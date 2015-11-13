@@ -280,6 +280,10 @@
     'name': 'storage.modifier.declarator.perl6fe'
   }
   {
+    'match': '(?<!\\=)=(?=\\s)'
+    'name': 'storage.modifier.assignment.perl6fe'
+  }
+  {
     'match': '\\b(for|loop|repeat|while|until|gather|given)(?!\\-)\\b'
     'name': 'keyword.control.repeat.perl6fe'
   }
@@ -354,8 +358,12 @@
       Buf|buf|buf1|buf2|buf4|buf8|buf16|buf32|buf64|
       UInt|uint|uint1|uint2|uint4|uint8|uint16|uint32|uint64|
       utf8|utf16|utf32
-    )\\b'
-    'name': 'support.type.perl6fe'
+    )(?:\\:([DU]))?\\b'
+    'captures':
+      '1':
+        'name': 'support.type.perl6fe'
+      '2':
+        'name': 'support.class.type.adverb.perl6fe'
   }
   {
     'match': '(?x)\\b(
@@ -367,18 +375,27 @@
   }
   {
     'match': '(?x) => | -> | \\+\\| | \\+\\+ | -- | \\*\\* |
-      \\?\\?(?!\\!) | \\!\\!(?!\\!) | && | \\+\\^ | \\?\\^ | %% | \\+& |
-      \\+< | \\+> | \\+\\^ | \\.\\.(?!\\.) | \\.\\.\\^ | \\^\\.\\. |
-      \\^\\.\\.\\^ | \\?\\| | == | != | <= | >= | === | =:= | ~~ |
+      (?<!\\?)\\?\\?(?!\\?) | (?<!\\!)\\!\\!(?!\\!) | && |
+      \\+\\^ | \\?\\^ | %% | \\+& | \\+< | \\+> | \\+\\^ |
+      \\.\\.(?!\\.) | \\.\\.\\^ | \\^\\.\\. | \\^\\.\\.\\^ |
+      \\?\\| | == | != | <= | >= | === | =:= | ~~ |
       \\|\\| | \\^\\^ | \\/\\/ | := | ::= | \\.\\.\\.'
     'name': 'keyword.operator.multi-symbol.perl6fe'
+  }
+  {
+    'match': '[\\$\\@](?=\\s)|\\$_|\\$\\/|\\$\\!'
+    'name': 'keyword.other.special-method.perl6fe'
+  }
+  {
+    'match': '(?<=\\W)\\*(?=\\W)(?![\\$\\@\\%\\=])'
+    'name': 'keyword.other.special-method.whatever.perl6fe'
   }
   {
     'match': '(\\$|@|%|&)(\\*|:|!|\\^|~|=|\\?|(<(?=.+>)))?([a-zA-Z_\xc0-\xff\\$])([a-zA-Z0-9_\xc0-\xff\\$]|[\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$])*'
     'name': 'variable.other.identifier.perl6fe'
   }
   {
-    'match': '(?x)\\b(
+    'match': '(?x)\\b(?<![\\-:])(
        eager|hyper|substr|index|rindex|grep|map|sort|join|lines|hints
       |chmod|split|reduce|min|max|reverse|truncate|zip|cat|roundrobin
       |classify|first|sum|keys|values|pairs|defined|delete|exists
@@ -413,6 +430,10 @@
   {
     'match': '([a-zA-Z_\xc0-\xff\\$])([a-zA-Z0-9_\xc0-\xff\\$]|[\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$])*'
     'name': 'routine.name.perl6fe'
+  }
+  {
+    'match': '[\\^\\%\\+><\\*\\!\\?\\:\\.]'
+    'name': 'keyword.operator.generic.perl6fe'
   }
 ]
 'repository':
