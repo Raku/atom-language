@@ -247,7 +247,7 @@
     ]
   }
   {
-    'begin': '(?<=\\<)(?=.+\\>)'
+    'begin': '(?<=\\<)(?!\\=)(?=.+\\>)'
     'end': '(?=\\>)'
     'name': 'string.array.words.perl6fe'
   }
@@ -374,11 +374,22 @@
     'name': 'keyword.operator.word.perl6fe'
   }
   {
+    'match': '(<)(=)(>)'
+    'captures':
+      '1':
+        'name': 'keyword.operator.spaceship.perl6fe'
+      '2':
+        'name': 'keyword.operator.spaceship.perl6fe'
+      '3':
+        'name': 'keyword.operator.spaceship.perl6fe'
+    'name': 'meta.operator.spaceship.perl6fe'
+  }
+  {
     'match': '(?x) => | -> | \\+\\| | \\+\\+ | -- | \\*\\* |
       (?<!\\?)\\?\\?(?!\\?) | (?<!\\!)\\!\\!(?!\\!) | && |
       \\+\\^ | \\?\\^ | %% | \\+& | \\+< | \\+> | \\+\\^ |
       \\.\\.(?!\\.) | \\.\\.\\^ | \\^\\.\\. | \\^\\.\\.\\^ |
-      \\?\\| | == | != | <= | >= | === | =:= | ~~ |
+      \\?\\| | == | != | <=(?!>) | >= | === | =:= | ~~ |
       \\|\\| | \\^\\^ | \\/\\/ | := | ::= | \\.\\.\\.'
     'name': 'keyword.operator.multi-symbol.perl6fe'
   }
