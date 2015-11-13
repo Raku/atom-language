@@ -1,0 +1,7 @@
+'.source.perl6fe':
+  'editor':
+    'foldEndPattern': '(\\*/|^\\s*(\\}|\\]|\\)))'
+    'increaseIndentPattern': '^.*\\{\\}?\\s*$'
+    'decreaseIndentPattern': '^\\s*\\}'
+    'commentStart': '# '
+    'nonWordCharacters': '/\\()"\':,.;<>~!#^&*|+=[]{}`?-'

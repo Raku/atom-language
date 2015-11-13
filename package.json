@@ -1,0 +1,21 @@
+{
+  "name": "language-perl6fe",
+  "version": "0.0.1",
+  "descirption": "Perl 6 Language Highlighter Fun Edition",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "homepage": "http://madcapjake.github.io/language-perl6fe",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madcapjake/language-perl6fe.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madcapjake/language-perl6fe/issues"
+  },
+  "devDependencies": {
+    "coffeelint": "^1.10.1"
+  }
+}
