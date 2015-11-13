@@ -394,13 +394,13 @@
     'name': 'keyword.operator.multi-symbol.perl6fe'
   }
   {
-    'match': '[\\$\\@](?=\\s)|\\$_|\\$\\/|\\$\\!'
+    'match': '[\\$\\@\\%](?=[\\s,;])|\\$_|\\$\\/|\\$\\!'
     'name': 'keyword.other.special-method.perl6fe'
   }
-  {
-    'match': '(?<=\\W)\\*(?=\\W)(?![\\$\\@\\%\\=])'
-    'name': 'keyword.other.special-method.whatever.perl6fe'
-  }
+  # {
+  #   'match': '(?<=\\W)\\*(?=\\W)(?![\\$\\@\\%\\=])'
+  #   'name': 'keyword.other.special-method.whatever.perl6fe'
+  # }
   {
     'match': '(?x)
       (\\$|@|%|&)
@@ -450,7 +450,7 @@
     'name': 'routine.name.perl6fe'
   }
   {
-    'match': '[\\^\\%\\+><\\*\\!\\?\\:\\.]'
+    'match': '(?<![\\(\\*])\\%|[\\^\\+><\\*\\!\\?\\:\\.]'
     'name': 'keyword.operator.generic.perl6fe'
   }
 ]
