@@ -98,7 +98,7 @@
     'name': 'meta.class.perl6fe'
   }
   {
-    'begin': '(?<=\\W)\''
+    'begin': '(?<=\\W|^)\''
     'beginCaptures':
       '0':
         'name': 'punctuation.definition.string.begin.perl6fe'
