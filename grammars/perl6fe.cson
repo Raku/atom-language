@@ -256,23 +256,27 @@
     'name': 'variable.other.perl6fe'
   }
   {
-    'match': '\\b(macro|sub|submethod|method|multi|proto|only|rule|token|regex|category)(?!\\-)\\b'
+    'match': '(?x)\\b(?<![\\-:])(
+       macro|sub|submethod|method
+      |multi|proto|only|rule|token
+      |regex|category
+    )(?!\\-)\\b'
     'name': 'storage.type.declare.routine.perl6fe'
   }
   {
-    'match': '\\b(self)(?!\\-)\\b'
+    'match': '\\b(?<![\\-:])(self)(?!\\-)\\b'
     'name': 'variable.language.perl6fe'
   }
   {
-    'match': '\\b(use|require)(?!\\-)\\b'
+    'match': '\\b(?<![\\-:])(use|require)(?!\\-)\\b'
     'name': 'keyword.other.include.perl6fe'
   }
   {
-    'match': '\\b(if|else|elsif|unless)(?!\\-)\\b'
+    'match': '\\b(?<![\\-:])(if|else|elsif|unless)(?!\\-)\\b'
     'name': 'keyword.control.conditional.perl6fe'
   }
   {
-    'match': '\\b(let|my|our|state|temp|has|constant)(?!\\-)\\b'
+    'match': '\\b(?<![\\-:])(let|my|our|state|temp|has|constant)(?!\\-)\\b'
     'name': 'storage.modifier.declarator.perl6fe'
   }
   {
@@ -280,15 +284,22 @@
     'name': 'keyword.control.repeat.perl6fe'
   }
   {
-    'match': '\\b(take|do|when|next|last|redo|return|contend|maybe|defer|default|exit|make|continue|break|goto|leave|async|lift)(?!\\-)\\b'
+    'match': '(?x)\\b(?<![\\-:])(
+       take|do|when|next|last|redo|return
+      |contend|maybe|defer|default|exit
+      |make|continue|break|goto|leave
+      |async|lift
+    )(?!\\-)\\b'
     'name': 'keyword.control.flowcontrol.perl6fe'
   }
   {
-    'match': '\\b(is|as|but|trusts|of|returns|handles|where|augment|supersede)(?!\\-)\\b'
+    'match': '(?x)\\b(?<![\\-:])(
+      is|as|but|trusts|of|returns|handles|where|augment|supersede
+    )(?!\\-)\\b'
     'name': 'storage.modifier.type.constraints.perl6fe'
   }
   {
-    'match': '(?x)\\b(
+    'match': '(?x)\\b(?<![\\-:])(
        BEGIN|CHECK|INIT
       |START|FIRST|ENTER
       |LEAVE|KEEP|UNDO
@@ -299,11 +310,17 @@
     'name': 'keyword.control.closure.trait.perl6fe'
   }
   {
-    'match': '\\b(die|fail|try|warn)(?!\\-)\\b'
+    'match': '\\b(?<![\\-:])(die|fail|try|warn)(?!\\-)\\b'
     'name': 'keyword.control.control-handlers.perl6fe'
   }
   {
-    'match': '\\b(prec|irs|ofs|ors|export|deep|binary|unary|reparsed|rw|parsed|cached|readonly|defequiv|will|ref|copy|inline|tighter|looser|equiv|assoc|required)(?!\\-)\\b'
+    'match': '(?x)\\b(?<![\\-:])(
+       prec|irs|ofs|ors|export|deep
+      |binary|unary|reparsed|rw|parsed
+      |cached|readonly|defequiv|will
+      |ref|copy|inline|tighter|looser
+      |equiv|assoc|required
+    )(?!\\-)\\b'
     'name': 'storage.modifier.perl6fe'
   }
   {
