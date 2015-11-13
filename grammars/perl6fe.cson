@@ -402,7 +402,14 @@
     'name': 'keyword.other.special-method.whatever.perl6fe'
   }
   {
-    'match': '(\\$|@|%|&)(\\*|:|!|\\^|~|=|\\?|(<(?=.+>)))?([a-zA-Z_\xc0-\xff\\$])([a-zA-Z0-9_\xc0-\xff\\$]|[\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$])*'
+    'match': '(?x)
+      (\\$|@|%|&)
+      (\\*|:|!|\\^|~|=|\\?|(<(?=.+>)))?
+      ([a-zA-Z_\xc0-\xff\\$])
+      (
+        [a-zA-Z0-9_\xc0-\xff\\$]|
+        [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
+      )*'
     'name': 'variable.other.identifier.perl6fe'
   }
   {
