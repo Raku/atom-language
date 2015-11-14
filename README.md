@@ -6,31 +6,27 @@
 
 A more colorful, thoughtful, and helpful language grammar for Perl 6. Derived from the builtin [language-perl](https://github.com/atom/language-perl) package but with many bugfixes and additions.  You might ask why I didn't just add a PR there but I feel that this package adds quite a bit more that it might not be everyone's cup of tea. However, I do plan on adding support for autocomplete+, linter, atom-build, and atom-runner.  Maybe even integrating a perl6 REPL would be fun!
 
-![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/example.png)
+> You will need to either disable the builtin `language-perl` package or select `Perl 6 FE` manually.  I am looking for a better solution.
+
+![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example3.png)
 
 ## What's Makes This The Fun Edition™?
 
 > Perl 6 is *optimized for fun* -Audrey Tang
 
-This package was developed to work with Fira Code ligatures:
+* This package was developed to work with [Fira Code](https://github.com/tonsky/FiraCode) ligatures
 
-![Example of ligatures](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/ligatures.png)
+* More syntax highlighted (numbers, operators, interpolation, traits, better strings)
 
-The color palette is quite a bit more varied than the baseline perl highlighter and maybe even moreso than the vim-perl plugin:
+* This package will also soon contain support for many popular atom packages that have service hooks like autocomplete+ and linter
 
-![Example of varied highlighting](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/colors.png)
+* I'd like to add a builtin REPL eventually
 
-This package will also soon contain support for many popular atom packages that have service hooks like autocomplete+:
+Here's a few more examples:
 
-![Example of autocomplete+](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/autocomplete.png)
+![Another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example1.png)
 
-Or even a linter using `perl6 -c`:
-
-![Example of builtin atom linter](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/linter.png)
-
-We also (will hopefully) have a builtin REPL:
-
-![Example of Perl6 REPL]()
+![Yet another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example2.png)
 
 # License
 
