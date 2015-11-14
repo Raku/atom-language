@@ -14,19 +14,19 @@ A more colorful, thoughtful, and helpful language grammar for Perl 6. Derived fr
 
 This package was developed to work with Fira Code ligatures:
 
-![Example of ligatures]()
+![Example of ligatures](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/ligatures.png)
 
 The color palette is quite a bit more varied than the baseline perl highlighter and maybe even moreso than the vim-perl plugin:
 
-![Example of varied highlighting]()
+![Example of varied highlighting](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/colors.png)
 
 This package will also soon contain support for many popular atom packages that have service hooks like autocomplete+:
 
-![Example of autocomplete+]()
+![Example of autocomplete+](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/autocomplete.png)
 
 Or even a linter using `perl6 -c`:
 
-![Example of builtin atom linter]()
+![Example of builtin atom linter](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/linter.png)
 
 We also (will hopefully) have a builtin REPL:
 
