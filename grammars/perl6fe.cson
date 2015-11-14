@@ -367,10 +367,11 @@
   }
   {
     'match': '(?x)\\b(
-      div|mod|gcd|lcm|x|xx|temp|let|does|but|cmp|leg|
-      eq|ne|gt|ge|lt|le|before|after|eqv|min|max|ff|fff|not|so|Z|X|
-      and|andthen|or|orelse
-    )\\b'
+        div|mod|gcd|lcm|x|xx|temp|let|does|but|cmp|leg|
+        eq|ne|gt|ge|lt|le|before|after|eqv|min|max|ff|fff|not|so|Z|
+        and|andthen|or|orelse
+      )\\b|
+      \\b(X)(?!:)\\b'
     'name': 'keyword.operator.word.perl6fe'
   }
   {
@@ -455,11 +456,15 @@
     'name': 'routine.name.perl6fe'
   }
   {
-    'match': '(?<![\\(\\*])\\%|[\\^\\+><\\*\\!\\?\\.~]|(?<!:):(?!:)'
+    'match': '(?x)
+      (?<![\\(\\*])\\%|
+      [\\^\\+><\\*\\!\\?\\.~]|
+      (?<!:):(?!:)|
+      (?<=\\s)\\-(?=[\\d\\s\\(\\{\\[])'
     'name': 'keyword.operator.generic.perl6fe'
   }
   {
-    'match': '([\\-\\+])?(\\d+(?:[\\_\\d]+\\d)?)'
+    'match': '(?<=[\\-\\+\\s\\=\\{\\[\\(])(\\d+(?:[\\_\\d]+\\d)?)'
     'name': 'constant.numeric.int.decimal.perl6fe'
   }
 ]
