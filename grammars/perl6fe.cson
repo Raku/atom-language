@@ -129,6 +129,9 @@
         'match': '\\\\[abtnfre"\\\\]'
         'name': 'constant.character.escape.perl6fe'
       }
+      {
+        'include': '#interpolation'
+      }
     ]
   }
   {
@@ -395,7 +398,11 @@
     'name': 'keyword.operator.multi-symbol.perl6fe'
   }
   {
-    'match': '[\\$\\@\\%](?=[\\s,;\\{\\[\\(])|\\$_|\\$\\/|\\$\\!'
+    'match': '(?x)
+      [\\$\\@\\%](?=[\\s,;\\{\\[\\(])|
+      \\$_|
+      \\$\\/|
+      \\$\\!(?!\\w)'
     'name': 'keyword.other.special-method.perl6fe'
   }
   # {
@@ -403,15 +410,7 @@
   #   'name': 'keyword.other.special-method.whatever.perl6fe'
   # }
   {
-    'match': '(?x)
-      (\\$|@|%|&)
-      (\\*|:|!|\\^|~|=|\\?|(<(?=.+>)))?
-      ([a-zA-Z_\xc0-\xff\\$])
-      (
-        [a-zA-Z0-9_\xc0-\xff\\$]|
-        [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
-      )*'
-    'name': 'variable.other.identifier.perl6fe'
+    'include': '#variables'
   }
   {
     'match': '(?x)\\b(?<![\\-:])(
@@ -458,7 +457,8 @@
   {
     'match': '(?x)
       (?<![\\(\\*])\\%|
-      [\\^\\+><\\*\\!\\?\\.~]|
+      [\\^\\+><\\*\\!\\?~\\/]|
+      (?<!\\$)\\.|
       (?<!:):(?!:)|
       (?<=\\s)\\-(?=[\\d\\s\\(\\{\\[])'
     'name': 'keyword.operator.generic.perl6fe'
@@ -469,6 +469,48 @@
   }
 ]
 'repository':
+  'variables':
+    'patterns': [
+        {
+          'match': '(?x)
+            (\\$|@|%|&)
+            (\\.|\\*|:|!|\\^|~|=|\\?|(<(?=.+>)))?
+            ([a-zA-Z_\xc0-\xff\\$])
+            (
+              [a-zA-Z0-9_\xc0-\xff\\$]|
+              [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
+            )*'
+          'name': 'variable.other.identifier.perl6fe'
+        }
+    ]
+  'interpolation':
+    'patterns': [
+      {
+        'match': '(?x)(?<!\\\\)
+          (\\$|@|%|&)
+          (\\.|\\*|:|!|\\^|~|=|\\?|(<(?=.+>)))?
+          ([a-zA-Z_\xc0-\xff\\$])
+          (
+            [a-zA-Z0-9_\xc0-\xff\\$]|
+            [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
+          )*'
+        'name': 'variable.interpolated.perl6fe'
+      }
+      {
+        'begin': '(\\{)'
+        'beginCaptures':
+          '1':
+            'name': 'punctuation.section.embedded.begin.perl6fe'
+        'end': '(\\})'
+        'endCaptures':
+          '1':
+            'name': 'punctuation.section.embedded.end.perl6fe'
+        'patterns': [
+          'include': '$self'
+        ]
+        'name': 'meta.interpolation.perl6fe'
+      }
+    ]
   'qq_angle_string_content':
     'begin': '<'
     'end': '>'
