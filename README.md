@@ -10,7 +10,7 @@ A more colorful, thoughtful, and helpful language grammar for Perl 6. Derived fr
 
 ![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example3.png)
 
-## What's Makes This The Fun Edition™?
+## What Makes This The Fun Edition™?
 
 > Perl 6 is *optimized for fun* -Audrey Tang
 
