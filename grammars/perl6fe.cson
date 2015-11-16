@@ -267,6 +267,16 @@
     'name': 'storage.type.declare.routine.perl6fe'
   }
   {
+    'begin': '(?x)(?<=
+      macro|sub|submethod|method|proto|rule|token|regex
+    )(?!\\-)\\s'
+    'beginCaptures':
+      '1':
+        'name': 'storage.type.declare.routine.perl6fe'
+    'end': '\\s*(?=[\\(\\{])'
+    'name': 'entity.name.function.perl6fe'
+  }
+  {
     'match': '\\b(?<![\\-:])(self)(?!\\-)\\b'
     'name': 'variable.language.perl6fe'
   }
