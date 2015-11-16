@@ -488,13 +488,22 @@
         {
           'match': '(?x)
             (\\$|@|%|&)
-            (\\.|\\*|:|!|\\^|~|=|\\?|(<(?=.+>)))?
-            ([a-zA-Z_\xc0-\xff\\$])
+            (\\.|\\*|:|!|\\^|~|=|\\?|<.+>)?
             (
-              [a-zA-Z0-9_\xc0-\xff\\$]|
-              [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
-            )*'
-          'name': 'variable.other.identifier.perl6fe'
+              ([a-zA-Z_\xc0-\xff\\$])
+              (
+                [a-zA-Z0-9_\xc0-\xff\\$]|
+                [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
+              )*
+            )'
+          'captures':
+            '1':
+              'name': 'variable.other.identifier.sigil.perl6fe'
+            '2':
+              'name': 'support.class.twigil.perl6fe'
+            '3':
+              'name': 'variable.other.identifier.perl6fe'
+          'name': 'meta.variable.container.perl6fe'
         }
     ]
   'interpolation':
