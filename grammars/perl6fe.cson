@@ -352,7 +352,7 @@
     'match': '(?x)\\b(?<![\\-:])(
       fatal|internals|MONKEY\\-TYPING|nqp|
       strict|trace|worries|invocant|parameters|
-      cur|soft|variables|attributes
+      cur|soft|variables|attributes|v6|lib
     )(?!\\-)\\b'
     'name': 'constant.language.pragma.perl6fe'
   }
