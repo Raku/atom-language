@@ -26,7 +26,7 @@
     'include': '#comment-block-abbreviated'
   }
   {
-    'match': '(#)(\\|)(.*)\\n'
+    'match': '^\\s*(#)([\\|\\=])(.*)\\n'
     'captures':
       '1':
         'name': 'comment.punctuation.pound.perl6fe'
