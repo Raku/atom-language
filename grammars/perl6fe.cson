@@ -407,7 +407,7 @@
   }
   {
     'match': '(?x)\\b(
-        div|mod|gcd|lcm|x|xx|temp|let|does|but|cmp|leg|
+        div|mod|gcd|lcm|x|xx|temp|let|but|cmp|leg|
         eq|ne|gt|ge|lt|le|before|after|eqv|min|max|ff|fff|not|so|Z|
         and|andthen|or|orelse
       )\\b|
