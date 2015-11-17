@@ -335,7 +335,7 @@
   }
   {
     'match': '(?x)\\b(?<![\\-:])(
-      is|as|but|trusts|of|returns|handles|where|augment|supersede
+      is|does|as|but|trusts|of|returns|handles|where|augment|supersede
     )(?!\\-)\\b'
     'name': 'storage.modifier.type.constraints.perl6fe'
   }
