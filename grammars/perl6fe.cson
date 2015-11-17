@@ -8,16 +8,7 @@
 ]
 'patterns': [
   {
-    'begin': '^(=)(begin)\\s+(\\w+)'
-    'end': '^(=)(end)\\s+(\\w+)'
-    'captures':
-      '1':
-        'name': 'storage.modifier.block.delimited.perl6fe'
-      '2':
-        'name': 'keyword.operator.block.delimited.perl6fe'
-      '3':
-        'name': 'entity.name.section.block.delimited.perl6fe'
-    'contentName': 'comment.block.delimited.perl6fe'
+    'include': '#comment-block-delimited'
   }
   {
     'begin': '^(=)(for)\\s+(\\w+)'
@@ -27,20 +18,12 @@
       '2':
         'name': 'keyword.operator.block.paragraph.perl6fe'
       '3':
-        'name': 'entity.name.section.block.paragraph.perl6fe'
+        'name': 'entity.other.attribute-name.paragraph.perl6fe'
     'end': '^\\s*$'
     'contentName': 'comment.block.paragraph.perl6fe'
   }
   {
-    'match': '^(=)(\\w+)\\s+(.+)$'
-    'captures':
-      '1':
-        'name': 'storage.modifier.block.abbreviated.perl6fe'
-      '2':
-        'name': 'entity.name.section.block.abbreviated.perl6fe'
-      '3':
-        'name': 'comment.line.block.abbreviated.perl6fe'
-    'name': 'meta.block.abbreviated.perl6fe'
+    'include': '#comment-block-abbreviated'
   }
   {
     'match': '(#)(\\|)(.*)\\n'
@@ -524,6 +507,43 @@
   }
 ]
 'repository':
+  'comment-block-delimited':
+    'patterns': [
+        {
+          'begin': '^(=)(begin)\\s+(\\w+)'
+          'end': '^(=)(end)\\s+(\\w+)'
+          'captures':
+            '1':
+              'name': 'storage.modifier.block.delimited.perl6fe'
+            '2':
+              'name': 'keyword.operator.block.delimited.perl6fe'
+            '3':
+              'name': 'entity.other.attribute-name.block.delimited.perl6fe'
+          'contentName': 'comment.block.delimited.perl6fe'
+          'patterns': [
+            {
+              'include': '#comment-block-delimited'
+            }
+            {
+              'include': '#comment-block-abbreviated'
+            }
+          ]
+        }
+    ]
+  'comment-block-abbreviated':
+    'patterns': [
+        {
+          'match': '^(=)(\\w+)\\s+(.+)$'
+          'captures':
+            '1':
+              'name': 'storage.modifier.block.abbreviated.perl6fe'
+            '2':
+              'name': 'entity.other.attribute-name.block.abbreviated.perl6fe'
+            '3':
+              'name': 'entity.name.section.abbreviated.perl6fe'
+          'name': 'meta.block.abbreviated.perl6fe'
+        }
+    ]
   'variables':
     'patterns': [
         {
