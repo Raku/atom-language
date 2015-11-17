@@ -8,9 +8,28 @@
 ]
 'patterns': [
   {
-    'begin': '^=begin'
-    'end': '^=end'
-    'name': 'comment.block.perl6fe'
+    'begin': '^(=)(begin)\\s+(\\w+)'
+    'end': '^(=)(end)\\s+(\\w+)'
+    'captures':
+      '1':
+        'name': 'storage.modifier.block.delimited.perl6fe'
+      '2':
+        'name': 'keyword.operator.block.delimited.perl6fe'
+      '3':
+        'name': 'entity.name.section.block.delimited.perl6fe'
+    'contentName': 'comment.block.delimited.perl6fe'
+  }
+  {
+    'begin': '^(=)(for)\\s+(\\w+)'
+    'beginCaptures':
+      '1':
+        'name': 'storage.modifier.block.paragraph.perl6fe'
+      '2':
+        'name': 'keyword.operator.block.paragraph.perl6fe'
+      '3':
+        'name': 'entity.name.section.block.paragraph.perl6fe'
+    'end': '^\\s*$'
+    'contentName': 'comment.block.paragraph.perl6fe'
   }
   {
     'match': '(#)(\\|)(.*)\\n'
