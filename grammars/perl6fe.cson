@@ -32,6 +32,17 @@
     'contentName': 'comment.block.paragraph.perl6fe'
   }
   {
+    'match': '^(=)(\\w+)\\s+(.+)$'
+    'captures':
+      '1':
+        'name': 'storage.modifier.block.abbreviated.perl6fe'
+      '2':
+        'name': 'entity.name.section.block.abbreviated.perl6fe'
+      '3':
+        'name': 'comment.line.block.abbreviated.perl6fe'
+    'name': 'meta.block.abbreviated.perl6fe'
+  }
+  {
     'match': '(#)(\\|)(.*)\\n'
     'captures':
       '1':
