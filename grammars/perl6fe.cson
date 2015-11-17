@@ -13,6 +13,17 @@
     'name': 'comment.block.perl6fe'
   }
   {
+    'match': '(#)(\\|)(.*)\\n'
+    'captures':
+      '1':
+        'name': 'comment.punctuation.pound.perl6fe'
+      '2':
+        'name': 'meta.declarator.perl6fe'
+      '3':
+        'name': 'comment.inline.declarator.perl6fe'
+    'name': 'meta.documentation.block.declarator.perl6fe'
+  }
+  {
     'begin': '#`\\(',
     'end': '\\)',
     'name': 'comment.multiline.hash-tick.parens.perl6fe'
@@ -453,7 +464,7 @@
       |quasi|body|each|contains|rewinddir|subst|can|isa|flush|arity
       |assuming|rewind|callwith|callsame|nextwith|nextsame|attr
       |eval_elsewhere|none|srand|trim|trim_start|trim_end|lastcall
-      |WHAT|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not|true
+      |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not|true
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
       |throws_like|trans
     )(?!\\-)\\b'
