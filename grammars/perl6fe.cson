@@ -527,6 +527,75 @@
             {
               'include': '#comment-block-abbreviated'
             }
+            {
+              'match': '(L)(\\<)(.+?)(?:(\\|)(.+?))?(\\>)'
+              'captures':
+                '1':
+                  'name': 'support.function.pod.link.perl6fe'
+                '2':
+                  'name': 'punctuation.section.embedded.pod.link.perl6fe'
+                '3':
+                  'name': 'entity.name.type.pod.link.perl6fe'
+                '4':
+                  'name': 'punctuation.section.embedded.pod.link.perl6fe'
+                '5':
+                  'name': 'markup.underline.link.pod.perl6fe'
+                '6':
+                  'name': 'punctuation.section.embedded.pod.link.perl6fe'
+              'name': 'meta.pod.l.perl6fe'
+            }
+            {
+              'match': '([CKT])(\\<)(.+?)(\\>)'
+              'captures':
+                '1':
+                  'name': 'support.function.pod.code.perl6fe'
+                '2':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+                '3':
+                  'name': 'markup.raw.code.perl6fe'
+                '4':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+              'name': 'meta.pod.c.perl6fe'
+            }
+            {
+              'match': '(U)(\\<)(.+?)(\\>)'
+              'captures':
+                '1':
+                  'name': 'support.function.pod.code.perl6fe'
+                '2':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+                '3':
+                  'name': 'markup.underline.perl6fe'
+                '4':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+              'name': 'meta.pod.c.perl6fe'
+            }
+            {
+              'match': '(I)(\\<)(.+?)(\\>)'
+              'captures':
+                '1':
+                  'name': 'support.function.pod.code.perl6fe'
+                '2':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+                '3':
+                  'name': 'markup.italic.perl6fe'
+                '4':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+              'name': 'meta.pod.c.perl6fe'
+            }
+            {
+              'match': '(B)(\\<)(.+?)(\\>)'
+              'captures':
+                '1':
+                  'name': 'support.function.pod.code.perl6fe'
+                '2':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+                '3':
+                  'name': 'markup.bold.perl6fe'
+                '4':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+              'name': 'meta.pod.c.perl6fe'
+            }
           ]
         }
     ]
