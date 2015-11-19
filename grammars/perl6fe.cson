@@ -500,12 +500,12 @@
   {
     'begin': '(?x)(?<=
       macro|sub|submethod|method|proto|rule|token|regex
-    )(?!\\-)\\s'
+    )(?!\\-)\\s+(!)?'
     'beginCaptures':
       '1':
-        'name': 'storage.type.declare.routine.perl6fe'
+        'name': 'support.class.method.private.perl6fe'
     'end': '\\s*(?=[\\(\\{])'
-    'name': 'entity.name.function.perl6fe'
+    'contentName': 'entity.name.function.perl6fe'
   }
   {
     'match': '\\b(?<![\\-:])(self)(?!\\-)\\b'
