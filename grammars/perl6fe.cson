@@ -866,8 +866,13 @@
     'name': 'keyword.operator.generic.perl6fe'
   }
   {
-    'match': '(?<=[+=,\\-\\s\\{\\[\\(\\/])(\\d+(?:[\\_\\d]+\\d)?)'
-    'name': 'constant.numeric.int.decimal.perl6fe'
+    'match': '(?x)
+      (?<=[=,\\s\\{\\[\\(\\/])
+      (?:[\\+\\-])?
+      (?: \\d+ (?:[\\_\\d]+\\d)? )
+      (?: \\.  \\d+ (?:[\\_\\d]+\\d)? )?
+      (?:   e  \\d+ (?:[\\_\\d]+\\d)? )?'
+    'name': 'constant.numeric.perl6fe'
   }
 ]
 'repository':
