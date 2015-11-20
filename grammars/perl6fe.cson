@@ -848,19 +848,19 @@
       |opendir|readdir|slurp|spurt|shell|run|pos|fmt|vec|link|unlink
       |symlink|uniq|pair|asin|atan|sec|cosec|cotan|asec|acosec|acotan
       |sinh|cosh|tanh|asinh|done|acos|acosh|atanh|sech|cosech|cotanh
-      |sech|acosech|acotanh|asech|ok|nok|plan_ok|dies_ok|lives_ok|skip
-      |todo|pass|flunk|force_todo|use_ok|isa_ok|diag|is_deeply|isnt
-      |like|skip_rest|unlike|cmp_ok|eval_dies_ok|nok_error
-      |eval_lives_ok|approx|is_approx|throws_ok|version_lt|plan|EVAL
+      |sech|acosech|acotanh|asech|ok|nok|plan-ok|dies-ok|lives-ok|skip
+      |todo|pass|flunk|force-todo|use-ok|isa-ok|diag|is-deeply|isnt
+      |like|skip-rest|unlike|cmp-ok|eval-dies-ok|nok-error
+      |eval-lives-ok|approx|is-approx|throws-ok|version-lt|plan|EVAL
       |succ|pred|times|nonce|once|signature|new|connect|operator|undef
       |undefine|sleep|from|to|infix|postfix|prefix|circumfix
       |postcircumfix|minmax|lazy|count|unwrap|getc|pi|e|context|void
       |quasi|body|each|contains|rewinddir|subst|can|isa|flush|arity
       |assuming|rewind|callwith|callsame|nextwith|nextsame|attr
-      |eval_elsewhere|none|srand|trim|trim_start|trim_end|lastcall
+      |eval-elsewhere|none|srand|trim|trim-start|trim-end|lastcall
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not|true
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
-      |throws_like|trans|race|hyper|tap
+      |throws-like|trans|race|hyper|tap
     )(?!\\-)\\b'
     'name': 'support.function.perl6fe'
   }
