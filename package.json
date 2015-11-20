@@ -1,6 +1,6 @@
 {
   "name": "language-perl6fe",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "descirption": "Perl 6 Language Highlighter Fun Edition",
   "engines": {
     "atom": "*",
