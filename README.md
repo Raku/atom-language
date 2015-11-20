@@ -15,6 +15,7 @@ You have three options:
 1. Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Perl 6 FE`
 2. Disable or uninstall the `language-perl` package
 3. Add this to your `config.cson` (*Application: Open Your Config*):
+
   ```coffee
   '*':
     core:
