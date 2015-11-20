@@ -6,9 +6,29 @@
 
 A more colorful, thoughtful, and helpful language grammar for Perl 6. Derived from the builtin [language-perl](https://github.com/atom/language-perl) package but with many bugfixes and additions.  You might ask why I didn't just add a PR there but I feel that this package adds quite a bit more that it might not be everyone's cup of tea. However, I do plan on adding support for autocomplete+, linter, atom-build, and atom-runner.  Maybe even integrating a perl6 REPL would be fun!
 
-> You will need to either disable the builtin `language-perl` package or select `Perl 6 FE` manually.  I am looking for a better solution.
-
 ![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example3.png)
+
+## How do I use this?
+
+You have three options:
+
+1. Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Perl 6 FE`
+2. Disable or uninstall the `language-perl` package
+3. Add this to your `config.cson` (*Application: Open Your Config*):
+  ```coffee
+  '*':
+    core:
+      customFileTypes:
+        'source.perl6fe': [
+          # Any extensions you'd like to override
+          'p6'
+          'pm6'
+          't'
+        ]
+  ```
+
+> Please be aware that if you do not include the `t` extension
+above, your `t` files will be highlighted with the `language-perl` highlighter (using either P5 or P6 grammar depending on if you have the `use v6;` pragma).
 
 ## What Makes This The Fun Edition™?
 
