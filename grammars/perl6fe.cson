@@ -122,11 +122,16 @@
     'name': 'meta.class.perl6fe'
   }
   {
-    'begin': '(?<![\\w\\/])(m|rx)?(\\/)'
+    'begin': '(?x)
+      (?<=^|[\\=,\\(\\[\\~])      \\s*
+      (?:(m|rx)((?:\\s*:\\w+)*))? \\s*
+      (\\/)'
     'beginCaptures':
       '1':
         'name': 'string.regexp.construct.perl6fe'
       '2':
+        'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3':
         'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\/)'
     'endCaptures':
@@ -135,16 +140,21 @@
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
       {
+        'include': '#interpolation'
+      }
+      {
         'include': 'source.regexp.perl6fe'
       }
     ]
   }
   {
-    'begin': '(?<![\\w\\/])(m|rx)(\\{)'
+    'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(\\{)'
     'beginCaptures':
       '1':
         'name': 'string.regexp.construct.perl6fe'
       '2':
+        'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3':
         'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\})'
     'endCaptures':
@@ -153,16 +163,21 @@
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
       {
+        'include': '#interpolation'
+      }
+      {
         'include': 'source.regexp.perl6fe'
       }
     ]
   }
   {
-    'begin': '(?<![\\w\\/])(m|rx)(\\[)'
+    'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(\\[)'
     'beginCaptures':
       '1':
         'name': 'string.regexp.construct.perl6fe'
       '2':
+        'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3':
         'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\])'
     'endCaptures':
@@ -171,16 +186,21 @@
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
       {
+        'include': '#interpolation'
+      }
+      {
         'include': 'source.regexp.perl6fe'
       }
     ]
   }
   {
-    'begin': '(?<![\\w\\/])(m|rx)(\\|)'
+    'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(\\|)'
     'beginCaptures':
       '1':
         'name': 'string.regexp.construct.perl6fe'
       '2':
+        'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3':
         'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\|)'
     'endCaptures':
@@ -189,16 +209,21 @@
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
       {
+        'include': '#interpolation'
+      }
+      {
         'include': 'source.regexp.perl6fe'
       }
     ]
   }
   {
-    'begin': '(?<![\\w\\/])(m|rx)(\\!)'
+    'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(\\!)'
     'beginCaptures':
       '1':
         'name': 'string.regexp.construct.perl6fe'
       '2':
+        'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3':
         'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\!)'
     'endCaptures':
@@ -207,16 +232,21 @@
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
       {
+        'include': '#interpolation'
+      }
+      {
         'include': 'source.regexp.perl6fe'
       }
     ]
   }
   {
-    'begin': '(?<![\\w\\/])(m|rx)(\\~)'
+    'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(~)'
     'beginCaptures':
       '1':
         'name': 'string.regexp.construct.perl6fe'
       '2':
+        'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3':
         'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\~)'
     'endCaptures':
@@ -224,6 +254,9 @@
         'name': 'punctuation.definition.regexp.perl6fe'
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
+      {
+        'include': '#interpolation'
+      }
       {
         'include': 'source.regexp.perl6fe'
       }
@@ -699,7 +732,7 @@
       |ref|copy|inline|tighter|looser
       |equiv|assoc|required
     )(?!\\-)\\b'
-    'name': 'storage.modifier.perl6fe'
+    'name': 'entity.name.type.trait.perl6fe'
   }
   {
     'match': '\\b(NaN|Inf)(?!\\-)\\b'
@@ -718,7 +751,7 @@
     'name': 'constant.language.pragma.perl6fe'
   }
   {
-    'match': '(?x)\\b(
+    'match': '(?x)\\b(?<!:)(
       AST|Any|Array|Associative|Attribute|Backtrace|Bag|BagHash|Baggy|
       Blob|Block|Bool|Callable|Capture|Channel|Code|Complex|Cool|
       CurrentThreadScheduler|Cursor|Date|DateTime|Dateish|Duration|
@@ -833,7 +866,7 @@
     'name': 'keyword.operator.generic.perl6fe'
   }
   {
-    'match': '(?<=[+=,\\-\\s\\{\\[\\(])(\\d+(?:[\\_\\d]+\\d)?)'
+    'match': '(?<=[+=,\\-\\s\\{\\[\\(\\/])(\\d+(?:[\\_\\d]+\\d)?)'
     'name': 'constant.numeric.int.decimal.perl6fe'
   }
 ]
@@ -1052,7 +1085,7 @@
     'patterns': [
       {
         'match': '(?x)(?<!\\\\)
-          (\\$|@|%|&)
+          (\\$|@|%|&)(?!\\$)
           (\\.|\\*|:|!|\\^|~|=|\\?|(<(?=.+>)))?
           ([a-zA-Z_\xc0-\xff\\$])
           (

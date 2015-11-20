@@ -17,6 +17,10 @@
         'name': 'constant.character.escape.class.regexp.perl6fe'
       }
       {
+        'match': ':\\w+'
+        'name': 'entity.name.section.adverb.perl6fe'
+      }
+      {
         'match': '\\^\\^|\\^|\\$\\$|\\$(?!<)|<<|>>'
         'name': 'entity.name.section.boundary.regexp.perl6fe'
       }
@@ -47,6 +51,21 @@
         'name': 'meta.property.regexp.perl6fe'
         'patterns': [
           {
+            'begin': '(\\?|\\!)(before|after)\\s+'
+            'beginCaptures':
+              '1':
+                'name': 'keyword.operator.negativity.perl6fe'
+              '2':
+                'name': 'entity.name.section.assertion.perl6fe'
+            'end': '(?=>)'
+            'name': 'meta.assertion.lookaround.perl6fe'
+            'patterns': [
+              {
+                'include': '#regexp'
+              }
+            ]
+          }
+          {
             'match': '(\\w+)(=)'
             'captures':
               '1':
@@ -72,6 +91,10 @@
             'begin': '\\['
             'end': '\\]'
             'contentName': 'constant.character.custom.property.regexp.perl6fe'
+          }
+          {
+            'match': '\\.\\w+\\b'
+            'name': 'comment.suppressed.capture.property.regexp.perl6fe'
           }
           {
             'match': '\\b\\w+\\b'
