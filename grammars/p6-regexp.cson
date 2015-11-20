@@ -21,7 +21,7 @@
         'name': 'entity.name.section.adverb.perl6fe'
       }
       {
-        'match': '\\^\\^|\\^|\\$\\$|\\$(?!<)|<<|>>'
+        'match': '\\^\\^|(?<!\\.)\\^(?!\\.)|\\$\\$|\\$(?!<)|<<|>>'
         'name': 'entity.name.section.boundary.regexp.perl6fe'
       }
       {
@@ -107,7 +107,7 @@
         'name': 'variable.other.identifier.whatever.regexp.perl6fe'
       }
       {
-        'match': '\\+|\\*\\*|\\*|\\?|%|\\.\\.|\\.|(?<=\\.\\.|\\s)\\^'
+        'match': '\\+|\\*\\*|\\*|\\?|%|\\.\\.|\\.|(?<=\\.\\.|\\s|\\d)\\^'
         'name': 'keyword.operator.quantifiers.regexp.perl6fe'
       }
       {
