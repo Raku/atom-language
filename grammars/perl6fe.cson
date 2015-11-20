@@ -785,7 +785,7 @@
       Buf|buf|buf1|buf2|buf4|buf8|buf16|buf32|buf64|
       UInt|uint|uint1|uint2|uint4|uint8|uint16|uint32|uint64|
       utf8|utf16|utf32
-    )(?:\\:([DU]))?\\b'
+    )(?!\\:\\:)(?:\\:([DU]))?\\b'
     'captures':
       '1':
         'name': 'support.type.perl6fe'
