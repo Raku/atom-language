@@ -866,16 +866,36 @@
     'name': 'keyword.operator.generic.perl6fe'
   }
   {
-    'match': '(?x)
-      (?<=[=,\\s\\{\\[\\(\\/])
-      (?:[\\+\\-])?
-      (?: \\d+ (?:[\\_\\d]+\\d)? )
-      (?: \\.  \\d+ (?:[\\_\\d]+\\d)? )?
-      (?:   e  \\d+ (?:[\\_\\d]+\\d)? )?'
-    'name': 'constant.numeric.perl6fe'
+    'include': '#numbers'
+  }
+  {
+    'begin': '(?<=\\:)(\\d+)(<)'
+    'beginCaptures':
+      '1':
+        'name': 'support.type.radix.perl6fe'
+      '2':
+        'name': 'punctuation.definition.radix.perl6fe'
+    'end': '>'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.radix.perl6fe'
+    'contentName': 'constant.numeric.perl6fe'
+
   }
 ]
 'repository':
+  'numbers':
+    'patterns': [
+      {
+        'match': '(?x)
+          (?<=[=,\\s\\{\\[\\(\\/])
+          (?:[\\+\\-])?
+          (?: \\d+ (?:[\\_\\d]+\\d)? )
+          (?: \\.  \\d+ (?:[\\_\\d]+\\d)? )?
+          (?:   e  \\d+ (?:[\\_\\d]+\\d)? )?'
+        'name': 'constant.numeric.perl6fe'
+      }
+    ]
   'comment-block-delimited':
     'patterns': [
         {
