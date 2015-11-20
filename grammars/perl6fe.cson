@@ -108,7 +108,10 @@
       '3':
         'name': 'entity.name.type.class.perl6fe'
     'match': '(?x)
-      (class|enum|grammar|knowhow|module|package|role|slang|subset)
+      (
+        class|enum|grammar|knowhow|module|
+        package|role|slang|subset|monitor|actor
+      )
       (\\s+)
       (
         (
@@ -699,7 +702,7 @@
        take|do|when|next|last|redo|return
       |contend|maybe|defer|default|exit
       |make|continue|break|goto|leave
-      |async|lift
+      |async|lift|await|start|react|whenever
     )(?!\\-)\\b'
     'name': 'keyword.control.flowcontrol.perl6fe'
   }
@@ -843,7 +846,7 @@
       |eval_elsewhere|none|srand|trim|trim_start|trim_end|lastcall
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not|true
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
-      |throws_like|trans
+      |throws_like|trans|race|hyper|tap
     )(?!\\-)\\b'
     'name': 'support.function.perl6fe'
   }
