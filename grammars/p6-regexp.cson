@@ -131,6 +131,16 @@
             'match': '\\b\\w+\\b'
             'name': 'variable.other.identifier.regexname.perl6fe'
           }
+          {
+            'begin': '(?<=\\w)\\('
+            'end': '\\)'
+            'name': 'meta.rule.signature.perl6fe'
+            'patterns': [
+              {
+                'include': 'source.perl6fe'
+              }
+            ]
+          }
         ]
       }
       {
