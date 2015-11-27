@@ -8,6 +8,23 @@
   'regexp':
     'patterns': [
       {
+        'begin': '(^[ \\t]+)?(?=#)'
+        'beginCaptures':
+          '1':
+            'name': 'punctuation.whitespace.comment.leading.perl6fe'
+        'end': '(?!\\G)'
+        'patterns': [
+          {
+            'begin': '#'
+            'beginCaptures':
+              '0':
+                'name': 'punctuation.definition.comment.perl6fe'
+            'end': '\\n'
+            'name': 'comment.line.number-sign.perl6fe'
+          }
+        ]
+      }
+      {
         'begin': '(?<!\\\\)\\\''
         'end': '\\\''
         'name': 'string.literal.perl6fe'
