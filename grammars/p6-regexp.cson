@@ -8,7 +8,7 @@
   'regexp':
     'patterns': [
       {
-        'begin': '\\\''
+        'begin': '(?<!\\\\)\\\''
         'end': '\\\''
         'name': 'string.literal.perl6fe'
       }
