@@ -668,7 +668,7 @@
     'contentName': 'entity.name.function.perl6fe'
   }
   {
-    'begin': '(regex|rule|token)\\s+(\\w+)\\s*\\(.+\\)\\s+(\\{)'
+    'begin': '(regex|rule|token)\\s+(\\w+)(?:\\s*\\(.+\\))?\\s+(\\{)'
     'beginCaptures':
       '1':
         'name': 'storage.type.declare.regexp.named.perl6fe'
@@ -676,7 +676,7 @@
         'name': 'entity.name.function.regexp.named.perl6fe'
       '3':
         'name': 'punctuation.definition.regex.named.perl6fe'
-    'end': '\\}'
+    'end': '(?<!\\\\)\\}'
     'endCaptures':
       '0':
         'name': 'punctuation.definition.regexp.named.perl6fe'
