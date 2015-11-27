@@ -902,6 +902,22 @@
     'contentName': 'constant.numeric.perl6fe'
 
   }
+  {
+    'begin': '\\{'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.block.perl6fe'
+    'end': '\\}'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.block.perl6fe'
+    'name': 'meta.block.perl6fe'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  }
 ]
 'repository':
   'numbers':
