@@ -40,6 +40,20 @@
         'name': 'meta.match.variable.perl6fe'
       }
       {
+        'begin': '(\\<(?:\\?|\\!)\\{)'
+        'beginCaptures':
+          '1':
+            'name': 'punctuation.section.embedded.begin.perl6fe'
+        'end': '(\\}\\>)'
+        'endCaptures':
+          '1':
+            'name': 'punctuation.section.embedded.end.perl6fe'
+        'patterns': [
+          'include': 'source.perl6fe'
+        ]
+        'name': 'meta.interpolation.perl6fe'
+      }
+      {
         'begin': '(?!\\\\)<'
         'beginCaptures':
           '0':
