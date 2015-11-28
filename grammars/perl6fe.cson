@@ -8,6 +8,15 @@
 ]
 'patterns': [
   {
+    'begin': '^(=)(finish)'
+    'beginCaptures':
+      '1':
+        'name': 'storage.modifier.block.finish.perl6fe'
+      '2':
+        'name': 'keyword.operator.block.finish.perl6fe'
+    'contentName': 'comment.block.finish.perl6fe'
+  }
+  {
     'include': '#comment-block-delimited'
   }
   {
