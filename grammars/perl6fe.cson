@@ -764,7 +764,7 @@
     'match': '(?x)\\b(?<![\\-:])(
        take|do|when|next|last|redo|return
       |contend|maybe|defer|default|exit
-      |make|continue|break|goto|leave
+      |make|continue|break|goto|leave|supply
       |async|lift|await|start|react|whenever
     )(?!\\-)\\b'
     'name': 'keyword.control.flowcontrol.perl6fe'
@@ -782,7 +782,7 @@
       |LEAVE|KEEP|UNDO
       |NEXT|LAST|PRE
       |POST|END|CATCH
-      |CONTROL|TEMP
+      |CONTROL|TEMP|QUIT
     )(?!\\-)\\b'
     'name': 'keyword.control.closure.trait.perl6fe'
   }
@@ -909,8 +909,8 @@
       |eval-elsewhere|none|srand|trim|trim-start|trim-end|lastcall
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not|true
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
-      |throws-like|trans|race|hyper|tap
-    )(?!\\-)\\b'
+      |throws-like|trans|race|hyper|tap|emit|done|quit
+    )(?!\\-)\\b(?!\\s*=>)'
     'name': 'support.function.perl6fe'
   }
   {
