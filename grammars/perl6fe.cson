@@ -669,7 +669,7 @@
   {
     'begin': '(?x)(?<=
       macro|sub|submethod|method
-    )(?!\\-)\\s+(!)?'
+    )(?!\\-)\\s+(!)?(?=\\w)'
     'beginCaptures':
       '1':
         'name': 'support.class.method.private.perl6fe'
