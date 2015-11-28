@@ -659,7 +659,7 @@
   }
   {
     'begin': '(?x)(?<=
-      macro|sub|submethod|method|proto
+      macro|sub|submethod|method
     )(?!\\-)\\s+(!)?'
     'beginCaptures':
       '1':
@@ -668,25 +668,62 @@
     'contentName': 'entity.name.function.perl6fe'
   }
   {
-    'begin': '(regex|rule|token)\\s+(\\w+)(?:\\s*\\(.+\\))?\\s+(\\{)'
+    'begin': 'regex|rule|token'
     'beginCaptures':
-      '1':
+      '0':
         'name': 'storage.type.declare.regexp.named.perl6fe'
-      '2':
-        'name': 'entity.name.function.regexp.named.perl6fe'
-      '3':
-        'name': 'punctuation.definition.regex.named.perl6fe'
     'end': '(?<!\\\\)\\}'
     'endCaptures':
       '0':
         'name': 'punctuation.definition.regexp.named.perl6fe'
-    'contentName': 'string.regexp.named.perl6fe'
+    'name': 'meta.regexp.named.perl6fe'
     'patterns': [
       {
-        'include': '#interpolation'
+        'match': '\\w+'
+        'name': 'entity.name.function.regexp.named.perl6fe'
       }
       {
-        'include': 'source.regexp.perl6fe'
+        'match': '(:)(\\w+)'
+        'captures':
+          '1':
+            'name': 'punctuation.definition.regexp.adverb.perl6fe'
+          '2':
+            'name': 'support.type.class.adverb.perl6fe'
+        'name': 'meta.regexp.named.adverb.perl6fe'
+      }
+      {
+        'begin': '\\x{00AB}|\\<'
+        'end': '(\\x{00BB}|\\>)(?=[\\s\\{])'
+        'contentName': 'string.array.words.perl6fe'
+      }
+      {
+        'begin': '\\('
+        'end': '(?<!\\\\)\\)'
+        'captures':
+          '0':
+            'name': 'punctuation.definition.regexp.named.signature.perlfe'
+        'name': 'meta.regexp.named.signature.perl6fe'
+        'patterns': [
+          {
+            'include': '$self'
+          }
+        ]
+      }
+      {
+        'begin': '\\{'
+        'end': '(?=\\})'
+        'captures':
+          '0':
+            'name': 'punctuation.definition.regex.named.perl6fe'
+        'name': 'meta.regexp.named.block.perl6fe'
+        'patterns': [
+          {
+            'include': '#interpolation'
+          }
+          {
+            'include': 'source.regexp.perl6fe'
+          }
+        ]
       }
     ]
   }
