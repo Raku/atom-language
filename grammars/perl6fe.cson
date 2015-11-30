@@ -745,7 +745,9 @@
     'name': 'keyword.other.include.perl6fe'
   }
   {
-    'match': '\\b(?<![\\-:])(if|else|elsif|unless)(?!\\-)\\b'
+    'match': '(?x)\\b(?<![\\-:])(
+      if|else|elsif|unless|with|orwith|without
+    )(?!\\-)\\b'
     'name': 'keyword.control.conditional.perl6fe'
   }
   {
@@ -888,14 +890,14 @@
       |elems|end|kv|any|all|one|wrap|shape|key|value|name|pop|push
       |shift|splice|unshift|floor|ceiling|abs|exp|log|log10|rand|sign
       |sqrt|sin|cos|tan|round|strand|roots|cis|unpolar|polar|atan2
-      |pick|chop|p5chop|chomp|p5chomp|lc|lcfirst|uc|ucfirst|capitalize
+      |pick|chop|chomp|lc|lcfirst|uc|ucfirst|capitalize
       |normalize|pack|unpack|quotemeta|comb|samecase|sameaccent|chars
       |nfd|nfc|nfkd|nfkc|printf|sprintf|caller|evalfile|run|runinstead
       |nothing|want|bless|chr|ord|gmtime|time|eof|localtime|gethost
       |getpw|chroot|getlogin|getpeername|kill|fork|wait|perl|graphs
       |codes|bytes|clone|print|open|read|write|readline|say|seek|close
       |opendir|readdir|slurp|spurt|shell|run|pos|fmt|vec|link|unlink
-      |symlink|uniq|pair|asin|atan|sec|cosec|cotan|asec|acosec|acotan
+      |symlink|unique|pair|asin|atan|sec|cosec|cotan|asec|acosec|acotan
       |sinh|cosh|tanh|asinh|done|acos|acosh|atanh|sech|cosech|cotanh
       |sech|acosech|acotanh|asech|ok|nok|plan-ok|dies-ok|lives-ok|skip
       |todo|pass|flunk|force-todo|use-ok|isa-ok|diag|is-deeply|isnt
@@ -910,6 +912,7 @@
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not|true
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
       |throws-like|trans|race|hyper|tap|emit|done|quit
+      |starts-with|ends-with|put|append
     )(?!\\-)\\b(?!\\s*=>)'
     'name': 'support.function.perl6fe'
   }
