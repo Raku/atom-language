@@ -677,9 +677,9 @@
     'contentName': 'entity.name.function.perl6fe'
   }
   {
-    'begin': 'regex|rule|token'
+    'begin': '(regex|rule|token)(?!\\s*=>)'
     'beginCaptures':
-      '0':
+      '1':
         'name': 'storage.type.declare.regexp.named.perl6fe'
     'end': '(?<!\\\\)\\}'
     'endCaptures':
