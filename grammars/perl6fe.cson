@@ -918,9 +918,19 @@
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not|true
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
       |throws-like|trans|race|hyper|tap|emit|done|quit
-      |starts-with|ends-with|put|append
+      |starts-with|ends-with|put|append|tail
     )(?!\\-)\\b(?!\\s*=>)'
     'name': 'support.function.perl6fe'
+  }
+  {
+    'match': '(?x)
+      (?<![\\(\\*])\\%|
+      [\\^\\+><\\*\\!\\?~\\/\\|]|
+      (?<!\\$)\\.|
+      (?<!:):(?!:)|
+      (?<=\\s)\\-(?=[\\s\\(\\{\\[])|
+      (?<!\\w)[o\\x{2218}](?!\\w)'
+    'name': 'keyword.operator.generic.perl6fe'
   }
   {
     'match': '(?x)
@@ -930,15 +940,6 @@
         [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
       )*'
     'name': 'routine.name.perl6fe'
-  }
-  {
-    'match': '(?x)
-      (?<![\\(\\*])\\%|
-      [\\^\\+><\\*\\!\\?~\\/\\|]|
-      (?<!\\$)\\.|
-      (?<!:):(?!:)|
-      (?<=\\s)\\-(?=[\\s\\(\\{\\[])'
-    'name': 'keyword.operator.generic.perl6fe'
   }
   {
     'include': '#numbers'
