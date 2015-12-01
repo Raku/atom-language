@@ -755,7 +755,7 @@
     'name': 'storage.modifier.declarator.perl6fe'
   }
   {
-    'match': '(?<!\\=)=(?![\\>\\=])'
+    'match': '(?<!\\=)=(?![\\>\\=\\~])'
     'name': 'storage.modifier.assignment.perl6fe'
   }
   {
@@ -853,7 +853,7 @@
     'name': 'keyword.operator.word.perl6fe'
   }
   {
-    'match': '(<)(=)(>)'
+    'match': '(<)(=)(>)|(=)(~)(=)'
     'captures':
       '1':
         'name': 'keyword.operator.spaceship.perl6fe'
@@ -861,14 +861,20 @@
         'name': 'keyword.operator.spaceship.perl6fe'
       '3':
         'name': 'keyword.operator.spaceship.perl6fe'
-    'name': 'meta.operator.spaceship.perl6fe'
+      '4':
+        'name': 'keyword.operator.approx-equal.perl6fe'
+      '5':
+        'name': 'keyword.operator.approx-equal.perl6fe'
+      '6':
+        'name': 'keyword.operator.approx-equal.perl6fe'
+    'name': 'meta.operator.non.ligature.perl6fe'
   }
   {
     'match': '(?x) => | -> | \\+\\| | \\+\\+ | -- | \\*\\* |
       (?<!\\?)\\?\\?(?!\\?) | (?<!\\!)\\!\\!(?!\\!) | && |
       \\+\\^ | \\?\\^ | %% | \\+& | \\+< | \\+> | \\+\\^ |
       \\.\\.(?!\\.) | \\.\\.\\^ | \\^\\.\\. | \\^\\.\\.\\^ |
-      \\?\\| | != | <=(?!>) | >= | === | == | =:= | ~~ |
+      \\?\\| | != | <=(?!>) | >= | === | == | =:= | ~~ | \\x{2245} |
       \\|\\| | \\^\\^ | \\/\\/ | := | ::= | \\.\\.\\.'
     'name': 'keyword.operator.multi-symbol.perl6fe'
   }
