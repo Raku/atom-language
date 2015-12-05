@@ -38,8 +38,12 @@
         'name': 'entity.name.section.adverb.perl6fe'
       }
       {
-        'match': '\\^\\^|(?<!\\.)\\^(?!\\.)|\\$\\$|\\$(?!<)|<<|>>'
+        'match': '\\^\\^|(?<!\\.)\\^(?!\\.)|\\$\\$|\\$(?!\\d|<)|<<|>>'
         'name': 'entity.name.section.boundary.regexp.perl6fe'
+      }
+      {
+        'match': '(?<!\\\\)\\$\\d'
+        'name': 'keyword.other.special-method.match.variable.numbered.perlt6e'
       }
       {
         'match': '(\\$)(\\<)(\\w+)(\\>)\\s*(=)'
