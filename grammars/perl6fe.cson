@@ -1173,18 +1173,43 @@
           ]
         }
         {
-          'begin': '(qx)\\s*(|)'
+          'begin': '(qx)\\s*(\\|)'
           'beginCaptures':
             '1':
               'name': 'string.quoted.q.shell.operator.perl6fe'
             '2':
               'name': 'punctuation.section.embedded.shell.begin.perl6fe'
-          'end': '|'
+          'end': '\\|'
           'endCaptures':
             '0':
               'name': 'punctuation.section.embedded.shell.begin.perl6fe'
           'name': 'meta.shell.quote.single.perl6fe'
           'patterns': [
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qx)\\s*(\\/)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '(?<!\\\\)\\/'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.single.perl6fe'
+          'patterns': [
+            {
+              'match': '\\\\\\/'
+              'name': 'constant.character.escape.perl6fe'
+            }
+            {
+              'include': '#interpolation'
+            }
             {
               'include': 'source.shell'
             }
@@ -1275,18 +1300,43 @@
           ]
         }
         {
-          'begin': '(qqx)\\s*(|)'
+          'begin': '(qqx)\\s*(\\|)'
           'beginCaptures':
             '1':
               'name': 'string.quoted.q.shell.operator.perl6fe'
             '2':
               'name': 'punctuation.section.embedded.shell.begin.perl6fe'
-          'end': '|'
+          'end': '\\|'
           'endCaptures':
             '0':
               'name': 'punctuation.section.embedded.shell.begin.perl6fe'
           'name': 'meta.shell.quote.double.perl6fe'
           'patterns': [
+            {
+              'include': '#interpolation'
+            }
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qqx)\\s*(\\/)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '(?<!\\\\)\\/'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.double.perl6fe'
+          'patterns': [
+            {
+              'match': '\\\\\\/'
+              'name': 'constant.character.escape.perl6fe'
+            }
             {
               'include': '#interpolation'
             }
