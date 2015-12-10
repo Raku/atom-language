@@ -26,7 +26,7 @@
       }
       {
         'begin': '(?<!\\\\)\\\''
-        'end': '\\\''
+        'end': '(?<!\\\\)\\\''
         'name': 'string.literal.perl6fe'
       }
       {
