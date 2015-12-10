@@ -329,6 +329,9 @@
     ]
   }
   {
+    'include': '#shellquotes'
+  }
+  {
     'include': '#heredocs'
   }
   {
@@ -1095,6 +1098,204 @@
           'name': 'meta.block.abbreviated.perl6fe'
         }
     ]
+  'shellquotes':
+    'patterns': [
+        {
+          'begin': '(qx)\\s*({{)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '}}'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.single.perl6fe'
+          'patterns': [
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qx)\\s*({)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '}'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.single.perl6fe'
+          'patterns': [
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qx)\\s*(\\[\\[)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '\\]\\]'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.single.perl6fe'
+          'patterns': [
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qx)\\s*(\\[)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '\\]'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.single.perl6fe'
+          'patterns': [
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qx)\\s*(|)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '|'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.single.perl6fe'
+          'patterns': [
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qqx)\\s*({{)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '}}'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.double.perl6fe'
+          'patterns': [
+            {
+              'include': '#interpolation'
+            }
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qqx)\\s*({)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '}'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.double.perl6fe'
+          'patterns': [
+            {
+              'include': '#interpolation'
+            }
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qqx)\\s*(\\[\\[)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '\\]\\]'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.double.perl6fe'
+          'patterns': [
+            {
+              'include': '#interpolation'
+            }
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qqx)\\s*(\\[)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '\\]'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.double.perl6fe'
+          'patterns': [
+            {
+              'include': '#interpolation'
+            }
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+        {
+          'begin': '(qqx)\\s*(|)'
+          'beginCaptures':
+            '1':
+              'name': 'string.quoted.q.shell.operator.perl6fe'
+            '2':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'end': '|'
+          'endCaptures':
+            '0':
+              'name': 'punctuation.section.embedded.shell.begin.perl6fe'
+          'name': 'meta.shell.quote.double.perl6fe'
+          'patterns': [
+            {
+              'include': '#interpolation'
+            }
+            {
+              'include': 'source.shell'
+            }
+          ]
+        }
+    ]
   'heredocs':
     'patterns': [
         {
@@ -1210,7 +1411,7 @@
             [a-zA-Z0-9_\xc0-\xff\\$]|
             [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
           )*'
-        'name': 'variable.interpolated.perl6fe'
+        'name': 'variable.other.identifier.interpolated.perl6fe'
       }
       {
         'begin': '(\\{)'
