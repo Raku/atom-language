@@ -1208,9 +1208,6 @@
               'name': 'constant.character.escape.perl6fe'
             }
             {
-              'include': '#interpolation'
-            }
-            {
               'include': 'source.shell'
             }
           ]
