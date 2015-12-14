@@ -1,7 +1,7 @@
 {
   "name": "language-perl6fe",
   "version": "1.2.3",
-  "descirption": "Perl 6 Language Highlighter Fun Edition",
+  "description": "Perl 6 Language Highlighter Fun Edition",
   "engines": {
     "atom": "*",
     "node": "*"
