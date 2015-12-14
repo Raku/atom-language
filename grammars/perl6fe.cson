@@ -1384,7 +1384,7 @@
               'name': 'meta.heredoc.continuation.perl6fe'
             }
             {
-              'match': '^.*$'
+              'match': '^(?:.|\\n)*$'
               'name': 'string.quoted.heredoc.perl6fe'
             }
           ]
