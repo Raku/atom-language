@@ -833,7 +833,7 @@
       QuantHash|Range|Rat|Rational|Real|Regex|Routine|Scheduler|Seq|
       Set|SetHash|Setty|Signature|Slip|Stash|Str|Stringy|Sub|
       Submethod|Supply|Tap|Temporal|Thread|ThreadPoolScheduler|
-      Variable|Version|Whatever|WhateverCode|
+      Variable|Version|Whatever|WhateverCode|bool|size_t
       Int|int|int1|int2|int4|int8|int16|int32|int64|
       Rat|rat|rat1|rat2|rat4|rat8|rat16|rat32|rat64|
       Buf|buf|buf1|buf2|buf4|buf8|buf16|buf32|buf64|
@@ -915,14 +915,14 @@
       |eval-lives-ok|approx|is-approx|throws-ok|version-lt|plan|EVAL
       |succ|pred|times|nonce|once|signature|new|connect|operator|undef
       |undefine|sleep|from|to|infix|postfix|prefix|circumfix
-      |postcircumfix|minmax|lazy|count|unwrap|getc|pi|e|context|void
+      |postcircumfix|minmax|lazy|count|unwrap|getc|pi|tau|e|context|void
       |quasi|body|each|contains|rewinddir|subst|can|isa|flush|arity
       |assuming|rewind|callwith|callsame|nextwith|nextsame|attr
       |eval-elsewhere|none|srand|trim|trim-start|trim-end|lastcall
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not|true
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
       |throws-like|trans|race|hyper|tap|emit|done|quit
-      |starts-with|ends-with|put|append|tail
+      |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
     )(?!\\-)\\b(?!\\s*=>)'
     'name': 'support.function.perl6fe'
   }
