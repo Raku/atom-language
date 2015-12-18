@@ -758,7 +758,7 @@
     'name': 'storage.modifier.declarator.perl6fe'
   }
   {
-    'match': '(?<!\\=)=(?![\\>\\=\\~])'
+    'match': '([+\\-.*/]|\\|\\|)?(?<!\\=)=(?![\\>\\=\\~])'
     'name': 'storage.modifier.assignment.perl6fe'
   }
   {
@@ -822,11 +822,22 @@
     'name': 'constant.language.pragma.perl6fe'
   }
   {
+        'match': '(?x)(?<![:\\-\\w])
+          (Backtrace|Exception|Failure|X)
+          (?:
+            \\:\\:[a-zA-Z]+
+          )*
+        \\b'
+        'captures':
+          '0':
+            'name': 'support.type.exception.perl6fe'
+  }
+  {
     'match': '(?x)\\b(?<!:)(
-      AST|Any|Array|Associative|Attribute|Backtrace|Bag|BagHash|Baggy|
+      AST|Any|Array|Associative|Attribute|Bag|BagHash|Baggy|
       Blob|Block|Bool|Callable|Capture|Channel|Code|Complex|Cool|
       CurrentThreadScheduler|Cursor|Date|DateTime|Dateish|Duration|
-      Enum|Exception|Failure|FatRat|Grammar|Hash|IO|Instant|Iterable|
+      Enum|FatRat|Grammar|Hash|IO|Instant|Iterable|
       Iterator|Junction|Label|List|Lock|Macro|Map|Match|Metamodel|
       Method|Mix|MixHash|Mixy|Mu|Nil|Num|Numeric|ObjAt|Pair|Parameter|
       Pod|Positional|PositionalBindFailover|Proc|Promise|Proxy|
@@ -856,25 +867,19 @@
     'name': 'keyword.operator.word.perl6fe'
   }
   {
-    'match': '(<)(=)(>)|(=)(~)(=)'
+    'match': '(=)(~)(=)'
     'captures':
       '1':
-        'name': 'keyword.operator.spaceship.perl6fe'
+        'name': 'keyword.operator.approx-equal.perl6fe'
       '2':
-        'name': 'keyword.operator.spaceship.perl6fe'
+        'name': 'keyword.operator.approx-equal.perl6fe'
       '3':
-        'name': 'keyword.operator.spaceship.perl6fe'
-      '4':
-        'name': 'keyword.operator.approx-equal.perl6fe'
-      '5':
-        'name': 'keyword.operator.approx-equal.perl6fe'
-      '6':
         'name': 'keyword.operator.approx-equal.perl6fe'
     'name': 'meta.operator.non.ligature.perl6fe'
   }
   {
-    'match': '(?x) => | -> | \\+\\| | \\+\\+ | -- | \\*\\* |
-      (?<!\\?)\\?\\?(?!\\?) | (?<!\\!)\\!\\!(?!\\!) | && |
+    'match': '(?x) <=> | => | -> | \\+\\| | \\+\\+ | -- | \\*\\* |
+      \\?\\?\\? | \\?\\? | \\!\\!\\! | \\!\\! | && |
       \\+\\^ | \\?\\^ | %% | \\+& | \\+< | \\+> | \\+\\^ |
       \\.\\.(?!\\.) | \\.\\.\\^ | \\^\\.\\. | \\^\\.\\.\\^ |
       \\?\\| | !=(?!\\=) | !==(?!\\=) | <=(?!>) | >= | === | == |
