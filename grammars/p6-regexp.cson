@@ -30,6 +30,11 @@
         'name': 'string.literal.perl6fe'
       }
       {
+        'begin': '(?<!\\\\)\\\"'
+        'end': '(?<!\\\\)\\\"'
+        'name': 'string.literal.perl6fe'
+      }
+      {
         'match': '\\\\[dDhHnNsStTvVwW]'
         'name': 'constant.character.escape.class.regexp.perl6fe'
       }
