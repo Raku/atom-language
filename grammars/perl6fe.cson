@@ -94,6 +94,11 @@
     ]
   }
   {
+    'begin': '(?<!\\+\\<)(?<=\\<)(?!\\=)(?=[^\\<]*[^\\<\\}]\\>)'
+    'end': '(?<!\\})(?=\\>)'
+    'name': 'string.array.words.perl6fe'
+  }
+  {
     'begin': '(^[ \\t]+)?(?=#)'
     'beginCaptures':
       '1':
@@ -655,11 +660,6 @@
         'include': '#qq_double_string_content'
       }
     ]
-  }
-  {
-    'begin': '(?<!\\+\\<)(?<=\\<)(?!\\=)(?=[^\\<]*[^\\<\\}]\\>)'
-    'end': '(?<!\\})(?=\\>)'
-    'name': 'string.array.words.perl6fe'
   }
   {
     'match': '\\b\\$\\w+\\b'
