@@ -25,14 +25,7 @@
         ]
       }
       {
-        'begin': '(?<!\\\\)\\\''
-        'end': '(?<=\\\\\\\\)\\\'|(?<!\\\\)\\\''
-        'name': 'string.literal.perl6fe'
-      }
-      {
-        'begin': '(?<!\\\\)\\\"'
-        'end': '(?<=\\\\\\\\)\\\"|(?<!\\\\)\\\"'
-        'name': 'string.literal.perl6fe'
+        'include': '#re_strings'
       }
       {
         'match': '\\\\[dDhHnNsStTvVwW]'
@@ -90,6 +83,9 @@
             'name': 'punctuation.delimiter.property.regexp.perl6fe'
         'name': 'meta.property.regexp.perl6fe'
         'patterns': [
+          {
+            'include': '#re_strings'
+          }
           {
             'begin': '(\\?|\\!)(before|after)\\s+'
             'beginCaptures':
@@ -163,5 +159,18 @@
       {
         'match': '(?<!\\\\)\\|{1,2}'
         'name': 'support.function.alternation.regexp.perl6fe'
+      }
+    ]
+  're_strings':
+    'patterns': [
+      {
+        'begin': '(?<!\\\\)\\\''
+        'end': '(?<=\\\\\\\\)\\\'|(?<!\\\\)\\\''
+        'name': 'string.literal.perl6fe'
+      }
+      {
+        'begin': '(?<!\\\\)\\\"'
+        'end': '(?<=\\\\\\\\)\\\"|(?<!\\\\)\\\"'
+        'name': 'string.literal.perl6fe'
       }
     ]
