@@ -5,6 +5,9 @@
   'pl6'
   'pm6'
   't'
+  't6'
+  'pod6'
+  'nqp'
 ]
 'patterns': [
   {
