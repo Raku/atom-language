@@ -1041,7 +1041,7 @@
               'name': 'meta.pod.l.perl6fe'
             }
             {
-              'match': '([CKT])(\\<)(.+?)(\\>)'
+              'match': '([CKT])(?:(\\<\\<)(.+?)(\\>\\>)|(\\<)(.+?)(\\>))'
               'captures':
                 '1':
                   'name': 'support.function.pod.code.perl6fe'
@@ -1050,6 +1050,12 @@
                 '3':
                   'name': 'markup.raw.code.perl6fe'
                 '4':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+                '5':
+                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
+                '6':
+                  'name': 'markup.raw.code.perl6fe'
+                '7':
                   'name': 'punctuation.section.embedded.pod.code.perl6fe'
               'name': 'meta.pod.c.perl6fe'
             }
