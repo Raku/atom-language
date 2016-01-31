@@ -328,7 +328,7 @@
     'name': 'string.quoted.double.perl6fe'
     'patterns': [
       {
-        'match': '\\\\[abtnfre"\\\\]'
+        'match': '\\\\[abtnfre"\\\\\\{\\}]'
         'name': 'constant.character.escape.perl6fe'
       }
       {
