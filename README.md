@@ -3,6 +3,7 @@
 [![apm package][apm-ver-link]][releases]
 [![][dl-badge]][apm-pkg-link]
 [![][mit-badge]][mit]
+[![][slack-badge]][slack]
 
 A more colorful, thoughtful, and helpful language grammar for Perl 6. Derived from the builtin [language-perl](https://github.com/atom/language-perl) package but with many bugfixes and additions.  You might ask why I didn't just add a PR there but I feel that this package adds quite a bit more that it might not be everyone's cup of tea. However, I do plan on adding support for autocomplete+, linter, atom-build, and atom-runner.  Maybe even integrating a perl6 REPL would be fun!
 
@@ -62,3 +63,5 @@ Here's a few more examples:
 [apm-pkg-link]: https://atom.io/packages/language-perl6fe
 [apm-ver-link]: https://img.shields.io/apm/v/language-perl6fe.svg
 [dl-badge]:     http://img.shields.io/apm/dm/language-perl6fe.svg
+[slack-badge]:  http://perl6.bestforever.com/badge.svg
+[slack]:        http://perl6.bestforever.com
