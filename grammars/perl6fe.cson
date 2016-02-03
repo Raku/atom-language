@@ -18,12 +18,17 @@
       '2':
         'name': 'keyword.operator.block.finish.perl6fe'
     'contentName': 'comment.block.finish.perl6fe'
+    'patterns': [
+      {
+        'include': '#comment-block-syntax'
+      }
+    ]
   }
   {
     'include': '#comment-block-delimited'
   }
   {
-    'begin': '^(=)(for)\\s+(\\w+)'
+    'begin': '^(=)(?:(para)|(for)\\s+(\\w+))'
     'beginCaptures':
       '1':
         'name': 'storage.modifier.block.paragraph.perl6fe'
@@ -33,6 +38,11 @@
         'name': 'entity.other.attribute-name.paragraph.perl6fe'
     'end': '^\\s*$'
     'contentName': 'comment.block.paragraph.perl6fe'
+    'patterns': [
+      {
+        'include': '#comment-block-syntax'
+      }
+    ]
   }
   {
     'include': '#comment-block-abbreviated'
@@ -1018,85 +1028,7 @@
           'contentName': 'comment.block.delimited.perl6fe'
           'patterns': [
             {
-              'include': '#comment-block-delimited'
-            }
-            {
-              'include': '#comment-block-abbreviated'
-            }
-            {
-              'match': '(L)(\\<)(.+?)(?:(\\|)(.+?))?(\\>)'
-              'captures':
-                '1':
-                  'name': 'support.function.pod.link.perl6fe'
-                '2':
-                  'name': 'punctuation.section.embedded.pod.link.perl6fe'
-                '3':
-                  'name': 'entity.name.type.pod.link.perl6fe'
-                '4':
-                  'name': 'punctuation.section.embedded.pod.link.perl6fe'
-                '5':
-                  'name': 'markup.underline.link.pod.perl6fe'
-                '6':
-                  'name': 'punctuation.section.embedded.pod.link.perl6fe'
-              'name': 'meta.pod.l.perl6fe'
-            }
-            {
-              'match': '([CKT])(?:(\\<\\<)(.+?)(\\>\\>)|(\\<)(.+?)(\\>))'
-              'captures':
-                '1':
-                  'name': 'support.function.pod.code.perl6fe'
-                '2':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-                '3':
-                  'name': 'markup.raw.code.perl6fe'
-                '4':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-                '5':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-                '6':
-                  'name': 'markup.raw.code.perl6fe'
-                '7':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-              'name': 'meta.pod.c.perl6fe'
-            }
-            {
-              'match': '(U)(\\<)(.+?)(\\>)'
-              'captures':
-                '1':
-                  'name': 'support.function.pod.code.perl6fe'
-                '2':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-                '3':
-                  'name': 'markup.underline.perl6fe'
-                '4':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-              'name': 'meta.pod.c.perl6fe'
-            }
-            {
-              'match': '(I)(\\<)(.+?)(\\>)'
-              'captures':
-                '1':
-                  'name': 'support.function.pod.code.perl6fe'
-                '2':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-                '3':
-                  'name': 'markup.italic.perl6fe'
-                '4':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-              'name': 'meta.pod.c.perl6fe'
-            }
-            {
-              'match': '(B)(\\<)(.+?)(\\>)'
-              'captures':
-                '1':
-                  'name': 'support.function.pod.code.perl6fe'
-                '2':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-                '3':
-                  'name': 'markup.bold.perl6fe'
-                '4':
-                  'name': 'punctuation.section.embedded.pod.code.perl6fe'
-              'name': 'meta.pod.c.perl6fe'
+              'include': '#comment-block-syntax'
             }
           ]
         }
@@ -1359,6 +1291,90 @@
             }
           ]
         }
+    ]
+  'comment-block-syntax':
+    'patterns': [
+      {
+        'include': '#comment-block-delimited'
+      }
+      {
+        'include': '#comment-block-abbreviated'
+      }
+      {
+        'match': '(L)(\\<)(.+?)(?:(\\|)(.+?))?(\\>)'
+        'captures':
+          '1':
+            'name': 'support.function.pod.link.perl6fe'
+          '2':
+            'name': 'punctuation.section.embedded.pod.link.perl6fe'
+          '3':
+            'name': 'entity.name.type.pod.link.perl6fe'
+          '4':
+            'name': 'punctuation.section.embedded.pod.link.perl6fe'
+          '5':
+            'name': 'markup.underline.link.pod.perl6fe'
+          '6':
+            'name': 'punctuation.section.embedded.pod.link.perl6fe'
+        'name': 'meta.pod.l.perl6fe'
+      }
+      {
+        'match': '([CKT])(?:(\\<\\<)(.+?)(\\>\\>)|(\\<)(.+?)(\\>))'
+        'captures':
+          '1':
+            'name': 'support.function.pod.code.perl6fe'
+          '2':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '3':
+            'name': 'markup.raw.code.perl6fe'
+          '4':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '5':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '6':
+            'name': 'markup.raw.code.perl6fe'
+          '7':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+      }
+      {
+        'match': '(U)(\\<)(.+?)(\\>)'
+        'captures':
+          '1':
+            'name': 'support.function.pod.code.perl6fe'
+          '2':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '3':
+            'name': 'markup.underline.perl6fe'
+          '4':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+      }
+      {
+        'match': '(I)(\\<)(.+?)(\\>)'
+        'captures':
+          '1':
+            'name': 'support.function.pod.code.perl6fe'
+          '2':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '3':
+            'name': 'markup.italic.perl6fe'
+          '4':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+      }
+      {
+        'match': '(B)(\\<)(.+?)(\\>)'
+        'captures':
+          '1':
+            'name': 'support.function.pod.code.perl6fe'
+          '2':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '3':
+            'name': 'markup.bold.perl6fe'
+          '4':
+            'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+      }
     ]
   'heredocs':
     'patterns': [
