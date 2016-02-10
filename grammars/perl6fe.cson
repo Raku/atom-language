@@ -940,7 +940,7 @@
       |quasi|body|each|contains|rewinddir|subst|can|isa|flush|arity
       |assuming|rewind|callwith|callsame|nextwith|nextsame|attr
       |eval-elsewhere|none|srand|trim|trim-start|trim-end|lastcall
-      |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not|true
+      |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
       |throws-like|trans|race|hyper|tap|emit|done|quit
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
