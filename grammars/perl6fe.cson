@@ -914,7 +914,7 @@
     'include': '#variables'
   }
   {
-    'match': '(?x)\\b(?<![\\-:])(
+    'match': '(?x)\\b(?<![\\-:]|\\\\)(
        eager|hyper|substr|index|rindex|grep|map|sort|join|lines|hints
       |chmod|split|reduce|min|max|reverse|truncate|zip|cat|roundrobin
       |classify|first|sum|keys|values|pairs|defined|delete|exists
