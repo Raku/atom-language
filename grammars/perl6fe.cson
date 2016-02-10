@@ -1004,6 +1004,10 @@
   'numbers':
     'patterns': [
       {
+        'match': '(?<=[=,;\\^\\s\\{\\[\\(\\/]|\\.\\.)0[bodx]\\w+'
+        'name': 'constant.numeric.radix.perl6fe'
+      }
+      {
         'match': '(?x)
           (?<=[=,;\\^\\s\\{\\[\\(\\/]|\\.\\.)
           (?:[\\+\\-])?
