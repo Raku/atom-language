@@ -127,6 +127,12 @@
             'begin': '\\['
             'end': '\\]'
             'contentName': 'constant.character.custom.property.regexp.perl6fe'
+            'patterns': [
+              {
+                'match': '(?<!\\\\)\\\\\\]'
+                'name': 'constant.character.custom.property.regexp.perl6fe'
+              }
+            ]
           }
           {
             'match': '\\.\\w+\\b'
