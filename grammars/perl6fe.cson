@@ -679,18 +679,14 @@
     'name': 'variable.other.perl6fe'
   }
   {
-    'match': '(?x)\\b(?<![\\-:])(
-       macro|sub|submethod|method
-      |multi|proto|only|category
-    )(?!\\-)\\b'
-    'name': 'storage.type.declare.routine.perl6fe'
-  }
-  {
-    'begin': '(?x)(?<=
-      macro|sub|submethod|method
-    )(?!\\-)\\s+(!)?(?=\\w)'
+    'begin': '(?x)(?<![%$&@]|\\w)
+      (macro|sub|submethod|method
+      |multi|proto|only|category)
+      \\s+(!)?(?=\\w)'
     'beginCaptures':
       '1':
+        'name': 'storage.type.declarator.routine.perl6fe'
+      '2':
         'name': 'support.class.method.private.perl6fe'
     'end': '\\s*(?=[\\(\\{])'
     'contentName': 'entity.name.function.perl6fe'
