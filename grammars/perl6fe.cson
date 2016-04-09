@@ -851,17 +851,17 @@
       CurrentThreadScheduler|Cursor|Date|DateTime|Dateish|Duration|
       Enum|FatRat|Grammar|Hash|IO|Instant|Iterable|
       Iterator|Junction|Label|List|Lock|Macro|Map|Match|Metamodel|
-      Method|Mix|MixHash|Mixy|Mu|Nil|Num|Numeric|ObjAt|Pair|Parameter|
-      Pod|Positional|PositionalBindFailover|Proc|Promise|Proxy|
-      QuantHash|Range|Rat|Rational|Real|Regex|Routine|Scheduler|Seq|
-      Set|SetHash|Setty|Signature|Slip|Stash|Str|Stringy|Sub|
+      Method|Mix|MixHash|Mixy|Mu|Nil|Numeric|ObjAt|Pair|
+      Parameter|Pod|Positional|PositionalBindFailover|Proc|Promise|
+      Proxy|QuantHash|Range|Rat|Rational|Real|Regex|Routine|Scheduler|
+      Seq|Set|SetHash|Setty|Signature|Slip|Stash|Str|str|Stringy|Sub|
       Submethod|Supply|Tap|Temporal|Thread|ThreadPoolScheduler|
       Variable|Version|Whatever|WhateverCode|bool|size_t|
       Int|int|int1|int2|int4|int8|int16|int32|int64|
       Rat|rat|rat1|rat2|rat4|rat8|rat16|rat32|rat64|
       Buf|buf|buf1|buf2|buf4|buf8|buf16|buf32|buf64|
       UInt|uint|uint1|uint2|uint4|uint8|uint16|uint32|uint64|
-      utf8|utf16|utf32
+      utf8|utf16|utf32|Num|num|num32|num64
     )(?!\\:\\:)\\b'
     'captures':
       '1':
