@@ -906,10 +906,25 @@
   {
     'include': '#special_variables'
   }
-  # {
-  #   'match': '(?<=\\W)\\*(?=\\W)(?![\\$\\@\\%\\=])'
-  #   'name': 'keyword.other.special-method.whatever.perl6fe'
-  # }
+  {
+    'match': '(?x)(?<=\\[)
+      \\s* (\\*) \\s*
+      ([\\-\\*%\\^\\+\\/]|div|mod|gcd|lcm)
+      \\s* (\\d+) \\s*
+    (?=\\])'
+    'name': 'meta.subscript.whatever.perl6fe'
+    'captures':
+      '1':
+        'name': 'constant.language.whatever.perl6fe'
+      '2':
+        'name': 'keyword.operator.minus.back-from.perl6fe'
+      '3':
+        'name': 'constant.numeric.back-from.perl6fe'
+  }
+  {
+    'match': '\\*\\s*(?=\\])'
+    'name': 'constant.language.whatever.hack.perl6fe'
+  }
   {
     'include': '#variables'
   }
