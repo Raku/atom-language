@@ -885,7 +885,7 @@
         div|mod|gcd|lcm|x|xx|temp|let|but|cmp|leg|
         eq|ne|gt|ge|lt|le|before|after|eqv|min|max|ff|fff|not|so|Z|
         and|andthen|or|orelse
-      )\\b|
+      )\\b(?!\\-)|
       \\b(X)(?!:)\\b'
     'name': 'keyword.operator.word.perl6fe'
   }
@@ -954,13 +954,13 @@
       |sinh|cosh|tanh|asinh|done|acos|acosh|atanh|sech|cosech|cotanh
       |sech|acosech|acotanh|asech|ok|nok|plan-ok|dies-ok|lives-ok|skip
       |todo|pass|flunk|force-todo|use-ok|isa-ok|diag|is-deeply|isnt
-      |like|skip-rest|unlike|cmp-ok|eval-dies-ok|nok-error
+      |like|skip-rest|unlike|cmp-ok|eval-dies-ok|nok-error|cmp-ok
       |eval-lives-ok|approx|is-approx|throws-ok|version-lt|plan|EVAL
       |succ|pred|times|nonce|once|signature|new|connect|operator|undef
-      |undefine|sleep|from|to|infix|postfix|prefix|circumfix
+      |undefine|sleep|from|to|infix|postfix|prefix|circumfix|can-ok
       |postcircumfix|minmax|lazy|count|unwrap|getc|pi|tau|e|context|void
       |quasi|body|each|contains|rewinddir|subst|can|isa|flush|arity
-      |assuming|rewind|callwith|callsame|nextwith|nextsame|attr
+      |assuming|rewind|callwith|callsame|nextwith|nextsame|attr|does-ok
       |eval-elsewhere|none|srand|trim|trim-start|trim-end|lastcall
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
