@@ -357,7 +357,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -386,7 +386,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -415,7 +415,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -444,7 +444,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -473,7 +473,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -502,7 +502,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -531,7 +531,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -560,7 +560,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -589,7 +589,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -618,7 +618,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
@@ -647,7 +647,7 @@
   }
   {
     'begin': '(?x)
-      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q)
+      (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q|Qw)
       ((?:
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
