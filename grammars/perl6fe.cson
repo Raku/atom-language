@@ -409,6 +409,29 @@
     ]
   }
   {
+    'begin': '”'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': '”'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.double.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[abtnfre"\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
+        'include': '#interpolation'
+      }
+      {
+        'include': '#special_variables'
+      }
+    ]
+  }
+  {
     'include': '#shellquotes'
   }
   {
