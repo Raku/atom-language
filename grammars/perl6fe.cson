@@ -95,6 +95,18 @@
     ]
   }
   {
+    'begin': '#`\\{\\{',
+    'end': '\\}\\}',
+    'name': 'comment.multiline.hash-tick.braces.perl6fe'
+    'patterns': [
+      {
+        'begin': '\\{\\{'
+        'end': '\\}\\}'
+        'name': 'comment.internal.braces.perl6fe'
+      }
+    ]
+  }
+  {
     'begin': '#`\\「',
     'end': '\\」',
     'name': 'comment.multiline.hash-tick.perl6fe'
