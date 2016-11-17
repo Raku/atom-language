@@ -1159,7 +1159,7 @@
   'shellquotes':
     'patterns': [
         {
-          'begin': '(qx)\\s*({{)'
+          'begin': '([qQ]x)\\s*({{)'
           'beginCaptures':
             '1':
               'name': 'string.quoted.q.shell.operator.perl6fe'
@@ -1173,11 +1173,12 @@
           'patterns': [
             {
               'include': 'source.shell'
+              'include': '#qq_single_string_content'
             }
           ]
         }
         {
-          'begin': '(qx)\\s*({)'
+          'begin': '([qQ]x)\\s*({)'
           'beginCaptures':
             '1':
               'name': 'string.quoted.q.shell.operator.perl6fe'
@@ -1191,11 +1192,13 @@
           'patterns': [
             {
               'include': 'source.shell'
+              'include': '#qq_single_string_content'
+
             }
           ]
         }
         {
-          'begin': '(qx)\\s*(\\[\\[)'
+          'begin': '([qQ]x)\\s*(\\[\\[)'
           'beginCaptures':
             '1':
               'name': 'string.quoted.q.shell.operator.perl6fe'
@@ -1209,11 +1212,12 @@
           'patterns': [
             {
               'include': 'source.shell'
+              'include': '#qq_single_string_content'
             }
           ]
         }
         {
-          'begin': '(qx)\\s*(\\[)'
+          'begin': '([Qq]x)\\s*(\\[)'
           'beginCaptures':
             '1':
               'name': 'string.quoted.q.shell.operator.perl6fe'
@@ -1227,11 +1231,12 @@
           'patterns': [
             {
               'include': 'source.shell'
+              'include': '#qq_single_string_content'
             }
           ]
         }
         {
-          'begin': '(qx)\\s*(\\|)'
+          'begin': '([Qq]x)\\s*(\\|)'
           'beginCaptures':
             '1':
               'name': 'string.quoted.q.shell.operator.perl6fe'
@@ -1245,11 +1250,12 @@
           'patterns': [
             {
               'include': 'source.shell'
+              'include': '#qq_single_string_content'
             }
           ]
         }
         {
-          'begin': '(qx)\\s*(\\/)'
+          'begin': '([Qq]x)\\s*(\\/)'
           'beginCaptures':
             '1':
               'name': 'string.quoted.q.shell.operator.perl6fe'
@@ -1267,6 +1273,7 @@
             }
             {
               'include': 'source.shell'
+              'include': '#qq_single_string_content'
             }
           ]
         }
