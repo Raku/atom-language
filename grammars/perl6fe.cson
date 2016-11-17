@@ -71,6 +71,18 @@
     ]
   }
   {
+    'begin': '#`\\(\\(',
+    'end': '\\)\\)',
+    'name': 'comment.multiline.hash-tick.doubleparens.perl6fe'
+    'patterns': [
+      {
+        'begin': '\\(\\('
+        'end': '\\)\\)'
+        'name': 'comment.internal.doubleparens.perl6fe'
+      }
+    ]
+  }
+  {
     'begin': '#`\\[',
     'end': '\\]',
     'name': 'comment.multiline.hash-tick.brackets.perl6fe'
@@ -97,24 +109,36 @@
   {
     'begin': '#`\\{\\{',
     'end': '\\}\\}',
-    'name': 'comment.multiline.hash-tick.braces.perl6fe'
+    'name': 'comment.multiline.hash-tick.doublebraces.perl6fe'
     'patterns': [
       {
         'begin': '\\{\\{'
         'end': '\\}\\}'
-        'name': 'comment.internal.braces.perl6fe'
+        'name': 'comment.internal.doublebraces.perl6fe'
       }
     ]
   }
   {
     'begin': '#`\\「',
     'end': '\\」',
-    'name': 'comment.multiline.hash-tick.perl6fe'
+    'name': 'comment.multiline.hash-tick.fwcornerbracket.perl6fe'
     'patterns': [
       {
         'begin': '\\「'
         'end': '\\」'
-        'name': 'comment.internal.parens.perl6fe'
+        'name': 'comment.internal.fwcornerbracket.perl6fe'
+      }
+    ]
+  }
+  {
+    'begin': '#`\\｢',
+    'end': '\\｣',
+    'name': 'comment.multiline.hash-tick.hwcornerbracket.perl6fe'
+    'patterns': [
+      {
+        'begin': '\\｢'
+        'end': '\\｣'
+        'name': 'comment.internal.hwcornerbracket.perl6fe'
       }
     ]
   }
