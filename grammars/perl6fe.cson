@@ -59,18 +59,6 @@
     'name': 'meta.documentation.block.declarator.perl6fe'
   }
   {
-    'begin': '#`\\(',
-    'end': '\\)',
-    'name': 'comment.multiline.hash-tick.parens.perl6fe'
-    'patterns': [
-      {
-        'begin': '\\('
-        'end': '\\)'
-        'name': 'comment.internal.parens.perl6fe'
-      }
-    ]
-  }
-  {
     'begin': '#`\\(\\(',
     'end': '\\)\\)',
     'name': 'comment.multiline.hash-tick.doubleparens.perl6fe'
@@ -79,6 +67,18 @@
         'begin': '\\(\\('
         'end': '\\)\\)'
         'name': 'comment.internal.doubleparens.perl6fe'
+      }
+    ]
+  }
+  {
+    'begin': '#`\\(',
+    'end': '\\)',
+    'name': 'comment.multiline.hash-tick.parens.perl6fe'
+    'patterns': [
+      {
+        'begin': '\\('
+        'end': '\\)'
+        'name': 'comment.internal.parens.perl6fe'
       }
     ]
   }
@@ -95,18 +95,6 @@
     ]
   }
   {
-    'begin': '#`\\{',
-    'end': '\\}',
-    'name': 'comment.multiline.hash-tick.braces.perl6fe'
-    'patterns': [
-      {
-        'begin': '\\{'
-        'end': '\\}'
-        'name': 'comment.internal.braces.perl6fe'
-      }
-    ]
-  }
-  {
     'begin': '#`\\{\\{',
     'end': '\\}\\}',
     'name': 'comment.multiline.hash-tick.doublebraces.perl6fe'
@@ -115,6 +103,18 @@
         'begin': '\\{\\{'
         'end': '\\}\\}'
         'name': 'comment.internal.doublebraces.perl6fe'
+      }
+    ]
+  }
+  {
+    'begin': '#`\\{',
+    'end': '\\}',
+    'name': 'comment.multiline.hash-tick.braces.perl6fe'
+    'patterns': [
+      {
+        'begin': '\\{'
+        'end': '\\}'
+        'name': 'comment.internal.braces.perl6fe'
       }
     ]
   }
