@@ -444,6 +444,9 @@
         'include': '#interpolation'
       }
       {
+        'include': '#variables'
+      }
+      {
         'include': '#special_variables'
       }
       {
@@ -468,6 +471,9 @@
       }
       {
         'include': '#interpolation'
+      }
+      {
+        'include': '#variables'
       }
       {
         'include': '#special_variables'
@@ -540,6 +546,7 @@
       {
         'include': '#q_brace_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -599,6 +606,7 @@
       {
         'include': '#q_angle_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -658,6 +666,7 @@
       {
         'include': '#q_paren_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -717,6 +726,7 @@
       {
         'include': '#q_bracket_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -776,6 +786,7 @@
       {
         'include': '#q_brace_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -835,6 +846,7 @@
       {
         'include': '#q_angle_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -894,6 +906,7 @@
       {
         'include': '#q_slash_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -953,6 +966,7 @@
       {
         'include': '#q_paren_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -1012,6 +1026,7 @@
       {
         'include': '#q_bracket_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -1071,6 +1086,7 @@
       {
         'include': '#q_single_string_content'
         'include': '#interpolation'
+        'include': '#variables'
       }
     ]
   }
@@ -1671,6 +1687,9 @@
               'include': '#interpolation'
             }
             {
+              'include': '#variables'
+            }
+            {
               'include': 'source.shell'
             }
           ]
@@ -1690,6 +1709,9 @@
           'patterns': [
             {
               'include': '#interpolation'
+            }
+            {
+              'include': '#variables'
             }
             {
               'include': 'source.shell'
@@ -1713,6 +1735,9 @@
               'include': '#interpolation'
             }
             {
+              'include': '#variables'
+            }
+            {
               'include': 'source.shell'
             }
           ]
@@ -1734,6 +1759,9 @@
               'include': '#interpolation'
             }
             {
+              'include': '#variables'
+            }
+            {
               'include': 'source.shell'
             }
           ]
@@ -1753,6 +1781,9 @@
           'patterns': [
             {
               'include': '#interpolation'
+            }
+            {
+              'include': '#variables'
             }
             {
               'include': 'source.shell'
@@ -1778,6 +1809,9 @@
             }
             {
               'include': '#interpolation'
+            }
+            {
+              'include': '#variables'
             }
             {
               'include': 'source.shell'
