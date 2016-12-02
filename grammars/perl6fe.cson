@@ -480,7 +480,7 @@
     'contentName': 'string.quoted.q.double.brace.perl6fe'
     'patterns': [
       {
-        'include': '#qq_brace_string_content'
+        'include': '#q_brace_string_content'
       }
     ]
   }
@@ -596,7 +596,7 @@
     'contentName': 'string.quoted.q.single.brace.perl6fe'
     'patterns': [
       {
-        'include': '#qq_brace_string_content'
+        'include': '#q_brace_string_content'
       }
     ]
   }
@@ -1587,7 +1587,7 @@
             'include': '#p5_escaped_char'
           }
           {
-            'include': '#qq_brace_string_content'
+            'include': '#q_brace_string_content'
           }
         ]
       }
@@ -1785,12 +1785,12 @@
         'include': '#qq_angle_string_content'
       }
     ]
-  'qq_brace_string_content':
+  'q_brace_string_content':
     'begin': '{'
     'end': '}'
     'patterns': [
       {
-        'include': '#qq_brace_string_content'
+        'include': '#q_brace_string_content'
       }
     ]
   'qq_bracket_string_content':
