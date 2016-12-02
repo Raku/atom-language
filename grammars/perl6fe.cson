@@ -460,7 +460,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -489,7 +489,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -518,7 +518,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -547,7 +547,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -576,7 +576,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -605,7 +605,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -634,7 +634,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -663,7 +663,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -692,7 +692,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -721,7 +721,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
@@ -750,7 +750,7 @@
       (q{1,2}(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|qq|double|
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path
         )
