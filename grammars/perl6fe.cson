@@ -1492,7 +1492,7 @@
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
       |throws-like|trans|race|hyper|tap|emit|done-testing|quit|dd|note
-      |prepend|categorize|antipairs
+      |prepend|categorize|antipairs|categorize-list|parse-base
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
     )(?!\\-)\\b(?!\\s*=>)'
     'name': 'support.function.perl6fe'
