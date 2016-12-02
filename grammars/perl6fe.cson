@@ -881,7 +881,7 @@
   }
   {
     'match': '(?x)\\b(?<![\\-:])(
-       take|do|when|next|last|redo|return
+       take|do|when|next|last|redo|return|return-rw
       |contend|maybe|defer|default|exit
       |make|made|continue|break|goto|leave|supply
       |async|lift|await|start|react|whenever
