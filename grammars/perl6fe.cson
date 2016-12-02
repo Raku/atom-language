@@ -1968,7 +1968,7 @@
               \\s*
               ((?:\\s*:\\w+)*)\\s*
             )
-            /(\\w+)/'
+            /(\\S+)/'
           'beginCaptures':
             '1':
               'name': 'string.quoted.construct.perl6fe'
