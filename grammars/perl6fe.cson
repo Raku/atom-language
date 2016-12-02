@@ -509,7 +509,7 @@
     'contentName': 'string.quoted.q.double.angle.perl6fe'
     'patterns': [
       {
-        'include': '#qq_angle_string_content'
+        'include': '#q_angle_string_content'
       }
     ]
   }
@@ -538,7 +538,7 @@
     'contentName': 'string.quoted.q.double.paren.perl6fe'
     'patterns': [
       {
-        'include': '#qq_paren_string_content'
+        'include': '#q_paren_string_content'
       }
     ]
   }
@@ -567,7 +567,7 @@
     'contentName': 'string.quoted.q.double.bracket.perl6fe'
     'patterns': [
       {
-        'include': '#qq_bracket_string_content'
+        'include': '#q_bracket_string_content'
       }
     ]
   }
@@ -625,7 +625,7 @@
     'contentName': 'string.quoted.q.single.angle.perl6fe'
     'patterns': [
       {
-        'include': '#qq_angle_string_content'
+        'include': '#q_angle_string_content'
       }
     ]
   }
@@ -654,7 +654,7 @@
     'contentName': 'string.quoted.q.single.slash.perl6fe'
     'patterns': [
       {
-        'include': '#qq_slash_string_content'
+        'include': '#q_slash_string_content'
       }
     ]
   }
@@ -683,7 +683,7 @@
     'contentName': 'string.quoted.q.single.paren.perl6fe'
     'patterns': [
       {
-        'include': '#qq_paren_string_content'
+        'include': '#q_paren_string_content'
       }
     ]
   }
@@ -712,7 +712,7 @@
     'contentName': 'string.quoted.q.single.bracket.perl6fe'
     'patterns': [
       {
-        'include': '#qq_bracket_string_content'
+        'include': '#q_bracket_string_content'
       }
     ]
   }
@@ -741,7 +741,7 @@
     'contentName': 'string.quoted.q.single.apostrophe.perl6fe'
     'patterns': [
       {
-        'include': '#qq_single_string_content'
+        'include': '#q_single_string_content'
       }
     ]
   }
@@ -770,7 +770,7 @@
     'contentName': 'string.quoted.q.single.quote.perl6fe'
     'patterns': [
       {
-        'include': '#qq_double_string_content'
+        'include': '#q_double_string_content'
       }
     ]
   }
@@ -1191,7 +1191,7 @@
           'patterns': [
             {
               'include': 'source.shell'
-              'include': '#qq_single_string_content'
+              'include': '#q_single_string_content'
             }
           ]
         }
@@ -1210,7 +1210,7 @@
           'patterns': [
             {
               'include': 'source.shell'
-              'include': '#qq_single_string_content'
+              'include': '#q_single_string_content'
 
             }
           ]
@@ -1230,7 +1230,7 @@
           'patterns': [
             {
               'include': 'source.shell'
-              'include': '#qq_single_string_content'
+              'include': '#q_single_string_content'
             }
           ]
         }
@@ -1249,7 +1249,7 @@
           'patterns': [
             {
               'include': 'source.shell'
-              'include': '#qq_single_string_content'
+              'include': '#q_single_string_content'
             }
           ]
         }
@@ -1268,7 +1268,7 @@
           'patterns': [
             {
               'include': 'source.shell'
-              'include': '#qq_single_string_content'
+              'include': '#q_single_string_content'
             }
           ]
         }
@@ -1291,7 +1291,7 @@
             }
             {
               'include': 'source.shell'
-              'include': '#qq_single_string_content'
+              'include': '#q_single_string_content'
             }
           ]
         }
@@ -1618,7 +1618,7 @@
             'include': '#p5_escaped_char'
           }
           {
-            'include': '#qq_bracket_string_content'
+            'include': '#q_bracket_string_content'
           }
         ]
       }
@@ -1649,7 +1649,7 @@
             'include': '#p5_escaped_char'
           }
           {
-            'include': '#qq_slash_string_content'
+            'include': '#q_slash_string_content'
           }
         ]
       }
@@ -1777,12 +1777,12 @@
         'name': 'meta.interpolation.perl6fe'
       }
     ]
-  'qq_angle_string_content':
+  'q_angle_string_content':
     'begin': '<'
     'end': '>'
     'patterns': [
       {
-        'include': '#qq_angle_string_content'
+        'include': '#q_angle_string_content'
       }
     ]
   'q_brace_string_content':
@@ -1793,43 +1793,43 @@
         'include': '#q_brace_string_content'
       }
     ]
-  'qq_bracket_string_content':
+  'q_bracket_string_content':
     'begin': '\\['
     'end': '\\]'
     'patterns': [
       {
-        'include': '#qq_bracket_string_content'
+        'include': '#q_bracket_string_content'
       }
     ]
-  'qq_double_string_content':
+  'q_double_string_content':
     'begin': '\"'
     'end': '\"'
     'patterns': [
       {
-        'include': '#qq_double_string_content'
+        'include': '#q_double_string_content'
       }
     ]
-  'qq_paren_string_content':
+  'q_paren_string_content':
     'begin': '\\('
     'end': '\\)'
     'patterns': [
       {
-        'include': '#qq_paren_string_content'
+        'include': '#q_paren_string_content'
       }
     ]
-  'qq_single_string_content':
+  'q_single_string_content':
     'begin': '\''
     'end': '\''
     'patterns': [
       {
-        'include': '#qq_single_string_content'
+        'include': '#q_single_string_content'
       }
     ]
-  'qq_slash_string_content':
+  'q_slash_string_content':
     'begin': '\\\\/'
     'end': '\\\\/'
     'patterns': [
       {
-        'include': '#qq_slash_string_content'
+        'include': '#q_slash_string_content'
       }
     ]
