@@ -377,6 +377,9 @@
         'match': '\\\\[‘’\\\\]'
         'name': 'constant.character.escape.perl6fe'
       }
+      {
+        'include': '#q_left_single_right_single_string_content'
+      }
     ]
   }
   {
@@ -448,6 +451,9 @@
       }
       {
         'include': '#special_variables'
+      }
+      {
+        'include': '#q_right_double_right_double_string_content'
       }
     ]
   }
@@ -2172,5 +2178,21 @@
     'patterns': [
       {
         'include': '#q_left_double_right_double_string_content'
+      }
+    ]
+  'q_right_double_right_double_string_content':
+    'begin': '”'
+    'end': '”'
+    'patterns': [
+      {
+        'include': '#q_right_double_right_double_string_content'
+      }
+    ]
+  'q_left_single_right_single_string_content':
+    'begin': '‘'
+    'end': '’'
+    'patterns': [
+      {
+        'include': '#q_left_single_right_single_string_content'
       }
     ]
