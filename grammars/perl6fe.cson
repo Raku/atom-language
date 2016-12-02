@@ -423,6 +423,9 @@
       {
         'include': '#special_variables'
       }
+      {
+        'include': '#q_left_double_right_double_string_content'
+      }
     ]
   }
   {
@@ -2161,5 +2164,13 @@
     'patterns': [
       {
         'include': '#q_slash_string_content'
+      }
+    ]
+  'q_left_double_right_double_string_content':
+    'begin': '“'
+    'end': '”'
+    'patterns': [
+      {
+        'include': '#q_left_double_right_double_string_content'
       }
     ]
