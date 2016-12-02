@@ -363,6 +363,26 @@
     ]
   }
   {
+    'begin': '(?<=\\W|^)｢'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': '｣'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.single.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[｢｣\\\\]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
+        'include': '#q_left_right_hwcornerbracket_string_content'
+      }
+    ]
+  }
+  {
     'begin': '(?<=\\W|^)‘'
     'beginCaptures':
       '0':
@@ -2194,5 +2214,13 @@
     'patterns': [
       {
         'include': '#q_left_single_right_single_string_content'
+      }
+    ]
+  'q_left_right_hwcornerbracket_string_content':
+    'begin': '｢'
+    'end': '｣'
+    'patterns': [
+      {
+        'include': '#q_left_right_hwcornerbracket_string_content'
       }
     ]
