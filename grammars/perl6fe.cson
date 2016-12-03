@@ -1399,6 +1399,10 @@
         'name': 'support.class.type.adverb.perl6fe'
   }
   {
+    'match': '(?x) ( \\[ / \\] )'
+    'name': 'keyword.operator.reduction.perl6fe'
+  }
+  {
     'match': '(?<=\\w)(\\:)([DU_])\\b'
     'name': 'meta.adverb.definedness.perl6fe'
     'captures':
