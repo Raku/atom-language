@@ -13,6 +13,7 @@
 * Get multiline comments with whitespace between ```#``` and the brackets working. Example: ```#`  (```
 * Highlight `.categorize`, `.prepend`, `.parse-base`, `categorize-list` and `.antipairs` methods. Fixes Issue #38
 * Add `long`, `longlong`, `Pointer` and `CArray` data types
+* Make sure `/` As a metaoperator `[/]` doesn't break syntax highlighting Fixes #34
 
 ## v1.8
 #### Quoting:
