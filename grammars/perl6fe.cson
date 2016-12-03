@@ -655,6 +655,10 @@
     'contentName': 'string.quoted.qq.double.angle.perl6fe'
     'patterns': [
       {
+        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} ] | \\\\>> | \\\\<<'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
         'include': '#q_angle_string_content'
         'include': '#interpolation'
         'include': '#variables'
