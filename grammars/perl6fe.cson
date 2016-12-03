@@ -1182,6 +1182,10 @@
     'contentName': 'string.quoted.q.single.quote.perl6fe'
     'patterns': [
       {
+        'match': '\\\\[abtnfre"\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
         'include': '#q_double_string_content'
         'include': '#interpolation'
       }
@@ -1211,6 +1215,10 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.qq.single.quote.perl6fe'
     'patterns': [
+      {
+        'match': '\\\\[abtnfre"\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
       {
         'include': '#q_double_string_content'
       }
