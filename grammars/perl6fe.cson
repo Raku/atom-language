@@ -595,6 +595,10 @@
     'contentName': 'string.quoted.qq.double.brace.perl6fe'
     'patterns': [
       {
+        'match': '(?x) \\\\[ abtnfre \\\\ ] | \\\\}} | \\\\{{'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
         'include': '#q_brace_string_content'
         'include': '#interpolation'
         'include': '#variables'
@@ -625,6 +629,10 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.q.double.angle.perl6fe'
     'patterns': [
+      {
+        'match': '(?x) \\\\<< | \\\\>> | \\\\'
+        'name': 'constant.character.escape.perl6fe'
+      }
       {
         'include': '#q_angle_string_content'
       }
