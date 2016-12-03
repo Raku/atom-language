@@ -866,6 +866,10 @@
     'contentName': 'string.quoted.q.single.angle.perl6fe'
     'patterns': [
       {
+        'match': '\\\\[abtnfre><\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
         'include': '#q_angle_string_content'
       }
     ]
@@ -894,6 +898,10 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.qq.single.angle.perl6fe'
     'patterns': [
+      {
+        'match': '\\\\[abtnfre><\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
       {
         'include': '#q_angle_string_content'
         'include': '#interpolation'
