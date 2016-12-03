@@ -806,6 +806,10 @@
     'contentName': 'string.quoted.q.single.brace.perl6fe'
     'patterns': [
       {
+        'match': '\\\\[abtnfre{}\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
         'include': '#q_brace_string_content'
       }
     ]
@@ -834,6 +838,10 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.qq.single.brace.perl6fe'
     'patterns': [
+      {
+        'match': '\\\\[abtnfre{}\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
       {
         'include': '#q_brace_string_content'
         'include': '#interpolation'
