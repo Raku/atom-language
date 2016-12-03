@@ -735,6 +735,10 @@
     'contentName': 'string.quoted.qq.double.paren.perl6fe'
     'patterns': [
       {
+        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} ] | \\\\ \\)\\) | \\\\ \\(\\('
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
         'include': '#q_paren_string_content'
         'include': '#interpolation'
         'include': '#variables'
