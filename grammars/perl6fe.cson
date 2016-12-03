@@ -803,6 +803,10 @@
     'contentName': 'string.quoted.qq.double.bracket.perl6fe'
     'patterns': [
       {
+        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} ] | \\\\ \\]\\] | \\\\ \\[\\['
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
         'include': '#q_bracket_string_content'
         'include': '#interpolation'
         'include': '#variables'
