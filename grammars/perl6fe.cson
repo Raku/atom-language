@@ -566,6 +566,10 @@
     'contentName': 'string.quoted.q.double.brace.perl6fe'
     'patterns': [
       {
+        'match': '(?x) \\\\<< | \\\\>> | \\\\\\\\'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      {
         'include': '#q_brace_string_content'
       }
     ]
@@ -630,7 +634,7 @@
     'contentName': 'string.quoted.q.double.angle.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\<< | \\\\>> | \\\\'
+        'match': '(?x) \\\\<< | \\\\>> | \\\\\\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
