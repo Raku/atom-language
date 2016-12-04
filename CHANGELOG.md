@@ -1,4 +1,5 @@
 ## v1.9
+* Regex using let regex using m/ / or rx/ / appear anywhere and span multiple lines
 * Get halfwidth (standard) width corner brackets working for strings `｢nesting｢works｣｣` too
 * Fix fancy heredoc delimiters like q:to/📝🔚/; Fixes Issue #36
 * Get left single and right single quotation marks work with nesting `‘testing 1 ‘2’ 3’`
