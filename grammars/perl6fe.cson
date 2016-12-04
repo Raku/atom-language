@@ -490,7 +490,7 @@
     'name': 'string.quoted.double.perl6fe'
     'patterns': [
       {
-        'match': '\\\\[abtnfre"\\\\\\{\\}]'
+        'match': '\\\\["abtnfre\\\\\\{\\}]'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -516,7 +516,7 @@
     'name': 'string.quoted.double.perl6fe'
     'patterns': [
       {
-        'match': '\\\\[abtnfre“”\\\\\\{\\}]'
+        'match': '\\\\[“”abtnfre\\\\\\{\\}]'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -545,7 +545,7 @@
     'name': 'string.quoted.double.perl6fe'
     'patterns': [
       {
-        'match': '\\\\[abtnfre”“\\\\\\{\\}]'
+        'match': '\\\\[”“abtnfre\\\\\\{\\}]'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -627,7 +627,7 @@
     'contentName': 'string.quoted.qq.double.brace.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} ] | \\\\ \\}\\} | \\\\ \\{\\{'
+        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\ \\}\\} | \\\\ \\{\\{ | \\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -695,7 +695,7 @@
     'contentName': 'string.quoted.qq.double.angle.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} ] | \\\\>> | \\\\<<'
+        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\ | \\\\>> | \\\\<<'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -763,7 +763,7 @@
     'contentName': 'string.quoted.qq.double.paren.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} ] | \\\\ \\)\\) | \\\\ \\(\\('
+        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\ | \\\\ \\)\\) | \\\\ \\(\\('
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -831,7 +831,7 @@
     'contentName': 'string.quoted.qq.double.bracket.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} ] | \\\\ \\]\\] | \\\\ \\[\\['
+        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\ | \\\\ \\]\\] | \\\\ \\[\\['
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -899,7 +899,7 @@
     'contentName': 'string.quoted.qq.single.brace.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} ]'
+        'match': '\\\\[abtnfre\\\\\\{\\}]|\\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -967,7 +967,7 @@
     'contentName': 'string.quoted.qq.single.angle.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} < > ]'
+        'match': '\\\\[<>abtnfre\\\\\\{\\}<>]|\\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -1035,7 +1035,7 @@
     'contentName': 'string.quoted.qq.single.slash.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} / ]'
+        'match': '(?x) \\\\[/abtnfre\\\\\\{\\}] | \\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -1105,7 +1105,7 @@
     'contentName': 'string.quoted.qq.single.paren.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} \\( \\) ]'
+        'match': '\\\\[abtnfre\\\\\\{\\}\\(\\)]|\\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -1140,7 +1140,7 @@
     'contentName': 'string.quoted.q.single.bracket.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\[ | \\] | \\\\\\\\'
+        'match': '\\\\\\[|\\\\\\]|\\\\\\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -1173,7 +1173,7 @@
     'contentName': 'string.quoted.qq.single.bracket.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ abtnfre \\\\ \\{ \\} \\[ \\] ]'
+        'match': '\\\\[abtnfre\\\\\\{\\}\\[\\]]|\\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -1209,7 +1209,7 @@
     'contentName': 'string.quoted.q.single.apostrophe.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\ \' | \\\\{ | \\\\} | \\\\\\\\'
+        'match': '(?x) \\\\ \' | \\\\{ | \\\\} | \\\\\\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -1243,7 +1243,7 @@
     'contentName': 'string.quoted.qq.single.apostrophe.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ \' abtnfre \\\\ \\{ \\} ] \\\\'
+        'match': '\\\\[\'abtnfre\\\\\\{\\}]|\\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -1312,7 +1312,7 @@
     'contentName': 'string.quoted.qq.single.quote.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[ " abtnfre \\\\ \\{ \\} ] | \\\\'
+        'match': '(?x) \\\\["abtnfre\\\\\\{\\}] | \\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
