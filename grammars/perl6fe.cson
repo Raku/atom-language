@@ -252,10 +252,10 @@
   {
     'include': '#p5_regex'
   }
-  # Finds regex at start of line or after = , ( ) ~ or when
+  # Finds regex at start of line or after: = , ( ) ~ => or when
   {
     'begin': '(?x)
-      (?<=^|[\\=,\\(\\[\\~]|when) \\s*
+      (?<=^|[\\=,\\(\\[\\~]|when|=>) \\s*
       (?:(m|rx)((?:(?<!\\:P5)\\s*:\\w+(?!\\s*\\:P5))*))? \\s*
       (\\/)'
     'beginCaptures':
