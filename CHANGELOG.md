@@ -1,14 +1,16 @@
 ## v1.9
-* Regex using let regex using `m/ /` or `rx/ /` appear anywhere and span multiple lines.
+* Let regex using `m/ /` or `rx/ /` appear anywhere and span multiple lines.
+* Let bare regex `/ /` appear after `=>`. Mostly fixes #35
+* `qq` and `q` constructs using `(( ))`, `{{ }}`, `<< >>`, `[ ]`, `[[ ]]`, `( )`,
+`{ }`, `/ /`,  `< >` now properly escape delimiters and other escape sequences. #46
 * Get halfwidth (standard) width corner brackets working for these strings: `｢nesting｢works｣｣`.
 * Fix fancy heredoc delimiters like `q:to/📝🔚/`; Fixes Issue #36
-* Get left single and right single quotation marks work with nesting `‘testing 1 ‘2’ 3’`
-* Get left double and right double quotation marks work with nesting `“testing 1 “2” 3”`
+* Get left single and right single quotation marks working with nesting `‘testing 1 ‘2’ 3’`
+* Get left double and right double quotation marks working with nesting `“testing 1 “2” 3”`
 * Have the `｢this｣` quoting construct (which is a shortcut for `Q[]` quoting) work.
 * Fix certain `$<variables>` inside interpolated strings not syntax highlighting. Fixes Issue #41
 * Make `:token` `:regex` `:rule` not explode the highlighter. Fixes Issue #33
 * ￼Get all the forms of qq[] properly highlighting variables (interpolation). Fixes Issue #18
-* Qw Quoting construct not recognized. Highlighted wrong and ruins highlighting when using " inside it. Fixes Issue #40
 * Get all types of #\`( Multiline comments working when there is leading whitespace before the #\`( Fixes Issue #44
 * Get these multiline comments #\`((( #\`{{{ and #\`[[[ working
 * Get multiline comments with whitespace between ```#``` and the brackets working. Example: ```#`  (```
