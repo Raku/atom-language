@@ -1183,6 +1183,7 @@
       }
     ]
   }
+  # Note: q '…' qq '…' Q '…' are only allowed with a space.
   {
     'begin': '(?x)
       (q(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
@@ -1193,7 +1194,7 @@
           regexp|substr|trans|codes|p|path
         )
       )*)
-      \\s*(\')'
+      \\s+ (\')'
     'beginCaptures':
       '1':
         'name': 'string.quoted.q.operator.perl6fe'
@@ -1216,6 +1217,7 @@
       }
     ]
   }
+  # Note: q '…' qq '…' Q '…' are only allowed with a space.
   {
     'begin': '(?x)
       (qq(?:x|w|ww|v|s|a|h|f|c|b|p)?)
@@ -1226,7 +1228,7 @@
           regexp|substr|trans|codes|p|path
         )
       )*)
-      \\s*(\')'
+      \\s+ (\')'
     'beginCaptures':
       '1':
         'name': 'string.quoted.qq.operator.perl6fe'
