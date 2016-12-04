@@ -1,7 +1,7 @@
 ## v1.9
-* Regex using let regex using m/ / or rx/ / appear anywhere and span multiple lines
-* Get halfwidth (standard) width corner brackets working for strings `｢nesting｢works｣｣` too
-* Fix fancy heredoc delimiters like q:to/📝🔚/; Fixes Issue #36
+* Regex using let regex using `m/ /` or `rx/ /` appear anywhere and span multiple lines.
+* Get halfwidth (standard) width corner brackets working for these strings: `｢nesting｢works｣｣`.
+* Fix fancy heredoc delimiters like `q:to/📝🔚/`; Fixes Issue #36
 * Get left single and right single quotation marks work with nesting `‘testing 1 ‘2’ 3’`
 * Get left double and right double quotation marks work with nesting `“testing 1 “2” 3”`
 * Have the `｢this｣` quoting construct (which is a shortcut for `Q[]` quoting) work.
