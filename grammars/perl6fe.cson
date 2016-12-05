@@ -1462,7 +1462,7 @@
       |cached|readonly|defequiv|will
       |ref|copy|inline|tighter|looser
       |equiv|assoc|required
-    )(?!\\-)\\b'
+    )(?!\\-)\\b  (?!\\s*=>)'
     'name': 'entity.name.type.trait.perl6fe'
   }
   {
