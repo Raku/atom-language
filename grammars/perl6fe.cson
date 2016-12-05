@@ -831,7 +831,7 @@
     'contentName': 'string.quoted.qq.double.bracket.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\ | \\\\ \\]\\] | \\\\ \\[\\['
+        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\ (?: \\]\\] | \\[\\[ | \\\\ ) | \\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
