@@ -175,6 +175,12 @@
         'name': 'string.literal.perl6fe'
       }
       {
+        'begin': '(?<!\\\\)‘'
+        'end': '(?<=\\\\\\\\)\\\’|(?<!\\\\)’'
+        'name': 'string.literal.perl6fe'
+      }
+      ## #49 FIXME shouldn't be string literal, should use interpolation
+      {
         'begin': '(?<!\\\\)\\\"'
         'end': '(?<=\\\\\\\\)\\\"|(?<!\\\\)\\\"'
         'name': 'string.literal.perl6fe'
