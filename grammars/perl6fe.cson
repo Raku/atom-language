@@ -695,7 +695,7 @@
     'contentName': 'string.quoted.qq.double.angle.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\ | \\\\>> | \\\\<<'
+        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\>> | \\\\<< | \\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -763,7 +763,7 @@
     'contentName': 'string.quoted.qq.double.paren.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\ | \\\\ \\)\\) | \\\\ \\(\\('
+        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\ \\)\\) | \\\\ \\(\\( | \\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
@@ -1278,12 +1278,11 @@
     'contentName': 'string.quoted.q.single.quote.perl6fe'
     'patterns': [
       {
-        'match': '(?x) \\\\" | \\\\\\\\'
+        'match': '(?x) \\\\\" | \\\\\\\\'
         'name': 'constant.character.escape.perl6fe'
       }
       {
         'include': '#q_double_string_content'
-        'include': '#interpolation'
       }
     ]
   }
