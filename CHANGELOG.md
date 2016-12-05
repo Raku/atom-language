@@ -7,6 +7,7 @@
 * Fix fancy heredoc delimiters like `q:to/📝🔚/`; Fixes Issue #36
 * Get left single and right single quotation marks working with nesting `‘testing 1 ‘2’ 3’`
 * Get left double and right double quotation marks working with nesting `“testing 1 “2” 3”`
+* Get left single and right single quotation marks working inside regex. Fixes #48
 * Have the `｢this｣` quoting construct (which is a shortcut for `Q[]` quoting) work.
 * Fix certain `$<variables>` inside interpolated strings not syntax highlighting. Fixes Issue #41
 * Make `:token` `:regex` `:rule` not explode the highlighter. Fixes Issue #33
