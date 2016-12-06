@@ -450,10 +450,6 @@
     'name': 'string.quoted.single.perl6fe'
     'patterns': [
       {
-        'match': '\\\\[｢｣\\\\]'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
         'include': '#q_left_right_hwcornerbracket_string_content'
       }
     ]
