@@ -1506,7 +1506,7 @@
       UInt|uint|uint1|uint2|uint4|uint8|uint16|uint32|uint64|
       utf8|utf16|utf32|Num|num|num32|num64|IntStr|NumStr|
       RatStr|ComplexStr|CArray|Pointer|long|longlong
-    )(?!\\:\\:)\\b'
+    )(?!\\:\\:)\\b (?!\\s*=>)'
     'captures':
       '1':
         'name': 'support.type.perl6fe'
