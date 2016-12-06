@@ -1430,9 +1430,9 @@
     'name': 'keyword.control.flowcontrol.perl6fe'
   }
   {
-    'match': '(?x)\\b(?<![\\-:])(
-      is|does|as|but|trusts|of|returns|handles|where|augment|supersede
-    )(?!\\-)\\b'
+    'match': '(?x)\\b(?<![\\-:])
+      (is|does|as|but|trusts|of|returns|handles|where|augment|supersede)
+      (?!\\-)\\b (?!\\s*=>)'
     'name': 'storage.modifier.type.constraints.perl6fe'
   }
   {
@@ -1452,7 +1452,7 @@
   }
   {
     'match': '(?x)\\b(?<![\\-:])(
-       prec|irs|ofs|ors|export|deep
+       prec|irs|ofs|ors|export|raw|deep
       |binary|unary|reparsed|rw|parsed
       |cached|readonly|defequiv|will
       |ref|copy|inline|tighter|looser
