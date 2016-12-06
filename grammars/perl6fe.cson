@@ -1473,7 +1473,7 @@
       fatal|internals|MONKEY\\-TYPING|nqp|
       strict|trace|worries|invocant|parameters|experimental|
       cur|soft|variables|attributes|v6(?:\\.\\w)*|lib|Test|NativeCall
-    )(?!\\-)\\b'
+    )(?!\\-) \\b (?!\\s*=>)'
     'name': 'constant.language.pragma.perl6fe'
   }
   {
