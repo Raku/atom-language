@@ -15,7 +15,6 @@
 * ￼Get all the forms of qq[] properly highlighting variables (interpolation). Fixes Issue #18
 * Get all types of #\`( Multiline comments working when there is leading whitespace before the #\`( Fixes Issue #44
 * Get these multiline comments #\`((( #\`{{{ and #\`[[[ working
-* Get multiline comments with whitespace between ```#``` and the brackets working. Example: ```#`  (```
 * Highlight `.categorize`, `.prepend`, `.parse-base`, `categorize-list` and `.antipairs` methods. Fixes Issue #38
 * Add `long`, `longlong`, `Pointer` and `CArray` data types
 * Make sure `/` As a metaoperator `[/]` doesn't break syntax highlighting Fixes #34

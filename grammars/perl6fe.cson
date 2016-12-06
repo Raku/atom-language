@@ -59,7 +59,7 @@
     'name': 'meta.documentation.block.declarator.perl6fe'
   }
   {
-    'begin': '\\s*#`\\s*\\(\\(\\(',
+    'begin': '\\s*#`\\(\\(\\(',
     'end': '\\)\\)\\)',
     'name': 'comment.multiline.hash-tick.tripleparens.perl6fe'
     'patterns': [
@@ -71,7 +71,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\(\\(',
+    'begin': '\\s*#`\\(\\(',
     'end': '\\)\\)',
     'name': 'comment.multiline.hash-tick.doubleparens.perl6fe'
     'patterns': [
@@ -83,7 +83,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\(',
+    'begin': '\\s*#`\\(',
     'end': '\\)',
     'name': 'comment.multiline.hash-tick.parens.perl6fe'
     'patterns': [
@@ -95,7 +95,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\[\\[\\[',
+    'begin': '\\s*#`\\[\\[\\[',
     'end': '\\]\\]\\]',
     'name': 'comment.multiline.hash-tick.triplebrackets.perl6fe'
     'patterns': [
@@ -107,7 +107,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\[\\[',
+    'begin': '\\s*#`\\[\\[',
     'end': '\\]\\]',
     'name': 'comment.multiline.hash-tick.doublebrackets.perl6fe'
     'patterns': [
@@ -119,7 +119,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\[',
+    'begin': '\\s*#`\\[',
     'end': '\\]',
     'name': 'comment.multiline.hash-tick.brackets.perl6fe'
     'patterns': [
@@ -131,7 +131,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\{\\{\\{',
+    'begin': '\\s*#`\\{\\{\\{',
     'end': '\\}\\}\\}',
     'name': 'comment.multiline.hash-tick.triplebraces.perl6fe'
     'patterns': [
@@ -143,7 +143,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\{\\{',
+    'begin': '\\s*#`\\{\\{',
     'end': '\\}\\}',
     'name': 'comment.multiline.hash-tick.doublebraces.perl6fe'
     'patterns': [
@@ -155,7 +155,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\{',
+    'begin': '\\s*#`\\{',
     'end': '\\}',
     'name': 'comment.multiline.hash-tick.braces.perl6fe'
     'patterns': [
@@ -167,7 +167,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\「',
+    'begin': '\\s*#`\\「',
     'end': '\\」',
     'name': 'comment.multiline.hash-tick.fwcornerbracket.perl6fe'
     'patterns': [
@@ -179,7 +179,7 @@
     ]
   }
   {
-    'begin': '\\s*#`\\s*\\｢',
+    'begin': '\\s*#`\\｢',
     'end': '\\｣',
     'name': 'comment.multiline.hash-tick.hwcornerbracket.perl6fe'
     'patterns': [
@@ -1581,6 +1581,7 @@
   {
     'include': '#variables'
   }
+  # Dual functions and methods
   {
     'match': '(?x)\\b(?<![\\-:]|\\\\)(
        eager|hyper|substr|index|rindex|grep|map|sort|join|lines|hints
@@ -1604,7 +1605,7 @@
       |eval-lives-ok|approx|is-approx|throws-ok|version-lt|plan|EVAL
       |succ|pred|times|nonce|once|signature|new|connect|operator|undef
       |undefine|sleep|from|to|infix|postfix|prefix|circumfix|can-ok
-      |postcircumfix|minmax|lazy|count|unwrap|getc|pi|tau|e|context|void
+      |postcircumfix|minmax|lazy|count|unwrap|getc|pi|tau|context|void
       |quasi|body|each|contains|rewinddir|subst|can|isa|flush|arity
       |assuming|rewind|callwith|callsame|nextwith|nextsame|attr|does-ok
       |eval-elsewhere|none|srand|trim|trim-start|trim-end|lastcall
@@ -1614,6 +1615,15 @@
       |prepend|categorize|antipairs|categorize-list|parse-base
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
     )(?!\\-)\\b(?!\\s*=>)'
+    'name': 'support.function.perl6fe'
+  }
+  # Methods Only
+  {
+    'match': '(?x)\\b(?<![\\-:]|\\\\)(?<=\\.)
+    (e|d|f|s|l|r|w|rw|x|rwx|z|abspath|basename|extension|dirname
+    |watch|is-absolute|parts|volume|path|is-relative|parent|child
+    |resolve|dir)
+    (?!\\-)\\b(?!\\s*=>)'
     'name': 'support.function.perl6fe'
   }
   {
