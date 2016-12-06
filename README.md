@@ -50,6 +50,10 @@ Here's a few more examples:
 
 ![Yet another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example2.png)
 
+# Contributing
+
+Contributions are welcome! Please see [`CONTRIBUTING.md`](/CONTRIBUTING.md) for info!
+
 # License
 
 [MIT][mit] © [Jake Russo][author] et [al][contributors]
@@ -65,3 +69,4 @@ Here's a few more examples:
 [dl-badge]:     http://img.shields.io/apm/dm/language-perl6fe.svg
 [slack-badge]:  http://perl6.bestforever.com/badge.svg
 [slack]:        http://perl6.bestforever.com
+[contributing]: (/CONTRIBUTING.md)
