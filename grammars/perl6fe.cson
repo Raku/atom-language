@@ -11,7 +11,7 @@
 ]
 'patterns': [
   {
-    'begin': '^(=)(finish)'
+    'begin': '^\\s*(=)(finish)'
     'beginCaptures':
       '1':
         'name': 'storage.modifier.block.finish.perl6fe'
@@ -28,7 +28,7 @@
     'include': '#comment-block-delimited'
   }
   {
-    'begin': '^(=)(?:(para)|(for)\\s+(\\w+))'
+    'begin': '^\\s*(=)(?:(para)|(for)\\s+(\\w+))'
     'beginCaptures':
       '1':
         'name': 'storage.modifier.block.paragraph.perl6fe'
@@ -1699,8 +1699,8 @@
   'comment-block-delimited':
     'patterns': [
         {
-          'begin': '^(=)(begin)\\s+(\\w+)'
-          'end': '^(=)(end)\\s+(\\w+)'
+          'begin': '^\\s*(=)(begin)\\s+(\\w+)'
+          'end': '^\\s*(=)(end)\\s+(\\w+)'
           'captures':
             '1':
               'name': 'storage.modifier.block.delimited.perl6fe'
@@ -1719,7 +1719,7 @@
   'comment-block-abbreviated':
     'patterns': [
         {
-          'match': '^(=)(\\w+)\\s+(.+)$'
+          'match': '^\\s*(=)(\\w+)\\s+(.+)$'
           'captures':
             '1':
               'name': 'storage.modifier.block.abbreviated.perl6fe'

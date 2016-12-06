@@ -20,6 +20,8 @@
 * Make sure some more things highlight properly if used as keys for pairs.
 * Add `long`, `longlong`, `Pointer` and `CArray` data types
 * Make sure `/` As a metaoperator `[/]` doesn't break syntax highlighting Fixes #34
+* Pod comments now highlight properly working when there is leading whitespace.
+
 
 ## v1.8
 #### Quoting:
