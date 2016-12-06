@@ -16,6 +16,8 @@
 * Get all types of #\`( Multiline comments working when there is leading whitespace before the #\`( Fixes Issue #44
 * Get these multiline comments #\`((( #\`{{{ and #\`[[[ working
 * Highlight `.categorize`, `.prepend`, `.parse-base`, `categorize-list` and `.antipairs` methods. Fixes Issue #38
+* Add IO related methods.
+* Make sure some more things highlight properly if used as keys for pairs.
 * Add `long`, `longlong`, `Pointer` and `CArray` data types
 * Make sure `/` As a metaoperator `[/]` doesn't break syntax highlighting Fixes #34
 
