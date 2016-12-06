@@ -1447,7 +1447,7 @@
     'name': 'keyword.control.closure.trait.perl6fe'
   }
   {
-    'match': '\\b(?<![\\-:])(die|fail|try|warn)(?!\\-)\\b'
+    'match': '\\b(?<![\\-:])(die|fail|try|warn)(?!\\-)\\b(?!\\s*=>)'
     'name': 'keyword.control.control-handlers.perl6fe'
   }
   {
