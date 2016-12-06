@@ -1,5 +1,6 @@
 ## v1.9
 * Let regex using `m/ /` or `rx/ /` appear anywhere and span multiple lines.
+* Fancy single quotes in regex now actually quote `/‘…’/`. Fixes #45
 * Let bare regex `/ /` appear after `=>`. Mostly fixes #35
 * `qq` and `q` constructs using `(( ))`, `{{ }}`, `<< >>`, `[ ]`, `[[ ]]`, `( )`,
 `{ }`, `/ /`,  `< >` now properly escape delimiters and other escape sequences. #46
