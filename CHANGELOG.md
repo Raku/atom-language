@@ -14,7 +14,7 @@
 * Get left single and right single quotation marks working inside regex. Fixes issue #48
 * Have the `｢this｣` quoting construct (which is a shortcut for `Q[]` quoting) work.
 * Get halfwidth (standard) width corner brackets working for these strings: `｢nesting｢works｣｣`.
-* Array indices in interpolated strings/quoting now highlight correctly
+* Array indices in interpolated strings/quoting now highlight correctly. #24
 
 ### `Q`, `qq` and `q` quoting constructs
 * `Q`, `qq` and `q` constructs using `(( ))`, `{{ }}`, `<< >>`, `[ ]`, `[[ ]]`, `( )`,
