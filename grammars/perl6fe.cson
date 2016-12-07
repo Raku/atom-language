@@ -10,6 +10,7 @@
   'nqp'
 ]
 'patterns': [
+  # Pod =finish
   {
     'begin': '^\\s*(=)(finish)'
     'beginCaptures':
@@ -27,6 +28,7 @@
   {
     'include': '#comment-block-delimited'
   }
+  # Pod =para and =for
   {
     'begin': '^\\s*(=)(?:(para)|(for)\\s+(\\w+))'
     'beginCaptures':
@@ -36,7 +38,7 @@
         'name': 'keyword.operator.block.paragraph.perl6fe'
       '3':
         'name': 'entity.other.attribute-name.paragraph.perl6fe'
-    'end': '^\\s*$'
+    'end': '(?=^\\s*$|^\\s*=\\w+.*$)'
     'contentName': 'comment.block.paragraph.perl6fe'
     'patterns': [
       {
@@ -1696,6 +1698,7 @@
         'name': 'constant.numeric.perl6fe'
       }
     ]
+  # Pod =begin =end
   'comment-block-delimited':
     'patterns': [
         {
@@ -1716,10 +1719,11 @@
           ]
         }
     ]
+  # Pod other
   'comment-block-abbreviated':
     'patterns': [
         {
-          'match': '^\\s*(=)(\\w+)\\s+(.+)$'
+          'match': '^\\s*(=)(\\w+)\\s+(.+?)\\s*$'
           'captures':
             '1':
               'name': 'storage.modifier.block.abbreviated.perl6fe'
