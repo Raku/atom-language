@@ -46,13 +46,13 @@ above, your `t` files will be highlighted with the `language-perl` highlighter (
 
 Here's a few more examples:
 
-![Another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example1.png)
+![Another screenshot of a funnified Perl 6 file][screenshot-1]
 
-![Yet another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example2.png)
+![Yet another screenshot of a funnified Perl 6 file][screenshot-2]
 
 # Contributing
 
-Contributions are welcome! Please see [`CONTRIBUTING.md`](/CONTRIBUTING.md) for info!
+Contributions are welcome! Please see [`CONTRIBUTING.md`][contributing] for info!
 
 # License
 
@@ -64,9 +64,15 @@ Contributions are welcome! Please see [`CONTRIBUTING.md`](/CONTRIBUTING.md) for 
 [contributors]: https://github.com/MadcapJake/language-perl6fe/graphs/contributors
 [releases]:     https://github.com/MadcapJake/language-perl6fe/releases
 [mit-badge]:    https://img.shields.io/apm/l/language-perl6fe.svg
+
+[//]: # (Atom Links)
 [apm-pkg-link]: https://atom.io/packages/language-perl6fe
 [apm-ver-link]: https://img.shields.io/apm/v/language-perl6fe.svg
 [dl-badge]:     http://img.shields.io/apm/dm/language-perl6fe.svg
 [slack-badge]:  http://perl6.bestforever.com/badge.svg
 [slack]:        http://perl6.bestforever.com
-[contributing]: (/CONTRIBUTING.md)
+[contributing]: /CONTRIBUTING.md
+
+[//]: # (Pictures)
+[screenshot-1]: https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example1.png
+[screenshot-2]: https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example2.png
