@@ -35,7 +35,7 @@ my @identifiers = '-', Q[\'];
 my $q-first-str = Q:to/🐧/;
   # Q_XXX
   {
-    'begin': '(?x) (?<=\s|^)
+    'begin': '(?x) (?<=\\s|^)
       (Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
