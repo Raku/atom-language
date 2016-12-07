@@ -3396,7 +3396,24 @@
           (
             [a-zA-Z0-9_\xc0-\xff\\$]|
             [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
-          )*'
+          )*(\\[.*\\])?'
+        'captures':
+          '5':
+            'patterns': [
+              {
+                'begin': '\\['
+                'beginCaptures':
+                  '0':
+                    'name': 'keyword.operator.bracket.open'
+                'end': '\\]'
+                'endCaptures':
+                  '0':
+                    'name': 'keyword.operator.bracket.close'
+                'patterns': [
+                  { 'include': '$self' }
+                ]
+              }
+            ]
         'name': 'variable.other.identifier.interpolated.perl6fe'
       }
       {
