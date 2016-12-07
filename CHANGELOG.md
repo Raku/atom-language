@@ -20,7 +20,7 @@
 * Add `Q`, `qq` and `q` constructs using ‘…’ and  “…”. Example: q“…”
 * Get halfwidth (standard) width corner brackets working for these strings: `｢nesting｢works｣｣`.
 
-### Varibles
+### Variables
 * Fix certain `$<variables>` inside interpolated strings not syntax highlighting. Fixes issue #41
 * Make `:token` `:regex` `:rule` not explode the highlighter. Fixes issue #33
 * ￼Get all the forms of qq[] properly highlighting variables (interpolation). Fixes issue #18
