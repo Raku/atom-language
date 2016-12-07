@@ -3,18 +3,18 @@
 ## Replace ZZZ with the escaped closing delimiter
 
 my @delimiters =
-#name      #open #close
-('double_angle', '<<', '>>'),
-('double_paren', Q<\\(\\(>, Q<\\)\\)>),
-('double_bracket', Q<\\[\\[>, Q<\\]\\]>),
-('double_brace', '{{', '}}'),
-('brace', '{', '}'),
-('angle', '<', '>'),
-('paren', Q<\\(>, Q<\\)>),
-('bracket', Q<\\[>, Q<\\]>),
-('double', '"', '"'),
-('single', ｢\'｣, ｢\'｣),
-('slash', '/', '/');
+#name             #open        #close     #number
+('double_angle',  '<<',        '>>',       2),
+('double_paren',   Q<\\(\\(>,  Q<\\)\\)>,  2),
+('double_bracket', Q<\\[\\[>,  Q<\\]\\]>,  2),
+('double_brace',   '{{',       Q<}}>,      2),
+('brace',          '{',        Q<}>,       1),
+('angle',          '<',        '>',        1),
+('paren',          Q<\\(>,     Q<\\)>,     1),
+('bracket',        Q<\\[>,     Q<\\]>,     1),
+('double',         Q<">,       Q<">,       1),
+('single',         Q<\'>,      Q<\'>,      1),
+('slash',          '/',        '/',        1),
 ;
 my $first-str = Q:to/🐧/;
   # Q_XXX
@@ -114,9 +114,6 @@ my $first-str = Q:to/🐧/;
   }
 🐧
 
-
-
-
 ##sections
 my $second-str = Q:to/🐧/;
   # q_XXX
@@ -128,6 +125,34 @@ my $second-str = Q:to/🐧/;
         'include': '#q_XXX_string_content'
       }
     ]
+🐧
+
+my $any-str = Q:to/🐧/;
+    # q_any qq_any Q_any
+    {
+    'begin': '(?x)
+      (q|qq|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
+      ((?:
+        \\s*:(?:
+          x|exec|w|words|ww|quotewords|v|val|q|single|double|
+          s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
+          regexp|substr|trans|codes|p|path
+        )
+      )*)
+      \\s*([^\\w\\sZZZ])'
+    'beginCaptures':
+      '1':
+        'name': 'string.quoted.q.operator.perl6fe'
+      '2':
+        'name': 'support.function.quote.adverb.perl6fe'
+      '3':
+        'name': 'punctuation.definition.string.perl6fe'
+    'end': '\\3'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.perl6fe'
+    'contentName': 'string.quoted.q.any.quote.perl6fe'
+    }
 🐧
 
 sub replace ( Str $string is copy, $name, $begin, $end ) {
@@ -153,6 +178,16 @@ for ^@delimiters -> $i {
   $first-file ~= replace($first-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
 
 }
+my @not-any;
+for ^@delimiters -> $i {
+    if @delimiters[$i][3] eq 1 {
+        push @not-any, @delimiters[$i][1] if @delimiters[$i][3] eq 1;
+        push @not-any, @delimiters[$i][2] if @delimiters[$i][1] ne @delimiters[$i][2];
+    }
+}
+my $not-any = @not-any.join('');
+$any-str ~~ s/ZZZ/$not-any/;
+$first-file ~= $any-str;
 spurt 'FIRST.cson', $first-file;
 #say '#1END';
 #say '#2START';
@@ -160,6 +195,7 @@ for ^@delimiters -> $i {
   $second-file ~= replace($second-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
 }
 spurt 'SECOND.cson', $second-file;
+
 #say '#2END';
 exit;
 say replace $second-str, 'double','"', '"';
