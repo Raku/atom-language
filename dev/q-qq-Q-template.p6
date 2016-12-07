@@ -1,7 +1,7 @@
-## Replace XXX with the content's name
-## Replace YYY with the escaped opening delimiter
-## Replace ZZZ with the escaped closing delimiter
-my @delimiters =
+#!/usr/bin/env perl6
+# Generate the q[] qq[] and Q[] quoting constructs
+
+my @open-close-delimiters =
 #name                       #open        #close      #number
 ('double_angle',            '<<',        '>>',        2),
 ('double_paren',             Q<\\(\\(>,   Q<\\)\\)>,  2),
@@ -11,14 +11,20 @@ my @delimiters =
 ('angle',                   '<',         '>',         1),
 ('paren',                    Q<\\(>,      Q<\\)>,     1),
 ('bracket',                  Q<\\[>,      Q<\\]>,     1),
-('double',                   Q<">,        Q<">,       1),
-('single',                   Q<\'>,       Q<\'>,      1),
-('slash',                    '/',        '/',         1),
 ('left_double_right_double', Q<“>,        Q<”>,       1),
 ('left_single_right_single', Q<‘>,        Q<’>,       1),
 ;
+my @delimiters = @open-close-delimiters;
+push @delimiters, ('slash',  '/',   '/',   1);
+push @delimiters, ('single', Q<\'>, Q<\'>, 1);
+push @delimiters, ('double', Q<">,  Q<">,  1);
+# These identifiers are not allowed to be used without a space.
+# Example: q '…'
 my @identifiers = '-', Q[\'];
 
+## Replace XXX with the content's name
+## Replace YYY with the escaped opening delimiter
+## Replace ZZZ with the escaped closing delimiter
 my $first-str = Q:to/🐧/;
   # Q_XXX
   {
@@ -158,6 +164,22 @@ my $any-str = Q:to/🐧/;
     }
 🐧
 
+my $multiline-comment-str = Q:to/🐧/;
+    # multiline comment XXX
+    {
+    'begin': '\\s*#`YYY',
+    'end': 'ZZZ',
+    'name': 'comment.multiline.hash-tick.XXX.perl6fe'
+    'patterns': [
+      {
+        'begin': 'YYY'
+        'end': 'ZZZ'
+        'name': 'comment.internal.XXX.perl6fe'
+      }
+    ]
+    }
+🐧
+
 sub replace ( Str $string is copy, $name, $begin, $end ) {
   $string ~~ s:g/XXX/$name/;
   # Note: q (…) qq (…) Q (…) are only allowed with a space.
@@ -172,11 +194,25 @@ sub replace ( Str $string is copy, $name, $begin, $end ) {
   $string ~~ s:g/ZZZ/$end/;
   $string;
 }
-
+sub replace-multiline-comment ( Str $string is copy, $name, $begin, $end ) {
+    $string ~~ s:g/XXX/$name/;
+    $string ~~ s:g/YYY/$begin/;
+    $string ~~ s:g/ZZZ/$end/;
+    $string;
+}
 #say @delimiters.perl;
+my $zero-file;
 my $first-file;
 my $second-file;
 #say '#1START';
+for ^@open-close-delimiters -> $i {
+    $zero-file ~= replace-multiline-comment $multiline-comment-str,
+                          @open-close-delimiters[$i][0],
+                          @open-close-delimiters[$i][1],
+                          @open-close-delimiters[$i][2];
+}
+spurt 'ZERO.cson', $zero-file;
+
 for ^@delimiters -> $i {
   $first-file ~= replace($first-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
 
