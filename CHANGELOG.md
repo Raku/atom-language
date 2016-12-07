@@ -2,8 +2,8 @@
 * Let regex using `m/ /` or `rx/ /` appear anywhere and span multiple lines.
 * Fancy single quotes in regex now actually quote `/‘…’/`. Fixes issue #45
 * Let bare regex `/ /` appear after `=>`. Mostly fixes issue #35
-* `qq` and `q` constructs using `(( ))`, `{{ }}`, `<< >>`, `[ ]`, `[[ ]]`, `( )`,
-`{ }`, `/ /`,  `< >` now properly escape delimiters and other escape sequences. #46
+* `Q`, `qq` and `q` constructs using `(( ))`, `{{ }}`, `<< >>`, `[ ]`, `[[ ]]`, `( )`,
+`{ }`, `/ /`,  `< >` now properly escape delimiters and other escape sequences. Fixes issue #46
 * Get halfwidth (standard) width corner brackets working for these strings: `｢nesting｢works｣｣`.
 * Fix fancy heredoc delimiters like `q:to/📝🔚/`; Fixes issue #36
 * Get left single and right single quotation marks working with nesting `‘testing 1 ‘2’ 3’`
