@@ -2,6 +2,7 @@
 # Generate the q[] qq[] and Q[] quoting constructs
 
 my @open-close-delimiters =
+#Left Pi right Pf. Open Ps close Pe
 #name                       #open        #close      #number
 ('triple_paren',          Q<\\(\\(\\(>, Q<\\)\\)\\)>, 3),
 ('triple_bracket',        Q<\\[\\[\\[>, Q<\\]\\]\\]>, 3),
@@ -23,6 +24,7 @@ my @delimiters = @open-close-delimiters;
 push @delimiters, ('slash',  '/',   '/',   1);
 push @delimiters, ('single', Q<\'>, Q<\'>, 1);
 push @delimiters, ('double', Q<">,  Q<">,  1);
+push @delimiters, ('right_double_right_double', '”', '”', 1);
 # These identifiers are not allowed to be used without a space.
 # Example: q '…'
 my @identifiers = '-', Q[\'];
@@ -30,10 +32,10 @@ my @identifiers = '-', Q[\'];
 ## Replace XXX with the content's name
 ## Replace YYY with the escaped opening delimiter
 ## Replace ZZZ with the escaped closing delimiter
-my $first-str = Q:to/🐧/;
+my $q-first-str = Q:to/🐧/;
   # Q_XXX
   {
-    'begin': '(?x)
+    'begin': '(?x) (?<=\s|^)
       (Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
@@ -61,7 +63,7 @@ my $first-str = Q:to/🐧/;
   }
   # q_XXX
   {
-    'begin': '(?x)
+    'begin': '(?x) (?<=\s|^)
       (q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
@@ -93,7 +95,7 @@ my $first-str = Q:to/🐧/;
   }
   # qq_XXX
   {
-    'begin': '(?x)
+    'begin': '(?x) (?<=\s|^)
       (qq(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
@@ -129,7 +131,7 @@ my $first-str = Q:to/🐧/;
 🐧
 
 ##sections
-my $second-str = Q:to/🐧/;
+my $q-second-str = Q:to/🐧/;
   # q_XXX
   'q_XXX_string_content':
     'begin': 'YYY'
@@ -141,10 +143,10 @@ my $second-str = Q:to/🐧/;
     ]
 🐧
 
-my $any-str = Q:to/🐧/;
+my $q-any-str = Q:to/🐧/;
     # q_any qq_any Q_any
     {
-    'begin': '(?x)
+    'begin': '(?x) (?<=\s|^)
       (q|qq|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
@@ -205,23 +207,28 @@ sub replace-multiline-comment ( Str $string is copy, $name, $begin, $end ) {
     $string ~~ s:g/ZZZ/$end/;
     $string;
 }
-#say @delimiters.perl;
+
 my $zero-file;
 my $first-file;
 my $second-file;
-#say '#1START';
+# Multi line comment
 for ^@open-close-delimiters -> $i {
     $zero-file ~= replace-multiline-comment $multiline-comment-str,
                           @open-close-delimiters[$i][0],
                           @open-close-delimiters[$i][1],
                           @open-close-delimiters[$i][2];
 }
-spurt 'ZERO.cson', $zero-file;
 
+# q qq Q quoting constructs
 for ^@delimiters -> $i {
-  $first-file ~= replace($first-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
+    if use-for-q @delimiters[$i] {
+        say "Skipping: {@delimiters[$i].perl}";
+        next;
+    }
+    $first-file ~= replace($q-first-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
 
 }
+# Get list of symbols we shouldn't use for q_any (using whatever delimiter the person wants)
 my @not-any;
 for ^@delimiters -> $i {
     if @delimiters[$i][3] eq 1 {
@@ -229,19 +236,24 @@ for ^@delimiters -> $i {
         push @not-any, @delimiters[$i][2] if @delimiters[$i][1] ne @delimiters[$i][2];
     }
 }
+#push @not-any, '@';
+@not-any .= unique;
 my $not-any = @not-any.join('');
-$any-str ~~ s/ZZZ/$not-any/;
-$first-file ~= $any-str;
-spurt 'FIRST.cson', $first-file;
-#say '#1END';
-#say '#2START';
-for ^@delimiters -> $i {
-  $second-file ~= replace($second-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
-}
-spurt 'SECOND.cson', $second-file;
+$q-any-str ~~ s/ZZZ/$not-any/;
+$first-file ~= $q-any-str;
 
-#say '#2END';
-exit;
-say replace $second-str, 'double','"', '"';
-say replace $first-str, 'double', '"', '"';
-say $second-str;
+for ^@delimiters -> $i {
+    if use-for-q @delimiters[$i] {
+        say "Skipping: {@delimiters[$i].perl}";
+        next;
+    }
+    $second-file ~= replace($q-second-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
+}
+spurt 'ZERO.cson', $zero-file;
+spurt 'FIRST.cson', $first-file;
+spurt 'SECOND.cson', $second-file;
+sub use-for-q ( @delimiters ) {
+    # If the delimiters are equal and they are an opening, closing or begining or ending
+    # unicode type symbol, then we can't use it for q/qq/Q
+    @delimiters[1] eq @delimiters[2] and uniprop(@delimiters[1]) eq any('Pi', 'Pf', 'Ps', 'Pe');
+}
