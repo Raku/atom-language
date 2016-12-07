@@ -863,13 +863,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.q.single.brace.perl6fe'
     'patterns': [
-      {
-        'match': '(?x) \\\\{ | \\\\} | \\\\\\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_brace_string_content'
-      }
+      { 'include': '#q_brace_character_escape' }
+      { 'include': '#q_brace_string_content' }
     ]
   }
   {
@@ -896,15 +891,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.qq.single.brace.perl6fe'
     'patterns': [
-      {
-        'match': '\\\\[abtnfre\\\\\\{\\}]|\\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_brace_string_content'
-        'include': '#interpolation'
-        'include': '#variables'
-      }
+      { 'include': '#q_brace_character_escape' }
+      { 'include': '#qq_brace_string_content' }
     ]
   }
   {
@@ -964,15 +952,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.qq.single.angle.perl6fe'
     'patterns': [
-      {
-        'match': '\\\\[<>abtnfre\\\\\\{\\}<>]|\\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_angle_string_content'
-        'include': '#interpolation'
-        'include': '#variables'
-      }
+      { 'include': '#q_angle_character_escape' }
+      { 'include': '#qq_angle_string_content' }
     ]
   }
   {
@@ -999,13 +980,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.q.single.slash.perl6fe'
     'patterns': [
-      {
-        'match': '(?x) \\\\/ | \\\\\\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_slash_string_content'
-      }
+      { 'include': '#q_slash_character_escape' }
+      { 'include': '#q_slash_string_content' }
     ]
   }
   {
@@ -1032,15 +1008,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.qq.single.slash.perl6fe'
     'patterns': [
-      {
-        'match': '(?x) \\\\[/abtnfre\\\\\\{\\}] | \\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_slash_string_content'
-        'include': '#interpolation'
-        'include': '#variables'
-      }
+      { 'include': '#q_slash_character_escape' }
+      { 'include': '#qq_slash_string_content' }
     ]
   }
   # Note: q (…) qq (…) Q (…) are only allowed with a space.
@@ -1068,13 +1037,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.q.single.paren.perl6fe'
     'patterns': [
-      {
-        'match': '(?x) \\\\ \\\( | \\\\ \\\) | \\\\\\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_paren_string_content'
-      }
+      { 'include': '#q_paren_character_escape' }
+      { 'include': '#q_paren_string_content' }
     ]
   }
   # Note: q (…) qq (…) Q (…) are only allowed with a space.
@@ -1102,15 +1066,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.qq.single.paren.perl6fe'
     'patterns': [
-      {
-        'match': '\\\\[abtnfre\\\\\\{\\}\\(\\)]|\\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_paren_string_content'
-        'include': '#interpolation'
-        'include': '#variables'
-      }
+      { 'include': '#q_paren_character_escape' }
+      { 'include': '#qq_paren_string_content' }
     ]
   }
   {
@@ -1137,13 +1094,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.q.single.bracket.perl6fe'
     'patterns': [
-      {
-        'match': '\\\\\\[|\\\\\\]|\\\\\\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_bracket_string_content'
-      }
+      { 'include': '#q_bracket_character_escape' }
+      { 'include': '#q_bracket_string_content' }
     ]
   }
   {
@@ -1170,15 +1122,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.qq.single.bracket.perl6fe'
     'patterns': [
-      {
-        'match': '\\\\[abtnfre\\\\\\{\\}\\[\\]]|\\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_bracket_string_content'
-        'include': '#interpolation'
-        'include': '#variables'
-      }
+      { 'include': '#q_bracket_character_escape' }
+      { 'include': '#qq_bracket_string_content' }
     ]
   }
   # Note: q '…' qq '…' Q '…' are only allowed with a space.
@@ -1275,13 +1220,8 @@
         'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.q.single.quote.perl6fe'
     'patterns': [
-      {
-        'match': '(?x) \\\\\" | \\\\\\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_double_string_content'
-      }
+      { 'include': '#q_double_character_escape' }
+      { 'include': '#q_double_string_content' }
     ]
   }
   {
@@ -1305,16 +1245,11 @@
     'end': '"'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.single.quote.perl6fe'
+        'name': 'punctuation.definition.double.perl6fe'
+    'contentName': 'string.quoted.qq.double.quote.perl6fe'
     'patterns': [
-      {
-        'match': '(?x) \\\\["abtnfre\\\\\\{\\}] | \\\\'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#q_double_string_content'
-      }
+      { 'include': '#q_double_character_escape' }
+      { 'include': '#qq_double_string_content' }
     ]
   }
   {
@@ -2361,6 +2296,26 @@
         'name': 'meta.interpolation.perl6fe'
       }
     ]
+  'q_character_escape':
+    'patterns': [
+      {
+        'match': '(?x) \\\\\\\\'
+        'name': 'constant.character.escape.perl6fe'
+      }
+    ]
+  'qq_character_escape':
+    'patterns': [
+      {
+        'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\'
+        'name': 'constant.character.escape.perl6fe'
+      }
+    ]
+  'qq_string':
+    'patterns': [
+      { 'include': '#qq_character_escape' }
+      { 'include': '#interpolation' }
+      { 'include': '#variables' }
+    ]
   'q_angle_string_content':
     'begin': '<'
     'end': '>'
@@ -2369,6 +2324,14 @@
         'include': '#q_angle_string_content'
       }
     ]
+  # q_brace
+  'q_brace_character_escape':
+      'patterns': [
+        {
+          'match': '\\\\[\\{\\}]'
+          'name': 'constant.character.escape.perl6fe'
+        }
+      ]
   'q_brace_string_content':
     'begin': '{'
     'end': '}'
@@ -2377,6 +2340,20 @@
         'include': '#q_brace_string_content'
       }
     ]
+  'qq_brace_string_content':
+    'patterns': [
+      { 'include': '#q_brace_string_content' }
+      { 'include': '#qq_character_escape' }
+      { 'include': '#qq_string' }
+    ]
+  # q_bracket
+  'q_bracket_character_escape':
+      'patterns': [
+        {
+          'match': '\\\\[\\[\\]]'
+          'name': 'constant.character.escape.perl6fe'
+        }
+      ]
   'q_bracket_string_content':
     'begin': '\\['
     'end': '\\]'
@@ -2385,12 +2362,41 @@
         'include': '#q_bracket_string_content'
       }
     ]
+  'qq_bracket_string_content':
+    'patterns': [
+      { 'include': '#q_bracket_string_content' }
+      { 'include': '#qq_character_escape' }
+      { 'include': '#qq_string' }
+    ]
+  # q_double
+  'q_double_character_escape':
+      'patterns': [
+        {
+          'match': '\\\\["]'
+          'name': 'constant.character.escape.perl6fe'
+        }
+      ]
   'q_double_string_content':
-    'begin': '\"'
-    'end': '\"'
+    'begin': '"'
+    'end': '"'
     'patterns': [
       {
         'include': '#q_double_string_content'
+      }
+    ]
+  'qq_double_string_content':
+    'patterns': [
+      { 'include': '#q_double_string_content' }
+      { 'include': '#qq_character_escape' }
+      { 'include': '#qq_string' }
+    ]
+
+  # q_paren
+  'q_paren_character_escape':
+    'patterns': [
+      {
+        'match': '(?x) \\\\[\\\(\\\)]'
+        'name': 'constant.character.escape.perl6fe'
       }
     ]
   'q_paren_string_content':
@@ -2401,6 +2407,13 @@
         'include': '#q_paren_string_content'
       }
     ]
+  'qq_paren_string_content':
+    'patterns': [
+      { 'include': '#q_paren_string_content' }
+      { 'include': '#qq_character_escape' }
+      { 'include': '#qq_string' }
+    ]
+  # q_single
   'q_single_string_content':
     'begin': '\''
     'end': '\''
@@ -2409,14 +2422,41 @@
         'include': '#q_single_string_content'
       }
     ]
+  # q_angle
+  'q_angle_character_escape':
+    'patterns': [
+      {
+        'match': '\\\\[<>]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+    ]
+  'qq_angle_string_content':
+    'patterns': [
+      { 'include': '#q_angle_string_content' }
+      { 'include': '#qq_character_escape' }
+      { 'include': '#qq_string' }
+    ]
+  # q_slash
+  'q_slash_character_escape':
+    'patterns': [
+      {
+        'match': '(?x) \\\\/'
+        'name': 'constant.character.escape.perl6fe'
+      }
+    ]
   'q_slash_string_content':
     'begin': '\\\\/'
     'end': '\\\\/'
     'patterns': [
-      {
-        'include': '#q_slash_string_content'
-      }
+      { 'include': '#q_slash_string_content' }
     ]
+  'qq_slash_string_content':
+    'patterns': [
+      { 'include': '#q_slash_string_content' }
+      { 'include': '#q_slash_character_escape' }
+      { 'include': '#qq_string' }
+    ]
+
   'q_left_double_right_double_string_content':
     'begin': '“'
     'end': '”'

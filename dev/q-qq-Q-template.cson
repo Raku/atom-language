@@ -1,0 +1,90 @@
+## Replace XXX with the content's name
+## Replace YYY with the escaped opening delimiter
+## Replace ZZZ with the escaped closing delimiter
+
+#q #Q
+{
+  'begin': '(?x)
+    (q(?:x|w|ww|v|s|a|h|f|c|b|p)?|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
+    ((?:
+      \\s*:(?:
+        x|exec|w|words|ww|quotewords|v|val|q|single|double|
+        s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
+        regexp|substr|trans|codes|p|path
+      )
+    )*)
+    \\s*(YYY)'
+  'beginCaptures':
+    '1':
+      'name': 'string.quoted.q.operator.perl6fe'
+    '2':
+      'name': 'support.function.quote.adverb.perl6fe'
+    '3':
+      'name': 'punctuation.definition.string.perl6fe'
+  'end': 'ZZZ'
+  'endCaptures':
+    '0':
+      'name': 'punctuation.definition.string.perl6fe'
+  'contentName': 'string.quoted.q.single.quote.perl6fe'
+  'patterns': [
+    { 'include': '#q_XXX_character_escape' }
+    { 'include': '#q_XXX_string_content' }
+  ]
+}
+#qq
+{
+  'begin': '(?x)
+    (qq(?:x|w|ww|v|s|a|h|f|c|b|p)?)
+    ((?:
+      \\s*:(?:
+        x|exec|w|words|ww|quotewords|v|val|q|single|double|
+        s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
+        regexp|substr|trans|codes|p|path
+      )
+    )*)
+    \\s*(YYY)'
+  'beginCaptures':
+    '1':
+      'name': 'string.quoted.qq.operator.perl6fe'
+    '2':
+      'name': 'support.function.quote.adverb.perl6fe'
+    '3':
+      'name': 'punctuation.definition.string.perl6fe'
+  'end': 'ZZZ'
+  'endCaptures':
+    '0':
+      'name': 'punctuation.definition.XXX.perl6fe'
+  'contentName': 'string.quoted.qq.XXX.quote.perl6fe'
+  'patterns': [
+    { 'include': '#q_XXX_character_escape' }
+    { 'include': '#qq_XXX_string_content' }
+  ]
+}
+
+
+
+
+##sections
+
+# q_XXX
+'q_XXX_character_escape':
+    'patterns': [
+      {
+        'match': '\\\\[YYYZZZ]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+    ]
+'q_XXX_string_content':
+  'begin': 'YYY'
+  'end': 'ZZZ'
+  'patterns': [
+    {
+      'include': '#q_XXX_string_content'
+    }
+  ]
+'qq_XXX_string_content':
+  'patterns': [
+    { 'include': '#q_XXX_string_content' }
+    { 'include': '#qq_character_escape' }
+    { 'include': '#qq_string' }
+  ]
