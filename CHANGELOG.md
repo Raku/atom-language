@@ -46,9 +46,6 @@
 * Make sure pod after `=para` and `=for` immediately stop that block. Make sure formatting doesn't run on further. Fixes issue #51
 * Make sure pod after all other abbreviated forms like `=head` highlight as comments as well. Fixes issue #50
 
-### Other
-* Remove `'` as a non-word character to make highlighting variables with `'` in them easier.
-
 
 ## v1.8
 #### Quoting:
