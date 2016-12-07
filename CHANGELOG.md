@@ -21,6 +21,7 @@
 * Add `long`, `longlong`, `Pointer` and `CArray` data types
 * Make sure `/` As a metaoperator `[/]` doesn't break syntax highlighting Fixes #34
 * Pod comments now highlight properly working when there is leading whitespace.
+* Make sure pod after `=para` and `=for` immediately stop that block. Make sure formatting doesn't run on further. Fixes #51
 
 
 ## v1.8
