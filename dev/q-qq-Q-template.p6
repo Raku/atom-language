@@ -3,6 +3,9 @@
 
 my @open-close-delimiters =
 #name                       #open        #close      #number
+('triple_paren',          Q<\\(\\(\\(>, Q<\\)\\)\\)>, 3),
+('triple_bracket',        Q<\\[\\[\\[>, Q<\\]\\]\\]>, 3),
+('triple_brace',          Q<\\{\\{\\{>, Q<\\}\\}\\}>, 3),
 ('double_angle',            '<<',        '>>',        2),
 ('double_paren',             Q<\\(\\(>,   Q<\\)\\)>,  2),
 ('double_bracket',           Q<\\[\\[>,   Q<\\]\\]>,  2),
@@ -13,6 +16,8 @@ my @open-close-delimiters =
 ('bracket',                  Q<\\[>,      Q<\\]>,     1),
 ('left_double_right_double', Q<“>,        Q<”>,       1),
 ('left_single_right_single', Q<‘>,        Q<’>,       1),
+('fw_cornerbracket',         Q<「>,       Q<」>,      1),
+('hw_cornerbracket',         Q<｢>,        Q<｣>,       1),
 ;
 my @delimiters = @open-close-delimiters;
 push @delimiters, ('slash',  '/',   '/',   1);
@@ -165,19 +170,19 @@ my $any-str = Q:to/🐧/;
 🐧
 
 my $multiline-comment-str = Q:to/🐧/;
-    # multiline comment XXX
+  # multiline comment XXX
+  {
+  'begin': '\\s*#`YYY',
+  'end': 'ZZZ',
+  'name': 'comment.multiline.hash-tick.XXX.perl6fe'
+  'patterns': [
     {
-    'begin': '\\s*#`YYY',
-    'end': 'ZZZ',
-    'name': 'comment.multiline.hash-tick.XXX.perl6fe'
-    'patterns': [
-      {
-        'begin': 'YYY'
-        'end': 'ZZZ'
-        'name': 'comment.internal.XXX.perl6fe'
-      }
-    ]
+      'begin': 'YYY'
+      'end': 'ZZZ'
+      'name': 'comment.internal.XXX.perl6fe'
     }
+  ]
+  }
 🐧
 
 sub replace ( Str $string is copy, $name, $begin, $end ) {

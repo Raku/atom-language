@@ -13,12 +13,15 @@
 * Get left double and right double quotation marks working with nesting `“testing 1 “2” 3”`
 * Get left single and right single quotation marks working inside regex. Fixes issue #48
 * Have the `｢this｣` quoting construct (which is a shortcut for `Q[]` quoting) work.
+* Get halfwidth (standard) width corner brackets working for these strings: `｢nesting｢works｣｣`.
+
 ### `Q`, `qq` and `q` quoting constructs
 * `Q`, `qq` and `q` constructs using `(( ))`, `{{ }}`, `<< >>`, `[ ]`, `[[ ]]`, `( )`,
 `{ }`, `/ /`,  `< >` now properly escape delimiters and other escape sequences. Fixes issue #46
 * Get `Q`, `qq` and `q` constructs using arbitrary non-word characters working. Example: q%…%
-* Add `Q`, `qq` and `q` constructs using ‘…’ and  “…”. Example: q“…”
-* Get halfwidth (standard) width corner brackets working for these strings: `｢nesting｢works｣｣`.
+* Add `Q`, `qq` and `q` constructs using `‘…’` and  `“…”`. Example: q“…”
+* Add `Q`, `qq` and `q` constructs using `｢…｣`, `(((…)))`, `{{{…}}}`, `[[[…]]]` and`「…」`.
+
 
 ### Variables
 * Fix certain `$<variables>` inside interpolated strings not syntax highlighting. Fixes issue #41
@@ -33,8 +36,9 @@
 * Make sure `/` As a metaoperator `[/]` doesn't break syntax highlighting Fixes #34
 
 ### Comments
-* Get all types of #\`( Multiline comments working when there is leading whitespace before the #\`( Fixes issue #44
-* Get these multiline comments #\`((( #\`{{{ and #\`[[[ working
+* Get all types of ```#`(``` Multiline comments working when there is leading whitespace before the #\`( Fixes issue #44
+* Get these multiline comments working:
+  ```#`((( )))```, ```#`{{{ }}}```, ```#`[[[ ]]]```, ```#`<< >>```, ```#`< >```, ```#`“ ”```, ```#`‘ ’```
 
 ### Pod
 * Pod comments now highlight properly working when there is leading whitespace.
