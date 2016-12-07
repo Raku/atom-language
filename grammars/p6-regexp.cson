@@ -178,6 +178,11 @@
         'begin': '(?<!\\\\)‘'
         'end': '(?<=\\\\\\\\)\\\’|(?<!\\\\)’'
         'name': 'string.literal.perl6fe'
+        'patterns': [
+          {
+            'include': 'source.perl6fe#q_left_single_right_single_string_content'
+          }
+        ]
       }
       ## #49 FIXME shouldn't be string literal, should use interpolation
       {

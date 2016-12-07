@@ -2,7 +2,7 @@
 
 ### Regex
 * Let regex using `m/ /` or `rx/ /` appear anywhere and span multiple lines.
-* Fancy single quotes in regex now actually quote `/‘…’/`. Fixes issue #45
+* Fancy single quotes in regex now actually quote `/‘…’/`. They can also be nested. Fixes issue #45
 * Let bare regex `/ /` appear after `=>`. Mostly fixes issue #35
 
 ### Heredocs
