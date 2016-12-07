@@ -1,4 +1,5 @@
 Copyright (c) 2015 Jacob Russo
+Copyright (c) 2016 Samantha McVey <samantham@posteo.net>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
