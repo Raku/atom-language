@@ -1,48 +1,58 @@
 #!/usr/bin/env perl6
 ### This is to test the q qq and Q quoting
+## any
+Q%  $var \t \ \\         { }  \{ \} % $var;
+q%  $var \t \ \\ \{{ \}} { }  \{ \} % $var;
+qq% $var \t \ \\ \{{ \}} { }  \{ \} % $var;
 ## {{ }}
-Q{{  $var \t \ \\          }}
-q{{  $var \t \ \\ \{{ \}}  \{ \} }}
-qq{{ $var \t \ \\ \{{ \}}  \{ \} }}
+Q{{  $var \t \ \\         { }  \{ \} }} $var;
+q{{  $var \t \ \\ \{{ \}} { }  \{ \} }} $var;
+qq{{ $var \t \ \\ \{{ \}} { }  \{ \} }} $var;
 ## (( ))
-Q((  $var \t \ \\          ))
-q((  $var \t \ \\ \(( \))  \{ \} ))
-qq(( $var \t \ \\ \(( \))  \{ \} ))
+Q((  $var \t \ \\          ( ) \{ \} )) $var;
+q((  $var \t \ \\ \(( \))  ( ) \{ \} )) $var;
+qq(( $var \t \ \\ \(( \))  ( ) \{ \} )) $var;
 ## [[ ]]
-Q[[  $var \t \ \\                ]]
-q[[  $var \t \ \\ \[[ \]]  \{ \} ]]
-q[[ \[[\[ [] \]                ]]
-qq[[ $var \t \ \\ \[[ \]] [ ] \{ \} ]]
+Q[[  $var \t \ \\         [ ] \{ \}    ]] $var;
+q[[  $var \t \ \\ \[[ \]] [ ] \{ \}    ]] $var;
+qq[[ $var \t \ \\ \[[ \]] [ ] \{ \}    ]] $var;
 ## << >>
-Q<<  $var \t \ \\                >>
-q<<  $var \t \ \\ \<< \>>  \{ \} >>
-qq<< $var \t \ \\ \<< \>>  \{ \} >>
+Q<<  $var \t \ \\                >> $var;
+q<<  $var \t \ \\ \<< \>>  \{ \} >> $var;
+qq<< $var \t \ \\ \<< \>>  \{ \} >> $var;
 ## < >
-Q< $var \t \ \\                   >
-q<  $var \t \ \\ \< \> \{ \}      >
-qq< $var $var \t \ \\ \< \> \{ \} >
+Q< $var \t \ \\                   > $var;
+q<  $var \t \ \\ \< \> \{ \}      > $var;
+qq< $var $var \t \ \\ \< \> \{ \} > $var;
 ## { }
-Q{  $var \t \ \\             }
-q{  $var \t \ \\ \{ \} \{ \} }
-qq{ $var \t \ \\ \{ \} \{ \} }
+Q{  $var \t \ \\             } $var;
+q{  $var \t \ \\ \{ \} \{ \} } $var;
+qq{ $var \t \ \\ \{ \} \{ \} } $var;
 ## [ ]
-Q[  $var \t \ \\               ]
-q[  $var \t \ \\ \[ \] \{ \}   ]
-qq[ $var \t \ \\ \[ \]  \} ]
-
+Q[  $var \t \ \\             ] $var;
+q[  $var \t \ \\ \[ \] \{ \} ] $var;
+qq[ $var \t \ \\ \[ \] \{ \} ] $var;
 ## ( )
-Q (  $var \t \ \\             )
-q (  $var \t \ \\ \( \) \{ \} )
-qq ( $var \t \ \\ \( \) \{ \} )
+Q (  $var \t \ \\             ) $var;
+q (  $var \t \ \\ \( \) \{ \} ) $var;
+qq ( $var \t \ \\ \( \) \{ \} ) $var;
 ## " "
-Q"  $var \t \ \\          "
-q"  $var \t \ \\ \" \{ \} "
-qq" $var \t \ \\ \" \{ \} "
+Q"  $var \t \ \\          " $var;
+q"  $var \t \ \\ \" \{ \} " $var;
+qq" $var \t \ \\ \" \{ \} " $var;
 ## ' '
-Q '  $var \t \ \\    '
-q '  $var \t \ \\ \' '
-qq ' $var \t \ \\ \' '
+Q '  $var \t \ \\    ' $var;
+q '  $var \t \ \\ \' ' $var;
+qq ' $var \t \ \\ \' ' $var;
 ## / /
-Q/  $var \t \ \\    /
-q/  $var \t \ \\ \/ /
-qq/ $var \t \ \\ \/ /
+Q/  $var \t \ \\    / $var;
+q/  $var \t \ \\ \/ / $var;
+qq/ $var \t \ \\ \/ / $var;
+## “ ”
+Q“  $var \t \ \\       ”
+q“  $var \t \ \\ \“ \” ” $var;
+qq“ $var \t \ \\ \“ \” ” $var;
+## ‘ ’
+Q‘  $var \t \ \\       ’ $var;
+q‘  $var \t \ \\ \‘ \’ ’ $var;
+qq‘ $var \t \ \\ \“ \  ’ $var;

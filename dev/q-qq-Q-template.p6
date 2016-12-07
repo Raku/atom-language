@@ -1,21 +1,24 @@
 ## Replace XXX with the content's name
 ## Replace YYY with the escaped opening delimiter
 ## Replace ZZZ with the escaped closing delimiter
-
 my @delimiters =
-#name             #open        #close     #number
-('double_angle',  '<<',        '>>',       2),
-('double_paren',   Q<\\(\\(>,  Q<\\)\\)>,  2),
-('double_bracket', Q<\\[\\[>,  Q<\\]\\]>,  2),
-('double_brace',   '{{',       Q<}}>,      2),
-('brace',          '{',        Q<}>,       1),
-('angle',          '<',        '>',        1),
-('paren',          Q<\\(>,     Q<\\)>,     1),
-('bracket',        Q<\\[>,     Q<\\]>,     1),
-('double',         Q<">,       Q<">,       1),
-('single',         Q<\'>,      Q<\'>,      1),
-('slash',          '/',        '/',        1),
+#name                       #open        #close      #number
+('double_angle',            '<<',        '>>',        2),
+('double_paren',             Q<\\(\\(>,   Q<\\)\\)>,  2),
+('double_bracket',           Q<\\[\\[>,   Q<\\]\\]>,  2),
+('double_brace',            '{{',         Q<}}>,      2),
+('brace',                   '{',          Q<}>,       1),
+('angle',                   '<',         '>',         1),
+('paren',                    Q<\\(>,      Q<\\)>,     1),
+('bracket',                  Q<\\[>,      Q<\\]>,     1),
+('double',                   Q<">,        Q<">,       1),
+('single',                   Q<\'>,       Q<\'>,      1),
+('slash',                    '/',        '/',         1),
+('left_double_right_double', Q<“>,        Q<”>,       1),
+('left_single_right_single', Q<‘>,        Q<’>,       1),
 ;
+my @identifiers = '-', Q[\'];
+
 my $first-str = Q:to/🐧/;
   # Q_XXX
   {
@@ -159,7 +162,7 @@ sub replace ( Str $string is copy, $name, $begin, $end ) {
   $string ~~ s:g/XXX/$name/;
   # Note: q (…) qq (…) Q (…) are only allowed with a space.
   # Note: q '…' qq '…' Q '…' are only allowed with a space.
-  if ( ｢\'｣ eq all($begin, $end) ) or ( $begin eq Q<\\(> and $end eq Q<\\)> ) {
+  if ( any(@identifiers) eq $begin ) or ( $begin eq Q<\\(> and $end eq Q<\\)> ) {
     $string ~~ s:g/'\\\\s*(YYY)'/\\\\s+(YYY)/
   }
   if $begin eq $end {
