@@ -258,11 +258,10 @@
   ]
   }
 #0END
-  {
-    'begin': '(?<!\\+\\<)(?<=\\<)(?!\\=)(?=[^\\<]*[^\\<\\}]\\>)'
-    'end': '(?<!\\})(?=\\>)'
-    'name': 'string.array.words.perl6fe'
-  }
+  #{
+  #  'match': '(?x) (\\S+) \\s+ (?!= =>)'
+  #  'name': 'constant'
+  #}
   {
     'begin': '(^[ \\t]+)?(?=#)'
     'beginCaptures':
@@ -899,6 +898,32 @@
   {
     'include': '#variables'
   }
+  # Word quoting matching: `=\s*<word quoting>`
+  {
+    'begin': '(?x) (?<= =) \\s* \\K ( < )'
+    'beginCaptures':
+      '1':
+        'name': 'span.keyword.operator.array.words.perl6fe'
+    'end': '(?x) \\\\\\\\>|(?<!\\\\) ( > )'
+    'endCaptures':
+      '1':
+        'name': 'span.keyword.operator.array.words.perl6fe'
+    'contentName': 'string.array.words.perl6fe'
+    'patterns':
+      { 'include': 'source.quoting.perl6fe#q_bracket_string_content' }
+  }
+  {
+    'begin': '(?x) (?<! \\+< ) (?! =) (<) (?= [^<]*[^<}] >)'
+    'beginCaptures':
+      '1':
+        'name': 'span.keyword.operator.array.words.perl6fe'
+    'end':   '(?x) (?<!\\\\) ( > )'
+    'endCaptures':
+      '1':
+        'name': 'span.keyword.operator.array.words.perl6fe'
+    'contentName': 'string.array.words.perl6fe'
+  }
+
   # Dual functions and methods
   {
     'match': '(?x)\\b(?<![\\-:]|\\\\)(
@@ -944,6 +969,7 @@
     (?!\\-)\\b(?!\\s*=>)'
     'name': 'support.function.perl6fe'
   }
+  # Operators
   {
     'match': '(?x)
       (?<!\\(|\\*)\\%|
@@ -955,16 +981,16 @@
     'name': 'keyword.operator.generic.perl6fe'
   }
   {
-    'match': '(?x)
-      ([a-zA-Z_\xc0-\xff\\$])
-      (
-        [a-zA-Z0-9_\xc0-\xff\\$]|
-        [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
-      )*'
-    'name': 'routine.name.perl6fe'
+    'include': '#numbers'
   }
   {
-    'include': '#numbers'
+    'match': '(?x) \\b (?<!\\d)
+      ([a-zA-Z_\\x{c0}-\\x{ff}\\$])
+      (
+        [a-zA-Z0-9_\\x{c0}-\\x{ff}\\$]|
+        [\\-\'][a-zA-Z_\\x{c0}-\\x{ff}\\$][a-zA-Z0-9_\\x{c0}-\\x{ff}\\$]
+      )*'
+    'name': 'routine.name.perl6fe'
   }
   {
     'begin': '(?<=\\:)(\\d+)(<)'
@@ -1000,17 +1026,18 @@
 'repository':
   'numbers':
     'patterns': [
+      # FIXME get it working on start of line
       {
         'match': '(?<=[=,;\\^\\s\\{\\[\\(\\/]|\\.\\.)0[bodx]\\w+'
         'name': 'constant.numeric.radix.perl6fe'
       }
       {
         'match': '(?x)
-          (?<=[=,:;\\^\\s\\{\\[\\(\\/]|\\.\\.)
-          (?:[\\+\\-])?
-          (?: \\d+ (?:[\\_\\d]+\\d)? )
-          (?: \\.  \\d+ (?:[\\_\\d]+\\d)? )?
-          (?:   e  \\d+ (?:[\\_\\d]+\\d)? )?'
+          (?<= ^ | [×÷*=,:;^\\s{\\[(/] | \\.\\. )
+          (?: [+-] )?
+          (?:     \\d+ (?: [\\_\\d]+ \\d )? )
+          (?: \\.  \\d+ (?: [\\_\\d]+ \\d )? )?
+          (?:  e  \\d+ (?: [\\_\\d]+ \\d )? )?'
         'name': 'constant.numeric.perl6fe'
       }
     ]
@@ -1678,6 +1705,20 @@
               }
             ]
         'name': 'variable.other.identifier.interpolated.perl6fe'
+      }
+      # TODO use the captures and make it highlight nicely
+      {
+        'match': '(?x) (\\\\x) ( \\[ ) ( [\\dA-Fa-f]+ ) ( \\] )'
+        'captures':
+          '1':
+            'name': 'keyword.punctuation.hex.perl6fe'
+          '2':
+            'name': 'keyword.operator.bracket.open.perl6fe'
+          '3':
+            'name': 'routine.name.hex.perl6fe'
+          '4':
+            'name': 'keyword.operator.bracket.close.perl6fe'
+        'name': 'punctuation.hex.perl6fe'
       }
       {
         'begin': '(\\{)'
