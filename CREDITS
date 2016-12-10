@@ -1,0 +1,19 @@
+=pod
+=head CREDITS
+
+    The fields are: name (N), email (E), web-address (W),
+    description (D), Subversion or GitHub username (U) and
+    snail-mail address (S).
+
+----------
+
+N: Jake Russo
+U: MadcapJake
+W: madcapjake.github.io
+
+N: Samantha McVey
+E: samantham@posteo.net
+W: cry.nu
+U: samcv
+
+=cut

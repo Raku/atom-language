@@ -3,19 +3,19 @@
 [![apm package][apm-ver-link]][releases]
 [![][dl-badge]][apm-pkg-link]
 [![][mit-badge]][mit]
-[![][slack-badge]][slack]
 
-A more colorful, thoughtful, and helpful language grammar for Perl 6. Derived from the builtin [language-perl](https://github.com/atom/language-perl) package but with many bugfixes and additions.  You might ask why I didn't just add a PR there but I feel that this package adds quite a bit more that it might not be everyone's cup of tea. However, I do plan on adding support for autocomplete+, linter, atom-build, and atom-runner.  Maybe even integrating a perl6 REPL would be fun!
+A more colorful, thoughtful, and helpful language grammar for Perl 6. Derived from the builtin [language-perl](https://github.com/atom/language-perl) package but with many bugfixes and additions.
 
-![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example3.png)
+![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/perl6/language-perl6fe/master/images/example3.png)
 
 ## How do I use this?
 
-You have three options:
+It should automatically highlight `p6`, `pod6`, `pm6` and `nqp` files.
+It should also highlight files whose first line includes `use v6;`.
+If this doesn't work you can:
 
 1. Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Perl 6 FE`
-2. Disable or uninstall the `language-perl` package
-3. Add this to your `config.cson` (*Application: Open Your Config*):
+2. Add this to your `config.cson` (*Application: Open Your Config*):
 
   ```coffee
   '*':
@@ -42,27 +42,27 @@ above, your `t` files will be highlighted with the `language-perl` highlighter (
 
 * This package will also soon contain support for many popular atom packages that have service hooks like autocomplete+ and linter
 
-* I'd like to add a builtin REPL eventually
-
 Here's a few more examples:
 
-![Another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example1.png)
+![Another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/language-perl6fe/master/images/example1.png)
 
-![Yet another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/MadcapJake/language-perl6fe/master/images/example2.png)
+![Yet another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/language-perl6fe/master/images/example2.png)
 
 # Contributing
 
 Contributions are welcome! Please see [`CONTRIBUTING.md`](/CONTRIBUTING.md) for info!
 
+# Potential future features?
+Autocomplete+, linter, atom-build, and atom-runner.  Maybe even integrating a perl6 REPL would be fun!
+
 # License
 
-[MIT][mit] © [Jake Russo][author] et [al][contributors]
+[MIT][mit] © All [contributors](/CREDITS)
 
 
 [mit]:          http://opensource.org/licenses/MIT
-[author]:       http://github.com/MadcapJake
-[contributors]: https://github.com/MadcapJake/language-perl6fe/graphs/contributors
-[releases]:     https://github.com/MadcapJake/language-perl6fe/releases
+[author]:       http://github.com/perl6
+[releases]:     https://github.com/perl6/language-perl6fe/releases
 [mit-badge]:    https://img.shields.io/apm/l/language-perl6fe.svg
 [apm-pkg-link]: https://atom.io/packages/language-perl6fe
 [apm-ver-link]: https://img.shields.io/apm/v/language-perl6fe.svg
