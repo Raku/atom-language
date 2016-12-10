@@ -6,7 +6,7 @@
 
 A more colorful, thoughtful, and helpful language grammar for Perl 6. Derived from the builtin [language-perl](https://github.com/atom/language-perl) package but with many bugfixes and additions.
 
-![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/perl6/language-perl6fe/master/images/example3.png)
+![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example3.png)
 
 ## How do I use this?
 
@@ -21,7 +21,7 @@ If this doesn't work you can:
   '*':
     core:
       customFileTypes:
-        'source.perl6fe': [
+        'source.perl6': [
           # Any extensions you'd like to override
           'p6'
           'pm6'
@@ -44,9 +44,9 @@ above, your `t` files will be highlighted with the `language-perl` highlighter (
 
 Here's a few more examples:
 
-![Another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/language-perl6fe/master/images/example1.png)
+![Another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png)
 
-![Yet another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/language-perl6fe/master/images/example2.png)
+![Yet another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example2.png)
 
 # Contributing
 
@@ -62,11 +62,11 @@ Autocomplete+, linter, atom-build, and atom-runner.  Maybe even integrating a pe
 
 [mit]:          http://opensource.org/licenses/MIT
 [author]:       http://github.com/perl6
-[releases]:     https://github.com/perl6/language-perl6fe/releases
-[mit-badge]:    https://img.shields.io/apm/l/language-perl6fe.svg
-[apm-pkg-link]: https://atom.io/packages/language-perl6fe
-[apm-ver-link]: https://img.shields.io/apm/v/language-perl6fe.svg
-[dl-badge]:     http://img.shields.io/apm/dm/language-perl6fe.svg
+[releases]:     https://github.com/perl6/atom-language-perl6/releases
+[mit-badge]:    https://img.shields.io/apm/l/language-perl6.svg
+[apm-pkg-link]: https://atom.io/packages/language-perl6
+[apm-ver-link]: https://img.shields.io/apm/v/language-perl6.svg
+[dl-badge]:     http://img.shields.io/apm/dm/language-perl6.svg
 [slack-badge]:  http://perl6.bestforever.com/badge.svg
 [slack]:        http://perl6.bestforever.com
 [contributing]: (/CONTRIBUTING.md)
