@@ -40,7 +40,8 @@ above, your `t` files will be highlighted with the `language-perl` highlighter (
 
 * More syntax highlighted (numbers, operators, interpolation, traits, better strings)
 
-* This package will also soon contain support for many popular atom packages that have service hooks like autocomplete+ and linter
+* Some day we hope this package will also contain support for many popular
+  atom packages that have service hooks like autocomplete+ and linter
 
 Here's a few more examples:
 
@@ -65,6 +66,4 @@ Autocomplete+, linter, atom-build, and atom-runner.  Maybe even integrating a pe
 [apm-pkg-link]: https://atom.io/packages/language-perl6
 [apm-ver-link]: https://img.shields.io/apm/v/language-perl6.svg
 [dl-badge]:     http://img.shields.io/apm/dm/language-perl6.svg
-[slack-badge]:  http://perl6.bestforever.com/badge.svg
-[slack]:        http://perl6.bestforever.com
 [contributing]: (/CONTRIBUTING.md)
