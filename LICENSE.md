@@ -1,3 +1,5 @@
+The MIT License (MIT)
+
 Copyright (c) 2015 Jacob Russo
 Copyright (c) 2016 Samantha McVey <samantham@posteo.net>
 
