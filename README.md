@@ -6,7 +6,7 @@
 
 A more colorful, thoughtful, and helpful language grammar for Perl 6. Derived from the builtin [language-perl](https://github.com/atom/language-perl) package but with many bugfixes and additions.
 
-![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example3.png)
+![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png)
 
 ## How do I use this?
 
@@ -44,9 +44,7 @@ above, your `t` files will be highlighted with the `language-perl` highlighter (
 
 Here's a few more examples:
 
-![Another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png)
-
-![Yet another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example2.png)
+![Another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example2.png)
 
 # Contributing
 
