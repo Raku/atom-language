@@ -15,6 +15,16 @@
 * The code that Atom uses to actually process the grammars is called
   [first-mate][first-mate].
 
+
+# The issue tracker and you
+
+* `priority:high` is reserved for bugs which ruin highlighting for potentially
+  a large number of lines below.
+* `priority:medium` is for medium bugs that may after a small amount of surrounding
+  text or features/improvements that are glaring flaws.
+* `priority:low` is for either small bugs that don't ruin the highlighting of
+  any surrounding text or reasonable improvements.
+
 [CSON]: (https://github.com/bevry/cson)
 [Rubular]: (http://rubular.com/)
 [Oniguruma]: (https://en.wikipedia.org/wiki/Oniguruma)
