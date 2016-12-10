@@ -1,4 +1,4 @@
-# Atom Perl 6 Support - Fun Edition!
+# Atom Perl 6 Support - »ö« (Fun) Edition!
 
 [![apm package][apm-ver-link]][releases]
 [![][dl-badge]][apm-pkg-link]
@@ -14,7 +14,7 @@ It should automatically highlight `p6`, `pod6`, `pm6` and `nqp` files.
 It should also highlight files whose first line includes `use v6;`.
 If this doesn't work you can:
 
-1. Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Perl 6 FE`
+1. Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Perl 6 »ö«`
 2. Add this to your `config.cson` (*Application: Open Your Config*):
 
   ```coffee
