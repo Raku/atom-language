@@ -123,8 +123,8 @@ my $q-first-str = Q:to/🐧/;
         'name': 'constant.character.escape.perl6fe'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': '#interpolation' }
-      { 'include': '#variables' }
+      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_XXX_string_content' }
     ]
   }
