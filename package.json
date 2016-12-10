@@ -1,19 +1,19 @@
 {
   "name": "language-perl6",
-  "version": "0.0.0",
+  "version": "1.9.1",
   "description": "Perl 6 Language Highlighter",
   "engines": {
     "atom": "*",
     "node": "*"
   },
-  "homepage": "http://github.com/perl6/atom-language-perl6/",
+  "homepage": "http://github.com/perl6/language-perl6fe/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/perl6/atom-language-perl6.git"
+    "url": "https://github.com/perl6/language-perl6fe.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/perl6/atom-language-perl6/issues"
+    "url": "https://github.com/language-perl6fe/language-perl6fe/issues"
   },
   "devDependencies": {
     "coffeelint": "^1.10.1"

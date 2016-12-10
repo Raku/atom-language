@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
-FILE="./grammars/perl6.cson"
+FILE="./grammars/perl6fe.cson"
 TEMP_FILE="${FILE}.new"
-FILE2="./grammars/perl6.quoting.cson"
+FILE2="./grammars/perl6fe.quoting.cson"
 TEMP_FILE2="${FILE2}.new"
 perl6 ./dev/q-qq-Q-template.p6
 if [ ! -f ZERO.cson ]; then
