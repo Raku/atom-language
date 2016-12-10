@@ -638,9 +638,9 @@
   }
   {
     'begin': '(?x)(?<![%$&@]|\\w)
-      (multi\\s+)?
-      (macro|sub|submethod|method|multi|proto|only|category)\\s+
-      (!)?(?=\\w)'
+      (?:(multi)(?=\\s+))?
+      (macro|sub|submethod|method|multi|proto|only|category)
+      (!)?(?=\\s+\\w)'
     'beginCaptures':
       '1':
         'name': 'storage.type.declarator.multi.perl6fe'
@@ -957,6 +957,7 @@
       |throws-like|trans|race|hyper|tap|emit|done-testing|quit|dd|note
       |prepend|categorize|antipairs|categorize-list|parse-base
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
+      |get|words|new-from-pairs
     )(?!\\-)\\b(?!\\s*=>)'
     'name': 'support.function.perl6fe'
   }
@@ -982,6 +983,10 @@
   }
   {
     'include': '#numbers'
+  }
+  {
+    'match': '(?x) (?<= ^|\\s) ([\\w\']+) \\s* (?= =>)'
+    'name': 'string.pair.key.perl6fe'
   }
   {
     'match': '(?x) \\b (?<!\\d)
@@ -1691,14 +1696,24 @@
           '5':
             'patterns': [
               {
+                'begin': '<'
+                'beginCaptures':
+                  '0':
+                    'name': 'keyword.operator.chevron.open.perl6fe'
+                'end': '>'
+                'endCaptures':
+                  '0':
+                    'name': 'keyword.operator.chevron.close.perl6fe'
+              }
+              {
                 'begin': '\\['
                 'beginCaptures':
                   '0':
-                    'name': 'keyword.operator.bracket.open'
+                    'name': 'keyword.operator.bracket.open.perl6fe'
                 'end': '\\]'
                 'endCaptures':
                   '0':
-                    'name': 'keyword.operator.bracket.close'
+                    'name': 'keyword.operator.bracket.close.perl6fe'
                 'patterns': [
                   { 'include': '$self' }
                 ]

@@ -1,3 +1,12 @@
+# v1.10
+
+### Methods/Functions
+* Add `get`, `new-from-pairs` and `words` methods and functions.
+### Other
+* Add get, words, new-from-pairs to methods/functions
+* Make sure bareword keys don't highlight in pairs
+
+
 # v1.9
 
 ### Regex
