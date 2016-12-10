@@ -1,4 +1,4 @@
-# Atom Perl 6 Support - Fun Edition!
+# Atom Perl 6 Support - Funner Edition!
 
 [![apm package][apm-ver-link]][releases]
 [![][dl-badge]][apm-pkg-link]

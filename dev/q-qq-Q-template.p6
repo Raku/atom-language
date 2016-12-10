@@ -47,16 +47,16 @@ my $q-first-str = Q:to/🐧/;
       \\s*(YYY)'
     'beginCaptures':
       '1':
-        'name': 'string.quoted.q.operator.perl6fe'
+        'name': 'string.quoted.q.operator.perl6'
       '2':
-        'name': 'support.function.quote.adverb.perl6fe'
+        'name': 'support.function.quote.adverb.perl6'
       '3':
-        'name': 'punctuation.definition.string.perl6fe'
+        'name': 'punctuation.definition.string.perl6'
     'end': 'ZZZ'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.XXX.quote.perl6fe'
+        'name': 'punctuation.definition.string.perl6'
+    'contentName': 'string.quoted.q.XXX.quote.perl6'
     'patterns': [
       { 'include': '#q_XXX_string_content' }
     ]
@@ -75,20 +75,20 @@ my $q-first-str = Q:to/🐧/;
       \\s*(YYY)'
     'beginCaptures':
       '1':
-        'name': 'string.quoted.q.operator.perl6fe'
+        'name': 'string.quoted.q.operator.perl6'
       '2':
-        'name': 'support.function.quote.adverb.perl6fe'
+        'name': 'support.function.quote.adverb.perl6'
       '3':
-        'name': 'punctuation.definition.string.perl6fe'
+        'name': 'punctuation.definition.string.perl6'
     'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.XXX.quote.perl6fe'
+        'name': 'punctuation.definition.string.perl6'
+    'contentName': 'string.quoted.q.XXX.quote.perl6'
     'patterns': [
       {
         'match': '\\\\YYY|\\\\ZZZ'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.perl6'
       }
       { 'include': '#q_XXX_string_content' }
     ]
@@ -107,24 +107,24 @@ my $q-first-str = Q:to/🐧/;
       \\s*(YYY)'
     'beginCaptures':
       '1':
-        'name': 'string.quoted.qq.operator.perl6fe'
+        'name': 'string.quoted.qq.operator.perl6'
       '2':
-        'name': 'support.function.quote.adverb.perl6fe'
+        'name': 'support.function.quote.adverb.perl6'
       '3':
-        'name': 'punctuation.definition.string.perl6fe'
+        'name': 'punctuation.definition.string.perl6'
     'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.XXX.quote.perl6fe'
+        'name': 'punctuation.definition.string.perl6'
+    'contentName': 'string.quoted.qq.XXX.quote.perl6'
     'patterns': [
       {
         'match': '\\\\YYY|\\\\ZZZ'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.perl6'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
+      { 'include': 'source.perl6#interpolation' }
+      { 'include': 'source.perl6#variables' }
       { 'include': '#q_XXX_string_content' }
     ]
   }
@@ -158,16 +158,16 @@ my $q-any-str = Q:to/🐧/;
       \\s*([^\\w\\sZZZ])'
     'beginCaptures':
       '1':
-        'name': 'string.quoted.q.operator.perl6fe'
+        'name': 'string.quoted.q.operator.perl6'
       '2':
-        'name': 'support.function.quote.adverb.perl6fe'
+        'name': 'support.function.quote.adverb.perl6'
       '3':
-        'name': 'punctuation.definition.string.perl6fe'
+        'name': 'punctuation.definition.string.perl6'
     'end': '\\3'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.any.quote.perl6fe'
+        'name': 'punctuation.definition.string.perl6'
+    'contentName': 'string.quoted.q.any.quote.perl6'
     }
 🐧
 
@@ -176,12 +176,12 @@ my $multiline-comment-str = Q:to/🐧/;
   {
   'begin': '\\s*#`YYY',
   'end': 'ZZZ',
-  'name': 'comment.multiline.hash-tick.XXX.perl6fe'
+  'name': 'comment.multiline.hash-tick.XXX.perl6'
   'patterns': [
     {
       'begin': 'YYY'
       'end': 'ZZZ'
-      'name': 'comment.internal.XXX.perl6fe'
+      'name': 'comment.internal.XXX.perl6'
     }
   ]
   }

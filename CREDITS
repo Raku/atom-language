@@ -1,5 +1,5 @@
 =pod
-=head CREDITS
+=head CREDITS atom-language-perl6
 
     The fields are: name (N), email (E), web-address (W),
     description (D), Subversion or GitHub username (U) and
