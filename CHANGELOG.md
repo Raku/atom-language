@@ -1,4 +1,4 @@
-# v1.10
+# v1.9.1
 
 ### Methods/Functions
 * Add `get`, `new-from-pairs` and `words` methods and functions.
