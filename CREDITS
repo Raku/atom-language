@@ -1,19 +1,22 @@
-=pod
-=head CREDITS
+=begin pod
+=head1 CREDITS
 
-    The fields are: name (N), email (E), web-address (W),
-    description (D), Subversion or GitHub username (U) and
-    snail-mail address (S).
+The fields are: name (N), email (E), web-address (W),
+description (D), Subversion or GitHub username (U) and
+snail-mail address (S).
 
 ----------
-
+=begin table
 N: Jake Russo
 U: MadcapJake
 W: madcapjake.github.io
+=end table
 
+=begin table
 N: Samantha McVey
 E: samantham@posteo.net
 W: cry.nu
 U: samcv
+=end table
 
-=cut
+=end pod
