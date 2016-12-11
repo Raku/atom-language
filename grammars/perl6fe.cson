@@ -9,6 +9,12 @@
   'pod6'
   'nqp'
 ]
+'firstLineMatch':
+   '(?x) ^ \\s* (?:
+     use \\s v6 | =begin\\spod
+     | \\#!(?: perl6|/.*perl6 (?! \\S))
+     | my\\s*class
+)'
 'patterns': [
   # Pod =finish
   {
