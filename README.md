@@ -8,6 +8,11 @@ A colorful, thoughtful, and helpful language grammar for Perl 6!
 
 ![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png)
 
+# Integration
+It has integration with the Atom [script][script-package] package. With this package and the plugin you can execute
+highlighted Perl 6 code or the whole document even if it hasn't been saved with
+a keyboard shortcut.
+
 ## What Makes This The Fun Edition™?
 
 > Perl 6 is *optimized for fun* -Audrey Tang
@@ -19,21 +24,12 @@ A colorful, thoughtful, and helpful language grammar for Perl 6!
 * Some day we hope this package will also contain support for many popular
   atom packages that have service hooks like autocomplete+ and linter
 
-Here's another screenshot:
-
-![Another screenshot of a funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example2.png)
-
 # Contributing
 
 Contributions are welcome! Please see [`CONTRIBUTING.md`][contributing] for info!
 
 # Potential future features?
-Autocomplete+, linter, atom-build, and atom-runner.  Maybe even integrating a perl6 REPL would be fun!
-
-# License
-
-[MIT][mit] © All [contributors][CREDITS]
-
+Autocomplete+, linter, atom-build.  Maybe even integrating a perl6 REPL would be fun!
 
 ## How do I use this?
 
@@ -41,7 +37,7 @@ It should automatically highlight `p6`, `pod6`, `pm6` and `nqp` files.
 It should also highlight files whose first line includes `use v6;`.
 If this doesn't work you can:
 
-* Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Perl 6 »ö«`
+* Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Perl 6 FE`
   * If you want to permanently change the preferences for a file type,
     add this to your `config.cson` (*Application: Open Your Config*):
 
@@ -61,7 +57,10 @@ If this doesn't work you can:
 above, your `t` files will be highlighted with the `language-perl` highlighter
 (using either P5 or P6 grammar depending on if you have the `use v6;` pragma).
 
+# License
 
+[MIT][mit] © All [contributors][CREDITS]
+[script-package]: https://atom.io/packages/script
 [mit]:          http://opensource.org/licenses/MIT
 [author]:       http://github.com/perl6
 [releases]:     https://github.com/perl6/atom-language-perl6/releases
