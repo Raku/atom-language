@@ -2,6 +2,7 @@
 * Detect files that have `use v6;`, `=begin pod` or `my class` as the first line
   as Perl 6. You will probably need to disable Atom's built in Perl Grammar to
   get this to work though...
+* Get integration with the script package working. See the README for details.
 
 # v1.9.1
 
