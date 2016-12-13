@@ -39,8 +39,8 @@ of this, a priority system seems the best way to categorize any issues.
 
 
 
-[CSON]: (https://github.com/bevry/cson)
-[Rubular]: (http://rubular.com/)
-[Oniguruma]: (https://en.wikipedia.org/wiki/Oniguruma)
-[Oniguruma-RE]: (https://github.com/kkos/oniguruma/blob/master/doc/RE)
+[CSON]: https://github.com/bevry/cson
+[Rubular]: http://rubular.com/
+[Oniguruma]: https://en.wikipedia.org/wiki/Oniguruma
+[Oniguruma-RE]: https://github.com/kkos/oniguruma/blob/master/doc/RE
 [first-mate]: https://github.com/atom/first-mate
