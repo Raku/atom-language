@@ -646,7 +646,7 @@
     'begin': '(?x)(?<![%$&@]|\\w)
       (?:(multi)(?=\\s+))?
       (macro|sub|submethod|method|multi|proto|only|category)
-      (!)?(?=\\s+\\w)'
+      \\s+(!)?(?=\\w)'
     'beginCaptures':
       '1':
         'name': 'storage.type.declarator.multi.perl6fe'

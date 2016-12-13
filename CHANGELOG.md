@@ -1,3 +1,5 @@
+# v1.9.6
+* Fix highlighting of private methods. Example: `method !priv-method`.
 # v1.9.5
 * Detect files that have `use v6;`, `=begin pod` or `my class` as the first line
   as Perl 6. You will probably need to disable Atom's built in Perl Grammar to
