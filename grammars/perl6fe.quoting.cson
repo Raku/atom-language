@@ -95,7 +95,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_triple_paren_string_content' }
     ]
   }
@@ -190,7 +189,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_triple_bracket_string_content' }
     ]
   }
@@ -285,7 +283,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_triple_brace_string_content' }
     ]
   }
@@ -380,7 +377,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_double_angle_string_content' }
     ]
   }
@@ -475,7 +471,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_double_paren_string_content' }
     ]
   }
@@ -570,7 +565,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_double_bracket_string_content' }
     ]
   }
@@ -665,7 +659,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_double_brace_string_content' }
     ]
   }
@@ -760,7 +753,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_brace_string_content' }
     ]
   }
@@ -855,7 +847,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_angle_string_content' }
     ]
   }
@@ -950,7 +941,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_paren_string_content' }
     ]
   }
@@ -1045,7 +1035,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_bracket_string_content' }
     ]
   }
@@ -1140,7 +1129,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_left_double_right_double_string_content' }
     ]
   }
@@ -1235,7 +1223,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_left_single_right_single_string_content' }
     ]
   }
@@ -1330,7 +1317,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_fw_cornerbracket_string_content' }
     ]
   }
@@ -1425,7 +1411,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_hw_cornerbracket_string_content' }
     ]
   }
@@ -1520,7 +1505,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_slash_string_content' }
     ]
   }
@@ -1615,7 +1599,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_single_string_content' }
     ]
   }
@@ -1710,7 +1693,6 @@
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_double_string_content' }
     ]
   }

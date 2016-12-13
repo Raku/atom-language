@@ -1,30 +1,29 @@
 #!/usr/bin/env perl6
 # Generate the q[] qq[] and Q[] quoting constructs
-
 my @open-close-delimiters =
 #Left Pi right Pf. Open Ps close Pe
-#name                       #open        #close      #number
-('triple_paren',          Q<\\(\\(\\(>, Q<\\)\\)\\)>, 3),
-('triple_bracket',        Q<\\[\\[\\[>, Q<\\]\\]\\]>, 3),
-('triple_brace',          Q<\\{\\{\\{>, Q<\\}\\}\\}>, 3),
-('double_angle',            '<<',        '>>',        2),
-('double_paren',             Q<\\(\\(>,   Q<\\)\\)>,  2),
-('double_bracket',           Q<\\[\\[>,   Q<\\]\\]>,  2),
-('double_brace',            '{{',         Q<}}>,      2),
-('brace',                   '{',          Q<}>,       1),
-('angle',                   '<',         '>',         1),
-('paren',                    Q<\\(>,      Q<\\)>,     1),
-('bracket',                  Q<\\[>,      Q<\\]>,     1),
-('left_double_right_double', Q<“>,        Q<”>,       1),
-('left_single_right_single', Q<‘>,        Q<’>,       1),
-('fw_cornerbracket',         Q<「>,       Q<」>,      1),
-('hw_cornerbracket',         Q<｢>,        Q<｣>,       1),
+#name                       #open        #close      #number   #alowed alone #if allowed alone what type
+('triple_paren',          Q<\\(\\(\\(>, Q<\\)\\)\\)>, 3,       False),
+('triple_bracket',        Q<\\[\\[\\[>, Q<\\]\\]\\]>, 3,       False),
+('triple_brace',          Q<\\{\\{\\{>, Q<\\}\\}\\}>, 3, False),
+('double_angle',            '<<',        '>>',        2, False),
+('double_paren',             Q<\\(\\(>,   Q<\\)\\)>,  2, False),
+('double_bracket',           Q<\\[\\[>,   Q<\\]\\]>,  2, False),
+('double_brace',            '{{',         Q<}}>,      2, False),
+('brace',                   '{',          Q<}>,       1, False),
+('angle',                   '<',         '>',         1, False),
+('paren',                    Q<\\(>,      Q<\\)>,     1, False),
+('bracket',                  Q<\\[>,      Q<\\]>,     1, False),
+('left_double_right_double', Q<“>,        Q<”>,       1, True, 'qq'),
+('left_single_right_single', Q<‘>,        Q<’>,       1, True, 'q'),
+('fw_cornerbracket',         Q<「>,       Q<」>,      1, False),
+('hw_cornerbracket',         Q<｢>,        Q<｣>,       1, False),
 ;
 my @delimiters = @open-close-delimiters;
-push @delimiters, ('slash',  '/',   '/',   1);
-push @delimiters, ('single', Q<\'>, Q<\'>, 1);
-push @delimiters, ('double', Q<">,  Q<">,  1);
-push @delimiters, ('right_double_right_double', '”', '”', 1);
+push @delimiters, ('slash',  '/',   '/',   1, False);
+push @delimiters, ('single', Q<\'>, Q<\'>, 1, True, 'q');
+push @delimiters, ('double', Q<">,  Q<">,  1, True, 'qq');
+push @delimiters, ('right_double_right_double', '”', '”', 1, True, 'qq');
 # These identifiers are not allowed to be used without a space.
 # Example: q '…'
 my @identifiers = '-', Q[\'];
@@ -32,7 +31,50 @@ my @identifiers = '-', Q[\'];
 ## Replace XXX with the content's name
 ## Replace YYY with the escaped opening delimiter
 ## Replace ZZZ with the escaped closing delimiter
-my $q-first-str = Q:to/🐧/;
+my $qq-quotation-marks = Q:to/🐧/;
+# Quotation Mark XXX
+  {
+    'begin': 'YYY'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': 'ZZZ'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.XXX.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[YYYZZZabtnfre\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      { 'include': '#interpolation' }
+      { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+    ]
+  }
+🐧
+my $q-quotation-marks = Q:to/🐧/;
+  {
+    'begin': '(?<=\\W|^)YYY'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': 'ZZZ'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.single.XXX.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[YYYZZZ\\\\]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+    ]
+  }
+🐧
+
+my $q-patterns = Q:to/🐧/;
   # Q_XXX
   {
     'begin': '(?x) (?<=\\s|^|,|;)
@@ -124,7 +166,6 @@ my $q-first-str = Q:to/🐧/;
       }
       { 'include': '#qq_character_escape' }
       { 'include': 'source.perl6fe#interpolation' }
-      { 'include': 'source.perl6fe#variables' }
       { 'include': '#q_XXX_string_content' }
     ]
   }
@@ -196,21 +237,35 @@ sub replace ( Str $string is copy, $name, $begin, $end ) {
   }
   if $begin eq $end {
     $string ~~ s:g/'\\\\\\\\YYY|\\\\\\\\ZZZ'/\\\\\\\\YYY/;
+    $string ~~ s:g/YYYZZZ/YYY/;
   }
   $string ~~ s:g/YYY/$begin/;
   $string ~~ s:g/ZZZ/$end/;
   $string;
 }
 sub replace-multiline-comment ( Str $string is copy, $name, $begin, $end ) {
-    $string ~~ s:g/XXX/$name/;
-    $string ~~ s:g/YYY/$begin/;
-    $string ~~ s:g/ZZZ/$end/;
-    $string;
+  $string ~~ s:g/XXX/$name/;
+  $string ~~ s:g/YYY/$begin/;
+  $string ~~ s:g/ZZZ/$end/;
+  $string;
 }
-
+my $normal-quotes-file;
 my $zero-file;
 my $first-file;
 my $second-file;
+# Normal quotation marks
+for ^@delimiters -> $i {
+  next unless @delimiters[$i][4];
+  my ($name, $open, $close, $num, $bool, $type) = @delimiters[$i];
+  say $type;
+  say $bool;
+  given $type {
+    when 'qq' { $normal-quotes-file ~= replace($qq-quotation-marks, $name, $open, $close) }
+    when 'q'  { $normal-quotes-file ~= replace($q-quotation-marks, $name, $open, $close) }
+    default { say "help"; }
+  }
+}
+#$first-file ~= $normal-quotes-file;
 # Multi line comment
 for ^@open-close-delimiters -> $i {
     $zero-file ~= replace-multiline-comment $multiline-comment-str,
@@ -218,14 +273,14 @@ for ^@open-close-delimiters -> $i {
                           @open-close-delimiters[$i][1],
                           @open-close-delimiters[$i][2];
 }
-
+$zero-file ~= $normal-quotes-file;
 # q qq Q quoting constructs
 for ^@delimiters -> $i {
     if use-for-q @delimiters[$i] {
         say "Skipping: {@delimiters[$i].perl}";
         next;
     }
-    $first-file ~= replace($q-first-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
+    $first-file ~= replace($q-patterns, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
 
 }
 # Get list of symbols we shouldn't use for q_any (using whatever delimiter the person wants)
@@ -257,3 +312,4 @@ sub use-for-q ( @delimiters ) {
     # unicode type symbol, then we can't use it for q/qq/Q
     @delimiters[1] eq @delimiters[2] and uniprop(@delimiters[1]) eq any('Pi', 'Pf', 'Ps', 'Pe');
 }
+# vim: ts=2

@@ -263,6 +263,102 @@
     }
   ]
   }
+# Quotation Mark left_double_right_double
+  {
+    'begin': '“'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': '”'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.left_double_right_double.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[“”abtnfre\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      { 'include': '#interpolation' }
+      { 'include': 'source.quoting.perl6fe#q_left_double_right_double_string_content' }
+    ]
+  }
+  {
+    'begin': '(?<=\\W|^)‘'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': '’'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.single.left_single_right_single.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[‘’\\\\]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      { 'include': 'source.quoting.perl6fe#q_left_single_right_single_string_content' }
+    ]
+  }
+  {
+    'begin': '(?<=\\W|^)\''
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.single.single.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[\'\\\\]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      { 'include': 'source.quoting.perl6fe#q_single_string_content' }
+    ]
+  }
+# Quotation Mark double
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.double.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\["abtnfre\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      { 'include': '#interpolation' }
+      { 'include': 'source.quoting.perl6fe#q_double_string_content' }
+    ]
+  }
+# Quotation Mark right_double_right_double
+  {
+    'begin': '”'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': '”'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.right_double_right_double.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[”abtnfre\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      { 'include': '#interpolation' }
+      { 'include': 'source.quoting.perl6fe#q_right_double_right_double_string_content' }
+    ]
+  }
 #0END
   #{
   #  'match': '(?x) (\\S+) \\s+ (?!= =>)'
@@ -495,23 +591,6 @@
     ]
   }
   {
-    'begin': '(?<=\\W|^)\''
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
-    'end': '\''
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
-    'name': 'string.quoted.single.perl6fe'
-    'patterns': [
-      {
-        'match': '\\\\[\'\\\\]'
-        'name': 'constant.character.escape.perl6fe'
-      }
-    ]
-  }
-  {
     'begin': '(?<=\\W|^)｢'
     'beginCaptures':
       '0':
@@ -524,110 +603,6 @@
     'patterns': [
       {
         'include': 'source.quoting.perl6fe#q_hw_cornerbracket_string_content'
-      }
-    ]
-  }
-  {
-    'begin': '(?<=\\W|^)‘'
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
-    'end': '’'
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
-    'name': 'string.quoted.single.perl6fe'
-    'patterns': [
-      {
-        'match': '\\\\[‘’\\\\]'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': 'source.quoting.perl6fe#q_left_single_right_single_string_content'
-      }
-    ]
-  }
-  {
-    'begin': '"'
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
-    'end': '"'
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
-    'name': 'string.quoted.double.perl6fe'
-    'patterns': [
-      {
-        'match': '\\\\["abtnfre\\\\\\{\\}]'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#interpolation'
-      }
-      {
-        'include': '#special_variables'
-      }
-      {
-        'include': '#variables'
-      }
-    ]
-  }
-  {
-    'begin': '“'
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
-    'end': '”'
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
-    'name': 'string.quoted.double.perl6fe'
-    'patterns': [
-      {
-        'match': '\\\\[“”abtnfre\\\\\\{\\}]'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#interpolation'
-      }
-      {
-        'include': '#variables'
-      }
-      {
-        'include': '#special_variables'
-      }
-      {
-        'include': 'source.quoting.perl6fe#q_left_double_right_double_string_content'
-      }
-    ]
-  }
-  {
-    'begin': '”'
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
-    'end': '”'
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
-    'name': 'string.quoted.double.perl6fe'
-    'patterns': [
-      {
-        'match': '\\\\[”“abtnfre\\\\\\{\\}]'
-        'name': 'constant.character.escape.perl6fe'
-      }
-      {
-        'include': '#interpolation'
-      }
-      {
-        'include': '#variables'
-      }
-      {
-        'include': '#special_variables'
-      }
-      {
-        'include': 'source.quoting.perl6fe#q_right_double_right_double_string_content'
       }
     ]
   }
