@@ -10,6 +10,7 @@
   if it's a range in a character class, please use `\\x{20}`(`\x{20}` in its unescaped form).
   This will use the Regex engine for this instead of using the JSON/CSON method
   of noting unicode codepoints ( Ex: `\u20` which does a CSON/JSON).
+* Specify Unicode propertys like this: `\\p{Alpha}`(`\p{Alpha}` in unescaped form). See the cheatsheet linked below for all the ones that are guarenteed to work.
 
 * Atom uses the [Oniguruma][Oniguruma] Regex engine which is the same one that Ruby uses.
 * See the [Regex reference/cheatsheet][Oniguruma-RE] for Oniguruma.
