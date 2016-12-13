@@ -646,7 +646,8 @@
     'begin': '(?x)(?<![%$&@]|\\w)
       (?:(multi)(?=\\s+))?
       (macro|sub|submethod|method|multi|proto|only|category)
-      \\s+(!)?(?=\\w)'
+      \\s+(!)?
+      ([\\p{Digit}\\p{Alpha}\'-_]+)'
     'beginCaptures':
       '1':
         'name': 'storage.type.declarator.multi.perl6fe'
@@ -654,6 +655,8 @@
         'name': 'storage.type.declarator.type.perl6fe'
       '3':
         'name': 'support.class.method.private.perl6fe'
+      '4':
+        'name': 'entity.name.function.perl6fe'
     'end': '\\s*(?=[\\(\\{])'
     'contentName': 'entity.name.function.perl6fe'
   }
