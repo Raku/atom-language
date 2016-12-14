@@ -941,7 +941,7 @@
       |throws-like|trans|race|hyper|tap|emit|done-testing|quit|dd|note
       |prepend|categorize|antipairs|categorize-list|parse-base
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
-      |get|words|new-from-pairs
+      |get|words|new-from-pairs|uniname|uninames|uniprop|uniprops
     )(?!\\-)\\b(?!\\s*=>)'
     'name': 'support.function.perl6fe'
   }
