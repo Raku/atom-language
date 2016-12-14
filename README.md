@@ -3,8 +3,6 @@
 [![apm package][apm-ver-link]][releases]
 [![][dl-badge]][apm-pkg-link]
 [![][mit-badge]][mit]
-[![Build Status](https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master)](https://travis-ci.org/perl6/atom-language-perl6)
-
 
 A colorful, thoughtful, and helpful language grammar for Perl 6!
 
@@ -31,7 +29,7 @@ a keyboard shortcut.
 Contributions are welcome! Please see [`CONTRIBUTING.md`][contributing] for info!
 
 # Potential future features?
-Autocomplete+, linter, atom-build.  Maybe even integrating a perl6 REPL would be fun!
+Autocomplete+, linter, atom-build?
 
 ## How do I use this?
 
