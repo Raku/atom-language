@@ -1,5 +1,6 @@
 # v1.9.6
-* Fix highlighting of private methods. Example: `method !priv-method`.
+* Fix highlighting of private methods. Example: `method !priv-method`. Issue #17
+* Fix `q[]` quoting constructs not quoting when there were surounded by parentheses.
 
 # v1.9.5
 * Detect files that have `use v6;`, `=begin pod` or `my class` as the first line
