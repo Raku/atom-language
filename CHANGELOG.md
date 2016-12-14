@@ -1,3 +1,6 @@
+# v1.9.8
+* Fix highlighting of fully qualified method names. Fixes #8
+
 # v1.9.6
 * Fix highlighting of private methods. Example: `method !priv-method`. Issue #17
 * Fix `q[]` quoting constructs not quoting when there were surounded by parentheses.
