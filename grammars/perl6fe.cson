@@ -622,7 +622,7 @@
       (?:  (multi)(?=\\s+))?
       (?:  (macro|sub|submethod|method|multi|proto|only|category) \\s+ )
       \\s* (!)?
-      (    [\\p{Digit}\\p{Alpha}\'-_]+ )'
+      (    [\\p{Digit}\\p{Alpha}\'\\-_]+ )'
     'beginCaptures':
       '1':
         'name': 'storage.type.declarator.multi.perl6fe'

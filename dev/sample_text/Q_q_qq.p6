@@ -1,5 +1,6 @@
 #!/usr/bin/env perl6
 ### This is to test the q qq and Q quoting
+((qw[\ % ? & = # + " ' : ~ < >]));
 ## any
 Q%  $var \t \ \\         { }  \{ \} % $var;
 q%  $var \t \ \\ \{{ \}} { }  \{ \} % $var;
