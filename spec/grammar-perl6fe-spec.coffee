@@ -47,15 +47,26 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[3]).toEqual
     value : 'TEST',
     scopes : [ 'source.perl6fe', 'string.quoted.q.bracket.quote.perl6fe' ]
-    
+
   it "Private methods highlight properly. Issue 7", ->
     {tokens} = grammar.tokenizeLine "method !wrap-decoder(Supply:D $bin-supply, $enc)"
     expect(tokens[0]).toEqual
     value : 'method',
-    scopes : [ 'source.perl6fe', 'storage.type.declarator.type.perl6fe' ] 
+    scopes : [ 'source.perl6fe', 'storage.type.declarator.type.perl6fe' ]
     expect(tokens[2]).toEqual
     value : '!',
-    scopes : [ 'source.perl6fe', 'support.class.method.private.perl6fe' ] 
+    scopes : [ 'source.perl6fe', 'support.class.method.private.perl6fe' ]
+    expect(tokens[3]).toEqual
+    value : 'wrap-decoder',
+    scopes : [ 'source.perl6fe', 'entity.name.function.perl6fe' ]
+  it "Escaped variables don't syntax highlight in double quotation marks", ->
+    {tokens} = grammar.tokenizeLine "method !wrap-decoder(Supply:D $bin-supply, $enc)"
+    expect(tokens[0]).toEqual
+    value : 'method',
+    scopes : [ 'source.perl6fe', 'storage.type.declarator.type.perl6fe' ]
+    expect(tokens[2]).toEqual
+    value : '!',
+    scopes : [ 'source.perl6fe', 'support.class.method.private.perl6fe' ]
     expect(tokens[3]).toEqual
     value : 'wrap-decoder',
     scopes : [ 'source.perl6fe', 'entity.name.function.perl6fe' ]
