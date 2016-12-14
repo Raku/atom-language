@@ -11,7 +11,7 @@
 ]
 'firstLineMatch':
    '(?x) ^ \\s* (?:
-     use \\s v6 | =begin\\spod
+     use \\s v6 | =begin \\s pod | =comment
      | \\#!(?: perl6|/.*perl6 (?! \\S))
      | my\\s*class
 )'

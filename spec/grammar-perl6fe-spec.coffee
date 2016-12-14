@@ -14,9 +14,12 @@ describe "Perl 6 FE grammar", ->
   it "use v6 works", ->
     line = " use v6;"
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(line)).not.toBeNull()
-  #it "# =begin pod works", ->
-  #  line = " =comment Perl 6 is the Best!"
-  #  expect(grammar.firstLineRegex.scanner.findNextMatchSync(line)).not.toBeNull()
+  it "First line: =comment detected as Perl 6", ->
+    line = " =comment detected as Perl 6"
+    expect(grammar.firstLineRegex.scanner.findNextMatchSync(line)).not.toBeNull()
+  it " =begin pod works", ->
+    line = " =begin pod"
+    expect(grammar.firstLineRegex.scanner.findNextMatchSync(line)).not.toBeNull()
   it "FQ private methods are highlighted properly Issue 8", ->
     {tokens} = grammar.tokenizeLine "self.List::perl;"
     expect(tokens[0]).toEqual value : 'self',

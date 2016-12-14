@@ -1,3 +1,7 @@
+# v1.9.9
+* Detect files that have `=comment` as the first line as Perl 6. You will probably need to disable Atom's built in Perl Grammar to
+get this to work though…
+
 # v1.9.8
 * Fix highlighting of fully qualified method names. Fixes #8
 
