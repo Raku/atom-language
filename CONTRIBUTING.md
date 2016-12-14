@@ -1,15 +1,23 @@
 # Contributing:
 
-# Helpful tips:
+### Installing for Development
+First uninstall the package from Atom. Then clone the Github repository into whichever folder you want.
+
+Now run `apm link atom-language-perl6` and it will install and link to the folder you just cloned. Now you are ready to start hacking away!
+
+### Helpful tips:
+
+#### Atom Grammars
 
 * Atom uses a TextMate type grammar. While TextMate uses plist's(XMLish),
   Atom stores them in [CSON][CSON] format.
 * In CSON the only characters that need to be escaped inside a single quoted
   string are single quotes(`'`), backslashes(`\`) and control codes.
-* If you want use a hex codepoint instead of typing the symbol in, for example,
-  if it's a range in a character class, please use `\\x{20}`(`\x{20}` in its unescaped form).
+
+### Oniguruma Regex Engine
+* If you want use a hex codepoint instead of typing the symbol in, please use `\\x{20}` (Unescaped form: `\x{20}`).
   This will use the Regex engine for this instead of using the JSON/CSON method
-  of noting unicode codepoints ( Ex: `\u20` which does a CSON/JSON).
+  of noting unicode codepoints (e.g. `\u20` which can be used in CSON/JSON).
 * Specify Unicode propertys like this: `\\p{Alpha}`(`\p{Alpha}` in unescaped form). See the cheatsheet linked below for all the ones that are guarenteed to work.
 
 * Atom uses the [Oniguruma][Oniguruma] Regex engine which is the same one that Ruby uses.
