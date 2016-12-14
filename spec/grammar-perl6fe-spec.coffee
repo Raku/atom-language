@@ -17,13 +17,17 @@ describe "Perl 6 FE grammar", ->
   #it "# =begin pod works", ->
   #  line = " =comment Perl 6 is the Best!"
   #  expect(grammar.firstLineRegex.scanner.findNextMatchSync(line)).not.toBeNull()
-  it "FQ private methods are highlighted properly Issue #8", ->
+  it "FQ private methods are highlighted properly Issue 8", ->
     {tokens} = grammar.tokenizeLine "self.List::perl;"
     expect(tokens[0]).toEqual value : 'self',
     scopes : [ 'source.perl6fe', 'variable.language.perl6fe' ]
     expect(tokens[1]).toEqual value : '.',
     scopes : [ 'source.perl6fe', 'keyword.operator.generic.perl6fe' ]
     expect(tokens[2]).toEqual value : 'List',
+    scopes : [ 'source.perl6fe', 'support.type.perl6fe' ]
+    expect(tokens[3]).toEqual value : '::',
+    scopes : [ 'source.perl6fe', 'support.function.perl6fe', 'keyword.operator.colon.perl6fe' ]
+    expect(tokens[4]).toEqual value : 'perl',
     scopes : [ 'source.perl6fe', 'support.function.perl6fe' ]
   it "self.perl highlights", ->
     {tokens} = grammar.tokenizeLine "self.perl"

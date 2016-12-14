@@ -910,7 +910,7 @@
 
   # Dual functions and methods
   {
-    'match': '(?x)\\b(?<![\\-:]|\\\\)(
+    'match': '(?x)\\b(?<![\\-:\\\\])( :: )?(
        eager|hyper|substr|index|rindex|grep|map|sort|join|lines|hints
       |chmod|split|reduce|min|max|reverse|truncate|zip|cat|roundrobin
       |classify|first|sum|keys|values|pairs|defined|delete|exists
@@ -943,6 +943,9 @@
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
       |get|words|new-from-pairs|uniname|uninames|uniprop|uniprops
     )(?!\\-)\\b(?!\\s*=>)'
+    'captures':
+      '1':
+        'name': 'keyword.operator.colon.perl6fe'
     'name': 'support.function.perl6fe'
   }
   # Methods Only
