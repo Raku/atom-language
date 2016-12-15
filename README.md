@@ -7,7 +7,7 @@
 
 A colorful, thoughtful, and helpful language grammar for Perl 6! See [here](How do I use this?) for questions about usage.
 
-![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png)
+![A screenshot of an funnified Perl 6 file][screenshot-1]
 
 # Integration
 It has integration with the Atom [script][script-package] package. With this package and the plugin you can execute
@@ -18,7 +18,7 @@ a keyboard shortcut.
 
 > Perl 6 is *optimized for fun* -Audrey Tang
 
-* This package was developed to work with [Fira Code](https://github.com/tonsky/FiraCode) ligatures
+* This package was developed to work with [Fira Code][fira-code] ligatures
 
 * More syntax highlighted (numbers, operators, interpolation, traits, better strings)
 
@@ -82,3 +82,5 @@ above, your `t` files will be highlighted with the `language-perl` highlighter
 [issues]: https://github.com/perl6/atom-language-perl6/issues
 [travis-badge]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
 [travis-link]: https://travis-ci.org/perl6/atom-language-perl6?branch=master
+[fira-code]: https://github.com/tonsky/FiraCode
+[screenshot-1]: https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png
