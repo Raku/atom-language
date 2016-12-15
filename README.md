@@ -3,6 +3,7 @@
 [![apm package][apm-ver-link]][releases]
 [![][dl-badge]][apm-pkg-link]
 [![][mit-badge]][mit]
+[![travis][travis-badge]][travis-link]
 
 A colorful, thoughtful, and helpful language grammar for Perl 6! See [here](How do I use this?) for questions about usage.
 
@@ -79,3 +80,5 @@ above, your `t` files will be highlighted with the `language-perl` highlighter
 [build-status]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
 [build-status-link]: https://travis-ci.org/perl6/atom-language-perl6
 [issues]: https://github.com/perl6/atom-language-perl6/issues
+[travis-badge]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
+[travis-link]: https://travis-ci.org/perl6/atom-language-perl6?branch=master
