@@ -8,14 +8,17 @@ Contributing
 * [Making Changes to the Grammar and Helpful Tips:](#making-changes-to-the-grammar-and-helpful-tips)
    * [Atom Grammars](#atom-grammars)
    * [Oniguruma Regex Engine](#oniguruma-regex-engine)
-   * [TextMate Grammar Documentation](#textmate-grammar-documentation)
+* [TextMate Grammar Documentation](#textmate-grammar-documentation)
+   * [Single line/simple matching](#single-linesimple-matching)
+   * [Multi line matching](#multi-line-matching)
    * [Show me the source already!](#show-me-the-source-already)
    * [Testing](#testing)
 
-
 ## Intro
 There are no good guides on writing TextMate grammars, so this is an attempt
-to do this as well as containing information specific to this project.
+to document some of the things I have learned that will help other people to work on this project.
+
+I do this in the hope that I can ease the barrier of entry into development on this project and share some of the things I have learned. Atom doesn't have documentation on creating grammars, so I hope this to become a great resource for others need who may wish to contribute.
 
 ### Installing for Development
 1. Clone the Github repository into any folder you wish.
@@ -77,12 +80,32 @@ Because of this, a priority system is the best way to categorize any issues.
 * [Regex101](regex101.com) is more graphical and nicer but make
   sure to test out the regex on [Rubular][Rubular] once you have it assembled!
 
-### TextMate Grammar Documentation
-The content in this contributing file is meant to supply most information on how
-grammars work, at least as much as you need to know to work on the project.
-Eventually I hope to add more information.
+## TextMate Grammar Documentation
+Reading the [documentation][textmate] for TextMate grammars is informative but leaves some things unanswered. In this section I will go over the basics.
 
-For now see the [documentation][textmate] TextMate grammars.
+The CSON file at the top has the patterns which are matched, in order from top to bottom. As I said in the CSON section, indentation in CSON is significant, and anything not bracketed above and below each other on the same level of indentation does not retain order of the elements of the list.
+
+### Single line/simple matching
+The bottom of the file has named sections which can be 'included' into other sections of the code with `'include': '#identifier_name'`.
+
+The simplest for is ‘match’ which will only match at most against one line.
+
+`'match': 'regex goes here'
+'name': 'label.perl6fe'`
+
+When you specify a name for the match, this label gets applied to the entire
+match of the regex. If you need to apply multiple labels, you should use captures.
+
+Captures can be listed to apply the labels to the numbered capture.
+
+### Multi line matching
+These are denoted with a begin and an end regex. You can use the captures
+to apply style labels to the captures for the start and end.
+
+Sometimes what you want is to highlight some section of text that starts and
+ends at certain points. For that you can use subrules which will be applied
+on top of the previous ones. You list the subrules in the Patterns section
+of the rule you are working on.
 
 ### Show me the source already!
 The majority of the grammar is included in `grammars/perl6fe.cson`.
