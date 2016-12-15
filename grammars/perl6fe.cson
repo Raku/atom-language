@@ -975,8 +975,9 @@
   {
     'include': '#numbers'
   }
+  # Pairs
   {
-    'match': '(?x) (?<= ^|\\s) ([\\w\']+) \\s* (?= =>)'
+    'match': '(?x) (?<=^|\\W|\\s) ([\\w\'\\-]+) \\s* (?= =>)'
     'name': 'string.pair.key.perl6fe'
   }
   {

@@ -1,4 +1,5 @@
 # v1.9.9
+* Keys of pairs now highlight properly if no spaces used for unquoted keys. Fixes Issue #4
 * Detect files that have `=comment` as the first line as Perl 6. You will probably need to disable Atom's built in Perl Grammar to
 get this to work though…
 
@@ -6,7 +7,7 @@ get this to work though…
 * Fix highlighting of fully qualified method names. Fixes #8
 
 # v1.9.6
-* Fix highlighting of private methods. Example: `method !priv-method`. Issue #17
+* Fix highlighting of private methods. Example: `method !priv-method`. Issue #7
 * Fix `q[]` quoting constructs not quoting when there were surounded by parentheses.
 
 # v1.9.5
@@ -22,6 +23,8 @@ get this to work though…
 ### Other
 * Add get, words, new-from-pairs to methods/functions
 * Make sure bareword keys don't highlight in pairs
+
+# The below issue numbers are for https://github.com/MadcapJake/language-perl6fe
 
 # v1.9
 
