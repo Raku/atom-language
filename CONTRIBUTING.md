@@ -16,9 +16,13 @@ Contributing
 
 ## Intro
 There are no good guides on writing TextMate grammars, so this is an attempt
-to document some of the things I have learned that will help other people to work on this project.
+to document some of the things I have learned — hopefully this will help
+anybody wanting to contribute or work on this project.
 
-I do this in the hope that I can ease the barrier of entry into development on this project and share some of the things I have learned. Atom doesn't have documentation on creating grammars, so I hope this to become a great resource for others need who may wish to contribute.
+I do this in the hope that I can ease the barrier of entry into development
+on this project and share some of the things I have learned. Atom doesn't have
+documentation on creating grammars, so I hope this to become a great resource
+for others need who may wish to contribute.
 
 ### Installing for Development
 1. Clone the Github repository into any folder you wish.
@@ -35,13 +39,16 @@ currently works on, but fails to work in some conditions.
 Anything else is an *enhancement* .
 Because of this, a priority system is the best way to categorize any issues.
 
-* `priority:high` is reserved for bugs which ruin highlighting for potentially
-  a large number of lines below.
-* `priority:medium` is for medium bugs that may after a small amount of
-  surrounding
-  text or missing features/improvements that are glaring flaws.
+* `priority:high` is reserved for bugs which ruin highlighting for a large
+  number of lines below/around them. Often these will ruin highlighting for most
+  if not all of the remaining document.
+* `priority:medium` is for medium bugs that may alter a small amount of
+  surrounding text. It is also for missing features/enhancements that are
+  very important.
 * `priority:low` is for either small bugs that don't ruin the highlighting of
-  any surrounding text or reasonable improvements.
+  any surrounding text or reasonable enhancements.
+* `priority:fun` is enhancements that are not a priority, but would be nice
+  to implement. 
 
 ## Making Changes to the Grammar and Helpful Tips:
 
@@ -81,12 +88,17 @@ Because of this, a priority system is the best way to categorize any issues.
   sure to test out the regex on [Rubular][Rubular] once you have it assembled!
 
 ## TextMate Grammar Documentation
-Reading the [documentation][textmate] for TextMate grammars is informative but leaves some things unanswered. In this section I will go over the basics.
+Reading the [documentation][textmate] for TextMate grammars is informative but
+leaves some things unanswered. In this section I will go over the basics.
 
-The CSON file at the top has the patterns which are matched, in order from top to bottom. As I said in the CSON section, indentation in CSON is significant, and anything not bracketed above and below each other on the same level of indentation does not retain order of the elements of the list.
+The CSON file at the top has the patterns which are matched, in order from top
+to bottom. As I said in the CSON section, indentation in CSON is significant,
+and anything not bracketed above and below each other on the same level of
+indentation does not retain order of the elements of the list.
 
 ### Single line/simple matching
-The bottom of the file has named sections which can be 'included' into other sections of the code with `'include': '#identifier_name'`.
+The bottom of the file has named sections which can be 'included' into other
+sections of the code with `'include': '#identifier_name'`.
 
 The simplest for is ‘match’ which will only match at most against one line.
 
@@ -94,7 +106,8 @@ The simplest for is ‘match’ which will only match at most against one line.
 'name': 'label.perl6fe'`
 
 When you specify a name for the match, this label gets applied to the entire
-match of the regex. If you need to apply multiple labels, you should use captures.
+match of the regex. If you need to apply multiple labels, you should use
+captures.
 
 Captures can be listed to apply the labels to the numbered capture.
 
