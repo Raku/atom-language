@@ -22,7 +22,7 @@ anybody wanting to contribute or work on this project.
 I do this in the hope that I can ease the barrier of entry into development
 on this project and share some of the things I have learned. Atom doesn't have
 documentation on creating grammars, so I hope this to become a great resource
-for others need who may wish to contribute.
+for others who may wish to contribute.
 
 ### Installing for Development
 1. Clone the Github repository into any folder you wish.
@@ -47,8 +47,8 @@ Because of this, a priority system is the best way to categorize any issues.
   very important.
 * `priority:low` is for either small bugs that don't ruin the highlighting of
   any surrounding text or reasonable enhancements.
-* `priority:fun` is enhancements that are not a priority, but would be nice
-  to implement. 
+* `priority:fun` is for enhancements that are not a priority, but would be nice
+  to implement.
 
 ## Making Changes to the Grammar and Helpful Tips:
 
