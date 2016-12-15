@@ -2,6 +2,10 @@
 ## skip the test. This can be useful, but for refering to Issue numbers
 ## please use the № symbol in place of a hash if the test passes, and
 ## a hash if it currently fails.
+
+## Keep ALL lines at _exactly_ 80 characters or _less_ or Travis CI's Linter
+## will cause the build to fail. Maybe there's a way around this…
+
 describe "Perl 6 FE grammar", ->
   grammar = null
   beforeEach ->
@@ -18,14 +22,14 @@ describe "Perl 6 FE grammar", ->
 
   ## First line language detection
   it "use v6 works", ->
-    line = " use v6;"
-    expect(grammar.firstLineRegex.scanner.findNextMatchSync(line)).not.toBeNull()
+    lne = " use v6;"
+    expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
   it "First line: =comment detected as Perl 6", ->
-    line = " =comment detected as Perl 6"
-    expect(grammar.firstLineRegex.scanner.findNextMatchSync(line)).not.toBeNull()
+    lne = " =comment detected as Perl 6"
+    expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
   it " =begin pod works", ->
-    line = " =begin pod"
-    expect(grammar.firstLineRegex.scanner.findNextMatchSync(line)).not.toBeNull()
+    lne = " =begin pod"
+    expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
   ## Methods
   it "FQ private methods are highlighted properly Issue №8", ->
@@ -146,7 +150,8 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'keyword.operator.multi-symbol.perl6fe' ]
 
   it "Pairs highlight when no quotes used for key and no spaces", ->
-    {tokens} = grammar.tokenizeLine "NFKD_QC=>'NFKD_Quick_Check',Ext=>'Extender'"
+    {tokens} =
+    grammar.tokenizeLine "NFKD_QC=>'NFKD_Quick_Check',Ext=>'Extender'"
     expect(tokens[0]).toEqual value: 'NFKD_QC',
     scopes: [ 'source.perl6fe', 'string.pair.key.perl6fe' ]
     expect(tokens[1]).toEqual value: '=>',
