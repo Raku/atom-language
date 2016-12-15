@@ -5,7 +5,7 @@
 [![][mit-badge]][mit]
 [![travis][travis-badge]][travis-link]
 
-A colorful, thoughtful, and helpful language grammar for Perl 6! See [here](How-do-I-use-this?) for questions about usage.
+A colorful, thoughtful, and helpful language grammar for Perl 6! See [here](#how-do-i-use-this?) for questions about usage.
 
 ![A screenshot of an funnified Perl 6 file][screenshot-1]
 
