@@ -37,9 +37,14 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[2]).toEqual value: 'List',
     scopes: [ 'source.perl6fe', 'support.type.perl6fe' ]
     expect(tokens[3]).toEqual value: '::',
-    scopes: [ 'source.perl6fe', 'support.function.perl6fe', 'keyword.operator.colon.perl6fe' ]
+    scopes: [
+      'source.perl6fe',
+      'support.function.perl6fe',
+      'keyword.operator.colon.perl6fe'
+    ]
     expect(tokens[4]).toEqual value: 'perl',
     scopes: [ 'source.perl6fe', 'support.function.perl6fe' ]
+
   it "self.perl highlights", ->
     {tokens} = grammar.tokenizeLine "self.perl"
     expect(tokens[0]).toEqual value: 'self',
@@ -49,7 +54,8 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[2]).toEqual value: 'perl',
     scopes: [ 'source.perl6fe', 'support.function.perl6fe' ]
   it "Private methods highlight properly. Issue №7", ->
-    {tokens} = grammar.tokenizeLine "method !wrap-decoder(Supply:D $bin-supply, $enc)"
+    {tokens} =
+    grammar.tokenizeLine "method !wrap-decoder(Supply:D $bin-supply, $enc)"
     expect(tokens[0]).toEqual value: 'method',
     scopes: [ 'source.perl6fe', 'storage.type.declarator.type.perl6fe' ]
     expect(tokens[2]).toEqual value: '!',
@@ -70,7 +76,7 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
     expect(tokens[1]).toEqual value: 'test',
     scopes: [ 'source.perl6fe', 'string.array.words.perl6fe' ]
-    expect(tokens[2]).toEqual value : '>',
+    expect(tokens[2]).toEqual value: '>',
     scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
   it "Angle bracket quoting works with } in them Issue №2", ->
     {tokens} = grammar.tokenizeLine "<test}>"
@@ -78,7 +84,7 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
     expect(tokens[1]).toEqual value: 'test}',
     scopes: [ 'source.perl6fe', 'string.array.words.perl6fe' ]
-    expect(tokens[2]).toEqual value : '>',
+    expect(tokens[2]).toEqual value: '>',
     scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
 
   it "q[TEST] works", ->
@@ -101,7 +107,8 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'string.quoted.q.bracket.quote.perl6fe' ]
 
   it "Escaped variables don't syntax highlight in double quotation marks", ->
-    {tokens} = grammar.tokenizeLine "method !wrap-decoder(Supply:D $bin-supply, $enc)"
+    {tokens} =
+    grammar.tokenizeLine "method !wrap-decoder(Supply:D $bin-supply, $enc)"
     expect(tokens[0]).toEqual value: 'method',
     scopes: [ 'source.perl6fe', 'storage.type.declarator.type.perl6fe' ]
     expect(tokens[2]).toEqual value: '!',
@@ -111,7 +118,8 @@ describe "Perl 6 FE grammar", ->
 
   ## Pairs
   it "Pairs highlight when no quotes used for key", ->
-    {tokens} = grammar.tokenizeLine "NFKD_QC=>'NFKD_Quick_Check', Ext=>'Extender'"
+    {tokens} =
+    grammar.tokenizeLine "NFKD_QC=>'NFKD_Quick_Check', Ext=>'Extender'"
     expect(tokens[0]).toEqual value: 'NFKD_QC',
     scopes: [ 'source.perl6fe', 'string.pair.key.perl6fe' ]
     expect(tokens[1]).toEqual value: '=>',
@@ -133,7 +141,7 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[5]).toEqual value: ', ',
     scopes: [ 'source.perl6fe' ]
     expect(tokens[6]).toEqual value: 'Ext',
-    scopes : [ 'source.perl6fe', 'string.pair.key.perl6fe' ]
+    scopes: [ 'source.perl6fe', 'string.pair.key.perl6fe' ]
     expect(tokens[7]).toEqual value: '=>',
     scopes: [ 'source.perl6fe', 'keyword.operator.multi-symbol.perl6fe' ]
 
@@ -160,6 +168,6 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[5]).toEqual value: ',',
     scopes: [ 'source.perl6fe' ]
     expect(tokens[6]).toEqual value: 'Ext',
-    scopes : [ 'source.perl6fe', 'string.pair.key.perl6fe' ]
+    scopes: [ 'source.perl6fe', 'string.pair.key.perl6fe' ]
     expect(tokens[7]).toEqual value: '=>',
     scopes: [ 'source.perl6fe', 'keyword.operator.multi-symbol.perl6fe' ]
