@@ -1,3 +1,6 @@
+# v1.9.10
+* Fix link on the readme
+
 # v1.9.9
 * Keys of pairs now highlight properly if no spaces used for unquoted keys.
   Fixes Issue #4
