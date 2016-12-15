@@ -1,18 +1,48 @@
-# Contributing:
 
+Development
+=================
+
+* [Intro](#intro)
+   * [Installing for Development](#installing-for-development)
+   * [The issue tracker and you](#the-issue-tracker-and-you)
+* [Making Changes to the Grammar and Helpful Tips:](#making-changes-to-the-grammar-and-helpful-tips)
+   * [Atom Grammars](#atom-grammars)
+   * [Oniguruma Regex Engine](#oniguruma-regex-engine)
+   * [Testing](#testing)
+
+## Intro
 ### Installing for Development
-First uninstall the package from Atom. Then clone the Github repository into whichever folder you want.
+1. Clone the Github repository into any folder you wish.
+2. Make sure the normal package is uninstalled.
+3. Run `apm link atom-language-perl6`
 
-Now run `apm link atom-language-perl6` and it will install and link to the folder you just cloned. Now you are ready to start hacking away!
+This will install and link to the folder you just cloned. Now you are ready to start hacking away!
 
-### Helpful tips:
+### The issue tracker and you
+For the purposes of this project, a *bug* is anything which alters the
+highlighting of surrounding text. An *issue* is anything that highlighting
+currently works on, but fails to work in some conditions.
+Anything else is an *enhancement* .
+Because of this, a priority system is the best way to categorize any issues.
 
-#### Atom Grammars
+* `priority:high` is reserved for bugs which ruin highlighting for potentially
+  a large number of lines below.
+* `priority:medium` is for medium bugs that may after a small amount of
+  surrounding
+  text or missing features/improvements that are glaring flaws.
+* `priority:low` is for either small bugs that don't ruin the highlighting of
+  any surrounding text or reasonable improvements.
+
+## Making Changes to the Grammar and Helpful Tips:
+
+### Atom Grammars
 
 * Atom uses a TextMate type grammar. While TextMate uses plist's(XMLish),
   Atom stores them in [CSON][CSON] format.
 * In CSON the only characters that need to be escaped inside a single quoted
   string are single quotes(`'`), backslashes(`\`) and control codes.
+* The code that Atom uses to actually process the grammars is called
+  [first-mate][first-mate].
 
 ### Oniguruma Regex Engine
 * If you want use a hex codepoint instead of typing the symbol in, please use
@@ -34,7 +64,7 @@ Now run `apm link atom-language-perl6` and it will install and link to the folde
 * [Regex101](regex101.com) is more graphical and nicer but make
   sure to test out the regex on [Rubular][Rubular] once you have it assembled!
 
-# Testing
+### Testing
 We all love tests, right? To run tests, run `apm test` and the tests will run.
 
 The testing file is at `spec/grammar-perl6fe-spec.coffee`. Please make sure
@@ -48,29 +78,6 @@ characters long.
 
 Travis CI will also fail if it detects improper indenting (most of these will
 error out when you run `apm test` yourself).
-
-Travis CI will also fail if
-
-
-# Extended info:
-
-* The code that Atom uses to actually process the grammars is called
-  [first-mate][first-mate].
-
-# The issue tracker and you
-For the purposes of this project, a *bug* is anything which alters the
-highlighting of surrounding text. An *issue* is anything that highlighting
-currently works on, but fails to work in some conditions.
-Anything else is an *enhancement* .
-Because of this, a priority system is the best way to categorize any issues.
-
-* `priority:high` is reserved for bugs which ruin highlighting for potentially
-  a large number of lines below.
-* `priority:medium` is for medium bugs that may after a small amount of
-  surrounding
-  text or missing features/improvements that are glaring flaws.
-* `priority:low` is for either small bugs that don't ruin the highlighting of
-  any surrounding text or reasonable improvements.
 
 
 
