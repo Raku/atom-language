@@ -4,7 +4,7 @@
 [![][dl-badge]][apm-pkg-link]
 [![][mit-badge]][mit]
 
-A colorful, thoughtful, and helpful language grammar for Perl 6!
+A colorful, thoughtful, and helpful language grammar for Perl 6! See [here](How do I use this?) for questions about usage.
 
 ![A screenshot of an funnified Perl 6 file](https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png)
 
@@ -24,11 +24,17 @@ a keyboard shortcut.
 * Some day we hope this package will also contain support for many popular
   atom packages that have service hooks like autocomplete+ and linter
 
-# Contributing
 
+## See something? Say something!
+See something highlighted incorrectly? See something LTA (Less Than Awesome)?
+Please report it on the [issue tracker][issues]. Any issue no matter how small
+should be reported. It is our hope that this is not only the best Perl 6
+highlighter for Atom, but the best highlighter for Atom out there.
+
+## Contributing
 Contributions are welcome! Please see [`CONTRIBUTING.md`][contributing] for info!
 
-# Potential future features?
+## Potential future features?
 Autocomplete+, linter, atom-build?
 
 ## How do I use this?
@@ -72,3 +78,4 @@ above, your `t` files will be highlighted with the `language-perl` highlighter
 [CREDITS]: https://github.com/perl6/atom-language-perl6/blob/master/CREDITS
 [build-status]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
 [build-status-link]: https://travis-ci.org/perl6/atom-language-perl6
+[issues]: https://github.com/perl6/atom-language-perl6/issues
