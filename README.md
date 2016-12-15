@@ -16,11 +16,11 @@ a keyboard shortcut.
 
 ## What Makes This The Fun Edition™?
 
-> Perl 6 is *optimized for fun* -Audrey Tang
+> Perl 6 is optimized for fun ― Audrey Tang
 
 * This package was developed to work with [Fira Code][fira-code] ligatures
 
-* More syntax highlighted (numbers, operators, interpolation, traits, better strings)
+* More syntax highlighted (numbers, operators, interpolation, traits, better strings).
 
 * Some day we hope this package will also contain support for many popular
   atom packages that have service hooks like autocomplete+ and linter
@@ -33,10 +33,10 @@ should be reported. It is our hope that this is not only the best Perl 6
 highlighter for Atom, but the best highlighter for Atom out there.
 
 ## Contributing
-Contributions are welcome! Please see [`CONTRIBUTING.md`][contributing] for info!
+Contributions are welcome! Please see [`CONTRIBUTING.md`][contributing] for a tutorial on writing Atom syntax grammars and more information!
 
-## Potential future features?
-Autocomplete+, linter, atom-build?
+## Potential Future Features
+Autocomplete+, linter, atom-build.
 
 ## How do I use this?
 
