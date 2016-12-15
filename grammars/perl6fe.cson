@@ -660,8 +660,8 @@
         'name': 'meta.regexp.named.adverb.perl6fe'
       }
       {
-        'begin': '\\x{00AB}|\\<'
-        'end': '(\\x{00BB}|\\>)(?=[\\s\\{])'
+        'begin': '«|\\<'
+        'end': '(»|\\>)(?=[\\s\\{])'
         'contentName': 'string.array.words.perl6fe'
       }
       {
@@ -883,6 +883,7 @@
     'include': '#variables'
   }
   # Word quoting matching: `=\s*<word quoting>`
+  # Multi-line:
   {
     'begin': '(?x) (?<= =) \\s* \\K ( < )'
     'beginCaptures':
@@ -896,10 +897,14 @@
     'patterns':
       { 'include': 'source.quoting.perl6fe#q_bracket_string_content' }
   }
+  # Non multi-line. I think.
   {
-    'begin': '(?x) (?<! \\+< ) (?! =) (<) (?= [^<]*[^<}] >)'
+    'begin': '(?x) (?<! \\+< ) (?! =)
+              (<)
+              (?<!\\\\>) # Make sure we don\'t match `\\>´ at the end
+              (?= [^<]* (?: [^<] ) > )'
     'beginCaptures':
-      '1':
+     '1':
         'name': 'span.keyword.operator.array.words.perl6fe'
     'end':   '(?x) (?<!\\\\) ( > )'
     'endCaptures':

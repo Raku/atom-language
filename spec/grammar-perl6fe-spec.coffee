@@ -64,6 +64,23 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'comment.multiline.hash-tick.paren.perl6fe' ]
 
 ## Quoting
+  it "Angle bracket quoting works", ->
+    {tokens} = grammar.tokenizeLine "<test>"
+    expect(tokens[0]).toEqual value: '<',
+    scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
+    expect(tokens[1]).toEqual value: 'test',
+    scopes: [ 'source.perl6fe', 'string.array.words.perl6fe' ]
+    expect(tokens[2]).toEqual value : '>',
+    scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
+  it "Angle bracket quoting works with } in them Issue №2", ->
+    {tokens} = grammar.tokenizeLine "<test}>"
+    expect(tokens[0]).toEqual value: '<',
+    scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
+    expect(tokens[1]).toEqual value: 'test}',
+    scopes: [ 'source.perl6fe', 'string.array.words.perl6fe' ]
+    expect(tokens[2]).toEqual value : '>',
+    scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
+
   it "q[TEST] works", ->
     {tokens} = grammar.tokenizeLine "q[TEST]"
     expect(tokens[0]).toEqual value: 'q',
