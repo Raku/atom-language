@@ -714,8 +714,37 @@
     'name': 'storage.modifier.declarator.perl6fe'
   }
   {
+    'begin': '(?x) (?<= = ) \\s* ( < )'
+    'beginCaptures':
+      '1':
+        'name': 'span.keyword.operator.array.words.perl6fe'
+    'end': '(?x) ( > )'
+    'endCaptures':
+      '1':
+        'name': 'span.keyword.operator.array.words.perl6fe'
+    'contentName': 'string.array.words.perl6fe'
+    'patterns': [
+      { 'include': 'source.quoting.perl6fe#q_bracket_string_content' }
+    ]
+  }
+  {
     'match': '([+\\-.*/]|\\|\\|)?(?<!\\=)=(?![\\>\\=\\~])'
     'name': 'storage.modifier.assignment.perl6fe'
+  }
+  # Non multi-line.
+  {
+    'begin': '(?x) (?<! \\+< )
+              (<)
+              (?<!\\\\>)
+              (?= [^<]* (?: [^<] ) > )'
+    'beginCaptures':
+     '1':
+        'name': 'span.keyword.operator.array.words.perl6fe'
+    'end':   '(?x) (?<!\\\\) ( > )'
+    'endCaptures':
+      '1':
+        'name': 'span.keyword.operator.array.words.perl6fe'
+    'contentName': 'string.array.words.perl6fe'
   }
   {
     'match': '\\b(for|loop|repeat|while|until|gather|given)(?!\\-)\\b'
@@ -882,36 +911,7 @@
   {
     'include': '#variables'
   }
-  # Word quoting matching: `=\s*<word quoting>`
-  # Multi-line:
-  {
-    'begin': '(?x) (?<= =) \\s* \\K ( < )'
-    'beginCaptures':
-      '1':
-        'name': 'span.keyword.operator.array.words.perl6fe'
-    'end': '(?x) \\\\\\\\>|(?<!\\\\) ( > )'
-    'endCaptures':
-      '1':
-        'name': 'span.keyword.operator.array.words.perl6fe'
-    'contentName': 'string.array.words.perl6fe'
-    'patterns':
-      { 'include': 'source.quoting.perl6fe#q_bracket_string_content' }
-  }
-  # Non multi-line. I think.
-  {
-    'begin': '(?x) (?<! \\+< ) (?! =)
-              (<)
-              (?<!\\\\>)
-              (?= [^<]* (?: [^<] ) > )'
-    'beginCaptures':
-     '1':
-        'name': 'span.keyword.operator.array.words.perl6fe'
-    'end':   '(?x) (?<!\\\\) ( > )'
-    'endCaptures':
-      '1':
-        'name': 'span.keyword.operator.array.words.perl6fe'
-    'contentName': 'string.array.words.perl6fe'
-  }
+
 
   # Dual functions and methods
   {

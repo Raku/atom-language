@@ -67,13 +67,21 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[3]).toEqual value: 'wrap-decoder',
     scopes: [ 'source.perl6fe', 'entity.name.function.perl6fe' ]
 
-## Comments
+  ## Comments
   it "Multi-line comments with paren start", ->
     {tokens} = grammar.tokenizeLine "#`("
     expect(tokens[0]).toEqual value: '#`(',
     scopes: [ 'source.perl6fe', 'comment.multiline.hash-tick.paren.perl6fe' ]
 
-## Quoting
+  ## Quoting
+  it "Angle bracket word quoting works multi-line, when after = sign", ->
+    lines = grammar.tokenizeLines """
+    my $var = < a b
+    c d >
+    """
+    expect(lines[0][7]).toEqual value: '<',
+    scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
+
   it "Angle brackets don't quote for less than sign", ->
     {tokens} = grammar.tokenizeLine "while $i < $len"
     expect(tokens[5]).toEqual value: '<',
