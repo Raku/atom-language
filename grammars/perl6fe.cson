@@ -478,24 +478,17 @@
   {
     'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(\\{)'
     'beginCaptures':
-      '1':
-        'name': 'string.regexp.construct.perl6fe'
-      '2':
-        'name': 'entity.name.section.adverb.regexp.perl6fe'
-      '3':
-        'name': 'punctuation.definition.regexp.perl6fe'
+      '1': 'name': 'string.regexp.construct.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\})'
     'endCaptures':
       '1':
         'name': 'punctuation.definition.regexp.perl6fe'
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
-      {
-        'include': '#interpolation'
-      }
-      {
-        'include': 'source.regexp.perl6fe'
-      }
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
     ]
   }
   {
@@ -503,45 +496,30 @@
     'beginCaptures':
       '1':
         'name': 'string.regexp.construct.perl6fe'
-      '2':
-        'name': 'entity.name.section.adverb.regexp.perl6fe'
-      '3':
-        'name': 'punctuation.definition.regexp.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\])'
     'endCaptures':
-      '1':
-        'name': 'punctuation.definition.regexp.perl6fe'
+      '1': 'name': 'punctuation.definition.regexp.perl6fe'
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
-      {
-        'include': '#interpolation'
-      }
-      {
-        'include': 'source.regexp.perl6fe'
-      }
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
     ]
   }
   {
     'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(\\|)'
     'beginCaptures':
-      '1':
-        'name': 'string.regexp.construct.perl6fe'
-      '2':
-        'name': 'entity.name.section.adverb.regexp.perl6fe'
-      '3':
-        'name': 'punctuation.definition.regexp.perl6fe'
+      '1': 'name': 'string.regexp.construct.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\|)'
     'endCaptures':
-      '1':
-        'name': 'punctuation.definition.regexp.perl6fe'
+      '1': 'name': 'punctuation.definition.regexp.perl6fe'
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
-      {
-        'include': '#interpolation'
-      }
-      {
-        'include': 'source.regexp.perl6fe'
-      }
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
     ]
   }
   {
@@ -570,24 +548,16 @@
   {
     'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(~)'
     'beginCaptures':
-      '1':
-        'name': 'string.regexp.construct.perl6fe'
-      '2':
-        'name': 'entity.name.section.adverb.regexp.perl6fe'
-      '3':
-        'name': 'punctuation.definition.regexp.perl6fe'
+      '1': 'name': 'string.regexp.construct.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\~)'
     'endCaptures':
-      '1':
-        'name': 'punctuation.definition.regexp.perl6fe'
+      '1': 'name': 'punctuation.definition.regexp.perl6fe'
     'contentName': 'string.regexp.perl6fe'
     'patterns': [
-      {
-        'include': '#interpolation'
-      }
-      {
-        'include': 'source.regexp.perl6fe'
-      }
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
     ]
   }
   {
@@ -606,12 +576,8 @@
       }
     ]
   }
-  {
-    'include': '#shellquotes'
-  }
-  {
-    'include': '#heredocs'
-  }
+  { 'include': '#shellquotes' }
+  { 'include': '#heredocs' }
   { 'include': 'source.quoting.perl6fe' }
   {
     'match': '\\b\\$\\w+\\b'
@@ -624,14 +590,10 @@
       \\s* (!)?
       (    [\\p{Digit}\\p{Alpha}\'\\-_]+ )'
     'beginCaptures':
-      '1':
-        'name': 'storage.type.declarator.multi.perl6fe'
-      '2':
-        'name': 'storage.type.declarator.type.perl6fe'
-      '3':
-        'name': 'support.class.method.private.perl6fe'
-      '4':
-        'name': 'entity.name.function.perl6fe'
+      '1': 'name': 'storage.type.declarator.multi.perl6fe'
+      '2': 'name': 'storage.type.declarator.type.perl6fe'
+      '3': 'name': 'support.class.method.private.perl6fe'
+      '4': 'name': 'entity.name.function.perl6fe'
     'end': '\\s*(?=[\\(\\{])'
     'contentName': 'entity.name.function.perl6fe'
   }
@@ -672,9 +634,7 @@
             'name': 'punctuation.definition.regexp.named.signature.perlfe'
         'name': 'meta.regexp.named.signature.perl6fe'
         'patterns': [
-          {
-            'include': '$self'
-          }
+          { 'include': '$self' }
         ]
       }
       {
@@ -685,12 +645,8 @@
             'name': 'punctuation.definition.regex.named.perl6fe'
         'name': 'meta.regexp.named.block.perl6fe'
         'patterns': [
-          {
-            'include': '#interpolation'
-          }
-          {
-            'include': 'source.regexp.perl6fe'
-          }
+          { 'include': '#interpolation' }
+          { 'include': 'source.regexp.perl6fe' }
         ]
       }
     ]
@@ -1007,24 +963,18 @@
   {
     'begin': '\\{'
     'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.block.perl6fe'
+      '0': 'name': 'punctuation.definition.block.perl6fe'
     'end': '\\}'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.block.perl6fe'
+      '0': 'name': 'punctuation.definition.block.perl6fe'
     'name': 'meta.block.perl6fe'
-    'patterns': [
-      {
-        'include': '$self'
-      }
-    ]
+    'patterns': [ { 'include': '$self' } ]
   }
 ]
+## REPOSITORY
 'repository':
   'numbers':
     'patterns': [
-      # FIXME get it working on start of line
       {
         'match': '(?<=[=,;\\^\\s\\{\\[\\(\\/]|\\.\\.)0[bodx]\\w+'
         'name': 'constant.numeric.radix.perl6fe'
