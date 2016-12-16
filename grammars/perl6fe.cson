@@ -647,7 +647,7 @@
     'name': 'meta.regexp.named.perl6fe'
     'patterns': [
       {
-        'match': '\\w+'
+        'match': '[\\p{Digit}\\p{Alpha}\'\\-_]+'
         'name': 'entity.name.function.regexp.named.perl6fe'
       }
       {
