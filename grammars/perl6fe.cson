@@ -1635,28 +1635,32 @@
         'name': 'keyword.other.special-method.perl6fe'
       }
     ]
+  'regexp-variables':
+    'patterns': [
+      {
+        'begin': '\\$(?=\\<)'
+        'beginCaptures':
+          '0':
+            'name': 'variable.other.identifier.sigil.regexp.perl6'
+        'end': '(?![\\w\\<\\>])'
+        'name': 'meta.match.variable.perl6fe'
+        'patterns': [
+          {
+            'match': '(\\<)([\\w\\-]+)(\\>)'
+            'captures':
+              '1':
+                'name': 'support.class.match.name.delimiter.regexp.perl6fe'
+              '2':
+                'name': 'variable.other.identifier.regexp.perl6'
+              '3':
+                'name': 'support.class.match.name.delimiter.regexp.perl6fe'
+          }
+        ]
+      }
+    ]
   'variables':
     'patterns': [
-        {
-          'begin': '\\$(?=\\<)'
-          'beginCaptures':
-            '0':
-              'name': 'variable.other.identifier.sigil.regexp.perl6'
-          'end': '(?![\\w\\<\\>])'
-          'name': 'meta.match.variable.perl6fe'
-          'patterns': [
-            {
-              'match': '(\\<)([\\w\\-]+)(\\>)'
-              'captures':
-                '1':
-                  'name': 'support.class.match.name.delimiter.regexp.perl6fe'
-                '2':
-                  'name': 'variable.other.identifier.regexp.perl6'
-                '3':
-                  'name': 'support.class.match.name.delimiter.regexp.perl6fe'
-            }
-          ]
-        }
+        { 'include': '#regexp-variables' }
         {
           'match': '(?x)
             (\\$|@|%|&)
@@ -1677,6 +1681,23 @@
               'name': 'variable.other.identifier.perl6fe'
           'name': 'meta.variable.container.perl6fe'
         }
+    ]
+  # TODO use the captures and make it highlight nicely
+  'hex_escapes':
+    'patterns': [
+      {
+        'match': '(?x) (\\\\x) ( \\[ ) ( [\\dA-Fa-f]+ ) ( \\] )'
+        'captures':
+          '1':
+            'name': 'keyword.punctuation.hex.perl6fe'
+          '2':
+            'name': 'keyword.operator.bracket.open.perl6fe'
+          '3':
+            'name': 'routine.name.hex.perl6fe'
+          '4':
+            'name': 'keyword.operator.bracket.close.perl6fe'
+        'name': 'punctuation.hex.perl6fe'
+      }
     ]
   'interpolation':
     'patterns': [
@@ -1718,20 +1739,8 @@
             ]
         'name': 'variable.other.identifier.interpolated.perl6fe'
       }
-      # TODO use the captures and make it highlight nicely
-      {
-        'match': '(?x) (\\\\x) ( \\[ ) ( [\\dA-Fa-f]+ ) ( \\] )'
-        'captures':
-          '1':
-            'name': 'keyword.punctuation.hex.perl6fe'
-          '2':
-            'name': 'keyword.operator.bracket.open.perl6fe'
-          '3':
-            'name': 'routine.name.hex.perl6fe'
-          '4':
-            'name': 'keyword.operator.bracket.close.perl6fe'
-        'name': 'punctuation.hex.perl6fe'
-      }
+      { 'include': '#hex_escapes' }
+      { 'include': '#regexp-variables' }
       {
         'begin': '(\\{)'
         'beginCaptures':

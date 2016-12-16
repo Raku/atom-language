@@ -176,3 +176,69 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'string.pair.key.perl6fe' ]
     expect(tokens[7]).toEqual value: '=>',
     scopes: [ 'source.perl6fe', 'keyword.operator.multi-symbol.perl6fe' ]
+
+  ## Variables
+  it "Regex named captures highlight", ->
+    {tokens} =
+    grammar.tokenizeLine "$<captured>"
+    expect(tokens[0]).toEqual value: '$',
+    scopes: [
+      'source.perl6fe',
+      'meta.match.variable.perl6fe',
+      'variable.other.identifier.sigil.regexp.perl6'
+    ]
+    expect(tokens[1]).toEqual value: '<',
+    scopes: [
+      'source.perl6fe',
+      'meta.match.variable.perl6fe',
+      'support.class.match.name.delimiter.regexp.perl6fe'
+    ]
+    expect(tokens[2]).toEqual value: 'captured',
+    scopes: [
+      'source.perl6fe',
+      'meta.match.variable.perl6fe',
+      'variable.other.identifier.regexp.perl6'
+    ]
+    expect(tokens[3]).toEqual value: '>',
+    scopes: [
+      'source.perl6fe',
+      'meta.match.variable.perl6fe',
+      'support.class.match.name.delimiter.regexp.perl6fe'
+    ]
+  it "Regex named captures highlight in double quoted strings. Issue №9", ->
+    {tokens} =
+    grammar.tokenizeLine '"$<captured>"'
+    expect(tokens[0]).toEqual value: '"',
+    scopes: [
+      'source.perl6fe',
+      'string.quoted.double.perl6fe',
+      'punctuation.definition.string.begin.perl6fe'
+    ]
+    expect(tokens[1]).toEqual value: '$',
+    scopes: [
+      'source.perl6fe',
+      'string.quoted.double.perl6fe',
+      'meta.match.variable.perl6fe',
+      'variable.other.identifier.sigil.regexp.perl6'
+    ]
+    expect(tokens[2]).toEqual value: '<',
+    scopes: [
+      'source.perl6fe',
+      'string.quoted.double.perl6fe',
+      'meta.match.variable.perl6fe',
+      'support.class.match.name.delimiter.regexp.perl6fe'
+    ]
+    expect(tokens[3]).toEqual value: 'captured',
+    scopes: [
+      'source.perl6fe',
+      'string.quoted.double.perl6fe',
+      'meta.match.variable.perl6fe',
+      'variable.other.identifier.regexp.perl6'
+    ]
+    expect(tokens[4]).toEqual value: '>',
+    scopes: [
+      'source.perl6fe',
+      'string.quoted.double.perl6fe',
+      'meta.match.variable.perl6fe',
+      'support.class.match.name.delimiter.regexp.perl6fe'
+    ]
