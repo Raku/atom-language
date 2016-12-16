@@ -1,6 +1,9 @@
 # v1.9.11
 * Highlight unicode hex codes in regex character classes. Fixes Issue #10
 * Highlight regex named capture variables in quoted strings. Fixes Issue #9
+* Fix a bug that could cause angle bracket word quoting to be triggered by
+  the less-than operator (`<`).
+* Add `.so` and `.not` methods.
 
 # v1.9.10
 * Fix link on the readme
