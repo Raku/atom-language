@@ -1648,15 +1648,23 @@
   'interpolation':
     'patterns': [
       {
-        'match': '(?x)(?<!\\\\)
-          (\\$|@|%|&)(?!\\$)
-          (\\.|\\*|:|!|\\^|~|=|\\?)?
-          ([a-zA-Z_\xc0-\xff\\$])
+        'match': '''(?x)
+          (?<!\\\\)
+          (\\$|@|%|&)                 # Sigils
+          (?!\\$)
+          (\\.|\\*|:|!|\\^|~|=|\\?)?  # Twigils
+          ([\\p{Alpha}_])             # Must start with Alpha or underscore
           (
-            [a-zA-Z0-9_\xc0-\xff\\$]|
-            [\\-\'][a-zA-Z_\xc0-\xff\\$][a-zA-Z0-9_\xc0-\xff\\$]
-          )*(\\[.*\\])?'
+             [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore or a ' or -
+          |                           # followed by an alphanum or underscore
+             [\\-\'] [\\p{Digit}\\p{Alpha}_]
+          )*
+          ( \\[ .* \\] )?             # postcircumfix [ ]
+          ( (?: \\.  ( \\S+ ) )? (?: \\(  .* \\) ) )?       # methods
+        '''
         'captures':
+          '1': 'name': 'variable.other.identifier.sigil.perl6fe'
+          '2': 'name': 'support.class.twigil.interpolated.perl6fe'
           '5':
             'patterns': [
               {
@@ -1683,6 +1691,22 @@
                 ]
               }
             ]
+          '7':
+            'patterns': [
+              {
+                'begin': '\\('
+                'beginCaptures':
+                  '0': 'name': 'keyword.operator.paren.open.perl6fe'
+                'end': '\\)'
+                'endCaptures':
+                  '0': 'name': 'keyword.operator.paren.open.perl6fe'
+                'patterns': [
+                  { 'include': '$self' }
+                ]
+              }
+            ]
+
+
         'name': 'variable.other.identifier.interpolated.perl6fe'
       }
       { 'include': '#hex_escapes' }

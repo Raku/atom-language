@@ -91,6 +91,27 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'comment.multiline.hash-tick.paren.perl6fe' ]
 
   ## Quoting
+  it "Variables highlight in interpolated strings", ->
+    {tokens} = grammar.tokenizeLine '"$var"'
+    expect(tokens[0]).toEqual value: '"',
+    scopes: [
+      'source.perl6fe',
+      'string.quoted.double.perl6fe',
+      'punctuation.definition.string.begin.perl6fe'
+    ]
+    expect(tokens[1]).toEqual  value: '$',
+    scopes: [
+      'source.perl6fe',
+      'string.quoted.double.perl6fe',
+      'variable.other.identifier.interpolated.perl6fe',
+      'variable.other.identifier.sigil.perl6fe'
+    ]
+    expect(tokens[2]).toEqual value: 'var',
+    scopes: [
+      'source.perl6fe',
+      'string.quoted.double.perl6fe',
+      'variable.other.identifier.interpolated.perl6fe'
+    ]
   it "Angle bracket word quoting works multi-line, when after = sign", ->
     lines = grammar.tokenizeLines """
     my $var = < a b
