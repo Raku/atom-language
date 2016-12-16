@@ -940,7 +940,7 @@
       |postcircumfix|minmax|lazy|count|unwrap|getc|pi|tau|context|void
       |quasi|body|each|contains|rewinddir|subst|can|isa|flush|arity
       |assuming|rewind|callwith|callsame|nextwith|nextsame|attr|does-ok
-      |eval-elsewhere|none|srand|trim|trim-start|trim-end|lastcall
+      |eval-elsewhere|none|not|srand|so|trim|trim-start|trim-end|lastcall
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
       |throws-like|trans|race|hyper|tap|emit|done-testing|quit|dd|note
