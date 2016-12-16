@@ -67,6 +67,23 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[3]).toEqual value: 'wrap-decoder',
     scopes: [ 'source.perl6fe', 'entity.name.function.perl6fe' ]
 
+  ## Operators
+  it "=~= approximately-equal to operator highlights properly", ->
+    {tokens} = grammar.tokenizeLine "=~="
+    expect(tokens[0]).toEqual value: "=~=",
+    scopes: [
+      'source.perl6fe',
+      'meta.operator.non.ligature.perl6fe',
+      'keyword.operator.approx-equal.perl6fe'
+    ]
+  it "≅ approximately-equal to operator highlights properly", ->
+    {tokens} = grammar.tokenizeLine "≅"
+    expect(tokens[0]).toEqual value: "≅",
+    scopes: [
+      'source.perl6fe',
+      'meta.operator.non.ligature.perl6fe',
+      'keyword.operator.approx-equal.perl6fe'
+    ]
   ## Comments
   it "Multi-line comments with paren start", ->
     {tokens} = grammar.tokenizeLine "#`("

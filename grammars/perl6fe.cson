@@ -866,13 +866,9 @@
     'name': 'keyword.operator.word.perl6fe'
   }
   {
-    'match': '(=)(~)(=)'
+    'match': '(=~=|≅)'
     'captures':
       '1':
-        'name': 'keyword.operator.approx-equal.perl6fe'
-      '2':
-        'name': 'keyword.operator.approx-equal.perl6fe'
-      '3':
         'name': 'keyword.operator.approx-equal.perl6fe'
     'name': 'meta.operator.non.ligature.perl6fe'
   }
