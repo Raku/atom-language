@@ -1,5 +1,6 @@
 # v1.9.11
 * Highlight unicode hex codes in regex character classes. Fixes Issue #10
+* Highlight regex named capture variables in quoted strings. Fixes Issue #9
 
 # v1.9.10
 * Fix link on the readme
