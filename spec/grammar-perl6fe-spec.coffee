@@ -252,6 +252,23 @@ describe "Perl 6 FE grammar", ->
       'meta.match.variable.perl6fe',
       'support.class.match.name.delimiter.regexp.perl6fe'
     ]
+  ## Regex
+  it "Hyphens and ' are allowed in grammar rules", ->
+    {tokens} =
+    grammar.tokenizeLine "rule calc's-op"
+    expect(tokens[0]).toEqual value: 'rule',
+    scopes: [
+      'source.perl6fe',
+      'meta.regexp.named.perl6fe',
+      'storage.type.declare.regexp.named.perl6fe'
+    ]
+    expect(tokens[2]).toEqual value: "calc's-op",
+    scopes: [
+      'source.perl6fe',
+      'meta.regexp.named.perl6fe',
+      'entity.name.function.regexp.named.perl6fe'
+    ]
+
   it "Regex hex highlights in character classes Issue №10", ->
     {tokens} =
     grammar.tokenizeLine '/<[ \\x[99] ]>/'

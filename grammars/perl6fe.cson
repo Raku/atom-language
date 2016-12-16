@@ -726,7 +726,7 @@
        take|do|when|next|last|redo|return|return-rw
       |contend|maybe|defer|default|exit
       |make|made|continue|break|goto|leave|supply
-      |async|lift|await|start|react|whenever
+      |async|lift|await|start|react|whenever|parse
     )(?!\\-)\\b'
     'name': 'keyword.control.flowcontrol.perl6fe'
   }
