@@ -901,7 +901,7 @@
   {
     'begin': '(?x) (?<! \\+< ) (?! =)
               (<)
-              (?<!\\\\>) # Make sure we don\'t match `\\>´ at the end
+              (?<!\\\\>)
               (?= [^<]* (?: [^<] ) > )'
     'beginCaptures':
      '1':
