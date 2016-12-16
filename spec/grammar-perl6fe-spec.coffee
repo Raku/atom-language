@@ -242,3 +242,94 @@ describe "Perl 6 FE grammar", ->
       'meta.match.variable.perl6fe',
       'support.class.match.name.delimiter.regexp.perl6fe'
     ]
+  it "Regex hex highlights in character classes Issue №10", ->
+    {tokens} =
+    grammar.tokenizeLine '/<[ \\x[99] ]>/'
+    expect(tokens[0]).toEqual value: '/',
+    scopes: [
+      'source.perl6fe',
+      'punctuation.definition.regexp.perl6fe'
+    ]
+    expect(tokens[1]).toEqual value: '<',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'punctuation.delimiter.property.regexp.perl6fe'
+    ]
+    expect(tokens[2]).toEqual value: '[',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'keyword.operator.charclass.open.regexp.perl6fe'
+    ]
+    expect(tokens[3]).toEqual value: ' ',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'constant.character.custom.property.regexp.perl6fe'
+    ]
+    expect(tokens[4]).toEqual value: '\\x',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'constant.character.custom.property.regexp.perl6fe',
+      'punctuation.hex.perl6fe',
+      'keyword.punctuation.hex.perl6fe'
+    ]
+    expect(tokens[5]).toEqual value: '[',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'constant.character.custom.property.regexp.perl6fe',
+      'punctuation.hex.perl6fe',
+      'keyword.operator.bracket.open.perl6fe'
+    ]
+    expect(tokens[6]).toEqual value: '99',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'constant.character.custom.property.regexp.perl6fe',
+      'punctuation.hex.perl6fe',
+      'routine.name.hex.perl6fe'
+    ]
+    expect(tokens[7]).toEqual value: ']',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'constant.character.custom.property.regexp.perl6fe',
+      'punctuation.hex.perl6fe',
+      'keyword.operator.bracket.close.perl6fe'
+    ]
+    expect(tokens[8]).toEqual value: ' ',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'constant.character.custom.property.regexp.perl6fe'
+    ]
+    expect(tokens[9]).toEqual value: ']',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'keyword.operator.charclass.close.regexp.perl6fe'
+    ]
+    expect(tokens[10]).toEqual value: '>',
+    scopes: [
+      'source.perl6fe',
+      'string.regexp.perl6fe',
+      'meta.property.regexp.perl6fe',
+      'punctuation.delimiter.property.regexp.perl6fe'
+    ]
+    expect(tokens[11]).toEqual value: '/',
+    scopes: [
+      'source.perl6fe',
+      'punctuation.definition.regexp.perl6fe'
+    ]

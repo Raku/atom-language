@@ -1,3 +1,6 @@
+# v1.9.11
+* Highlight unicode hex codes in regex character classes. Fixes Issue #10
+
 # v1.9.10
 * Fix link on the readme
 

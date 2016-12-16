@@ -125,9 +125,16 @@
           }
           {
             'begin': '\\['
+            'beginCaptures':
+              '0':
+                'name': 'keyword.operator.charclass.open.regexp.perl6fe'
             'end': '\\]'
+            'endCaptures':
+              '0':
+                'name': 'keyword.operator.charclass.close.regexp.perl6fe'
             'contentName': 'constant.character.custom.property.regexp.perl6fe'
             'patterns': [
+              { 'include': 'source.perl6fe#hex_escapes' }
               {
                 'match': '(?<!\\\\)\\\\\\]'
                 'name': 'constant.character.custom.property.regexp.perl6fe'
