@@ -1677,7 +1677,7 @@
              [\\-\'] [\\p{Digit}\\p{Alpha}_]
           )*
           ( \\[ .* \\] )?             # postcircumfix [ ]
-          ( (?: \\.  ( \\S+ ) )? (?: \\(  .* \\) ) )?       # methods
+          ( (?:( \\. )( \\S+ ))? ( \\(  .*? \\) ) )?       # methods
         '''
         'captures':
           '1': 'name': 'variable.other.identifier.sigil.perl6fe'
@@ -1708,7 +1708,9 @@
                 ]
               }
             ]
-          '7':
+          '7': 'name': 'keyword.operator.dot.perl6fe'
+          '8': 'name': 'support.function.perl6fe'
+          '9':
             'patterns': [
               {
                 'begin': '\\('
