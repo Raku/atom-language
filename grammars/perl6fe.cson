@@ -1031,6 +1031,23 @@
   'comment-block-abbreviated':
     'patterns': [
         {
+          'begin': '^\\s*(=)(head\\w*)\\s+(.+?)\\s*$'
+          'end': '(?=^\\s*$|^\\s*=\\w+.*$)'
+          'captures':
+            '1':
+              'name': 'storage.modifier.block.abbreviated.perl6fe'
+            '2':
+              'name': 'entity.other.attribute-name.block.abbreviated.perl6fe'
+            '3':
+              'name': 'entity.name.section.abbreviated.perl6fe'
+          'contentName': 'entity.name.section.head.abbreviated.perl6fe'
+          'patterns': [
+            {
+              'include': '#comment-block-syntax'
+            }
+          ]
+        }
+        {
           'begin': '^\\s*(=)(\\w+)\\s+(.+?)\\s*$'
           'end': '(?=^\\s*$|^\\s*=\\w+.*$)'
           'captures':
@@ -1040,7 +1057,7 @@
               'name': 'entity.other.attribute-name.block.abbreviated.perl6fe'
             '3':
               'name': 'entity.name.section.abbreviated.perl6fe'
-          'name': 'comment.block.abbreviated.perl6fe'
+          'contentName': 'comment.block.abbreviated.perl6fe'
           'patterns': [
             {
               'include': '#comment-block-syntax'
