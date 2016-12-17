@@ -109,6 +109,16 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'comment.multiline.hash-tick.paren.perl6fe' ]
 
   ## Quoting
+  it "Function calls highlight in interpolated strings", ->
+    {tokens} = grammar.tokenizeLine '"$b.foo() should)"'
+    expect(tokens[1]).toEqual value : '$', scopes: [ 'source.perl6fe', 'string.quoted.double.perl6fe', 'variable.other.identifier.interpolated.perl6fe', 'variable.other.identifier.sigil.perl6fe' ]
+    expect(tokens[2]).toEqual value : 'b', scopes: [ 'source.perl6fe', 'string.quoted.double.perl6fe', 'variable.other.identifier.interpolated.perl6fe' ]
+    expect(tokens[3]).toEqual value : '.', scopes: [ 'source.perl6fe', 'string.quoted.double.perl6fe', 'variable.other.identifier.interpolated.perl6fe', 'keyword.operator.dot.perl6fe' ]
+    expect(tokens[4]).toEqual value : 'foo', scopes: [ 'source.perl6fe', 'string.quoted.double.perl6fe', 'variable.other.identifier.interpolated.perl6fe', 'support.function.perl6fe' ]
+    expect(tokens[5]).toEqual value : '(', scopes: [ 'source.perl6fe', 'string.quoted.double.perl6fe', 'variable.other.identifier.interpolated.perl6fe', 'keyword.operator.paren.open.perl6fe' ]
+    expect(tokens[6]).toEqual value : ')', scopes: [ 'source.perl6fe', 'string.quoted.double.perl6fe', 'variable.other.identifier.interpolated.perl6fe', 'keyword.operator.paren.open.perl6fe' ]
+    expect(tokens[7]).toEqual value : ' should)', scopes: [ 'source.perl6fe', 'string.quoted.double.perl6fe' ]
+
   it "Variables highlight in interpolated strings", ->
     {tokens} = grammar.tokenizeLine '"$var"'
     expect(tokens[0]).toEqual value: '"',
