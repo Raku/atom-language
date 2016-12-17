@@ -31,6 +31,24 @@ describe "Perl 6 FE grammar", ->
     lne = " =begin pod"
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
+  ## Pod
+  it "Pod headers highlight until newline", ->
+    lines = grammar.tokenizeLines '''
+    =head1 abc
+    ethethe head
+
+    trim
+    '''
+    expect(lines[0][0]).toEqual value: '=',
+    scopes: [ 'source.perl6fe', 'storage.modifier.block.abbreviated.perl6fe' ]
+    expect(lines[0][1]).toEqual value: 'head1',
+    scopes: [
+      'source.perl6fe',
+      'entity.other.attribute-name.block.abbreviated.perl6fe'
+    ]
+    expect(lines[1][0]).toEqual value: 'ethethe head',
+    scopes: [ 'source.perl6fe', 'entity.name.section.head.abbreviated.perl6fe' ]
+
   ## Methods
   it "FQ private methods are highlighted properly Issue №8", ->
     {tokens} = grammar.tokenizeLine "self.List::perl;"
