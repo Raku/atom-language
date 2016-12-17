@@ -234,6 +234,10 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'keyword.operator.multi-symbol.perl6fe' ]
 
   ## Variables
+  it "Method made highlights", ->
+    {tokens} = grammar.tokenizeLine "Calculator.made"
+    expect(tokens[2]).toEqual value: 'made',
+    scopes: [ 'source.perl6fe', 'keyword.control.flowcontrol.perl6fe' ]
   it "Regex named captures highlight", ->
     {tokens} =
     grammar.tokenizeLine "$<captured>"
@@ -261,6 +265,53 @@ describe "Perl 6 FE grammar", ->
       'meta.match.variable.perl6fe',
       'support.class.match.name.delimiter.regexp.perl6fe'
     ]
+  it "regex rule calc-op:sym<add> highlights.", ->
+    {tokens} = grammar.tokenizeLine 'rule calc-op:sym<add>'
+    expect(tokens[3]).toEqual value: ':',
+    scopes: [
+      'source.perl6fe', 'meta.regexp.named.perl6fe',
+      'meta.regexp.named.adverb.perl6fe',
+      'punctuation.definition.regexp.adverb.perl6fe'
+    ]
+    expect(tokens[4]).toEqual value: 'sym',
+    scopes: [
+      'source.perl6fe',
+      'meta.regexp.named.perl6fe',
+      'meta.regexp.named.adverb.perl6fe',
+      'support.type.class.adverb.perl6fe'
+    ]
+    expect(tokens[5]).toEqual value: '<',
+    scopes: [ 'source.perl6fe', 'meta.regexp.named.perl6fe' ]
+    expect(tokens[6]).toEqual value: 'add',
+    scopes: [
+      'source.perl6fe',
+      'meta.regexp.named.perl6fe',
+      'string.array.words.perl6fe'
+    ]
+
+  it "regex grammar method ops highlight. Issue №12", ->
+    {tokens} = grammar.tokenizeLine 'method calc-op:sym<add>'
+    expect(tokens[3]).toEqual value: ':',
+    scopes: [
+      'source.perl6fe',
+      'punctuation.definition.function.adverb.perl6fe'
+    ]
+    expect(tokens[4]).toEqual value: 'sym',
+    scopes: [
+      'source.perl6fe',
+      'support.type.class.adverb.perl6fe'
+    ]
+    expect(tokens[5]).toEqual value: '<',
+    scopes: [
+      'source.perl6fe',
+      'span.keyword.operator.array.words.perl6fe'
+    ]
+    expect(tokens[6]).toEqual value: 'add',
+    scopes: [
+      'source.perl6fe',
+      'string.array.words.perl6fe'
+    ]
+
   it "Regex named captures highlight in double quoted strings. Issue №9", ->
     {tokens} =
     grammar.tokenizeLine '"$<captured>"'

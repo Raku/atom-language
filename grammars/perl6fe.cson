@@ -588,14 +588,31 @@
       (?:  (multi)(?=\\s+))?
       (?:  (macro|sub|submethod|method|multi|proto|only|category) \\s+ )
       \\s* (!)?
-      (    [\\p{Digit}\\p{Alpha}\'\\-_]+ )'
+      (  [^\\s\\(\\)\\{\\}]+ )'
     'beginCaptures':
       '1': 'name': 'storage.type.declarator.multi.perl6fe'
       '2': 'name': 'storage.type.declarator.type.perl6fe'
       '3': 'name': 'support.class.method.private.perl6fe'
-      '4': 'name': 'entity.name.function.perl6fe'
-    'end': '\\s*(?=[\\(\\{])'
-    'contentName': 'entity.name.function.perl6fe'
+      '4':
+        #'name': 'entity.name.function.perl6fe'
+        'patterns': [
+          {
+            'match': '(?x) ( [\\p{Digit}\\p{Alpha}\'\\-_]+ ) \\b (:)? (\\w+ \\b )? (\\S+  )?'
+            'captures':
+              '1': 'name': 'entity.name.function.perl6fe'
+              '2':
+                'name': 'punctuation.definition.function.adverb.perl6fe'
+              '3':
+                'name': 'support.type.class.adverb.perl6fe'
+              '4':
+                'patterns': [
+                  { 'include': '$self' }
+                ]
+            #'name': 'meta.function.named.adverb.perl6fe'
+          }
+        ]
+    'end': '(?=[\\(\\{\\s])'
+    #'contentName': 'entity.name.function.perl6fe'
   }
   {
     'begin': '(?<![\\.:])(regex|rule|token)(?!\\s*=>)'
