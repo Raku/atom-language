@@ -8,17 +8,23 @@
 
 describe "Perl 6 FE grammar", ->
   grammar = null
+  grammarRE = null
   beforeEach ->
     waitsForPromise ->
       atom.packages.activatePackage("language-perl6")
 
     runs ->
       grammar = atom.grammars.grammarForScopeName("source.perl6fe")
+      grammarRE = atom.grammars.grammarForScopeName("source.regexp.perl6fe")
 
   ## Sanity checks
-  it "parses the grammar", ->
+  it "parses source.perl6fe", ->
     expect(grammar).toBeDefined()
     expect(grammar.scopeName).toBe "source.perl6fe"
+
+  it "parses source.regexp.perl6fe", ->
+    expect(grammarRE).toBeDefined()
+    expect(grammarRE.scopeName).toBe "source.regexp.perl6fe"
 
   ## First line language detection
   it "use v6 works", ->
@@ -423,8 +429,9 @@ describe "Perl 6 FE grammar", ->
       'meta.regexp.named.perl6fe',
       'entity.name.function.regexp.named.perl6fe'
     ]
-
-  it "Regex hex highlights in character classes Issue №10", ->
+##The line below is fudged due to an Atom bug that only shows up when testing
+##intermittently. Please unfudge and test before release.
+  it "Regex hex highlights in character classes Issue №10. Atom Issue #5025", ->
     {tokens} =
     grammar.tokenizeLine '/<[ \\x[99] ]>/'
     expect(tokens[0]).toEqual value: '/',
