@@ -1,3 +1,7 @@
+# v1.11.1
+* Fix problem where the recently added feature so routines and methods can
+  highlight inside interpolated strings would cause it to overrun the length of
+  the string if there were parenthesis later on in the line. Fixes Issue #20
 # v1.11.0
 
 ## Pod
