@@ -107,6 +107,19 @@
     }
   ]
   }
+  # multiline comment triple_angle
+  {
+  'begin': '\\s*#`<<<',
+  'end': '>>>',
+  'name': 'comment.multiline.hash-tick.triple_angle.perl6fe'
+  'patterns': [
+    {
+      'begin': '<<<'
+      'end': '>>>'
+      'name': 'comment.internal.triple_angle.perl6fe'
+    }
+  ]
+  }
   # multiline comment double_angle
   {
   'begin': '\\s*#`<<',

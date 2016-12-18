@@ -6,6 +6,7 @@ my @open-close-delimiters =
 ('triple_paren',          Q<\\(\\(\\(>, Q<\\)\\)\\)>, 3,       False),
 ('triple_bracket',        Q<\\[\\[\\[>, Q<\\]\\]\\]>, 3,       False),
 ('triple_brace',          Q<\\{\\{\\{>, Q<\\}\\}\\}>, 3, False),
+('triple_angle',             '<<<',      '>>>',       3, False),
 ('double_angle',            '<<',        '>>',        2, False),
 ('double_paren',             Q<\\(\\(>,   Q<\\)\\)>,  2, False),
 ('double_bracket',           Q<\\[\\[>,   Q<\\]\\]>,  2, False),
