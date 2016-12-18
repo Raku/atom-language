@@ -92,6 +92,24 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'entity.name.function.perl6fe' ]
 
   ## Operators
+  it "Hex numbers highlight properly with dash-minus in front", ->
+    {tokens} = grammar.tokenizeLine "-0x10"
+    expect(tokens[0]).toEqual value: '-0x10',
+    scopes: [ 'source.perl6fe', 'constant.numeric.radix.perl6fe' ]
+
+  it "Hex numbers highlight properly with plus sign in front", ->
+    {tokens} = grammar.tokenizeLine "+0x10"
+    expect(tokens[0]).toEqual value: '+0x10',
+    scopes: [ 'source.perl6fe', 'constant.numeric.radix.perl6fe' ]
+  it "Hex numbers highlight properly with minus sign U2212 in front", ->
+    {tokens} = grammar.tokenizeLine "−0x10"
+    expect(tokens[0]).toEqual value: '−0x10',
+    scopes: [ 'source.perl6fe', 'constant.numeric.radix.perl6fe' ]
+  it "Numbers highlight properly with minus sign U2212 in front", ->
+    {tokens} = grammar.tokenizeLine "−42"
+    expect(tokens[0]).toEqual value: '−42',
+    scopes: [ 'source.perl6fe', 'constant.numeric.perl6fe' ] 
+
   it "=~= approximately-equal to operator highlights properly", ->
     {tokens} = grammar.tokenizeLine "=~="
     expect(tokens[0]).toEqual value: "=~=",

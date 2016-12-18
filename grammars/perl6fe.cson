@@ -956,6 +956,8 @@
   #  'match':
   #}
   # Operators
+    # Numbers
+  { 'include': '#numbers' }
   {
     'match': '(?x)
       (?<!\\(|\\*)\\%|
@@ -965,9 +967,6 @@
       (?<=\\s)\\-(?=[\\s\\(\\{\\[])|
       (?<!\\w)[o\\x{2218}](?!\\w)'
     'name': 'keyword.operator.generic.perl6fe'
-  }
-  {
-    'include': '#numbers'
   }
   # Pairs
   {
@@ -1013,13 +1012,17 @@
   'numbers':
     'patterns': [
       {
-        'match': '(?<=[=,;\\^\\s\\{\\[\\(\\/]|\\.\\.)0[bodx]\\w+'
+        'match': '''(?x)
+                    (?<= ^ | [=,;^\\s{\\[(/] | \\.\\. )
+                    [-−+]?
+                    0[bodx]\\w+
+                 '''
         'name': 'constant.numeric.radix.perl6fe'
       }
       {
         'match': '(?x)
           (?<= ^ | [×÷*=,:;^\\s{\\[(/] | \\.\\. )
-          (?: [+-] )?
+          (?: [+-−] )?
           (?:     \\d+ (?: [\\_\\d]+ \\d )? )
           (?: \\.  \\d+ (?: [\\_\\d]+ \\d )? )?
           (?:  e  \\d+ (?: [\\_\\d]+ \\d )? )?'
