@@ -1034,35 +1034,24 @@
           'begin': '^\\s*(=)(head\\w*)\\s+(.+?)\\s*$'
           'end': '(?=^\\s*$|^\\s*=\\w+.*$)'
           'captures':
-            '1':
-              'name': 'storage.modifier.block.abbreviated.perl6fe'
-            '2':
-              'name': 'entity.other.attribute-name.block.abbreviated.perl6fe'
+            '1': 'name': 'storage.modifier.block.abbreviated.perl6fe'
+            '2': 'name': 'entity.other.attribute-name.block.abbreviated.perl6fe'
             '3':
               'name': 'entity.name.section.abbreviated.perl6fe'
+              'patterns': [ { 'include': '#comment-block-syntax' } ]
+
           'contentName': 'entity.name.section.head.abbreviated.perl6fe'
-          'patterns': [
-            {
-              'include': '#comment-block-syntax'
-            }
-          ]
+          'patterns': [ { 'include': '#comment-block-syntax' } ]
         }
         {
           'begin': '^\\s*(=)(\\w+)\\s+(.+?)\\s*$'
           'end': '(?=^\\s*$|^\\s*=\\w+.*$)'
           'captures':
-            '1':
-              'name': 'storage.modifier.block.abbreviated.perl6fe'
-            '2':
-              'name': 'entity.other.attribute-name.block.abbreviated.perl6fe'
-            '3':
-              'name': 'entity.name.section.abbreviated.perl6fe'
+            '1': 'name': 'storage.modifier.block.abbreviated.perl6fe'
+            '2': 'name': 'entity.other.attribute-name.block.abbreviated.perl6fe'
+            '3': 'name': 'entity.name.section.abbreviated.perl6fe'
           'contentName': 'comment.block.abbreviated.perl6fe'
-          'patterns': [
-            {
-              'include': '#comment-block-syntax'
-            }
-          ]
+          'patterns': [ { 'include': '#comment-block-syntax' } ]
         }
     ]
   'shellquotes':
@@ -1361,7 +1350,7 @@
         'name': 'meta.pod.l.perl6fe'
       }
       {
-        'match': '([CKT])(?:(\\<\\<)(.+?)(\\>\\>)|(\\<)(.+?)(\\>))'
+        'match': '([CKTX])(?:(\\<\\<)(.+?)(\\>\\>)|(\\<)(.+?)(\\>))'
         'captures':
           '1':
             'name': 'support.function.pod.code.perl6fe'
