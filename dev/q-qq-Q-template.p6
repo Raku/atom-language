@@ -77,7 +77,7 @@ my $q-quotation-marks = Q:to/🐧/;
 my $q-patterns = Q:to/🐧/;
   # Q_XXX
   {
-    'begin': '(?x) (?<=^|[\\s\\(\\),;])
+    'begin': '(?x) (?<=^|[\\s\\(\\){},;])
       (Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
@@ -99,7 +99,7 @@ my $q-patterns = Q:to/🐧/;
   }
   # q_XXX
   {
-    'begin': '(?x) (?<=^|[\\s\\(\\),;])
+    'begin': '(?x) (?<=^|[\\s\\(\\){},;])
       (q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
@@ -127,7 +127,7 @@ my $q-patterns = Q:to/🐧/;
   }
   # qq_XXX
   {
-    'begin': '(?x) (?<=^|[\\s\\(\\),;])
+    'begin': '(?x) (?<=^|[\\s\\(\\){},;])
       (qq(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
@@ -169,7 +169,7 @@ my $q-second-str = Q:to/🐧/;
 my $q-any-str = Q:to/🐧/;
     # q_any qq_any Q_any
     {
-    'begin': '(?x) (?<=^|[\\s\\(\\),;])
+    'begin': '(?x) (?<=^|[\\s\\(\\){},;])
       (q|qq|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
         \\s*:(?:
