@@ -114,7 +114,20 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[0]).toEqual value: '#`(',
     scopes: [ 'source.perl6fe', 'comment.multiline.hash-tick.paren.perl6fe' ]
 
-  ## Quoting
+  ## Quoting {qq[ ]}
+  it "qq quoting works if surrounded by curly brackets", ->
+    {tokens} = grammar.tokenizeLine "{qq[ ]}"
+    expect(tokens[1]).toEqual value: 'qq',
+    scopes: [
+      'source.perl6fe', 'meta.block.perl6fe',
+      'string.quoted.qq.operator.perl6fe'
+    ]
+  it "qq quoting works if surrounded by parens", ->
+    {tokens} = grammar.tokenizeLine "(qq[ ])"
+    expect(tokens[1]).toEqual value: 'qq',
+    scopes: [
+      'source.perl6fe', 'string.quoted.qq.operator.perl6fe'
+    ]
   it "Function calls highlight in interpolated strings", ->
     {tokens} = grammar.tokenizeLine '"$b.foo() should)"'
     expect(tokens[1]).toEqual value: '$',
