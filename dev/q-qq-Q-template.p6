@@ -2,26 +2,29 @@
 # Generate the q[] qq[] and Q[] quoting constructs
 my @open-close-delimiters =
 #Left Pi right Pf. Open Ps close Pe
-#name                       #open        #close      #number   #alowed alone #if allowed alone what type
-('triple_paren',          Q<\\(\\(\\(>, Q<\\)\\)\\)>, 3,       False),
+#name                       #open        #close      #number #std quotes #std prop. #pod-tag?
+('triple_paren',          Q<\\(\\(\\(>, Q<\\)\\)\\)>, 3,       False,   True),
 ('triple_bracket',        Q<\\[\\[\\[>, Q<\\]\\]\\]>, 3,       False),
-('triple_brace',          Q<\\{\\{\\{>, Q<\\}\\}\\}>, 3, False),
-('triple_angle',             '<<<',      '>>>',       3, False),
-('double_angle',            '<<',        '>>',        2, False),
-('double_paren',             Q<\\(\\(>,   Q<\\)\\)>,  2, False),
-('double_bracket',           Q<\\[\\[>,   Q<\\]\\]>,  2, False),
-('double_brace',            '{{',         Q<}}>,      2, False),
-('brace',                   '{',          Q<}>,       1, False),
-('angle',                   '<',         '>',         1, False),
-('paren',                    Q<\\(>,      Q<\\)>,     1, False),
-('bracket',                  Q<\\[>,      Q<\\]>,     1, False),
-('left_double_right_double', Q<“>,        Q<”>,       1, True, 'qq'),
-('left_single_right_single', Q<‘>,        Q<’>,       1, True, 'q'),
-('fw_cornerbracket',         Q<「>,       Q<」>,      1, False),
-('hw_cornerbracket',         Q<｢>,        Q<｣>,       1, False),
-('chevron', '«', '»', 1, False),
+('triple_brace',          Q<\\{\\{\\{>, Q<\\}\\}\\}>, 3,       False),
+('triple_angle',             '<<<',      '>>>',       3,       False,  Nil,        True),
+('double_angle',            '<<',        '>>',        2,       False,  Nil,        True),
+('double_paren',             Q<\\(\\(>,   Q<\\)\\)>,  2,       False),
+('double_bracket',           Q<\\[\\[>,   Q<\\]\\]>,  2,       False),
+('double_brace',            '{{',         Q<}}>,      2,       False),
+('brace',                   '{',          Q<}>,       1,       False),
+('angle',                   '<',         '>',         1,       False,  Nil,        True),
+('paren',                    Q<\\(>,      Q<\\)>,     1,       False),
+('bracket',                  Q<\\[>,      Q<\\]>,     1,       False),
+('left_double_right_double', Q<“>,        Q<”>,       1,       True,    'qq'),
+('left_single_right_single', Q<‘>,        Q<’>,       1,       True,    'q'),
+('fw_cornerbracket',         Q<「>,       Q<」>,      1,        False),
+('hw_cornerbracket',         Q<｢>,        Q<｣>,       1,       False),
+('chevron',                   '«',         '»',       1,       False,  Nil,       True),
 ;
 my @delimiters = @open-close-delimiters;
+=comment unmatched delimiters
+the delimiters being pushed to @delimiters are unmatched (open and close delimiters are the same)
+
 push @delimiters, ('slash',  '/',   '/',   1, False);
 push @delimiters, ('single', Q<\'>, Q<\'>, 1, True, 'q');
 push @delimiters, ('double', Q<">,  Q<">,  1, True, 'qq');
@@ -207,6 +210,72 @@ my $multiline-comment-str = Q:to/🐧/;
   }
 🐧
 
+my $pod-tag-str = Q:to/🐧/;
+      # UYYY ZZZ
+      {
+        'begin': '(?x) (U) (YYY)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (ZZZ)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.underline.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+        ]
+      }
+      # IYYY ZZZ
+      {
+        'begin': '(?x) (I) (YYY)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (ZZZ)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.italic.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+        ]
+      }
+      # BYYY ZZZ
+      {
+        'begin': '(?x) (B) (YYY)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (ZZZ)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.bold.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+        ]
+      }
+      # UppercaseYYY ZZZ
+      {
+        'begin': '(?x) ([A-Z]) (YYY)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (ZZZ)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.raw.code.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+        ]
+      }
+🐧
 sub replace ( Str $string is copy, $name, $begin, $end ) {
   $string ~~ s:g/XXX/$name/;
   # Note: q (…) qq (…) Q (…) are only allowed with a space.
@@ -232,6 +301,12 @@ my $normal-quotes-file;
 my $zero-file;
 my $first-file;
 my $second-file;
+my $third-file;
+for ^@delimiters -> $i {
+  next unless @delimiters[$i][6];
+  my ($name, $open, $close, $num, $nil, $Nil, $bool) = @delimiters[$i];
+  $third-file ~= replace-multiline-comment($pod-tag-str, $name, $open, $close);
+}
 # Normal quotation marks
 for ^@delimiters -> $i {
   next unless @delimiters[$i][4];
@@ -286,6 +361,7 @@ for ^@delimiters -> $i {
 spurt 'ZERO.cson', $zero-file;
 spurt 'FIRST.cson', $first-file;
 spurt 'SECOND.cson', $second-file;
+spurt 'THIRD.cson', $third-file;
 sub use-for-q ( @delimiters ) {
     # If the delimiters are equal and they are an opening, closing or begining or ending
     # unicode type symbol, then we can't use it for q/qq/Q

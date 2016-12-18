@@ -30,3 +30,11 @@ awk '
     p' "${FILE2}" > "${TEMP_FILE2}"
 rm SECOND.cson
 mv "${TEMP_FILE2}" "${FILE2}"
+
+awk '
+    BEGIN       {p=1}
+    /^#3START/   {print;system("cat THIRD.cson");p=0}
+    /^#3END/     {p=1}
+    p' "${FILE}" > "${TEMP_FILE}"
+rm THIRD.cson
+mv "${TEMP_FILE}" "${FILE}"

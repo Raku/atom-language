@@ -1348,80 +1348,70 @@
     'patterns': [
       { 'include': '#comment-block-delimited' }
       { 'include': '#comment-block-abbreviated' }
+## See `./dev/Q_q_qq.p6` to alter the generator for this code
+#3START DO NOT EDIT BETWEEN THIS LINE AND #0END
+      # U<<< >>>
       {
-        'match': '(L)(\\<)(.+?)(?:(\\|)(.+?))?(\\>)'
-        'captures':
-          '1': 'name': 'support.function.pod.link.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.link.perl6fe'
-          '3': 'name': 'entity.name.type.pod.link.perl6fe'
-          '4': 'name': 'punctuation.section.embedded.pod.link.perl6fe'
-          '5': 'name': 'markup.underline.link.pod.perl6fe'
-          '6': 'name': 'punctuation.section.embedded.pod.link.perl6fe'
-        'name': 'meta.pod.l.perl6fe'
-      }
-      # CKTX<< >>
-      {
-        'begin': '(?x) ([CKTX]) (<<)'
+        'begin': '(?x) (U) (<<<)'
         'beginCaptures':
           '1': 'name': 'support.function.pod.code.perl6fe'
           '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'end':   '(?x) (>>)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.raw.code.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_double_angle_string_content' }
-        ]
-      }
-      # CKTX< >
-      {
-        'begin': '(?x) ([CKTX]) (<)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'end':   '(?x) (>)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.raw.code.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
-        ]
-      }
-      # CKTX« »
-      {
-        'begin': '(?x) ([CKTX]) («)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'end':   '(?x) (»)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.raw.code.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
-        ]
-      }
-      # 'markup.underline.perl6fe'
-      # U< >
-      {
-        'begin': '(?x) (U) (<)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'end':   '(?x) (>)'
+        'end':   '(?x) (>>>)'
         'endCaptures':
           '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
         'contentName': 'markup.underline.perl6fe'
         'name': 'meta.pod.c.perl6fe'
         'patterns': [
           { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
+          { 'include': 'source.quoting.perl6fe#q_triple_angle_string_content' }
+        ]
+      }
+      # I<<< >>>
+      {
+        'begin': '(?x) (I) (<<<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>>>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.italic.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_triple_angle_string_content' }
+        ]
+      }
+      # B<<< >>>
+      {
+        'begin': '(?x) (B) (<<<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>>>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.bold.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_triple_angle_string_content' }
+        ]
+      }
+      # Uppercase<<< >>>
+      {
+        'begin': '(?x) ([A-Z]) (<<<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>>>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.raw.code.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_triple_angle_string_content' }
         ]
       }
       # U<< >>
@@ -1440,39 +1430,6 @@
           { 'include': 'source.quoting.perl6fe#q_double_angle_string_content' }
         ]
       }
-      # U« »
-      {
-        'begin': '(?x) (U) («)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'end':   '(?x) (»)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.underline.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
-        ]
-      }
-      # 'markup.italic.perl6fe'
-      # I< >
-      {
-        'begin': '(?x) (I) (<)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'end':   '(?x) (>)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.italic.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
-        ]
-      }
       # I<< >>
       {
         'begin': '(?x) (I) (<<)'
@@ -1487,38 +1444,6 @@
         'patterns': [
           { 'include': '#comment-block-syntax' }
           { 'include': 'source.quoting.perl6fe#q_double_angle_string_content' }
-        ]
-      }
-      # I« »
-      {
-        'begin': '(?x) (I) («)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'end':   '(?x) (»)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.italic.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
-        ]
-      }
-      # B< >
-      {
-        'begin': '(?x) (B) (<)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'end':   '(?x) (>)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.bold.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
         ]
       }
       # B<< >>
@@ -1537,6 +1462,118 @@
           { 'include': 'source.quoting.perl6fe#q_double_angle_string_content' }
         ]
       }
+      # Uppercase<< >>
+      {
+        'begin': '(?x) ([A-Z]) (<<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.raw.code.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_double_angle_string_content' }
+        ]
+      }
+      # U< >
+      {
+        'begin': '(?x) (U) (<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.underline.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
+        ]
+      }
+      # I< >
+      {
+        'begin': '(?x) (I) (<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.italic.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
+        ]
+      }
+      # B< >
+      {
+        'begin': '(?x) (B) (<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.bold.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
+        ]
+      }
+      # Uppercase< >
+      {
+        'begin': '(?x) ([A-Z]) (<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.raw.code.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
+        ]
+      }
+      # U« »
+      {
+        'begin': '(?x) (U) («)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (»)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.underline.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
+        ]
+      }
+      # I« »
+      {
+        'begin': '(?x) (I) («)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (»)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.italic.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
+        ]
+      }
       # B« »
       {
         'begin': '(?x) (B) («)'
@@ -1553,6 +1590,23 @@
           { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
         ]
       }
+      # Uppercase« »
+      {
+        'begin': '(?x) ([A-Z]) («)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (»)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.raw.code.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
+        ]
+      }
+#3END
     ]
   'heredocs':
     'patterns': [
