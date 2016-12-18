@@ -267,12 +267,10 @@
   {
     'begin': '“'
     'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
+      '0': 'name': 'punctuation.definition.string.begin.perl6fe'
     'end': '”'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
+      '0': 'name': 'punctuation.definition.string.end.perl6fe'
     'name': 'string.quoted.left_double_right_double.perl6fe'
     'patterns': [
       {
@@ -323,12 +321,10 @@
   {
     'begin': '"'
     'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
+      '0': 'name': 'punctuation.definition.string.begin.perl6fe'
     'end': '"'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
+      '0': 'name': 'punctuation.definition.string.end.perl6fe'
     'name': 'string.quoted.double.perl6fe'
     'patterns': [
       {
@@ -343,12 +339,10 @@
   {
     'begin': '”'
     'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
+      '0': 'name': 'punctuation.definition.string.begin.perl6fe'
     'end': '”'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
+      '0': 'name': 'punctuation.definition.string.end.perl6fe'
     'name': 'string.quoted.right_double_right_double.perl6fe'
     'patterns': [
       {

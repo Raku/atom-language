@@ -36,12 +36,10 @@ my $qq-quotation-marks = Q:to/🐧/;
   {
     'begin': 'YYY'
     'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
+      '0': 'name': 'punctuation.definition.string.begin.perl6fe'
     'end': 'ZZZ'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
+      '0': 'name': 'punctuation.definition.string.end.perl6fe'
     'name': 'string.quoted.XXX.perl6fe'
     'patterns': [
       {
@@ -89,20 +87,14 @@ my $q-patterns = Q:to/🐧/;
       )*)
       \\s*(YYY)'
     'beginCaptures':
-      '1':
-        'name': 'string.quoted.q.operator.perl6fe'
-      '2':
-        'name': 'support.function.quote.adverb.perl6fe'
-      '3':
-        'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.perl6fe'
+      '2': 'name': 'support.function.quote.adverb.perl6fe'
+      '3': 'name': 'punctuation.definition.string.perl6fe'
     'end': 'ZZZ'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.perl6fe'
+      '0': 'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.q.XXX.quote.perl6fe'
-    'patterns': [
-      { 'include': '#q_XXX_string_content' }
-    ]
+    'patterns': [ { 'include': '#q_XXX_string_content' } ]
   }
   # q_XXX
   {
@@ -117,16 +109,12 @@ my $q-patterns = Q:to/🐧/;
       )*)
       \\s*(YYY)'
     'beginCaptures':
-      '1':
-        'name': 'string.quoted.q.operator.perl6fe'
-      '2':
-        'name': 'support.function.quote.adverb.perl6fe'
-      '3':
-        'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.perl6fe'
+      '2': 'name': 'support.function.quote.adverb.perl6fe'
+      '3': 'name': 'punctuation.definition.string.perl6fe'
     'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.perl6fe'
+      '0': 'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.q.XXX.quote.perl6fe'
     'patterns': [
       {
@@ -149,16 +137,12 @@ my $q-patterns = Q:to/🐧/;
       )*)
       \\s*(YYY)'
     'beginCaptures':
-      '1':
-        'name': 'string.quoted.qq.operator.perl6fe'
-      '2':
-        'name': 'support.function.quote.adverb.perl6fe'
-      '3':
-        'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.perl6fe'
+      '2': 'name': 'support.function.quote.adverb.perl6fe'
+      '3': 'name': 'punctuation.definition.string.perl6fe'
     'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.perl6fe'
+      '0': 'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.qq.XXX.quote.perl6fe'
     'patterns': [
       {
@@ -178,11 +162,7 @@ my $q-second-str = Q:to/🐧/;
   'q_XXX_string_content':
     'begin': 'YYY'
     'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
-    'patterns': [
-      {
-        'include': '#q_XXX_string_content'
-      }
-    ]
+    'patterns': [ { 'include': '#q_XXX_string_content' } ]
 🐧
 
 my $q-any-str = Q:to/🐧/;
@@ -199,16 +179,12 @@ my $q-any-str = Q:to/🐧/;
       )*)
       \\s*([^\\w\\sZZZ])'
     'beginCaptures':
-      '1':
-        'name': 'string.quoted.q.operator.perl6fe'
-      '2':
-        'name': 'support.function.quote.adverb.perl6fe'
-      '3':
-        'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.perl6fe'
+      '2': 'name': 'support.function.quote.adverb.perl6fe'
+      '3': 'name': 'punctuation.definition.string.perl6fe'
     'end': '\\3'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.perl6fe'
+      '0': 'name': 'punctuation.definition.string.perl6fe'
     'contentName': 'string.quoted.q.any.quote.perl6fe'
     }
 🐧
