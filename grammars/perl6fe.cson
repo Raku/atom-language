@@ -1072,7 +1072,10 @@
           'captures':
             '1': 'name': 'storage.modifier.block.abbreviated.perl6fe'
             '2': 'name': 'entity.other.attribute-name.block.abbreviated.perl6fe'
-            '3': 'name': 'entity.name.section.abbreviated.perl6fe'
+            '3':
+              'name': 'entity.name.section.abbreviated.perl6fe'
+              'patterns': [ { 'include': '#comment-block-syntax' } ]
+
           'contentName': 'comment.block.abbreviated.perl6fe'
           'patterns': [ { 'include': '#comment-block-syntax' } ]
         }

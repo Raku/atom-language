@@ -108,7 +108,7 @@ describe "Perl 6 FE grammar", ->
   it "Numbers highlight properly with minus sign U2212 in front", ->
     {tokens} = grammar.tokenizeLine "−42"
     expect(tokens[0]).toEqual value: '−42',
-    scopes: [ 'source.perl6fe', 'constant.numeric.perl6fe' ] 
+    scopes: [ 'source.perl6fe', 'constant.numeric.perl6fe' ]
 
   it "=~= approximately-equal to operator highlights properly", ->
     {tokens} = grammar.tokenizeLine "=~="
