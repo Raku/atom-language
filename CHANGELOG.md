@@ -1,9 +1,16 @@
-# v1.9.12
-* Make angle bracket word quoting across multiple lines work again. It will
+# v1.10.0
+* Method calls and routine calls in interpolated strings now highlight.
+  Example: `"$var.method()"` Fixes Issue #13
+* Angle bracket word quoting across multiple lines works again. It will
   only allow multi-line quoting this way if the opening angle bracket is after
   an `=` sign.
-* Allow non-word characters like `=` and `'` to be in `token`, `rule` and `regex`
+* Allow non-word characters like `-` and `'` to be in `token`, `rule` and `regex`
   names for grammars.
+* Highlight `:sym< >` for protoregex action `method`'s. Fixes Issue #12
+* Highlight pod =head sections as headings not comments when they continue onto
+  the next line. Fixes Issue #16
+* Make sure fonts with ligatures like Fira Code don't use ligatures in comments,
+  or quoted strings.
 
 # v1.9.11
 * Highlight unicode hex codes in regex character classes. Fixes Issue #10
