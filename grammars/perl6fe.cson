@@ -1873,7 +1873,7 @@
       {
         'match': '''(?x)
           (?<!\\\\)
-          (\\$|@|%|&)                 # Sigils
+          (\\$|@|%|&)
           (?!\\$)
           (\\.|\\*|:|!|\\^|~|=|\\?)?  # Twigils
           ([\\p{Alpha}_])             # Must start with Alpha or underscore
@@ -1883,7 +1883,22 @@
              [\\-\'] [\\p{Digit}\\p{Alpha}_]
           )*
           ( \\[ .* \\] )?             # postcircumfix [ ]
-          ( (?:( \\. )( \\S+ ))? ( \\(  .*? \\) ) )?       # methods
+          ## methods
+          (?:
+            (?:
+              ( \\. )
+              (
+                 [\\p{Alpha}]
+                  (?:
+                    [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore or a ' or -
+                  |                           # followed by an alphanum or underscore
+                    [\\-\'] [\\p{Digit}\\p{Alpha}_]
+                  )*
+
+              )
+            )?
+            ( \\( .*?  \\) )
+          )?
         '''
         'captures':
           '1': 'name': 'variable.other.identifier.sigil.perl6fe'
@@ -1914,24 +1929,18 @@
                 ]
               }
             ]
-          '7': 'name': 'keyword.operator.dot.perl6fe'
-          '8': 'name': 'support.function.perl6fe'
-          '9':
+          '6': 'name': 'keyword.operator.dot.perl6fe'
+          '7': 'name': 'support.function.perl6fe'
+          '8':
+            'begin': '('
+            'beginCaptures':
+              '0': 'keyword.operator.paren.open.perl6fe'
+            'end': ')'
+            'endCaptures':
+              '0': 'name': 'keyword.operator.paren.close.perl6fe'
             'patterns': [
-              {
-                'begin': '\\('
-                'beginCaptures':
-                  '0': 'name': 'keyword.operator.paren.open.perl6fe'
-                'end': '\\)'
-                'endCaptures':
-                  '0': 'name': 'keyword.operator.paren.open.perl6fe'
-                'patterns': [
-                  { 'include': '$self' }
-                ]
-              }
+              { 'include': '$self' }
             ]
-
-
         'name': 'variable.other.identifier.interpolated.perl6fe'
       }
       { 'include': '#hex_escapes' }
