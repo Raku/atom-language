@@ -18,6 +18,7 @@ my @open-close-delimiters =
 ('left_single_right_single', Q<‘>,        Q<’>,       1, True, 'q'),
 ('fw_cornerbracket',         Q<「>,       Q<」>,      1, False),
 ('hw_cornerbracket',         Q<｢>,        Q<｣>,       1, False),
+('chevron', '«', '»', 1, False),
 ;
 my @delimiters = @open-close-delimiters;
 push @delimiters, ('slash',  '/',   '/',   1, False);

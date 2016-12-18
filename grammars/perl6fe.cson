@@ -263,6 +263,19 @@
     }
   ]
   }
+  # multiline comment chevron
+  {
+  'begin': '\\s*#`«',
+  'end': '»',
+  'name': 'comment.multiline.hash-tick.chevron.perl6fe'
+  'patterns': [
+    {
+      'begin': '«'
+      'end': '»'
+      'name': 'comment.internal.chevron.perl6fe'
+    }
+  ]
+  }
 # Quotation Mark left_double_right_double
   {
     'begin': '“'
@@ -1333,6 +1346,7 @@
           '6': 'name': 'punctuation.section.embedded.pod.link.perl6fe'
         'name': 'meta.pod.l.perl6fe'
       }
+      # CKTX<< >>
       {
         'begin': '(?x) ([CKTX]) (<<)'
         'beginCaptures':
@@ -1348,6 +1362,7 @@
           { 'include': 'source.quoting.perl6fe#q_double_angle_string_content' }
         ]
       }
+      # CKTX< >
       {
         'begin': '(?x) ([CKTX]) (<)'
         'beginCaptures':
@@ -1363,23 +1378,119 @@
           { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
         ]
       }
+      # CKTX« »
       {
-        'match': '(U)(<)(.+?)(>)'
-        'captures':
+        'begin': '(?x) ([CKTX]) («)'
+        'beginCaptures':
           '1': 'name': 'support.function.pod.code.perl6fe'
           '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-          '3': 'name': 'markup.underline.perl6fe'
-          '4': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (»)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.raw.code.perl6fe'
         'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
+        ]
       }
+      # 'markup.underline.perl6fe'
+      # U< >
       {
-        'match': '(I)(\\<)(.+?)(\\>)'
-        'captures':
+        'begin': '(?x) (U) (<)'
+        'beginCaptures':
           '1': 'name': 'support.function.pod.code.perl6fe'
           '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-          '3': 'name': 'markup.italic.perl6fe'
-          '4': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.underline.perl6fe'
         'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
+        ]
+      }
+      # U<< >>
+      {
+        'begin': '(?x) (U) (<<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.underline.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_double_angle_string_content' }
+        ]
+      }
+      # U« »
+      {
+        'begin': '(?x) (U) («)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (»)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.underline.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
+        ]
+      }
+      # 'markup.italic.perl6fe'
+      # I< >
+      {
+        'begin': '(?x) (I) (<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.italic.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_angle_string_content' }
+        ]
+      }
+      # I<< >>
+      {
+        'begin': '(?x) (I) (<<)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (>>)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.italic.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_double_angle_string_content' }
+        ]
+      }
+      # I« »
+      {
+        'begin': '(?x) (I) («)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (»)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.italic.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
+        ]
       }
       # B< >
       {
@@ -1411,6 +1522,22 @@
         'patterns': [
           { 'include': '#comment-block-syntax' }
           { 'include': 'source.quoting.perl6fe#q_double_angle_string_content' }
+        ]
+      }
+      # B« »
+      {
+        'begin': '(?x) (B) («)'
+        'beginCaptures':
+          '1': 'name': 'support.function.pod.code.perl6fe'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'end':   '(?x) (»)'
+        'endCaptures':
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+        'contentName': 'markup.bold.perl6fe'
+        'name': 'meta.pod.c.perl6fe'
+        'patterns': [
+          { 'include': '#comment-block-syntax' }
+          { 'include': 'source.quoting.perl6fe#q_chevron_string_content' }
         ]
       }
     ]
