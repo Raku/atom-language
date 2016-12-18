@@ -1,3 +1,18 @@
+# v1.11.0
+
+## Pod
+* Highlight `X< >` tags. Fixes Issue #17
+* Add support for `C<< >>`, `C<<< >>>` and `C« »` delimiters for all types of tags.
+  Fixes Issue #18
+* Nested tags now highlight.
+* Tags can now span multiple lines. Fixes Issue #14
+
+## Misc
+* Fix q/qq/Q quoting not highlighting when surrounded by brackets.
+* Highlight `<<< >>>` delimiters for q/qq/Q quoting.
+* Highlight `« »` delimiters for q/qq/Q quoting.
+* Add ```#`«``` and ```#`<<<``` delimiters for multiline comments.
+
 # v1.10.0
 * Method calls and routine calls in interpolated strings now highlight.
   Example: `"$var.method()"` Fixes Issue #13
