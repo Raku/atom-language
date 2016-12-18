@@ -128,6 +128,22 @@ describe "Perl 6 FE grammar", ->
     scopes: [
       'source.perl6fe', 'string.quoted.qq.operator.perl6fe'
     ]
+  it "Function calls in interpolated strings don't overrun the line", ->
+    {tokens} = grammar.tokenizeLine '"$o.n()".s( ) ]);'
+    expect(tokens[4]).toEqual value: 'n',
+    scopes: [
+      'source.perl6fe', 'string.quoted.double.perl6fe',
+      'variable.other.identifier.interpolated.perl6fe',
+      'support.function.perl6fe'
+    ]
+    expect(tokens[5]).toEqual value: '()',
+    scopes: [
+      'source.perl6fe', 'string.quoted.double.perl6fe',
+      'variable.other.identifier.interpolated.perl6fe'
+    ]
+    expect(tokens[7]).toEqual value: '.',
+    scopes: [ 'source.perl6fe', 'keyword.operator.generic.perl6fe' ]
+
   it "Function calls highlight in interpolated strings", ->
     {tokens} = grammar.tokenizeLine '"$b.foo() should)"'
     expect(tokens[1]).toEqual value: '$',
@@ -153,19 +169,12 @@ describe "Perl 6 FE grammar", ->
       'variable.other.identifier.interpolated.perl6fe',
       'support.function.perl6fe'
     ]
-    expect(tokens[5]).toEqual value: '(',
+    expect(tokens[5]).toEqual value: '()',
     scopes: [
       'source.perl6fe', 'string.quoted.double.perl6fe',
-      'variable.other.identifier.interpolated.perl6fe',
-      'keyword.operator.paren.open.perl6fe'
+      'variable.other.identifier.interpolated.perl6fe'
     ]
-    expect(tokens[6]).toEqual value: ')',
-    scopes: [
-      'source.perl6fe', 'string.quoted.double.perl6fe',
-      'variable.other.identifier.interpolated.perl6fe',
-      'keyword.operator.paren.open.perl6fe'
-    ]
-    expect(tokens[7]).toEqual value: ' should)',
+    expect(tokens[6]).toEqual value: ' should)',
     scopes: [ 'source.perl6fe', 'string.quoted.double.perl6fe' ]
 
   it "Variables highlight in interpolated strings", ->
