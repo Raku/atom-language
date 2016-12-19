@@ -1615,7 +1615,7 @@
           regexp|substr|trans|codes|p|path
         )
       )*)
-      \\s*([^\\w\\s{}<>\\(\\)\\[\\]“”‘’「」｢｣«»/\'"])'
+      \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
     'beginCaptures':
       '1': 'name': 'string.quoted.q.operator.perl6fe'
       '2': 'name': 'support.function.quote.adverb.perl6fe'

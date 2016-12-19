@@ -182,7 +182,7 @@ my $q-any-str = Q:to/🐧/;
           regexp|substr|trans|codes|p|path
         )
       )*)
-      \\s*([^\\w\\sZZZ])'
+      \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
     'beginCaptures':
       '1': 'name': 'string.quoted.q.operator.perl6fe'
       '2': 'name': 'support.function.quote.adverb.perl6fe'
@@ -347,8 +347,10 @@ for ^@delimiters -> $i {
 }
 #push @not-any, '@';
 @not-any .= unique;
+#`{{ We now use unicode properties so don't have to create a list of all the delimiters
 my $not-any = @not-any.join('');
 $q-any-str ~~ s/ZZZ/$not-any/;
+}}
 $first-file ~= $q-any-str;
 
 for ^@delimiters -> $i {
