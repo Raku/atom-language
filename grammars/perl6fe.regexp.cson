@@ -72,6 +72,12 @@
         ]
         'name': 'meta.interpolation.perl6fe'
       }
+      # TODO check for escaping with lookbehind
+      {
+        'match': '<\\(|\\)>'
+        'name': 'keyword.operator.capture.marker.regexp.perl6fe'
+      }
+      # Property < >
       {
         'begin': '(?!\\\\)<'
         'beginCaptures':
