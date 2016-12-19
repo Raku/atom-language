@@ -1,3 +1,11 @@
+# v1.11.2
+* Fix Issue #21:
+  * Fix − (U+2212 minus) and + in front of numbers or hex numbers.
+  * Fix hex numbers not highlighting when at start of line.
+  * Fix hex numbers not highlighting when hyphen was in front of it.
+* Fix highlighting breaking when the word `regex` was used as a routine name.
+  Fixes Issue #17
+
 # v1.11.1
 * Fix problem where the recently added feature so routines and methods can
   highlight inside interpolated strings would cause it to overrun the length of
