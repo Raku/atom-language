@@ -1,3 +1,6 @@
+# v1.11.4
+* Add preliminary support for `s///` and `S///`.
+
 # v1.11.3
 * Fix a problem where a capture marker inside regex was recognized as a grouping
   parenthesis, and could overrun the regex if there was another paren on the same
