@@ -37,6 +37,12 @@ describe "Perl 6 FE grammar", ->
     lne = " =begin pod"
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
+ ## Bugs
+
+  it "doesn't start regex for routines with regex in them", ->
+    {tokens} = grammar.tokenizeLine 'regex_coderef'
+    expect(tokens[0]).toEqual value: 'regex_coderef',
+    scopes: [ 'source.perl6fe', 'routine.name.perl6fe' ]
   ## Pod
   it "Pod headers highlight until newline", ->
     lines = grammar.tokenizeLines '''
