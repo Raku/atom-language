@@ -1,3 +1,8 @@
+# v1.11.3
+* Fix a problem where a capture marker inside regex was recognized as a grouping
+  parenthesis, and could overrun the regex if there was another paren on the same
+  line. Fixes Issue #24
+
 # v1.11.2
 * Fix Issue #21:
   * Fix − (U+2212 minus) and + in front of numbers or hex numbers.
