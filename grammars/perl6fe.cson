@@ -470,8 +470,8 @@
   }
   # Finds regex marked rx or m as long as there's whitespace in front
   {
-    'begin': '(?x) \\s+
-      (?: (?<=^|\\s) (m|rx)((?:(?<!\\:P5)\\s*:\\w (?!\\s*\\\\:P5))*))
+    'begin': '(?x)
+      (?: (?<=^|\\s) (m|rx|S|s)((?:(?<!\\:P5)\\s*:\\w (?!\\s*\\\\:P5))*))
       \\s*
       (\\/)'
     'beginCaptures':
