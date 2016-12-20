@@ -40,6 +40,8 @@ describe "Perl 6 FE grammar", ->
  ## Bugs
   it "# regex highlights with two backslash behind it", ->
     {tokens} = grammar.tokenizeLine 'm/\\\\/'
+  it "# regex highlights arbitrary delimiters when using m", ->
+    {tokens} = grammar.tokenizeLine 'say m|hi|'
 
   it "doesn't start regex for routines with regex in them", ->
     {tokens} = grammar.tokenizeLine 'regex_coderef'

@@ -442,10 +442,10 @@
     'include': '#p5_regex'
   }
   # Finds regex at start of line or after: = , ( ) ~ => or when
-  # Using arbirtary delimiters
+  # Using arbirtary delimiters and m, rx, s or S
   {
     'begin': '''(?x)
-    (?<= ^|[=,(\\[~]|when|=> ) \\s*
+    (?<= ^|\\s )
     (?:
       (m|rx|s|S)
       (
@@ -472,10 +472,12 @@
       { 'include': 'source.regexp.perl6fe' }
     ]
   }
-  # Finds regex marked rx or m as long as there's whitespace in front
+  # (?<= ^|[=,(\\[~]|when|=> ) \\s*
+  # (?<= ^|\\s )
+  # Finds regex marked with or without m, rx, s or S, as long as there's whitespace in front
   {
     'begin': '''(?x)
-    (?<= ^|\\s )
+    (?<= ^|[=,(\\[~]|when|=> ) \\s*
     (?:
       (m|rx)
       (
@@ -525,59 +527,6 @@
       '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
       '3': 'name': 'punctuation.definition.regexp.perl6fe'
     'end': '(?<!\\\\)(\\])'
-    'endCaptures':
-      '1': 'name': 'punctuation.definition.regexp.perl6fe'
-    'contentName': 'string.regexp.perl6fe'
-    'patterns': [
-      { 'include': '#interpolation' }
-      { 'include': 'source.regexp.perl6fe' }
-    ]
-  }
-  {
-    'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(\\|)'
-    'beginCaptures':
-      '1': 'name': 'string.regexp.construct.perl6fe'
-      '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
-      '3': 'name': 'punctuation.definition.regexp.perl6fe'
-    'end': '(?<!\\\\)(\\|)'
-    'endCaptures':
-      '1': 'name': 'punctuation.definition.regexp.perl6fe'
-    'contentName': 'string.regexp.perl6fe'
-    'patterns': [
-      { 'include': '#interpolation' }
-      { 'include': 'source.regexp.perl6fe' }
-    ]
-  }
-  {
-    'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(\\!)'
-    'beginCaptures':
-      '1':
-        'name': 'string.regexp.construct.perl6fe'
-      '2':
-        'name': 'entity.name.section.adverb.regexp.perl6fe'
-      '3':
-        'name': 'punctuation.definition.regexp.perl6fe'
-    'end': '(?<!\\\\)(\\!)'
-    'endCaptures':
-      '1':
-        'name': 'punctuation.definition.regexp.perl6fe'
-    'contentName': 'string.regexp.perl6fe'
-    'patterns': [
-      {
-        'include': '#interpolation'
-      }
-      {
-        'include': 'source.regexp.perl6fe'
-      }
-    ]
-  }
-  {
-    'begin': '(?<![\\w\\/])(m|rx)((?:\\s*:\\w+)*)\\s*(~)'
-    'beginCaptures':
-      '1': 'name': 'string.regexp.construct.perl6fe'
-      '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
-      '3': 'name': 'punctuation.definition.regexp.perl6fe'
-    'end': '(?<!\\\\)(\\~)'
     'endCaptures':
       '1': 'name': 'punctuation.definition.regexp.perl6fe'
     'contentName': 'string.regexp.perl6fe'
