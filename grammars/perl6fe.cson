@@ -447,7 +447,7 @@
     'begin': '''(?x)
     (?<= ^|[=,(\\[~]|when|=> ) \\s*
     (?:
-      (m|rx)
+      (m|rx|s|S)
       (
         (?:
           (?<!:P5) # < This can maybe be removed because we
@@ -457,13 +457,13 @@
       )
     )
     \\s*
-    ([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\'\\-<>\\-]) # Whatever
+    ([^\\#\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\'\\-<>\\-]) # Whatever
     '''
     'beginCaptures':
       '1': 'name': 'string.regexp.construct.perl6fe'
       '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
       '3': 'name': 'punctuation.definition.regexp.perl6fe'
-    'end': '(?<!\\\\)(\\3)'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (\\3)'
     'endCaptures':
       '1': 'name': 'punctuation.definition.regexp.perl6fe'
     'contentName': 'string.regexp.perl6fe'
@@ -493,7 +493,7 @@
       '1': 'name': 'string.regexp.construct.perl6fe'
       '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
       '3': 'name': 'punctuation.definition.regexp.perl6fe'
-    'end': '(?<!\\\\)(\\3)'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (/)'
     'endCaptures':
       '1': 'name': 'punctuation.definition.regexp.perl6fe'
     'contentName': 'string.regexp.perl6fe'
@@ -942,6 +942,7 @@
       |prepend|categorize|antipairs|categorize-list|parse-base
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
       |get|words|new-from-pairs|uniname|uninames|uniprop|uniprops
+      |slurp-rest
     )(?!\\-)\\b(?!\\s*=>)'
     'captures':
       '1':

@@ -38,6 +38,8 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
+  it "# regex highlights with two backslash behind it", ->
+    {tokens} = grammar.tokenizeLine 'm/\\\\/'
 
   it "doesn't start regex for routines with regex in them", ->
     {tokens} = grammar.tokenizeLine 'regex_coderef'
