@@ -38,8 +38,17 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
-  it "# regex highlights with two backslash behind it", ->
+  it "m/\\\\/ regex highlights with two backslash in it", ->
     {tokens} = grammar.tokenizeLine 'm/\\\\/'
+    expect(tokens[0]).toEqual value: 'm',
+    scopes: [ 'source.perl6fe', 'string.regexp.construct.perl6fe' ]
+    expect(tokens[1]).toEqual value: '/',
+    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+    expect(tokens[2]).toEqual value: '\\\\',
+    scopes: [ 'source.perl6fe', 'string.regexp.perl6fe' ]
+    expect(tokens[3]).toEqual value: '/',
+    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+
   it "# regex highlights arbitrary delimiters when using m", ->
     {tokens} = grammar.tokenizeLine 'say m|hi|'
 
@@ -47,6 +56,7 @@ describe "Perl 6 FE grammar", ->
     {tokens} = grammar.tokenizeLine 'regex_coderef'
     expect(tokens[0]).toEqual value: 'regex_coderef',
     scopes: [ 'source.perl6fe', 'routine.name.perl6fe' ]
+
   it "Regex doesn't start with just a /", ->
     {tokens} = grammar.tokenizeLine '/'
     expect(tokens[0]).toEqual value: '/',
