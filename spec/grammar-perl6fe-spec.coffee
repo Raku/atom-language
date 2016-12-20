@@ -47,6 +47,11 @@ describe "Perl 6 FE grammar", ->
     {tokens} = grammar.tokenizeLine 'regex_coderef'
     expect(tokens[0]).toEqual value: 'regex_coderef',
     scopes: [ 'source.perl6fe', 'routine.name.perl6fe' ]
+  it "Regex doesn't start with just a /", ->
+    {tokens} = grammar.tokenizeLine '/'
+    expect(tokens[0]).toEqual value: '/',
+    scopes: [ 'source.perl6fe', 'keyword.operator.generic.perl6fe' ]
+
   ## Pod
   it "Pod headers highlight until newline", ->
     lines = grammar.tokenizeLines '''

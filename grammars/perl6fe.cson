@@ -441,6 +441,25 @@
   {
     'include': '#p5_regex'
   }
+  # Finds bare regex. Online works if both `/` are on the same line
+  {
+    'match': '''(?x)
+    (?<= ^|\\s )
+    ([/]) # Solidus
+    (.*?) # Regex contents
+    (?: (?<!\\\\)|(?<=\\\\\\\\) ) (/) # Ending
+    '''
+    'captures':
+      '1': 'name': 'punctuation.definition.regexp.perl6fe'
+      '2':
+        'name': 'string.regexp.perl6fe'
+        'patterns': [
+          { 'include': '#interpolation' }
+          { 'include': 'source.regexp.perl6fe' }
+        ]
+      '3': 'name': 'punctuation.definition.regexp.perl6fe'
+
+  }
   # Finds regex at start of line or after: = , ( ) ~ => or when
   # Using arbirtary delimiters and m, rx, s or S
   {
@@ -472,9 +491,8 @@
       { 'include': 'source.regexp.perl6fe' }
     ]
   }
-  # (?<= ^|[=,(\\[~]|when|=> ) \\s*
-  # (?<= ^|\\s )
-  # Finds regex marked with or without m, rx, s or S, as long as there's whitespace in front
+  # Finds regex marked with m, rx, s or S, as long as there's whitespace in front
+  # can match across lines.
   {
     'begin': '''(?x)
     (?<= ^|[=,(\\[~]|when|=> ) \\s*
@@ -487,7 +505,7 @@
           (?!\\s*:P5) # < include p5_regex above it
         )*
       )
-    )? # With or without m or rx
+    ) # With the m or rx
     \\s*
     ([/]) # Solidus
     '''
