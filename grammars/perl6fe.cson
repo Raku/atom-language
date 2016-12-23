@@ -578,10 +578,11 @@
   }
   {
     'begin': '(?x) (?<![%$&@]|\\w)
-      (?:  (multi)(?=\\s+))?
-      (?:  (macro|sub|submethod|method|multi|proto|only|category) \\s+ )
-      \\s* (!)?
-      (  [^\\s\\(\\)\\{\\}]+ )'
+    (?:  (multi) \\s+ )?
+    (macro|sub|submethod|method|multi|proto|only|category)
+    \\s+
+    (!)?
+    (  [^\\s\\(\\)\\{\\}]+ )'
     'beginCaptures':
       '1': 'name': 'storage.type.declarator.multi.perl6fe'
       '2': 'name': 'storage.type.declarator.type.perl6fe'

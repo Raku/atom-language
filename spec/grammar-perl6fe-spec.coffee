@@ -81,6 +81,19 @@ describe "Perl 6 FE grammar", ->
     scopes: [ 'source.perl6fe', 'entity.name.section.head.abbreviated.perl6fe' ]
 
   ## Methods
+  it "multi sub highlights properly. Issue №26", ->
+    {tokens} = grammar.tokenizeLine "multi sub thingy"
+    expect(tokens[0]).toEqual value: 'multi',
+    scopes: [ 'source.perl6fe', 'storage.type.declarator.multi.perl6fe' ]
+    expect(tokens[1]).toEqual value: ' ',
+    scopes: [ 'source.perl6fe' ]
+    expect(tokens[2]).toEqual value: 'sub',
+    scopes: [ 'source.perl6fe', 'storage.type.declarator.type.perl6fe' ]
+    expect(tokens[3]).toEqual value: ' ',
+    scopes: [ 'source.perl6fe' ]
+    expect(tokens[4]).toEqual value: 'thingy',
+    scopes : [ 'source.perl6fe', 'entity.name.function.perl6fe' ]
+
   it "FQ private methods are highlighted properly Issue №8", ->
     {tokens} = grammar.tokenizeLine "self.List::perl;"
     expect(tokens[0]).toEqual value: 'self',
