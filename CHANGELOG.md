@@ -1,3 +1,8 @@
+# v1.12.0
+* Fix a problem with `multi sub` not highlighting the sub's name properly. Fixes Issue #26
+* Make sure that q/qq/Q quoting works when there is a bracket before the q/qq/Q and no space.
+* Regular expressions using `m` or `rx` now allow arbitrary delimiters.
+
 # v1.11.4
 * Add preliminary support for `s///` and `S///`.
 
