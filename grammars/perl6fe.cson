@@ -906,7 +906,7 @@
       |WHAT|WHY|WHERE|HOW|WHICH|VAR|WHO|WHENCE|ACCEPTS|REJECTS|not
       |iterator|by|re|im|invert|flip|gist|flat|tree|is-prime
       |throws-like|trans|race|hyper|tap|emit|done-testing|quit|dd|note
-      |prepend|categorize|antipairs|categorize-list|parse-base
+      |prepend|categorize|antipairs|categorize-list|parse-base|base
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
       |get|words|new-from-pairs|uniname|uninames|uniprop|uniprops
       |slurp-rest
