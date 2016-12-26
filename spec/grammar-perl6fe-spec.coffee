@@ -148,6 +148,11 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[0]).toEqual value: '−42',
     scopes: [ 'source.perl6fe', 'constant.numeric.perl6fe' ]
 
+  it "Numbers highlight properly with no whole number and a sign", ->
+    {tokens} = grammar.tokenizeLine "−.42"
+    expect(tokens[0]).toEqual value: '−.42',
+    scopes: [ 'source.perl6fe', 'constant.numeric.perl6fe' ]
+
   it "=~= approximately-equal to operator highlights properly", ->
     {tokens} = grammar.tokenizeLine "=~="
     expect(tokens[0]).toEqual value: "=~=",
