@@ -1,3 +1,8 @@
+# v1.13.0
+* Interpolated heredocs now highlight variables and other interpolated things. Fixes Issue #27
+* Fixed signed numbers like `+.2` without a whole number from highlighting. Fixes Issue #29
+* Make sure the `==>` operator highlights properly.
+
 # v1.12.0
 * Fix a problem with `multi sub` not highlighting the sub's name properly. Fixes Issue #26
 * Make sure that q/qq/Q quoting works when there is a bracket before the q/qq/Q and no space.
