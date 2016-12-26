@@ -441,10 +441,12 @@
   {
     'include': '#p5_regex'
   }
-  # Finds bare regex. Online works if both `/` are on the same line
+  # Finds bare regex. Online works if both `/` are on the same line and the bare
+  # regex is at the start of a line, after a space or immediately after an opening
+  # paren
   {
     'match': '''(?x)
-    (?<= ^|\\s )
+    (?<= ^|[\\s\\(] )
     ([/]) # Solidus
     (.*?) # Regex contents
     (?: (?<!\\\\)|(?<=\\\\\\\\) ) (/) # Ending
@@ -491,8 +493,8 @@
       { 'include': 'source.regexp.perl6fe' }
     ]
   }
-  # Finds regex marked with m, rx, s or S, as long as there's whitespace in front
-  # can match across lines.
+  # Finds regex marked with m, rx, s or S, as long as there's
+  # special words behind it. can match across lines.
   {
     'begin': '''(?x)
     (?<= ^|[=,(\\[~]|when|=> ) \\s*
@@ -570,7 +572,83 @@
     ]
   }
   { 'include': '#shellquotes' }
-  { 'include': '#heredocs' }
+  # heredocs put it here instead of in 'repository' as a workaround to
+  # https://github.com/atom/first-mate/issues/61
+  {
+    'begin': '(?x)
+        (?:
+          ( qq|qqx|qqw )
+          \\s*
+          ( (?:\\s*:\\w+)*\\s*: (?: to|heredoc ) )\\s*
+        |
+          (qqto)
+          \\s*
+          ( (?:\\s*:\\w+)* )\\s*
+        )
+        / (\\S+) /'
+    'beginCaptures':
+      '1': 'name': 'string.quoted.construct.perl6fe'
+      '2': 'name': 'support.function.adverb.perl6fe'
+      '3': 'name': 'string.quoted.construct.perl6fe'
+      '4': 'name': 'support.function.adverb.perl6fe'
+      '5': 'name': 'entity.other.attribute-name.heredoc.delimiter.perl6fe'
+    'end': '\\s*\\5'
+    'endCaptures':
+      '0': 'name': 'entity.other.attribute-name.heredoc.delimiter.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      {
+        'begin': '(?<=/)'
+        'end': '\\n'
+        'patterns': [
+          { 'include': '$self' }
+        ]
+        'name': 'meta.heredoc.continuation.perl6fe'
+      }
+      {
+        'match': '(?x) ^ (?: . | \\n )* $'
+        'name': 'string.quoted.qq.heredoc.perl6fe'
+      }
+    ]
+    'name': 'meta.heredoc.perl6fe'
+  }
+  {
+    'begin': '(?x)
+      (?:
+        ( [qQ](?!/)|qw|qww|qx|qqx )
+        \\s*
+        ( (?:\\s*:\\w+)*\\s*: (?: to|heredoc ) )\\s*
+      |
+        (qto|Qto)
+        \\s*
+        ( (?:\\s*:\\w+)* )\\s*
+      )
+      / (\\S+) /'
+    'beginCaptures':
+      '1': 'name': 'string.quoted.construct.perl6fe'
+      '2': 'name': 'support.function.adverb.perl6fe'
+      '3': 'name': 'string.quoted.construct.perl6fe'
+      '4': 'name': 'support.function.adverb.perl6fe'
+      '5': 'name': 'entity.other.attribute-name.heredoc.delimiter.perl6fe'
+    'end': '\\s*\\5'
+    'endCaptures':
+      '0': 'name': 'entity.other.attribute-name.heredoc.delimiter.perl6fe'
+    'patterns': [
+      {
+        'begin': '(?<=/)'
+        'end': '\\n'
+        'patterns': [
+          { 'include': '$self' }
+        ]
+        'name': 'meta.heredoc.continuation.perl6fe'
+      }
+      {
+        'match': '(?x) ^ (?: . | \\n )* $'
+        'name': 'string.quoted.q.heredoc.perl6fe'
+      }
+    ]
+    'name': 'meta.heredoc.perl6fe'
+  }
   { 'include': 'source.quoting.perl6fe' }
   {
     'match': '\\b\\$\\w+\\b'
@@ -1588,54 +1666,6 @@
         ]
       }
 #3END
-    ]
-  'heredocs':
-    'patterns': [
-        {
-          'begin': '(?x)
-            (?:
-              ([qQ](?!/)|qq|qw|qww|qx|qqx)
-              \\s*
-              ((?:\\s*:\\w+)*\\s*:(?:to|heredoc))\\s*
-            |
-              (qto|qqto|Qto)
-              \\s*
-              ((?:\\s*:\\w+)*)\\s*
-            )
-            /(\\S+)/'
-          'beginCaptures':
-            '1':
-              'name': 'string.quoted.construct.perl6fe'
-            '2':
-              'name': 'support.function.adverb.perl6fe'
-            '3':
-              'name': 'string.quoted.construct.perl6fe'
-            '4':
-              'name': 'support.function.adverb.perl6fe'
-            '5':
-              'name': 'entity.other.attribute-name.heredoc.delimiter.perl6fe'
-          'end': '\\s*\\5'
-          'endCaptures':
-            '0':
-              'name': 'entity.other.attribute-name.heredoc.delimiter.perl6fe'
-          'patterns': [
-            {
-              'begin': '(?<=/)'
-              'end': '\\n'
-              'patterns': [
-                {
-                  'include': '$self'
-                }
-              ]
-              'name': 'meta.heredoc.continuation.perl6fe'
-            }
-            {
-              'match': '^(?:.|\\n)*$'
-              'name': 'string.quoted.heredoc.perl6fe'
-            }
-          ]
-          'name': 'meta.heredoc.perl6fe'
-        }
     ]
   'p5_regex':
     'patterns': [
