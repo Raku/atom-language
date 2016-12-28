@@ -689,14 +689,16 @@
   {
     'begin': '(?<![\\.:])(regex|rule|token)(?!\\s*=>|\\S)'
     'beginCaptures':
-      '1':
-        'name': 'storage.type.declare.regexp.named.perl6fe'
+      '1': 'name': 'storage.type.declare.regexp.named.perl6fe'
     'end': '(?<!\\\\)\\}'
     'endCaptures':
-      '0':
-        'name': 'punctuation.definition.regexp.named.perl6fe'
+      '0': 'name': 'punctuation.definition.regexp.named.perl6fe'
     'name': 'meta.regexp.named.perl6fe'
     'patterns': [
+      {
+        'match': 'TOP'
+        'name' : 'entity.name.function.regexp.named.TOP.perl6fe'
+      }
       {
         'match': '[\\p{Digit}\\p{Alpha}\'\\-_]+'
         'name': 'entity.name.function.regexp.named.perl6fe'
