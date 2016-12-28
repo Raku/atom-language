@@ -12,7 +12,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\(\\(\\()'
@@ -34,7 +34,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\(\\(\\()'
@@ -62,7 +62,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\(\\(\\()'
@@ -92,7 +92,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\[\\[\\[)'
@@ -114,7 +114,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\[\\[\\[)'
@@ -142,7 +142,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\[\\[\\[)'
@@ -172,7 +172,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\{\\{\\{)'
@@ -194,7 +194,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\{\\{\\{)'
@@ -222,7 +222,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\{\\{\\{)'
@@ -252,7 +252,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(<<<)'
@@ -274,7 +274,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(<<<)'
@@ -302,7 +302,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(<<<)'
@@ -332,7 +332,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(<<)'
@@ -354,7 +354,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(<<)'
@@ -382,7 +382,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(<<)'
@@ -412,7 +412,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\(\\()'
@@ -434,7 +434,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\(\\()'
@@ -462,7 +462,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\(\\()'
@@ -492,7 +492,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\[\\[)'
@@ -514,7 +514,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\[\\[)'
@@ -542,7 +542,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\[\\[)'
@@ -572,7 +572,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*({{)'
@@ -594,7 +594,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*({{)'
@@ -622,7 +622,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*({{)'
@@ -652,7 +652,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*({)'
@@ -674,7 +674,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*({)'
@@ -702,7 +702,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*({)'
@@ -732,7 +732,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(<)'
@@ -754,7 +754,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(<)'
@@ -782,7 +782,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(<)'
@@ -812,7 +812,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s+(\\()'
@@ -834,7 +834,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s+(\\()'
@@ -862,7 +862,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s+(\\()'
@@ -892,7 +892,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\[)'
@@ -914,7 +914,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\[)'
@@ -942,7 +942,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(\\[)'
@@ -972,7 +972,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(“)'
@@ -994,7 +994,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(“)'
@@ -1022,7 +1022,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(“)'
@@ -1052,7 +1052,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(‘)'
@@ -1074,7 +1074,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(‘)'
@@ -1102,7 +1102,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(‘)'
@@ -1132,7 +1132,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(「)'
@@ -1154,7 +1154,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(「)'
@@ -1182,7 +1182,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(「)'
@@ -1212,7 +1212,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(｢)'
@@ -1234,7 +1234,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(｢)'
@@ -1262,7 +1262,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(｢)'
@@ -1292,7 +1292,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(«)'
@@ -1314,7 +1314,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(«)'
@@ -1342,7 +1342,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(«)'
@@ -1372,7 +1372,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(/)'
@@ -1394,7 +1394,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(/)'
@@ -1422,7 +1422,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(/)'
@@ -1452,7 +1452,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s+(\')'
@@ -1474,7 +1474,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s+(\')'
@@ -1502,7 +1502,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s+(\')'
@@ -1532,7 +1532,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(")'
@@ -1554,7 +1554,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(")'
@@ -1582,7 +1582,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*(")'
@@ -1612,7 +1612,7 @@
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc
+          regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
       \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
