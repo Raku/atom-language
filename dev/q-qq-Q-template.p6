@@ -87,7 +87,7 @@ my $q-patterns = Q:to/🐧/;
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path
+          regexp|substr|trans|codes|p|path|nfkc
         )
       )*)
       \\s*(YYY)'
@@ -109,7 +109,7 @@ my $q-patterns = Q:to/🐧/;
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path
+          regexp|substr|trans|codes|p|path|nfkc
         )
       )*)
       \\s*(YYY)'
@@ -137,7 +137,7 @@ my $q-patterns = Q:to/🐧/;
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path
+          regexp|substr|trans|codes|p|path|nfkc
         )
       )*)
       \\s*(YYY)'
@@ -179,7 +179,7 @@ my $q-any-str = Q:to/🐧/;
         \\s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path
+          regexp|substr|trans|codes|p|path|nfkc
         )
       )*)
       \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
