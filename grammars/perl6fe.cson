@@ -446,10 +446,14 @@
   # paren
   {
     'match': '''(?x)
-    (?<= ^|[\\s\\(] )
-    ([/]) # Solidus
-    (.*?) # Regex contents
-    (?: (?<!\\\\)|(?<=\\\\\\\\) ) (/) # Ending
+        (?<=
+          ^
+         | ^\\s
+         | [\\s\\(] [^\\p{Nd}\\p{L}]
+        )
+        ([/]) # Solidus
+        (.*?) # Regex contents
+        (?: (?<!\\\\)|(?<=\\\\\\\\) ) (/) # Ending
     '''
     'captures':
       '1': 'name': 'punctuation.definition.regexp.perl6fe'
