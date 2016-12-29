@@ -968,7 +968,7 @@
       |pick|chop|chomp|lc|lcfirst|uc|ucfirst|capitalize
       |normalize|pack|unpack|quotemeta|comb|samecase|sameaccent|chars
       |nfd|nfc|nfkd|nfkc|printf|sprintf|caller|evalfile|run|runinstead
-      |nothing|want|bless|chr|ord|gmtime|time|eof|localtime|gethost
+      |nothing|want|bless|chr|ord|ords|gmtime|time|eof|localtime|gethost
       |getpw|chroot|getlogin|getpeername|kill|fork|wait|perl|graphs
       |codes|bytes|clone|print|open|read|write|readline|say|seek|close
       |opendir|readdir|slurp|spurt|shell|run|pos|fmt|vec|link|unlink
