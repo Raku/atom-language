@@ -1,3 +1,11 @@
+# v1.13.1
+* Add `ords` routine and method. `[fb6d26b]`
+* Fix highlighting breaking when using `/` with another `/` on the line. `[a91eeef]`
+  Fixes Issue #34
+* add q/qq/Q:nfkc and q/qq/Q:nfkd quoting. It is not yet implemented in Rakudo
+  but it is in roast (NFK-types.t). `[02db872][26aecbe]`
+* Tag `TOP` in grammars differently for docs.perl6.org. `[e6c8c77]`
+
 # v1.13.0
 * Interpolated heredocs now highlight variables and other interpolated things. Fixes Issue #27
 * Fixed signed numbers like `+.2` without a whole number from highlighting. Fixes Issue #29
