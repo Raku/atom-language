@@ -1,3 +1,7 @@
+# v1.13.2
+* Add support for the assignment operator `:=`
+* Highlight the `throws` method/routine
+
 # v1.13.1
 * Add `ords` routine and method. `[fb6d26b]`
 * Fix highlighting breaking when using `/` with another `/` on the line. `[a91eeef]`
