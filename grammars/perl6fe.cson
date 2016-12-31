@@ -778,8 +778,9 @@
       { 'include': 'source.quoting.perl6fe#q_bracket_string_content' }
     ]
   }
+   # Equals sign `=`, Assignment operator `:=` etc.
   {
-    'match': '([+\\-.*/]|\\|\\|)?(?<!\\=)=(?![\\>\\=\\~])'
+    'match': '(?x) ( [+:\\-.*/] | \\|\\| )? (?<! = ) = (?! [>=~] )'
     'name': 'storage.modifier.assignment.perl6fe'
   }
   # Non multi-line.
