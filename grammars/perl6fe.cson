@@ -765,7 +765,7 @@
     'name': 'storage.modifier.declarator.perl6fe'
   }
   {
-    'begin': '(?x) (?<= = ) \\s* ( < )'
+    'begin': '(?x) (?<= = | for ) \\s* ( < )'
     'beginCaptures':
       '1':
         'name': 'span.keyword.operator.array.words.perl6fe'

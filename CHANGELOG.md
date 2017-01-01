@@ -1,3 +1,6 @@
+# v1.13.3
+* Allow angle bracket multi-line quoting directly after the `for` keyword. Fixes Issue #37
+
 # v1.13.2
 * Add support for the assignment operator `:=`
 * Highlight the `throws` method/routine
