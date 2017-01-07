@@ -2,6 +2,8 @@
 # Generate the q[] qq[] and Q[] quoting constructs
 my @open-close-delimiters =
 #Left Pi right Pf. Open Ps close Pe
+# std prop: What quoting style does it use by default?
+# For example “…” quoting is like qq, while '…' is like q
 #name                       #open        #close      #number #std quotes #std prop. #pod-tag?
 ('triple_paren',          Q<\\(\\(\\(>, Q<\\)\\)\\)>, 3,       False,   True),
 ('triple_bracket',        Q<\\[\\[\\[>, Q<\\]\\]\\]>, 3,       False),
@@ -20,6 +22,7 @@ my @open-close-delimiters =
 ('fw_cornerbracket',         Q<「>,       Q<」>,      1,        False),
 ('hw_cornerbracket',         Q<｢>,        Q<｣>,       1,       False),
 ('chevron',                   '«',         '»',       1,       False,  Nil,       True),
+('s-shaped-bag-delimiter',     '⟅',       '⟆',         1,       False),
 ;
 my @delimiters = @open-close-delimiters;
 =comment unmatched delimiters

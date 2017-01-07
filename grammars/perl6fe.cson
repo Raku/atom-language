@@ -289,6 +289,19 @@
     }
   ]
   }
+  # multiline comment s-shaped-bag-delimiter
+  {
+  'begin': '\\s*#`⟅',
+  'end': '⟆',
+  'name': 'comment.multiline.hash-tick.s-shaped-bag-delimiter.perl6fe'
+  'patterns': [
+    {
+      'begin': '⟅'
+      'end': '⟆'
+      'name': 'comment.internal.s-shaped-bag-delimiter.perl6fe'
+    }
+  ]
+  }
 # Quotation Mark left_double_right_double
   {
     'begin': '“'
@@ -970,7 +983,7 @@
       |elems|end|kv|any|all|one|wrap|shape|key|value|name|pop|push
       |shift|splice|unshift|floor|ceiling|abs|exp|log|log10|rand|sign
       |sqrt|sin|cos|tan|round|strand|roots|cis|unpolar|polar|atan2
-      |pick|chop|chomp|lc|lcfirst|uc|ucfirst|capitalize
+      |pick|chop|chomp|lc|lcfirst|uc|ucfirst|capitalize|mkdir
       |normalize|pack|unpack|quotemeta|comb|samecase|sameaccent|chars
       |nfd|nfc|nfkd|nfkc|printf|sprintf|caller|evalfile|run|runinstead
       |nothing|want|bless|chr|ord|ords|gmtime|time|eof|localtime|gethost
