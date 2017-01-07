@@ -53,15 +53,18 @@ precedence. To remedy this you can:
   add the following to your `config.cson` (*Edit* → *Config*):
 
   ```coffee
-  '*':
+  "*":
     core:
-      customFileTypes:
-        'source.perl6': [
-          # Any extensions you'd like to override
+      customFileTypes: [
+        'source.perl6fe': [
           'p6'
           'pm6'
+          # Add pm and t if you want auto choose this highlighter for .pm or 't
+          # files.
+          'pm'
           't'
         ]
+      ]
   ```
 
 Please be aware that if you do not include the `t` extension
