@@ -1,3 +1,9 @@
+# v1.13.4
+* Fix README.md's instructions on how to override the built in Perl highlighter.
+  The previous instructions were not accurate and did not properly work.
+* Add quoting/commenting using the S-shaped bag delimiter `⟅ ⟆`.
+* Add highlighting for `mkdir` routine/method.
+
 # v1.13.3
 * Allow angle bracket multi-line quoting directly after the `for` keyword. Fixes Issue #37
 
