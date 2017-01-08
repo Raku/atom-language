@@ -1684,26 +1684,72 @@
       { 'include': '#q_double_string_content' }
     ]
   }
-    # q_any qq_any Q_any
+    # q_any qq_any
     {
-    'begin': '(?x) (?<=^|[\\[\\]\\s\\(\\){},;])
-      (q|qq|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
-      ((?:
-        \\s*:(?:
-          x|exec|w|words|ww|quotewords|v|val|q|single|double|
-          s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
-          regexp|substr|trans|codes|p|path|nfkc|nfkd
-        )
-      )*)
-      \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
-    'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
-    'end': '(?x) \\\\\\\\\\1 | (?<! \\\\ ) \\1'
-    'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.any.quote.perl6fe'
+      'begin': '(?x) (?<=^|[\\[\\]\\s\\(\\){},;])
+        (q|qq(?:x|w|ww|v|s|a|h|f|c|b|p)?)
+        ((?:
+          \\s*:(?:
+            x|exec|w|words|ww|quotewords|v|val|q|single|double|
+            s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
+            regexp|substr|trans|codes|p|path|nfkc|nfkd
+          )
+        )*)
+        \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
+      'beginCaptures':
+        '1': 'name': 'string.quoted.q.operator.perl6fe'
+        '2': 'name': 'support.function.quote.adverb.perl6fe'
+        '3': 'name': 'punctuation.definition.string.perl6fe'
+      'end': '(?x) \\\\\\\\\\3 | (?<! \\\\ ) \\3'
+      'endCaptures':
+        '0': 'name': 'punctuation.definition.string.perl6fe'
+      'contentName': 'string.quoted.q.any.quote.perl6fe'
+    }
+    # Q:q_any
+    # Q:q will use q semantics and allow escaping delimiters
+    {
+      'begin': '(?x) (?<=^|[\\[\\]\\s\\(\\){},;])
+              (Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
+              (
+                \\s*:q
+                (?:
+                (?:
+                  x|exec|w|words|ww|quotewords|v|val|single|double|
+                  s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
+                  regexp|substr|trans|codes|p|path|nfkc|nfkd
+                )
+                )*
+              )
+              \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
+      'beginCaptures':
+        '1': 'name': 'string.quoted.q.operator.perl6fe'
+        '2': 'name': 'support.function.quote.adverb.perl6fe'
+        '3': 'name': 'punctuation.definition.string.perl6fe'
+      'end': '(?x) (?x) \\\\\\\\\\3 | (?<! \\\\ ) \\3'
+      'endCaptures':
+        '0': 'name': 'punctuation.definition.string.perl6fe'
+      'contentName': 'string.quoted.Q.any.quote.perl6fe'
+    }
+    # Q_any
+    {
+      'begin': '(?x) (?<=^|[\\[\\]\\s\\(\\){},;])
+        (Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
+        ((?:
+          \\s*:(?:
+            x|exec|w|words|ww|quotewords|v|val|q|single|double|
+            s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
+            regexp|substr|trans|codes|p|path|nfkc|nfkd
+          )
+        )*)
+        \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
+      'beginCaptures':
+        '1': 'name': 'string.quoted.q.operator.perl6fe'
+        '2': 'name': 'support.function.quote.adverb.perl6fe'
+        '3': 'name': 'punctuation.definition.string.perl6fe'
+      'end': '(?x) \\3' # Delimiters can't be escaped
+      'endCaptures':
+        '0': 'name': 'punctuation.definition.string.perl6fe'
+      'contentName': 'string.quoted.Q.any.quote.perl6fe'
     }
 #1END
 ]
