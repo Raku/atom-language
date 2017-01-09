@@ -38,6 +38,27 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
+  it "Issue № 39. Angle bracket quoting needlessly starts", ->
+    {tokens} = grammar.tokenizeLine '$i++ < 3; # >'
+    expect(tokens[0]).toEqual value: '$',
+    scopes: [
+      'source.perl6fe',
+      'meta.variable.container.perl6fe',
+      'variable.other.identifier.sigil.perl6fe'
+    ]
+    expect(tokens[1]).toEqual value: 'i',
+    scopes: [
+      'source.perl6fe', 'meta.variable.container.perl6fe',
+      'variable.other.identifier.perl6fe'
+    ]
+    expect(tokens[4]).toEqual value: '<',
+    scopes: [ 'source.perl6fe', 'keyword.operator.generic.perl6fe' ]
+    expect(tokens[8]).toEqual value: '#',
+    scopes: [
+      'source.perl6fe', 'comment.line.number-sign.perl6fe',
+      'punctuation.definition.comment.perl6fe'
+    ]
+
   it "m/\\\\/ regex highlights with two backslash in it", ->
     {tokens} = grammar.tokenizeLine 'm/\\\\/'
     expect(tokens[0]).toEqual value: 'm',
@@ -92,8 +113,7 @@ describe "Perl 6 FE grammar", ->
     expect(tokens[3]).toEqual value: ' ',
     scopes: [ 'source.perl6fe' ]
     expect(tokens[4]).toEqual value: 'thingy',
-    scopes : [ 'source.perl6fe', 'entity.name.function.perl6fe' ]
-
+    scopes: [ 'source.perl6fe', 'entity.name.function.perl6fe' ]
   it "FQ private methods are highlighted properly Issue №8", ->
     {tokens} = grammar.tokenizeLine "self.List::perl;"
     expect(tokens[0]).toEqual value: 'self',

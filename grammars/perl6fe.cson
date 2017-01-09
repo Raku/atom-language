@@ -730,9 +730,14 @@
         'name': 'meta.regexp.named.adverb.perl6fe'
       }
       {
-        'begin': '«|\\<'
-        'end': '(»|\\>)(?=[\\s\\{])'
+        'begin': '<'
+        'end': '(>)(?=[\\s\\{])'
         'contentName': 'string.array.words.perl6fe'
+      }
+      {
+        'begin': '«'
+        'end': '(»)(?=[\\s\\{])'
+        'contentName': 'string.array.words.chevron.perl6fe'
       }
       {
         'begin': '\\('
@@ -798,10 +803,10 @@
   }
   # Non multi-line.
   {
-    'begin': '(?x) (?<! \\+< )
-              (<)
-              (?<!\\\\>)
-              (?= [^<]* (?: [^<] ) > )'
+    'begin': '(?x) (?<! \\+< | \\+\\s|\\+ ) \\s*
+                  (<)
+                  (?<! > )
+                  (?= [^<]* (?: [^<] ) > )'
     'beginCaptures':
      '1':
         'name': 'span.keyword.operator.array.words.perl6fe'
