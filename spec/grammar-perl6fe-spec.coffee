@@ -59,6 +59,13 @@ describe "Perl 6 FE grammar", ->
       'punctuation.definition.comment.perl6fe'
     ]
 
+  it "Issue №38 array word quoting doesn't end when \\\\ seen at end", ->
+    {tokens} = grammar.tokenizeLine '< \\\\>'
+    expect(tokens[0]).toEqual value: '<',
+    scopes: [ 'source.perl6fe', 'span.keyword.operator.array.words.perl6fe' ]
+    expect(tokens[3]).toEqual value: '>',
+    scopes: [ 'source.perl6fe', 'keyword.operator.generic.perl6fe' ]
+
   it "m/\\\\/ regex highlights with two backslash in it", ->
     {tokens} = grammar.tokenizeLine 'm/\\\\/'
     expect(tokens[0]).toEqual value: 'm',

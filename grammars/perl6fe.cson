@@ -810,7 +810,7 @@
     'beginCaptures':
      '1':
         'name': 'span.keyword.operator.array.words.perl6fe'
-    'end':   '(?x) (?<!\\\\) ( > )'
+    'end':   '(?x) \\\\\\\\|(?<!\\\\) ( > )'
     'endCaptures':
       '1':
         'name': 'span.keyword.operator.array.words.perl6fe'
