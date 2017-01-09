@@ -731,12 +731,12 @@
       }
       {
         'begin': '<'
-        'end': '(>)(?=[\\s\\{])'
+        'end': '(?x) \\\\\\\\|(?<!\\\\) ( > ) (?=[\\s\\{])'
         'contentName': 'string.array.words.perl6fe'
       }
       {
         'begin': '«'
-        'end': '(»)(?=[\\s\\{])'
+        'end': '(?x)  \\\\\\\\|(?<!\\\\) ( » ) (?=[\\s\\{])'
         'contentName': 'string.array.words.chevron.perl6fe'
       }
       {
@@ -787,7 +787,7 @@
     'beginCaptures':
       '1':
         'name': 'span.keyword.operator.array.words.perl6fe'
-    'end': '(?x) ( > )'
+    'end': '(?x)  \\\\\\\\|(?<!\\\\) ( > )'
     'endCaptures':
       '1':
         'name': 'span.keyword.operator.array.words.perl6fe'
