@@ -1,3 +1,7 @@
+# v1.13.5
+* Fix Issue #39, angle bracket word quoting starting improperly.
+* Fix Issue #38 array word quoting doesn't end if \\ at the end.
+
 # v1.13.4
 * Fix README.md's instructions on how to override the built in Perl highlighter.
   The previous instructions were not accurate and did not properly work.
