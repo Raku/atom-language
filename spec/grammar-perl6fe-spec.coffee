@@ -38,6 +38,11 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
+  it "Keywords that are flow control highlight as methods when used as methods. Issue # 35", ->
+   {tokens} = grammar.tokenizeLine '$p2.break'
+   expect(tokens[3]).toEqual value: 'break',
+   scopes: [ 'source.perl6fe', 'support.function.perl6fe' ]
+
   it "1e-6 highlights as a number. Issue № 35", ->
     {tokens} = grammar.tokenizeLine '1e-6'
     expect(tokens[0]).toEqual value: '1e-6',
