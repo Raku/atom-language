@@ -38,6 +38,11 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
+  it "Putting spaces around / division operator highlights properly. Issue № 34", ->
+    {tokens} = grammar.tokenizeLine 'isa-ok(1 / 4, Rat, "/ makes a Rat");'
+    expect(tokens[4]).toEqual value: '/',
+    scopes: [ 'source.perl6fe', 'keyword.operator.generic.perl6fe' ]
+
   it "Two variables in a row don't allow hyphens in variable name. Issue № 40", ->
     {tokens} = grammar.tokenizeLine '$reverse-solidus$reverse-solidus'
     expect(tokens[3]).toEqual value: 'reverse-solidus',
