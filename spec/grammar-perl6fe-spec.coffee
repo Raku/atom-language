@@ -46,7 +46,7 @@ describe "Perl 6 FE grammar", ->
       'variable.other.identifier.perl6fe'
     ]
 
-  it "Keywords that are flow control highlight as methods when used as methods. Issue # 35", ->
+  it "Keywords that are flow control highlight as methods when used as methods. Issue № 35", ->
     {tokens} = grammar.tokenizeLine '$p2.break'
     expect(tokens[3]).toEqual value: 'break',
     scopes: [ 'source.perl6fe', 'support.function.perl6fe' ]
@@ -442,7 +442,7 @@ describe "Perl 6 FE grammar", ->
   it "Method made highlights", ->
     {tokens} = grammar.tokenizeLine "Calculator.made"
     expect(tokens[2]).toEqual value: 'made',
-    scopes: [ 'source.perl6fe', 'keyword.control.flowcontrol.perl6fe' ]
+    scopes: [ 'source.perl6fe', 'keyword.control.flowcontrol.regex.perl6fe' ]
   it "Regex named captures highlight", ->
     {tokens} =
     grammar.tokenizeLine "$<captured>"
