@@ -1882,16 +1882,17 @@
     'patterns': [
         { 'include': '#regexp-variables' }
         {
-          'match': '(?x)
+          'match': '''(?x)
             (\\$|@|%|&)
             (\\.|\\*|:|!|\\^|~|=|\\?)?
             (
-              (?:[a-zA-Z])
-              (?:
-                [a-zA-Z0-9_\xc0-\xff\\$]|
-                [\\-\'][a-zA-Z_\xc0-\xff\\$]
-              )*
-            )'
+                (?:[\\p{Alpha}_])             # Must start with Alpha or underscore
+                (?:
+                   [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore or a ' or -
+                |                           # followed by an alphanum or underscore
+                   [\\-\'] [\\p{Digit}\\p{Alpha}_]
+                )*
+            )'''
           'captures':
             '1':
               'name': 'variable.other.identifier.sigil.perl6fe'

@@ -38,6 +38,19 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
+  it "Issue № 36. Variables highlight correctly if they contain any non-ASCII characters ", ->
+    {tokens} = grammar.tokenizeLine '$ΔxAB'
+    expect(tokens[0]).toEqual value: '$',
+    scopes: [
+      'source.perl6fe', 'meta.variable.container.perl6fe',
+      'variable.other.identifier.sigil.perl6fe'
+    ]
+    expect(tokens[1]).toEqual value: 'ΔxAB',
+    scopes: [
+      'source.perl6fe', 'meta.variable.container.perl6fe',
+      'variable.other.identifier.perl6fe'
+    ]
+
   it "Issue № 39. Angle bracket quoting needlessly starts", ->
     {tokens} = grammar.tokenizeLine '$i++ < 3; # >'
     expect(tokens[0]).toEqual value: '$',
