@@ -1,3 +1,10 @@
+# v1.13.7
+* Add highlighting for `.keep` method.
+* Fix `.break` highlighting as a flowcontrol keyword when used as method.
+  Fixes Issue #33
+* Fix two variables in a row not allowing hyphens in variable name.
+  Fixes Issue #40
+
 # v1.13.6
 * Fix scientific notation with negative exponents not rendering as numbers.
   Fixes Issue #35
