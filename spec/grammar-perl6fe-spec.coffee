@@ -38,6 +38,11 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
+  it "1e-6 highlights as a number. Issue № 35", ->
+    {tokens} = grammar.tokenizeLine '1e-6'
+    expect(tokens[0]).toEqual value: '1e-6',
+    scopes: [ 'source.perl6fe', 'constant.numeric.perl6fe' ]
+
   it "Issue № 36. Variables highlight correctly if they contain any non-ASCII characters ", ->
     {tokens} = grammar.tokenizeLine '$ΔxAB'
     expect(tokens[0]).toEqual value: '$',

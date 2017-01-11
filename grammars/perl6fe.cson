@@ -1105,10 +1105,11 @@
             (?: \\d+ (?: [\\_\\d]+ \\d )? )
             (?: \\.  \\d+ (?: [\\_\\d]+ \\d )? )?
         )
-        (?:  e  \\d+ (?: [\\_\\d]+ \\d )? )?
+        (?:  e  (?:-|−)? \\d+ (?: [\\_\\d]+ \\d )? )?
       '''
         'name': 'constant.numeric.perl6fe'
       }
+      # Like the above but matches negative numbers with no leading digit ( -.2 for example)
       {
         'match': '''(?x)
                   (?<= ^ | [×÷*=,:;^\\s{\\[(/] | \\.\\. )
@@ -1116,7 +1117,7 @@
         (?:
             (?: \\.  \\d+ (?: [\\_\\d]+ \\d )? )
         )
-        (?:  e  \\d+ (?: [\\_\\d]+ \\d )? )?
+        (?:  e  (?:-|−)? \\d+ (?: [\\_\\d]+ \\d )? )?
       '''
         'name': 'constant.numeric.perl6fe'
       }
