@@ -38,10 +38,18 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
+  it "Two variables in a row don't allow hyphens in variable name. Issue № 40", ->
+    {tokens} = grammar.tokenizeLine '$reverse-solidus$reverse-solidus'
+    expect(tokens[3]).toEqual value: 'reverse-solidus',
+    scopes: [
+      'source.perl6fe', 'meta.variable.container.perl6fe',
+      'variable.other.identifier.perl6fe'
+    ]
+
   it "Keywords that are flow control highlight as methods when used as methods. Issue # 35", ->
-   {tokens} = grammar.tokenizeLine '$p2.break'
-   expect(tokens[3]).toEqual value: 'break',
-   scopes: [ 'source.perl6fe', 'support.function.perl6fe' ]
+    {tokens} = grammar.tokenizeLine '$p2.break'
+    expect(tokens[3]).toEqual value: 'break',
+    scopes: [ 'source.perl6fe', 'support.function.perl6fe' ]
 
   it "1e-6 highlights as a number. Issue № 35", ->
     {tokens} = grammar.tokenizeLine '1e-6'

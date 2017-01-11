@@ -667,10 +667,7 @@
     'name': 'meta.heredoc.perl6fe'
   }
   { 'include': 'source.quoting.perl6fe' }
-  {
-    'match': '\\b\\$\\w+\\b'
-    'name': 'variable.other.perl6fe'
-  }
+  { 'include': '#variables' }
   {
     'begin': '(?x) (?<![%$&@]|\\w)
     (?:  (multi) \\s+ )?
@@ -974,11 +971,6 @@
     'match': '\\*\\s*(?=\\])'
     'name': 'constant.language.whatever.hack.perl6fe'
   }
-  {
-    'include': '#variables'
-  }
-
-
   # Dual functions and methods
   {
     'match': '(?x)\\b(?<![\\-:\\\\])( :: )?(
