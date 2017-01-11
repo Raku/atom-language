@@ -1021,7 +1021,7 @@
       |prepend|categorize|antipairs|categorize-list|parse-base|base
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
       |get|words|new-from-pairs|uniname|uninames|uniprop|uniprops
-      |slurp-rest|throw|break
+      |slurp-rest|throw|break|keep
     )(?!\\-)\\b(?!\\s*=>)'
     'captures':
       '1':
