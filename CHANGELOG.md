@@ -1,6 +1,12 @@
+# v1.13.6
+* Fix scientific notation with negative exponents not rendering as numbers.
+  Fixes Issue #35
+* Fix variable names not in interpolated strings not highlighting properly when
+  certain non-ASCII characters were used. Fixes Issue #36
+
 # v1.13.5
-* Fix Issue #39, angle bracket word quoting starting improperly.
-* Fix Issue #38 array word quoting doesn't end if \\ at the end.
+* Fix angle bracket word quoting starting improperly. Fixes Issue #39
+* Fix array word quoting not end if `\` was at the end. Fixes Issue #38
 
 # v1.13.4
 * Fix README.md's instructions on how to override the built in Perl highlighter.
