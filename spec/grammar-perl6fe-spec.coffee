@@ -38,6 +38,15 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
+  it "proto method does not highlight properly. Issue № 31", ->
+    {tokens} = grammar.tokenizeLine 'proto method rename(|) { * }'
+    expect(tokens[0]).toEqual value: 'proto',
+    scopes: [ 'source.perl6fe', 'storage.type.declarator.multi.perl6fe' ]
+    expect(tokens[2]).toEqual value: 'method',
+    scopes: [ 'source.perl6fe', 'storage.type.declarator.type.perl6fe' ]
+    expect(tokens[4]).toEqual value: 'rename',
+    scopes: [ 'source.perl6fe', 'entity.name.function.perl6fe' ]
+
   it "Putting spaces around / division operator highlights properly. Issue № 34", ->
     {tokens} = grammar.tokenizeLine 'isa-ok(1 / 4, Rat, "/ makes a Rat");'
     expect(tokens[4]).toEqual value: '/',
