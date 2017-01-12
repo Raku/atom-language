@@ -1,3 +1,6 @@
+# v1.13.8
+* Fix highlighting of `proto method X`, `proto sub X` etc. Fixes Issue #31
+
 # v1.13.7
 * Add highlighting for `.keep` method.
 * Fix `.break` highlighting as a flowcontrol keyword when used as method.
