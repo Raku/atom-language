@@ -456,13 +456,14 @@
   }
   # Finds bare regex. Online works if both `/` are on the same line and the bare
   # regex is at the start of a line, after a space or immediately after an opening
-  # paren
+  # paren + non-number/letter OR before ~~\s or ~~\s\s
   {
     'match': '''(?x)
         (?<=
           ^
          | ^\\s
          | [\\s\\(] [^\\p{Nd}\\p{L}]
+         | ~~\\s|~~\\s\\s|match\\(
         )
         ([/]) # Solidus
         (.*?) # Regex contents
@@ -1021,7 +1022,7 @@
       |prepend|categorize|antipairs|categorize-list|parse-base|base
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
       |get|words|new-from-pairs|uniname|uninames|uniprop|uniprops
-      |slurp-rest|throw|break|keep
+      |slurp-rest|throw|break|keep|match
     )(?!\\-)\\b(?!\\s*=>)'
     'captures':
       '1':

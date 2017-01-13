@@ -38,6 +38,19 @@ describe "Perl 6 FE grammar", ->
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
  ## Bugs
+# $line.match(/^\s*$/)
+  it "Regex using .match highlights $line.match(/^\\s*$/)", ->
+    {tokens} = grammar.tokenizeLine '$line.match(/^\\s*$/)'
+    expect(tokens[3]).toEqual value: 'match',
+    scopes: [ 'source.perl6fe', 'support.function.perl6fe' ]
+    expect(tokens[5]).toEqual value: '/',
+    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+
+  it "Bare Regex with ~~ before it highlights", ->
+    {tokens} = grammar.tokenizeLine '"t" ~~ /^\\s$/'
+    expect(tokens[6]).toEqual value: '/',
+    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+
   it "proto method does not highlight properly. Issue № 31", ->
     {tokens} = grammar.tokenizeLine 'proto method rename(|) { * }'
     expect(tokens[0]).toEqual value: 'proto',
