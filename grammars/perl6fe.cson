@@ -614,7 +614,6 @@
     'endCaptures':
       '0': 'name': 'entity.other.attribute-name.heredoc.delimiter.perl6fe'
     'patterns': [
-      { 'include': '#interpolation' }
       {
         'begin': '(?<=/)'
         'end': '\\n'
@@ -624,11 +623,18 @@
         'name': 'meta.heredoc.continuation.perl6fe'
       }
       {
+        'begin': '^'
+        'end': '$'
+        'patterns': [
+          { 'include': '#interpolation' }
+        ]
+      }
+      {
         'match': '(?x) ^ (?: . | \\n )* $'
         'name': 'string.quoted.qq.heredoc.perl6fe'
       }
     ]
-    'name': 'meta.heredoc.perl6fe'
+    'name': 'string.quoted.heredoc.perl6fe'
   }
   {
     'begin': '(?x)
