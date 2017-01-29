@@ -237,6 +237,19 @@
     }
   ]
   }
+  # multiline comment left_double-low-q_right_double
+  {
+  'begin': '\\s*#`„',
+  'end': '”|“',
+  'name': 'comment.multiline.hash-tick.left_double-low-q_right_double.perl6fe'
+  'patterns': [
+    {
+      'begin': '„'
+      'end': '”|“'
+      'name': 'comment.internal.left_double-low-q_right_double.perl6fe'
+    }
+  ]
+  }
   # multiline comment left_single_right_single
   {
   'begin': '\\s*#`‘',
@@ -318,6 +331,24 @@
       }
       { 'include': '#interpolation' }
       { 'include': 'source.quoting.perl6fe#q_left_double_right_double_string_content' }
+    ]
+  }
+# Quotation Mark left_double-low-q_right_double
+  {
+    'begin': '„'
+    'beginCaptures':
+      '0': 'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': '”|“'
+    'endCaptures':
+      '0': 'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.left_double-low-q_right_double.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[„”|“abtnfre\\\\\\{\\}]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      { 'include': '#interpolation' }
+      { 'include': 'source.quoting.perl6fe#q_left_double-low-q_right_double_string_content' }
     ]
   }
   {

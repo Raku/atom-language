@@ -18,6 +18,7 @@ my @open-close-delimiters =
 ('paren',                    Q<\\(>,      Q<\\)>,     1,       False),
 ('bracket',                  Q<\\[>,      Q<\\]>,     1,       False),
 ('left_double_right_double', Q<“>,        Q<”>,       1,       True,    'qq'),
+('left_double-low-q_right_double', '„', '”|“',          1,         True,    'qq'),
 ('left_single_right_single', Q<‘>,        Q<’>,       1,       True,    'q'),
 ('fw_cornerbracket',         Q<「>,       Q<」>,      1,        False),
 ('hw_cornerbracket',         Q<｢>,        Q<｣>,       1,       False),
