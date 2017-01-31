@@ -907,7 +907,7 @@
       |binary|unary|reparsed|rw|parsed
       |cached|readonly|defequiv|will
       |ref|copy|inline|tighter|looser
-      |equiv|assoc|required
+      |equiv|assoc|required|pure
     )(?!\\-)\\b  (?!\\s*=>)'
     'name': 'entity.name.type.trait.perl6fe'
   }
