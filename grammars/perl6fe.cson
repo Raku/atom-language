@@ -861,7 +861,7 @@
       \\b (?<! [\\-:.] )
       (
          take|do|when|next|last|redo|return|return-rw
-        |contend|maybe|defer|default|exit
+        |contend|maybe|defer|default|exit|quietly
         |continue|break|goto|leave|supply
         |async|lift|await|start|react|whenever|parse
       )
@@ -1024,6 +1024,12 @@
   {
     'match': '\\*\\s*(?=\\])'
     'name': 'constant.language.whatever.hack.perl6fe'
+  }
+  {
+    'match': '(?x)\\b(?<![\\-\\\\])( :: )?(exists)(?!\\-)\\b(?!\\s*=>)'
+    'captures':
+      '1': 'name': 'keyword.operator.colon.perl6fe'
+    'name': 'support.function.perl6fe'
   }
   # Dual functions and methods
   {
