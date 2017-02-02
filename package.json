@@ -1,6 +1,6 @@
 {
   "name": "language-perl6",
-  "version": "1.13.8",
+  "version": "1.14.0",
   "description": "Perl 6 Language Highlighter",
   "engines": {
     "atom": "*",
