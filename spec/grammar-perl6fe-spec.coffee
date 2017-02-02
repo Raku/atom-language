@@ -37,6 +37,12 @@ describe "Perl 6 FE grammar", ->
     lne = " =begin pod"
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
 
+  # Types
+  it "Same highlights as a type", ->
+    {tokens} = grammar.tokenizeLine 'Same'
+    expect(tokens[0]).toEqual value: 'Same',
+    scopes: [ 'source.perl6fe', 'support.type.perl6fe' ]
+
  ## Bugs
 # $line.match(/^\s*$/)
   it "Regex using .match highlights $line.match(/^\\s*$/)", ->

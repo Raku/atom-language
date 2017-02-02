@@ -939,7 +939,7 @@
             'name': 'support.type.exception.perl6fe'
   }
   {
-    'match': '(?x)\\b(?<!:)(
+    'match': '''(?x)\\b(?<!:)(
       AST|Any|Array|Associative|Attribute|Bag|BagHash|Baggy|
       Blob|Block|Bool|Callable|Capture|Channel|Code|Complex|Cool|
       CurrentThreadScheduler|Cursor|Date|DateTime|Dateish|Duration|
@@ -956,8 +956,10 @@
       Buf|buf|buf1|buf2|buf4|buf8|buf16|buf32|buf64|
       UInt|uint|uint1|uint2|uint4|uint8|uint16|uint32|uint64|
       utf8|utf16|utf32|Num|num|num32|num64|IntStr|NumStr|
-      RatStr|ComplexStr|CArray|Pointer|long|longlong
-    )\\b (?!\\s*=>)'
+      RatStr|ComplexStr|CArray|Pointer|long|longlong|
+      # These are for types which have sub types
+      Order|More|Less|Same
+    )\\b (?!\\s*=>)'''
     'captures':
       '1':
         'name': 'support.type.perl6fe'
@@ -1066,6 +1068,7 @@
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
       |get|words|new-from-pairs|uniname|uninames|uniprop|uniprops
       |slurp-rest|throw|break|keep|match|trim-leading|trim-trailing
+      |is-lazy
     )(?!\\-)\\b(?!\\s*=>)'
     'captures':
       '1':
