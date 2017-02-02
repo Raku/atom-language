@@ -1,3 +1,14 @@
+# v1.14.0
+* Sort of fix variable highlighting in qq quoted heredocs. Still has some issues
+  though.
+* Highlight `is-lazy`, `trim-trailing` and `trim-leading` methods
+* Highlight `Order` types (More|Less|Same)
+* Highlight `is pure` trait
+* Highlight `quietly` and `:exists`
+* Enable quoting using
+  `„Low-double quotation mark ― Left/Right double quotation mark quoting.“`
+  Fixes Issue #48
+
 # v1.13.8
 * Fix highlighting of `proto method X`, `proto sub X` etc. Fixes Issue #31
 
