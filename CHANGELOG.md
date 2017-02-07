@@ -1,3 +1,10 @@
+# v1.14.1
+* Highlight QAST as we highlight nqp
+* Add a bunch of methods, mostly Iterator methods
+ * pull-one, push-exactly, push-at-least, push-all, push-until-lazy
+    , sink-all, skip-at-least, skip-at-least-pull-one
+* Fix highlighting of `1…10` when using the ellipsis
+
 # v1.14.0
 * Sort of fix variable highlighting in qq quoted heredocs. Still has some issues
   though.
