@@ -5,12 +5,14 @@
 [![][mit-badge]][mit]
 [![travis][travis-badge]][travis-link]
 
-A colorful, thoughtful, and helpful language grammar for Perl 6! See [here](#how-do-i-use-this) for questions about usage.
+A colorful, thoughtful, and helpful language grammar for Perl 6! See
+[here](#how-do-i-use-this) for questions about usage.
 
 ![A screenshot of an funnified Perl 6 file][screenshot-1]
 
 ## Integration
-This package has integration with the Atom [script][script-package] package. With both this package and the the `script` package you can execute
+This package has integration with the Atom [script][script-package] package.
+With both this package and the `script` package you can execute
 highlighted Perl 6 code or the whole document, even if it hasn't been saved using
 a keyboard shortcut.
 
