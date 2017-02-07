@@ -1068,7 +1068,8 @@
       |starts-with|ends-with|put|append|tail|\\x{03C0}|\\x{03C4}|\\x{212F}
       |get|words|new-from-pairs|uniname|uninames|uniprop|uniprops
       |slurp-rest|throw|break|keep|match|trim-leading|trim-trailing
-      |is-lazy
+      |is-lazy|pull-one|push-exactly|push-at-least|push-all|push-until-lazy
+      |sink-all|skip-at-least|skip-at-least-pull-one
     )(?!\\-)\\b(?!\\s*=>)'
     'captures':
       '1':
