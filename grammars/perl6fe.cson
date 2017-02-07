@@ -921,7 +921,7 @@
   }
   {
     'match': '(?x)\\b(?<![\\-:])(
-      fatal|internals|MONKEY\\-TYPING|nqp|
+      fatal|internals|MONKEY\\-TYPING|nqp|QAST|
       strict|trace|worries|invocant|parameters|experimental|
       cur|soft|variables|attributes|v6(?:\\.\\w)*|lib|Test|NativeCall
     )(?!\\-) \\b (?!\\s*=>)'
