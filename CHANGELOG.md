@@ -1,3 +1,7 @@
+# v1.14.2
+* Highlight ^-10 the same as ^10
+* Fix highlighting of regex using { } delimiters. Fixes Issue #52
+
 # v1.14.1
 * Highlight QAST as we highlight nqp
 * Add a bunch of methods, mostly Iterator methods
