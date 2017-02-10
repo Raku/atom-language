@@ -45,6 +45,11 @@ describe "Perl 6 FE grammar", ->
 
  ## Bugs
 # $line.match(/^\s*$/)
+  it "m:i{blah} highlights as regex", ->
+    {tokens} = grammar.tokenizeLine "m:i{ blah }"
+    expect(tokens[2]).toEqual value: '{',
+    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+
   it "^-10 highlights as a number", ->
     {tokens} = grammar.tokenizeLine "^-10"
     expect(tokens[0]).toEqual value: '^-10',
