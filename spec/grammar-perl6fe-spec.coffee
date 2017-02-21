@@ -45,6 +45,12 @@ describe "Perl 6 FE grammar", ->
 
  ## Bugs
 # $line.match(/^\s*$/)
+  it "single quotes in regex don't break", ->
+    {tokens} = grammar.tokenizeLine "/ '/' /"
+    expect(tokens[0]).toEqual value : '/', scopes : [ 'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+    expect(tokens[2]).toEqual value : "'", scopes : [ 'source.perl6fe', 'string.regexp.perl6fe', 'string.literal.perl6fe' ]
+    expect(tokens[5]).toEqual value : ' /', scopes : [ 'source.perl6fe', 'string.quoted.single.single.perl6fe' ]
+
   it "m:i{blah} highlights as regex", ->
     {tokens} = grammar.tokenizeLine "m:i{ blah }"
     expect(tokens[2]).toEqual value: '{',
