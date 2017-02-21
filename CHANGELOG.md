@@ -1,3 +1,8 @@
+# v1.14.3
+* Fix a bug in highlighting of := binding operator
+* Fix ligature of `==>` operator when using Fira Code
+* Some fixes for single quotes inside of regex. Fixes Issue #53 and #44
+
 # v1.14.2
 * Highlight ^-10 the same as ^10
 * Fix highlighting of regex using { } delimiters. Fixes Issue #52
