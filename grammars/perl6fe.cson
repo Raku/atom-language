@@ -864,7 +864,7 @@
   }
    # Equals sign `=`, Assignment operator `:=` etc.
   {
-    'match': '(?x) ( [+:\\-.*/] | \\|\\| )? (?<! = ) = (?! [>=~] )'
+    'match': '(?x) (?: [+:\\-.*/] | \\|\\| )? (?<! = ) = (?! [>=~] )'
     'name': 'storage.modifier.assignment.perl6fe'
   }
   # Non multi-line.
