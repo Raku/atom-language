@@ -263,6 +263,19 @@
     }
   ]
   }
+  # multiline comment low-q_left_single
+  {
+  'begin': '\\s*#`‚',
+  'end': '‘',
+  'name': 'comment.multiline.hash-tick.low-q_left_single.perl6fe'
+  'patterns': [
+    {
+      'begin': '‚'
+      'end': '‘'
+      'name': 'comment.internal.low-q_left_single.perl6fe'
+    }
+  ]
+  }
   # multiline comment fw_cornerbracket
   {
   'begin': '\\s*#`「',
@@ -367,6 +380,24 @@
         'name': 'constant.character.escape.perl6fe'
       }
       { 'include': 'source.quoting.perl6fe#q_left_single_right_single_string_content' }
+    ]
+  }
+  {
+    'begin': '(?<=\\W|^)‚'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.perl6fe'
+    'end': '‘'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.perl6fe'
+    'name': 'string.quoted.single.low-q_left_single.perl6fe'
+    'patterns': [
+      {
+        'match': '\\\\[‚‘\\\\]'
+        'name': 'constant.character.escape.perl6fe'
+      }
+      { 'include': 'source.quoting.perl6fe#q_low-q_left_single_string_content' }
     ]
   }
   {
