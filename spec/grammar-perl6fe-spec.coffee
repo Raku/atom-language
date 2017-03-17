@@ -45,6 +45,12 @@ describe "Perl 6 FE grammar", ->
 
  ## Bugs
 # $line.match(/^\s*$/)
+  it "bracket before number does not accidently highlight as a number № 58", ->
+    {tokens} = grammar.tokenizeLine "{1}"
+    expect(tokens[1]).toEqual value: '1',
+    scopes: [ 'source.perl6fe', 'meta.block.perl6fe',
+    'constant.numeric.perl6fe' ]
+
   it ":= assignment highlights as one token and correctly", ->
     {tokens} = grammar.tokenizeLine "10 := 11"
     expect(tokens[2]).toEqual value: ':=',
