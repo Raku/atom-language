@@ -1,3 +1,7 @@
+# v1.14.4
+* Add support for some low-9 quotation styles ‚ single-low 9 quotation mark ― left single quotation mark ‘
+* Fix highlighting of bracket before number. Fixes Issue #58
+
 # v1.14.3
 * Fix a bug in highlighting of := binding operator
 * Fix ligature of `==>` operator when using Fira Code
