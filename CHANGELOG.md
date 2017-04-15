@@ -1,4 +1,5 @@
-# v1.14.4
+# v1.15.0
+* Fix issue with `s:{ }`, substitution regex using brackets as delimiters. Fixes Issue #60
 * Add support for some low-9 quotation styles ‚ single-low 9 quotation mark ― left single quotation mark ‘
 * Fix highlighting of bracket before number. Fixes Issue #58
 
