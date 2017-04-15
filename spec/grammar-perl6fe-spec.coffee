@@ -45,6 +45,16 @@ describe "Perl 6 FE grammar", ->
 
  ## Bugs
 # $line.match(/^\s*$/)
+  it "bracket regex with s: highlights properly № 60", ->
+    {tokens} = grammar.tokenizeLine "s:g { [^ | <?after '\\\\'>] <!before '..\\\\'> <-[\\\\]>+ '\\\\..' ['\\\\' | $ ] } = '' { };"
+    expect(tokens[1]).toEqual value: ':g',
+    scopes: [ 'source.perl6fe', 'entity.name.section.adverb.regexp.perl6fe' ]
+    expect(tokens[3]).toEqual value: '{',
+    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+    expect(tokens[5]).toEqual value: '^',
+    scopes: [ 'source.perl6fe', 'fstring.regexp.perl6fe',
+    'entity.name.section.boundary.regexp.perl6fe' ]
+
   it "bracket before number does not accidently highlight as a number № 58", ->
     {tokens} = grammar.tokenizeLine "{1}"
     expect(tokens[1]).toEqual value: '1',
