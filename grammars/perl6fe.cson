@@ -549,7 +549,7 @@
     'begin': '''(?x)
     (?<= ^|[=,(\\[~]|when|=> ) \\s*
     (?:
-      (m|rx)
+      (m|rx|s)
       (
         (?:
           (?<!:P5) # < This can maybe be removed because we
@@ -578,7 +578,7 @@
     'begin': '''(?x)
     (?<= ^|[=,(\\[~]|when|=> ) \\s*
     (?:
-      (m|rx)
+      (m|rx|s)
       (
         (?:
           (?<!:P5) # < This can maybe be removed because we
@@ -667,7 +667,7 @@
       )
     )
     \\s*
-    ([^#\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\'\\-<>\\-])
+    ([^#\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\'\\-<>\\-\\}\\{])
     '''
     'beginCaptures':
       '1': 'name': 'string.regexp.construct.perl6fe'
