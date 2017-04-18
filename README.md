@@ -57,7 +57,7 @@ precedence. To remedy this you can:
   ```coffee
   "*":
     core:
-      customFileTypes: [
+      customFileTypes:
         'source.perl6fe': [
           'p6'
           'pm6'
@@ -66,7 +66,6 @@ precedence. To remedy this you can:
           'pm'
           't'
         ]
-      ]
   ```
 
 Please be aware that if you do not include the `t` extension
@@ -74,7 +73,7 @@ above, your `t` files will be highlighted with the `language-perl` highlighter u
 
 # License
 
-[MIT][mit] © All [contributors][CREDITS]
+[MIT][mit] © All [contributors](CREDITS]
 [script-package]: https://atom.io/packages/script
 [mit]:          http://opensource.org/licenses/MIT
 [author]:       http://github.com/perl6
