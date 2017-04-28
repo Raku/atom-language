@@ -1,6 +1,25 @@
+[script-package]: https://atom.io/packages/script
+[mit]:          http://opensource.org/licenses/MIT
+[author]:       http://github.com/perl6
+[releases]:     https://github.com/perl6/atom-language-perl6/releases
+[mit-badge]:    https://img.shields.io/apm/l/language-perl6.svg
+[apm-pkg-link]: https://atom.io/packages/language-perl6
+[apm-ver-link]: https://img.shields.io/apm/v/language-perl6.svg
+[dl-badge]:     http://img.shields.io/apm/dm/language-perl6.svg
+[contributing]: https://github.com/perl6/atom-language-perl6/blob/master/CONTRIBUTING.md
+[CREDITS]: https://github.com/perl6/atom-language-perl6/blob/master/CREDITS
+[build-status]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
+[build-status-link]: https://travis-ci.org/perl6/atom-language-perl6
+[issues]: https://github.com/perl6/atom-language-perl6/issues
+[travis-badge]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
+[travis-link]: https://travis-ci.org/perl6/atom-language-perl6?branch=master
+[fira-code]: https://github.com/tonsky/FiraCode
+[screenshot-1]: https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png
+
 # Atom Perl 6 Support - »ö« Official Edition!
 
-[![apm package][apm-ver-link]][releases]
+`[![apm package][apm-ver-link]][apm-pkg-link]`
+
 [![][dl-badge]][apm-pkg-link]
 [![][mit-badge]][mit]
 [![travis][travis-badge]][travis-link]
@@ -75,20 +94,3 @@ above, your `t` files will be highlighted with the `language-perl` highlighter u
 # License
 
 [MIT][mit] © All [contributors][CREDITS]
-[script-package]: https://atom.io/packages/script
-[mit]:          http://opensource.org/licenses/MIT
-[author]:       http://github.com/perl6
-[releases]:     https://github.com/perl6/atom-language-perl6/releases
-[mit-badge]:    https://img.shields.io/apm/l/language-perl6.svg
-[apm-pkg-link]: https://atom.io/packages/language-perl6
-[apm-ver-link]: https://img.shields.io/apm/v/language-perl6.svg
-[dl-badge]:     http://img.shields.io/apm/dm/language-perl6.svg
-[contributing]: https://github.com/perl6/atom-language-perl6/blob/master/CONTRIBUTING.md
-[CREDITS]: https://github.com/perl6/atom-language-perl6/blob/master/CREDITS
-[build-status]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
-[build-status-link]: https://travis-ci.org/perl6/atom-language-perl6
-[issues]: https://github.com/perl6/atom-language-perl6/issues
-[travis-badge]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
-[travis-link]: https://travis-ci.org/perl6/atom-language-perl6?branch=master
-[fira-code]: https://github.com/tonsky/FiraCode
-[screenshot-1]: https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png
