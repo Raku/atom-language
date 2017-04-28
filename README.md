@@ -18,6 +18,7 @@
 
 # Atom Perl 6 Support - »ö« Official Edition!
 
+[![apm package][apm-ver-link]][apm-pkg-link]
 [![][dl-badge]][apm-pkg-link]
 [![][mit-badge]][mit]
 [![travis][travis-badge]][travis-link]
