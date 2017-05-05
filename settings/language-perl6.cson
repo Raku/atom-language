@@ -1,4 +1,4 @@
-'.source.perl6fe':
+'.source.perl6':
   'editor':
     'foldEndPattern': '(\\*/|^\\s*(\\}|\\]|\\)))'
     'increaseIndentPattern': '^.*\\{\\}?\\s*$'

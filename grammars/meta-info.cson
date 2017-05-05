@@ -1,5 +1,5 @@
 'scopeName': 'source.meta-info'
-'name': 'META.info'
+'name': 'META6.json'
 'fileTypes': [
   'META.info'
   'META6.json'
@@ -89,10 +89,10 @@
   fields:
     'match': '(?x)
       "(?:
-      perl|name|version|description|author(?:s)?|provides|depends|emulates|
+      perl|name|version|description|authors|provides|depends|emulates|
       supersedes|superseded-by|excludes|build-depends|test-depends|resource|
       support|email|mailinglist|bugtracker|source|source-url|source-type|
-      irc|phone|production|license|tags|auth
+      irc|phone|production|license|tags|auth|resources
       )"'
     'name': 'entity.name.function.field.meta-info'
   string:

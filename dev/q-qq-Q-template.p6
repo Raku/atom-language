@@ -46,18 +46,18 @@ my $qq-quotation-marks = Q:to/🐧/;
   {
     'begin': 'YYY'
     'beginCaptures':
-      '0': 'name': 'punctuation.definition.string.begin.perl6fe'
+      '0': 'name': 'punctuation.definition.string.begin.perl6'
     'end': 'ZZZ'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.end.perl6fe'
-    'name': 'string.quoted.XXX.perl6fe'
+      '0': 'name': 'punctuation.definition.string.end.perl6'
+    'name': 'string.quoted.XXX.perl6'
     'patterns': [
       {
         'match': '\\\\[YYYZZZabtnfre\\\\\\{\\}]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.perl6'
       }
       { 'include': '#interpolation' }
-      { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+      { 'include': 'source.quoting.perl6#q_XXX_string_content' }
     ]
   }
 🐧
@@ -66,18 +66,18 @@ my $q-quotation-marks = Q:to/🐧/;
     'begin': '(?<=\\W|^)YYY'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
+        'name': 'punctuation.definition.string.begin.perl6'
     'end': 'ZZZ'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
-    'name': 'string.quoted.single.XXX.perl6fe'
+        'name': 'punctuation.definition.string.end.perl6'
+    'name': 'string.quoted.single.XXX.perl6'
     'patterns': [
       {
         'match': '\\\\[YYYZZZ\\\\]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.perl6'
       }
-      { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+      { 'include': 'source.quoting.perl6#q_XXX_string_content' }
     ]
   }
 🐧
@@ -97,13 +97,13 @@ my $q-patterns = Q:to/🐧/;
       )*)
       \\s*(YYY)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.perl6'
+      '2': 'name': 'support.function.quote.adverb.perl6'
+      '3': 'name': 'punctuation.definition.string.perl6'
     'end': 'ZZZ'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.XXX.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.perl6'
+    'contentName': 'string.quoted.q.XXX.quote.perl6'
     'patterns': [ { 'include': '#q_XXX_string_content' } ]
   }
   # q_XXX
@@ -119,17 +119,17 @@ my $q-patterns = Q:to/🐧/;
       )*)
       \\s*(YYY)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.perl6'
+      '2': 'name': 'support.function.quote.adverb.perl6'
+      '3': 'name': 'punctuation.definition.string.perl6'
     'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.XXX.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.perl6'
+    'contentName': 'string.quoted.q.XXX.quote.perl6'
     'patterns': [
       {
         'match': '\\\\YYY|\\\\ZZZ'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.perl6'
       }
       { 'include': '#q_XXX_string_content' }
     ]
@@ -147,20 +147,20 @@ my $q-patterns = Q:to/🐧/;
       )*)
       \\s*(YYY)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.perl6'
+      '2': 'name': 'support.function.quote.adverb.perl6'
+      '3': 'name': 'punctuation.definition.string.perl6'
     'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.XXX.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.perl6'
+    'contentName': 'string.quoted.qq.XXX.quote.perl6'
     'patterns': [
       {
         'match': '\\\\YYY|\\\\ZZZ'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.perl6'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.perl6#interpolation' }
       { 'include': '#q_XXX_string_content' }
     ]
   }
@@ -189,13 +189,13 @@ my $q-any-str = Q:to/🐧/;
       )*)
       \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.perl6'
+      '2': 'name': 'support.function.quote.adverb.perl6'
+      '3': 'name': 'punctuation.definition.string.perl6'
     'end': '\\3'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.any.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.perl6'
+    'contentName': 'string.quoted.q.any.quote.perl6'
     }
 🐧
 
@@ -204,12 +204,12 @@ my $multiline-comment-str = Q:to/🐧/;
   {
   'begin': '\\s*#`YYY',
   'end': 'ZZZ',
-  'name': 'comment.multiline.hash-tick.XXX.perl6fe'
+  'name': 'comment.multiline.hash-tick.XXX.perl6'
   'patterns': [
     {
       'begin': 'YYY'
       'end': 'ZZZ'
-      'name': 'comment.internal.XXX.perl6fe'
+      'name': 'comment.internal.XXX.perl6'
     }
   ]
   }
@@ -220,64 +220,64 @@ my $pod-tag-str = Q:to/🐧/;
       {
         'begin': '(?x) (U) (YYY)'
         'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '1': 'name': 'support.function.pod.code.perl6'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6'
         'end':   '(?x) (ZZZ)'
         'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.underline.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6'
+        'contentName': 'markup.underline.perl6'
+        'name': 'meta.pod.c.perl6'
         'patterns': [
           { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+          { 'include': 'source.quoting.perl6#q_XXX_string_content' }
         ]
       }
       # IYYY ZZZ
       {
         'begin': '(?x) (I) (YYY)'
         'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '1': 'name': 'support.function.pod.code.perl6'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6'
         'end':   '(?x) (ZZZ)'
         'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.italic.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6'
+        'contentName': 'markup.italic.perl6'
+        'name': 'meta.pod.c.perl6'
         'patterns': [
           { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+          { 'include': 'source.quoting.perl6#q_XXX_string_content' }
         ]
       }
       # BYYY ZZZ
       {
         'begin': '(?x) (B) (YYY)'
         'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '1': 'name': 'support.function.pod.code.perl6'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6'
         'end':   '(?x) (ZZZ)'
         'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.bold.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6'
+        'contentName': 'markup.bold.perl6'
+        'name': 'meta.pod.c.perl6'
         'patterns': [
           { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+          { 'include': 'source.quoting.perl6#q_XXX_string_content' }
         ]
       }
       # UppercaseYYY ZZZ
       {
         'begin': '(?x) ([A-Z]) (YYY)'
         'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '1': 'name': 'support.function.pod.code.perl6'
+          '2': 'name': 'punctuation.section.embedded.pod.code.perl6'
         'end':   '(?x) (ZZZ)'
         'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.raw.code.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
+          '1': 'name': 'punctuation.section.embedded.pod.code.perl6'
+        'contentName': 'markup.raw.code.perl6'
+        'name': 'meta.pod.c.perl6'
         'patterns': [
           { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+          { 'include': 'source.quoting.perl6#q_XXX_string_content' }
         ]
       }
 🐧
