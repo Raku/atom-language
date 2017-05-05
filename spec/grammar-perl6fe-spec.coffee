@@ -45,6 +45,11 @@ describe "Perl 6 FE grammar", ->
 
  ## Bugs
 # $line.match(/^\s*$/)
+  it "when before bare regex highlights properly", ->
+    {tokens} = grammar.tokenizeLine "when / ^ /"
+    expect(tokens[2]).toEqual value: '/', scopes: [
+      'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+
   it "bracket regex with s: highlights properly № 60", ->
     {tokens} = grammar.tokenizeLine "s:g { [^ | <?after '\\\\'>] <!before '..\\\\'> <-[\\\\]>+ '\\\\..' ['\\\\' | $ ] } = '' { };"
     expect(tokens[1]).toEqual value: ':g',
