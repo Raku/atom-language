@@ -1,3 +1,12 @@
+# v1.15.1
+* Improve support for bare regex after `when` or `~~` and other special words/symbols. List:
+  * `~~`
+  * `when`
+  * `=>`
+  * `[`
+  * `(`
+  * `=`
+
 # v1.15.0
 * Fix issue with `s:{ }`, substitution regex using brackets as delimiters. Fixes Issue #60
 * Add support for some low-9 quotation styles ‚ single-low 9 quotation mark ― left single quotation mark ‘
