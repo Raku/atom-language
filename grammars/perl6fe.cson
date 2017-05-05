@@ -547,9 +547,9 @@
   # Can match across lines.
   {
     'begin': '''(?x)
-    (?<= ^|[=,(\\[~]|when|=> ) \\s*
+    (?<= [=,(\\[]|when|=>|~~) \\s*
     (?:
-      (m|rx|s)
+      (m|rx|s)?
       (
         (?:
           (?<!:P5) # < This can maybe be removed because we
@@ -561,11 +561,11 @@
     \\s*
     ([/]) # Solidus
     '''
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\)|(?<!\')|(?<=\\\\ \') ) (/)'
     'beginCaptures':
       '1': 'name': 'string.regexp.construct.perl6fe'
       '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
       '3': 'name': 'punctuation.definition.regexp.perl6fe'
-    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\)|(?<!\')|(?<=\\\\ \') ) (/)'
     'endCaptures':
       '1': 'name': 'punctuation.definition.regexp.perl6fe'
     'contentName': 'string.regexp.perl6fe'
