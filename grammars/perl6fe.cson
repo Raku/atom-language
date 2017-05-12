@@ -984,7 +984,7 @@
   {
     'match': '(?x)\\b(?<![\\-:])(
       fatal|internals|
-      MONKEY-(?:TYPING|SEE\\-NO\\-EVAL|BRAINS|GUTS|BUSINESS|TRAP|SHINE|WRENCH|BARS)|
+      MONKEY\\-(?:TYPING|SEE\\-NO\\-EVAL|BRAINS|GUTS|BUSINESS|TRAP|SHINE|WRENCH|BARS)|
       nqp|QAST|strict|trace|worries|invocant|parameters|experimental|
       cur|soft|variables|attributes|v6(?:\\.\\w)*|lib|Test|NativeCall
     )(?!\\-) \\b (?!\\s*=>)'
