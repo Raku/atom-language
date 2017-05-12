@@ -7,6 +7,7 @@ Contributing
    * [The issue tracker and you](#the-issue-tracker-and-you)
 * [Making Changes to the Grammar and Helpful Tips:](#making-changes-to-the-grammar-and-helpful-tips)
    * [Atom Grammars](#atom-grammars)
+    * [Escaping](#escaping)
    * [Oniguruma Regex Engine](#oniguruma-regex-engine)
 * [TextMate Grammar Documentation](#textmate-grammar-documentation)
    * [Single line/simple matching](#single-linesimple-matching)
