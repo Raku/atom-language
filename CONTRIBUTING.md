@@ -7,6 +7,7 @@ Contributing
    * [The issue tracker and you](#the-issue-tracker-and-you)
 * [Making Changes to the Grammar and Helpful Tips:](#making-changes-to-the-grammar-and-helpful-tips)
    * [Atom Grammars](#atom-grammars)
+    * [Escaping](#escaping)
    * [Oniguruma Regex Engine](#oniguruma-regex-engine)
 * [TextMate Grammar Documentation](#textmate-grammar-documentation)
    * [Single line/simple matching](#single-linesimple-matching)
@@ -66,6 +67,15 @@ Because of this, a priority system is the best way to categorize any issues.
   sure you put curly brackets around them.
 * Atom uses the [Oniguruma][Oniguruma] Regex engine which is the same one that
   Ruby uses. More details in the section below.
+  
+  ### Escaping
+  **Important escaping is very easy to mess up. Use the included scripts to get to an unescaped version, edit on that one, and then escape it again**
+  
+ * The best thing to use when editing is use `dev/escape.p6` or `dev/unescape.p6` to unescape or escape text. These scripts accept STDIN and output an escaped/unescaped version.
+
+* I usually copy the text `xclip -o | dev/unescape.p6` work on the text and then copy back and do`xclip -o | dev/escape.p6`
+
+* (though often I do `xclip -o | dev/Xescape.p6 | xclip` and it lands right back on the clipboard but in a differently escaped version. This will prevent accidents with the escaping which are very easy to do (can cause silent bugs or worse).
 
 ### Oniguruma Regex Engine
 * The Oniguruma regex engine is used by all programs which utilize
