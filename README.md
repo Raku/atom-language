@@ -75,7 +75,7 @@ precedence. To remedy this you can:
   ```coffee
   "*":
     core:
-      customFileTypes: [
+      customFileTypes:
         'source.perl6fe': [
           'p6'
           'pm6'
@@ -84,7 +84,6 @@ precedence. To remedy this you can:
           'pm'
           't'
         ]
-      ]
   ```
 
 Please be aware that if you do not include the `t` extension
