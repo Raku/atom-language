@@ -526,6 +526,7 @@
          | ^\\s
          | [\\s\\(] [^\\p{Nd}\\p{L}]
          | ~~\\s|~~\\s\\s|match\\(
+         | match:\\s
         )
         ([/]) # Solidus
         (.*?) # Regex contents
