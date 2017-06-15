@@ -26,6 +26,7 @@ my @open-close-delimiters =
 ('chevron',                   '«',         '»',       1,       False,  Nil,       True),
 ('s-shaped-bag-delimiter',     '⟅',       '⟆',         1,       False),
 ;
+my $DEBUG = False;
 my @delimiters = @open-close-delimiters;
 =comment unmatched delimiters
 the delimiters being pushed to @delimiters are unmatched (open and close delimiters are the same)
@@ -281,6 +282,53 @@ my $pod-tag-str = Q:to/🐧/;
         ]
       }
 🐧
+my $regex-tag-str = Q:to/♥/;
+# regex_XXX
+{
+  'begin': '''(?x)
+  (?<= ^|\\s )
+  (?:
+    (m|rx|s|S)
+    (
+      (?:
+        (?<!:P5) # < This can maybe be removed because we
+        \\s*:\\w+
+        (?!\\s*:P5) # < include p5_regex above it
+      )*
+    )
+  )
+  \\s*
+  (YYY)
+  '''
+  'beginCaptures':
+    '1': 'name': 'string.regexp.construct.XXX.perl6fe'
+    '2': 'name': 'entity.name.section.adverb.regexp.XXX.perl6fe'
+    '3': 'name': 'punctuation.definition.regexp.XXX.perl6fe'
+  'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (ZZZ)'
+  'endCaptures':
+    '1': 'name': 'punctuation.definition.regexp.XXX.perl6fe'
+  'contentName': 'string.regexp.XXX.perl6fe'
+  'patterns': [
+    { 'include': '#interpolation' }
+    { 'include': 'source.regexp.perl6fe' }
+  ]
+}
+♥
+sub regex-highlighting {
+  my Str @output;
+  @output.push: replace($regex-tag-str, |@delimiters.first({.[0] eq 'slash'}).head(3));
+  for ^@open-close-delimiters -> $i {
+    next unless @open-close-delimiters[$i][3] == 1;
+    @output.push: replace($regex-tag-str, |@open-close-delimiters[$i].head(3));
+  }
+  @output.push: replace($regex-tag-str,
+    'any',
+    Q‘[^#\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\'\\-<>\\-\\]\\)\\}\\{]’,
+    Q‘\\3’
+  );
+  @output.join.indent(2);
+}
+my Str:D $regex-file = regex-highlighting;
 sub replace ( Str $string is copy, $name, $begin, $end ) {
   $string ~~ s:g/XXX/$name/;
   # Note: q (…) qq (…) Q (…) are only allowed with a space.
@@ -316,8 +364,8 @@ for ^@delimiters -> $i {
 for ^@delimiters -> $i {
   next unless @delimiters[$i][4];
   my ($name, $open, $close, $num, $bool, $type) = @delimiters[$i];
-  say $type;
-  say $bool;
+  #say $type;
+  #say $bool;
   given $type {
     when 'qq' { $normal-quotes-file ~= replace($qq-quotation-marks, $name, $open, $close) }
     when 'q'  { $normal-quotes-file ~= replace($q-quotation-marks, $name, $open, $close) }
@@ -336,7 +384,7 @@ $zero-file ~= $normal-quotes-file;
 # q qq Q quoting constructs
 for ^@delimiters -> $i {
     if use-for-q @delimiters[$i] {
-        say "Skipping: {@delimiters[$i].perl}";
+        #say "Skipping: {@delimiters[$i].perl}" unless $DEBUG;
         next;
     }
     $first-file ~= replace($q-patterns, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
@@ -360,7 +408,7 @@ $first-file ~= $q-any-str;
 
 for ^@delimiters -> $i {
     if use-for-q @delimiters[$i] {
-        say "Skipping: {@delimiters[$i].perl}";
+        #say "Skipping: {@delimiters[$i].perl}" unless $DEBUG;
         next;
     }
     $second-file ~= replace($q-second-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
@@ -369,6 +417,8 @@ spurt 'ZERO.cson', $zero-file;
 spurt 'FIRST.cson', $first-file;
 spurt 'SECOND.cson', $second-file;
 spurt 'THIRD.cson', $third-file;
+spurt 'REGEX.cson', $regex-file;
+say "Done generating.";
 sub use-for-q ( @delimiters ) {
     # If the delimiters are equal and they are an opening, closing or begining or ending
     # unicode type symbol, then we can't use it for q/qq/Q

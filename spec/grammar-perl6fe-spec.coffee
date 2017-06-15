@@ -45,6 +45,13 @@ describe "Perl 6 FE grammar", ->
 
  ## Bugs
 # $line.match(/^\s*$/)
+  it "s:g[] with adverbs highlight properly №69", ->
+    {tokens} = grammar.tokenizeLine "s:g[^testing$] ^"
+    expect(tokens[3]).toEqual value: '^',
+    scopes: [ 'source.perl6fe', 'string.regexp.bracket.perl6fe',
+    'entity.name.section.boundary.regexp.perl6fe' ]
+    expect(tokens[7]).toEqual value: ' ', scopes: [ 'source.perl6fe' ]
+
   it "when before bare regex highlights properly", ->
     {tokens} = grammar.tokenizeLine "when / ^ /"
     expect(tokens[2]).toEqual value: '/', scopes: [
@@ -179,13 +186,13 @@ describe "Perl 6 FE grammar", ->
   it "m/\\\\/ regex highlights with two backslash in it", ->
     {tokens} = grammar.tokenizeLine 'm/\\\\/'
     expect(tokens[0]).toEqual value: 'm',
-    scopes: [ 'source.perl6fe', 'string.regexp.construct.perl6fe' ]
+    scopes: [ 'source.perl6fe', 'string.regexp.construct.slash.perl6fe' ]
     expect(tokens[1]).toEqual value: '/',
-    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.slash.perl6fe' ]
     expect(tokens[2]).toEqual value: '\\\\',
-    scopes: [ 'source.perl6fe', 'string.regexp.perl6fe' ]
+    scopes: [ 'source.perl6fe', 'string.regexp.slash.perl6fe' ]
     expect(tokens[3]).toEqual value: '/',
-    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.perl6fe' ]
+    scopes: [ 'source.perl6fe', 'punctuation.definition.regexp.slash.perl6fe' ]
 
   it "# regex highlights arbitrary delimiters when using m", ->
     {tokens} = grammar.tokenizeLine 'say m|hi|'

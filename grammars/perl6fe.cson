@@ -654,6 +654,37 @@
   }
   # Finds regex at start of line or after: = , ( ) ~ => or when
   # Using arbirtary delimiters and m, rx, s or S
+  #{
+  #  'begin': '''(?x)
+  #  (?<= ^|\\s )
+  #  (?:
+  #    (m|rx|s|S)
+  #    (
+  #      (?:
+  #        (?<!:P5) # < This can maybe be removed because we
+  #        \\s*:\\w+
+  #        (?!\\s*:P5) # < include p5_regex above it
+  #      )*
+  #    )
+  #  )
+  #  \\s*
+  #  ([^#\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\'\\-<>\\-\\]\\)\\}\\{])
+  #  '''
+  #  'beginCaptures':
+  #    '1': 'name': 'string.regexp.construct.perl6fe'
+  #    '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
+  #    '3': 'name': 'punctuation.definition.regexp.perl6fe'
+  #  'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (\\3)'
+  #  'endCaptures':
+  #    '1': 'name': 'punctuation.definition.regexp.perl6fe'
+  #  'contentName': 'string.regexp.perl6fe'
+  #  'patterns': [
+  #    { 'include': '#interpolation' }
+  #    { 'include': 'source.regexp.perl6fe' }
+  #  ]
+  #}
+#REGEX_START
+  # regex_slash
   {
     'begin': '''(?x)
     (?<= ^|\\s )
@@ -668,21 +699,412 @@
       )
     )
     \\s*
-    ([^#\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\'\\-<>\\-\\}\\{])
+    (/)
     '''
     'beginCaptures':
-      '1': 'name': 'string.regexp.construct.perl6fe'
-      '2': 'name': 'entity.name.section.adverb.regexp.perl6fe'
-      '3': 'name': 'punctuation.definition.regexp.perl6fe'
-    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (\\3)'
+      '1': 'name': 'string.regexp.construct.slash.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.slash.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.slash.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (/)'
     'endCaptures':
-      '1': 'name': 'punctuation.definition.regexp.perl6fe'
-    'contentName': 'string.regexp.perl6fe'
+      '1': 'name': 'punctuation.definition.regexp.slash.perl6fe'
+    'contentName': 'string.regexp.slash.perl6fe'
     'patterns': [
       { 'include': '#interpolation' }
       { 'include': 'source.regexp.perl6fe' }
     ]
   }
+  # regex_brace
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    ({)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.brace.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.brace.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.brace.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (})'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.brace.perl6fe'
+    'contentName': 'string.regexp.brace.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_angle
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    (<)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.angle.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.angle.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.angle.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (>)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.angle.perl6fe'
+    'contentName': 'string.regexp.angle.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_paren
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    (\\()
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.paren.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.paren.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.paren.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (\\))'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.paren.perl6fe'
+    'contentName': 'string.regexp.paren.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_bracket
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    (\\[)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.bracket.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.bracket.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.bracket.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (\\])'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.bracket.perl6fe'
+    'contentName': 'string.regexp.bracket.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_left_double_right_double
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    (“)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.left_double_right_double.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.left_double_right_double.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.left_double_right_double.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (”)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.left_double_right_double.perl6fe'
+    'contentName': 'string.regexp.left_double_right_double.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_left_double-low-q_right_double
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    („)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.left_double-low-q_right_double.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.left_double-low-q_right_double.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.left_double-low-q_right_double.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (”|“)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.left_double-low-q_right_double.perl6fe'
+    'contentName': 'string.regexp.left_double-low-q_right_double.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_left_single_right_single
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    (‘)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.left_single_right_single.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.left_single_right_single.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.left_single_right_single.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (’)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.left_single_right_single.perl6fe'
+    'contentName': 'string.regexp.left_single_right_single.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_low-q_left_single
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    (‚)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.low-q_left_single.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.low-q_left_single.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.low-q_left_single.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (‘)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.low-q_left_single.perl6fe'
+    'contentName': 'string.regexp.low-q_left_single.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_fw_cornerbracket
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    (「)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.fw_cornerbracket.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.fw_cornerbracket.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.fw_cornerbracket.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (」)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.fw_cornerbracket.perl6fe'
+    'contentName': 'string.regexp.fw_cornerbracket.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_hw_cornerbracket
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    (｢)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.hw_cornerbracket.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.hw_cornerbracket.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.hw_cornerbracket.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (｣)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.hw_cornerbracket.perl6fe'
+    'contentName': 'string.regexp.hw_cornerbracket.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_chevron
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    («)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.chevron.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.chevron.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.chevron.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (»)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.chevron.perl6fe'
+    'contentName': 'string.regexp.chevron.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_s-shaped-bag-delimiter
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    (⟅)
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.s-shaped-bag-delimiter.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.s-shaped-bag-delimiter.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.s-shaped-bag-delimiter.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (⟆)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.s-shaped-bag-delimiter.perl6fe'
+    'contentName': 'string.regexp.s-shaped-bag-delimiter.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+  # regex_any
+  {
+    'begin': '''(?x)
+    (?<= ^|\\s )
+    (?:
+      (m|rx|s|S)
+      (
+        (?:
+          (?<!:P5) # < This can maybe be removed because we
+          \\s*:\\w+
+          (?!\\s*:P5) # < include p5_regex above it
+        )*
+      )
+    )
+    \\s*
+    ([^#\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\'\\-<>\\-\\]\\)\\}\\{])
+    '''
+    'beginCaptures':
+      '1': 'name': 'string.regexp.construct.any.perl6fe'
+      '2': 'name': 'entity.name.section.adverb.regexp.any.perl6fe'
+      '3': 'name': 'punctuation.definition.regexp.any.perl6fe'
+    'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (\\3)'
+    'endCaptures':
+      '1': 'name': 'punctuation.definition.regexp.any.perl6fe'
+    'contentName': 'string.regexp.any.perl6fe'
+    'patterns': [
+      { 'include': '#interpolation' }
+      { 'include': 'source.regexp.perl6fe' }
+    ]
+  }
+#REGEX_END
   { 'include': '#shellquotes' }
   # heredocs put it here instead of in 'repository' as a workaround to
   # https://github.com/atom/first-mate/issues/61

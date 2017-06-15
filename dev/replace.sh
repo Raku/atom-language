@@ -38,3 +38,13 @@ awk '
     p' "${FILE}" > "${TEMP_FILE}"
 rm THIRD.cson
 mv "${TEMP_FILE}" "${FILE}"
+
+awk '
+    BEGIN       {p=1}
+    /^#REGEX_START/   {print;system("cat REGEX.cson");p=0}
+    /^#REGEX_END/     {p=1}
+    p' "${FILE}" > "${TEMP_FILE}"
+rm REGEX.cson
+mv "${TEMP_FILE}" "${FILE}"
+
+printf "Done!\n"
