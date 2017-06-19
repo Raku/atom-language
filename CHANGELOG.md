@@ -1,3 +1,16 @@
+# v1.16.0
+* We now automate m// and s/// grammar generation using different delimiters.
+  Now `m/ /`, `s/ / /`, `S/ / /`, `rx/ /` regex should work for more delimiters, and existing delimiters
+  that already worked should have less issues. Some of these delimiters
+  I did not know worked until now!
+* `m[ ]`, `m⟅ ⟆`, `m{ }`
+* `m< >`, `m ( )`, `m“ ”`
+* `m„ ”`, `m‘ ’`, `m‚ ’`
+* `m｢ ｣`, `m｢ ｣`, `m« »`
+* Also a reminder than arbitrary delimiters in regex still work as well: `'test' ~~ m* test *`
+* Fix highlighting of `.match` when not using parens (`.match: / regex /`
+* Highlight all of the `MONKEYS` (i.e. `MONKEY-TYPING` and friends)
+
 # v1.15.1
 * Improve support for bare regex after `when` or `~~` and other special words/symbols. List:
   * `~~`
