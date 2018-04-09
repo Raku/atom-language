@@ -2397,7 +2397,7 @@
                 (?:
                    [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore or a ' or -
                 |                           # followed by an alphanum or underscore
-                   [\\-\'] [\\p{Digit}\\p{Alpha}_]
+                   [\\-\\'] [\\p{Digit}\\p{Alpha}_]
                 )*
             )'''
           'captures':
@@ -2435,7 +2435,7 @@
           (
              [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore or a ' or -
           |                           # followed by an alphanum or underscore
-             [\\-\'] [\\p{Digit}\\p{Alpha}_]
+             [\\-\\'] [\\p{Digit}\\p{Alpha}_]
           )*
           ( \\[ .* \\] )?             # postcircumfix [ ]
           ## methods
@@ -2447,7 +2447,7 @@
                   (?:
                     [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore or a ' or -
                   |                           # followed by an alphanum or underscore
-                    [\\-\'] [\\p{Digit}\\p{Alpha}_]
+                    [\\-\\'] [\\p{Digit}\\p{Alpha}_]
                   )*
 
               )
