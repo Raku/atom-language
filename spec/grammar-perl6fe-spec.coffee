@@ -52,6 +52,15 @@ describe "Perl 6 FE grammar", ->
     'entity.name.section.boundary.regexp.perl6fe' ]
     expect(tokens[7]).toEqual value: ' ', scopes: [ 'source.perl6fe' ]
 
+  it "identifiers with embedded dash/apostroph highlight properly № 83", ->
+    {tokens} = grammar.tokenizeLine "$var-var-123 \"@var\'var-123\""
+    expect(tokens[1]).toEqual value: 'var-var',
+    scopes: [ 'source.perl6fe','meta.variable.container.perl6fe',
+    'variable.other.identifier.perl6fe' ]
+    expect(tokens[5]).toEqual value: "var\'var",
+    scopes: [ 'source.perl6fe', 'string.quoted.double.perl6fe',
+    'variable.other.identifier.interpolated.perl6fe' ]
+
   it "when before bare regex highlights properly", ->
     {tokens} = grammar.tokenizeLine "when / ^ /"
     expect(tokens[2]).toEqual value: '/', scopes: [
