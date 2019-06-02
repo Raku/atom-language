@@ -2393,11 +2393,11 @@
             (\\$|@|%|&)
             (\\.|\\*|:|!|\\^|~|=|\\?)?
             (
-                (?:[\\p{Alpha}_])             # Must start with Alpha or underscore
+                (?:[\\p{Alpha}_])           # Must start with Alpha or underscore
                 (?:
-                   [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore or a ' or -
-                |                           # followed by an alphanum or underscore
-                   [\\-\'] [\\p{Digit}\\p{Alpha}_]
+                   [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore, or a ' or -
+                |                           # followed by an Alpha or underscore
+                   [\\-\'] [\\p{Alpha}_]
                 )*
             )'''
           'captures':
@@ -2433,9 +2433,9 @@
           (\\.|\\*|:|!|\\^|~|=|\\?)?  # Twigils
           ([\\p{Alpha}_])             # Must start with Alpha or underscore
           (
-             [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore or a ' or -
-          |                           # followed by an alphanum or underscore
-             [\\-\'] [\\p{Digit}\\p{Alpha}_]
+             [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore, or a ' or -
+          |                           # followed by an Alpha or underscore
+             [\\-\'] [\\p{Alpha}_]
           )*
           ( \\[ .* \\] )?             # postcircumfix [ ]
           ## methods
@@ -2445,9 +2445,9 @@
               (
                  [\\p{Alpha}]
                   (?:
-                    [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore or a ' or -
-                  |                           # followed by an alphanum or underscore
-                    [\\-\'] [\\p{Digit}\\p{Alpha}_]
+                    [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore, or a ' or -
+                  |                          # followed by an Alpha or underscore
+                    [\\-\'] [\\p{Alpha}_]
                   )*
 
               )
