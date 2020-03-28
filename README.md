@@ -16,7 +16,7 @@
 [fira-code]: https://github.com/tonsky/FiraCode
 [screenshot-1]: https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png
 
-# Atom Perl 6 Support - »ö« Official Edition!
+# Atom Raku/Perl 6 Support - »ö« Official Edition!
 
 [![apm package][apm-ver-link]][apm-pkg-link]
 [![][dl-badge]][apm-pkg-link]
@@ -26,17 +26,17 @@
 A colorful, thoughtful, and helpful language grammar for Perl 6! See
 [here](#how-do-i-use-this) for questions about usage.
 
-![A screenshot of an funnified Perl 6 file][screenshot-1]
+![A screenshot of an funnified Raku/Perl 6 file][screenshot-1]
 
 ## Integration
 This package has integration with the Atom [script][script-package] package.
 With both this package and the `script` package you can execute
-highlighted Perl 6 code or the whole document, even if it hasn't been saved using
+highlighted Raku/Perl 6 code or the whole document, even if it hasn't been saved using
 a keyboard shortcut.
 
 ## What Makes This The *Fun* Edition?
 
-> Perl 6 is optimized for fun. ― Audrey Tang
+> Perl 6 (Raku) is optimized for fun. ― Audrey Tang
 
 * This package was designed to work with [Fira Code][fira-code] ligatures
 
@@ -49,7 +49,7 @@ a keyboard shortcut.
 ## See something? Say something!
 See something highlighted incorrectly? See something LTA (Less Than Awesome)?
 Please report it on the [issue tracker][issues]. Any issue no matter how small
-should be reported. It is our hope that this is not only the best Perl 6
+should be reported. It is our hope that this is not only the best Raku/Perl 6
 highlighter for Atom, but the best highlighter for Atom out there.
 
 ## Contributing
@@ -68,7 +68,7 @@ line includes `use v6`, a shebang whose last term before any whitespace is
 If you are having issues, the `language-perl` package is probably taking
 precedence. To remedy this you can:
 
-* Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Perl 6 FE`
+* Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Raku/Perl 6`
 * If you want to permanently change the preferences for a file type,
   add the following to your `config.cson` (*Edit* → *Config*):
 
