@@ -14,7 +14,7 @@
 'firstLineMatch':
    '(?x) ^ \\s* (?:
      use \\s v6 | =begin \\s pod | =comment
-     | \\#!(?: perl6|/.*perl6 (?! \\S))
+     | \\#!(?: (?:perl6|raku)|/.*(?:perl6|raku) (?! \\S))
      | my\\s*class
 )'
 'patterns': [
