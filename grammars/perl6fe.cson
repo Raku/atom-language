@@ -1,5 +1,5 @@
 'scopeName': 'source.perl6fe'
-'name': 'Raku/Perl 6'
+'name': 'Perl 6'
 'fileTypes': [
   'p6'
   'pl6'
