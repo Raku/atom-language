@@ -1,6 +1,6 @@
 {
   "name": "language-perl6",
-  "version": "1.16.1",
+  "version": "1.17.0",
   "description": "Raku/Perl 6 Language Highlighter",
   "engines": {
     "atom": "*",
