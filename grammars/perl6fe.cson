@@ -1,5 +1,5 @@
 'scopeName': 'source.perl6fe'
-'name': 'Perl 6 FE'
+'name': 'Raku/Perl 6'
 'fileTypes': [
   'p6'
   'pl6'
@@ -8,11 +8,13 @@
   't6'
   'pod6'
   'nqp'
+  'rakutest'
+  'raku'
 ]
 'firstLineMatch':
    '(?x) ^ \\s* (?:
      use \\s v6 | =begin \\s pod | =comment
-     | \\#!(?: perl6|/.*perl6 (?! \\S))
+     | \\#!(?: (?:perl6|raku)|/.*(?:perl6|raku) (?! \\S))
      | my\\s*class
 )'
 'patterns': [

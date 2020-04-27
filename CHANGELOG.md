@@ -1,3 +1,8 @@
+# v1.17.0
+* Rename from 'Perl 6 FE' to 'Raku/Perl 6'
+* Change the description of the atom package to have Raku in it
+* Update README.md to mention Raku everywhere
+
 # v1.16.0
 * We now automate m// and s/// grammar generation using different delimiters.
   Now `m/ /`, `s/ / /`, `S/ / /`, `rx/ /` regex should work for more delimiters, and existing delimiters
