@@ -1,4 +1,4 @@
-#!/usr/bin/env perl6
+#!/usr/bin/env raku
 # Generate the q[] qq[] and Q[] quoting constructs
 my @open-close-delimiters =
 #Left Pi right Pf. Open Ps close Pe

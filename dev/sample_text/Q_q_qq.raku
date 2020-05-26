@@ -1,4 +1,4 @@
-#!/usr/bin/env perl6
+#!/usr/bin/env raku
 ### This is to test the q qq and Q quoting
 ((qw[\ % ? & = # + " ' : ~ < >]));
 ## any

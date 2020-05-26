@@ -1,4 +1,4 @@
-#!/usr/bin/env perl6
+#!/usr/bin/env raku
 sub escape-cson ( $str is copy ) {
     my @chars = <'>;
     my $reverse-solidus = Q[\];

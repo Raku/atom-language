@@ -57,9 +57,7 @@ Integration with Autocomplete+, linter or other packages are possible future fea
 
 ## How do I use this?
 
-This language grammar should automatically highlight `.raku`, `.rakumod`, `.rakutest`, `.rakudoc`, `.nqp` and legacy `.p6`, `.pod6`, `.pm6` files. The language grammar will also detect files whose first
-line includes `use v6`, a shebang whose last term before any whitespace is
-`perl6` , `=begin pod`, or `my class`.
+This language grammar should automatically highlight `.raku`, `.rakumod`, `.rakutest`, `.rakudoc`, `.nqp` and legacy `.p6`, `.pod6`, `.pm6` files. The language grammar will also detect files whose first line includes `use v6`, a shebang whose last term before any whitespace is `raku` , `=begin pod`, or `my class`.
 
 If you are having issues, the `language-perl` package is probably taking
 precedence. To remedy this you can:
@@ -75,7 +73,7 @@ precedence. To remedy this you can:
         'source.raku': [
           'p6'
           'pm6'
-          # Add pm and t if you want auto choose this highlighter for .pm or 't
+          # Add pm and t if you want auto choose this highlighter for .pm or .t
           # files.
           'pm'
           't'

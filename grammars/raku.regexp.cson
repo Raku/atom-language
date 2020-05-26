@@ -1,5 +1,5 @@
 'scopeName': 'source.regexp.raku'
-'name': 'Regular Expressions (Raku)'
+'name': 'Regular Expressions in Raku'
 'fileTypes': []
 'patterns': [
   'include': '#regexp'

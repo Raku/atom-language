@@ -30,8 +30,8 @@ describe "Raku grammar", ->
   it "use v6 works", ->
     lne = " use v6;"
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
-  it "First line: =comment detected as Perl 6", ->
-    lne = " =comment detected as Perl 6"
+  it "First line: =comment detected as Raku", ->
+    lne = " =comment detected as Raku"
     expect(grammar.firstLineRegex.scanner.findNextMatchSync(lne)).not.toBeNull()
   it " =begin pod works", ->
     lne = " =begin pod"

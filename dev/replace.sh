@@ -3,7 +3,7 @@ FILE="./grammars/raku.cson"
 TEMP_FILE="${FILE}.new"
 FILE2="./grammars/raku.quoting.cson"
 TEMP_FILE2="${FILE2}.new"
-perl6 ./dev/q-qq-Q-template.p6
+raku ./dev/q-qq-Q-template.raku
 if [ ! -f ZERO.cson ]; then
   exit 1
 fi

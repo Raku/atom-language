@@ -1,8 +1,8 @@
 'scopeName': 'source.quoting.raku'
-'name': 'Quoting (Raku)'
+'name': 'Quoting in Raku'
 'fileTypes': []
 'patterns': [
-## See `./dev/Q_q_qq.p6` to alter the generator for this code
+## See `./dev/Q_q_qq.raku` to alter the generator for this code
 #1START DO NOT EDIT BETWEEN THIS LINE AND #1END
   # Q_triple_paren
   {
