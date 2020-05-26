@@ -1,5 +1,5 @@
-'scopeName': 'source.regexp.perl6fe'
-'name': 'Regular Expressions (Perl 6)'
+'scopeName': 'source.regexp.raku'
+'name': 'Regular Expressions (Raku)'
 'fileTypes': []
 'patterns': [
   'include': '#regexp'
@@ -11,16 +11,16 @@
         'begin': '(^[ \\t]+)?(?=#)'
         'beginCaptures':
           '1':
-            'name': 'punctuation.whitespace.comment.leading.perl6fe'
+            'name': 'punctuation.whitespace.comment.leading.raku'
         'end': '(?!\\G)'
         'patterns': [
           {
             'begin': '#'
             'beginCaptures':
               '0':
-                'name': 'punctuation.definition.comment.perl6fe'
+                'name': 'punctuation.definition.comment.raku'
             'end': '\\n'
-            'name': 'comment.line.number-sign.perl6fe'
+            'name': 'comment.line.number-sign.raku'
           }
         ]
       }
@@ -29,15 +29,15 @@
       }
       {
         'match': '\\\\[dDhHnNsStTvVwW]'
-        'name': 'constant.character.escape.class.regexp.perl6fe'
+        'name': 'constant.character.escape.class.regexp.raku'
       }
       {
         'match': ':\\w+'
-        'name': 'entity.name.section.adverb.perl6fe'
+        'name': 'entity.name.section.adverb.raku'
       }
       {
         'match': '\\^\\^|(?<!\\.)\\^(?!\\.)|\\$\\$|\\$(?!\\d|<)|<<|>>'
-        'name': 'entity.name.section.boundary.regexp.perl6fe'
+        'name': 'entity.name.section.boundary.regexp.raku'
       }
       {
         'match': '(?<!\\\\)\\$\\d'
@@ -49,45 +49,45 @@
           '1':
             'name': 'variable.other.identifier.sigil.regexp.perl6'
           '2':
-            'name': 'support.class.match.name.delimiter.regexp.perl6fe'
+            'name': 'support.class.match.name.delimiter.regexp.raku'
           '3':
             'name': 'variable.other.identifier.regexp.perl6'
           '4':
-            'name': 'support.class.match.name.delimiter.regexp.perl6fe'
+            'name': 'support.class.match.name.delimiter.regexp.raku'
           '5':
-            'name': 'storage.modifier.match.assignment.regexp.perl6fe'
-        'name': 'meta.match.variable.perl6fe'
+            'name': 'storage.modifier.match.assignment.regexp.raku'
+        'name': 'meta.match.variable.raku'
       }
       {
         'begin': '(\\<(?:\\?|\\!)\\{)'
         'beginCaptures':
           '1':
-            'name': 'punctuation.section.embedded.begin.perl6fe'
+            'name': 'punctuation.section.embedded.begin.raku'
         'end': '(\\}\\>)'
         'endCaptures':
           '1':
-            'name': 'punctuation.section.embedded.end.perl6fe'
+            'name': 'punctuation.section.embedded.end.raku'
         'patterns': [
-          'include': 'source.perl6fe'
+          'include': 'source.raku'
         ]
-        'name': 'meta.interpolation.perl6fe'
+        'name': 'meta.interpolation.raku'
       }
       # TODO check for escaping with lookbehind
       {
         'match': '<\\(|\\)>'
-        'name': 'keyword.operator.capture.marker.regexp.perl6fe'
+        'name': 'keyword.operator.capture.marker.regexp.raku'
       }
       # Property < >
       {
         'begin': '(?!\\\\)<'
         'beginCaptures':
           '0':
-            'name': 'punctuation.delimiter.property.regexp.perl6fe'
+            'name': 'punctuation.delimiter.property.regexp.raku'
         'end': '>'
         'endCaptures':
           '0':
-            'name': 'punctuation.delimiter.property.regexp.perl6fe'
-        'name': 'meta.property.regexp.perl6fe'
+            'name': 'punctuation.delimiter.property.regexp.raku'
+        'name': 'meta.property.regexp.raku'
         'patterns': [
           {
             'include': '#re_strings'
@@ -96,11 +96,11 @@
             'begin': '(\\?|\\!)(before|after)\\s+'
             'beginCaptures':
               '1':
-                'name': 'keyword.operator.negativity.perl6fe'
+                'name': 'keyword.operator.negativity.raku'
               '2':
-                'name': 'entity.name.section.assertion.perl6fe'
+                'name': 'entity.name.section.assertion.raku'
             'end': '(?=>)'
-            'name': 'meta.assertion.lookaround.perl6fe'
+            'name': 'meta.assertion.lookaround.raku'
             'patterns': [
               {
                 'include': '#regexp'
@@ -111,57 +111,57 @@
             'match': '(\\w+)(=)'
             'captures':
               '1':
-                'name': 'entity.name.function.capturename.perl6fe'
+                'name': 'entity.name.function.capturename.raku'
               '2':
-                'name': 'storage.modifier.capture.assignment.perl6fe'
-            'name': 'meta.capture.assignment.perl6fe'
+                'name': 'storage.modifier.capture.assignment.raku'
+            'name': 'meta.capture.assignment.raku'
           }
           {
             'match': '(:)(\\w+)'
             'captures':
               '1':
-                'name': 'punctuation.definition.property.regexp.perl6fe'
+                'name': 'punctuation.definition.property.regexp.raku'
               '2':
-                'name': 'variable.other.identifier.property.regexp.perl6fe'
-            'name': 'meta.property.name.regexp.perl6fe'
+                'name': 'variable.other.identifier.property.regexp.raku'
+            'name': 'meta.property.name.regexp.raku'
           }
           {
             'match': '[+|&\\-^]'
-            'name': 'keyword.operator.property.regexp.perl6fe'
+            'name': 'keyword.operator.property.regexp.raku'
           }
           {
             'begin': '\\['
             'beginCaptures':
               '0':
-                'name': 'keyword.operator.charclass.open.regexp.perl6fe'
+                'name': 'keyword.operator.charclass.open.regexp.raku'
             'end': '\\]'
             'endCaptures':
               '0':
-                'name': 'keyword.operator.charclass.close.regexp.perl6fe'
-            'contentName': 'constant.character.custom.property.regexp.perl6fe'
+                'name': 'keyword.operator.charclass.close.regexp.raku'
+            'contentName': 'constant.character.custom.property.regexp.raku'
             'patterns': [
-              { 'include': 'source.perl6fe#hex_escapes' }
+              { 'include': 'source.raku#hex_escapes' }
               {
                 'match': '(?<!\\\\)\\\\\\]'
-                'name': 'constant.character.custom.property.regexp.perl6fe'
+                'name': 'constant.character.custom.property.regexp.raku'
               }
             ]
           }
           {
             'match': '\\.\\w+\\b'
-            'name': 'comment.suppressed.capture.property.regexp.perl6fe'
+            'name': 'comment.suppressed.capture.property.regexp.raku'
           }
           {
             'match': '\\b\\w+\\b'
-            'name': 'variable.other.identifier.regexname.perl6fe'
+            'name': 'variable.other.identifier.regexname.raku'
           }
           {
             'begin': '(?<=\\w)\\('
             'end': '\\)'
-            'name': 'meta.rule.signature.perl6fe'
+            'name': 'meta.rule.signature.raku'
             'patterns': [
               {
-                'include': 'source.perl6fe'
+                'include': 'source.raku'
               }
             ]
           }
@@ -169,15 +169,15 @@
       }
       {
         'match': '(?<=\\.\\.)\\*'
-        'name': 'variable.other.identifier.whatever.regexp.perl6fe'
+        'name': 'variable.other.identifier.whatever.regexp.raku'
       }
       {
         'match': '\\+|\\*\\*|\\*|\\?|%|\\.\\.|\\.|(?<=\\.\\.|\\s|\\d)\\^'
-        'name': 'keyword.operator.quantifiers.regexp.perl6fe'
+        'name': 'keyword.operator.quantifiers.regexp.raku'
       }
       {
         'match': '(?<!\\\\)\\|{1,2}'
-        'name': 'support.function.alternation.regexp.perl6fe'
+        'name': 'support.function.alternation.regexp.raku'
       }
     ]
   're_strings':
@@ -185,15 +185,15 @@
       {
         'begin': '(?<!\\\\)\\\''
         'end': '(?<=\\\\\\\\)\\\'|(?<!\\\\)\\\''
-        'name': 'string.literal.perl6fe'
+        'name': 'string.literal.raku'
       }
       {
         'begin': '(?<!\\\\)‘'
         'end': '(?<=\\\\\\\\)\\\’|(?<!\\\\)’'
-        'name': 'string.literal.perl6fe'
+        'name': 'string.literal.raku'
         'patterns': [
           {
-            'include': 'source.perl6fe#q_left_single_right_single_string_content'
+            'include': 'source.raku#q_left_single_right_single_string_content'
           }
         ]
       }
@@ -201,6 +201,6 @@
       {
         'begin': '(?<!\\\\)\\\"'
         'end': '(?<=\\\\\\\\)\\\"|(?<!\\\\)\\\"'
-        'name': 'string.literal.perl6fe'
+        'name': 'string.literal.raku'
       }
     ]
