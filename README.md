@@ -1,6 +1,6 @@
 [script-package]: https://atom.io/packages/script
 [mit]:          http://opensource.org/licenses/MIT
-[author]:       http://github.com/perl6
+[author]:       http://github.com/Raku
 [releases]:     https://github.com/perl6/atom-language-perl6/releases
 [mit-badge]:    https://img.shields.io/apm/l/language-perl6.svg
 [apm-pkg-link]: https://atom.io/packages/language-perl6
@@ -16,41 +16,38 @@
 [fira-code]: https://github.com/tonsky/FiraCode
 [screenshot-1]: https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png
 
-# Atom Raku/Perl 6 Support - »ö« Official Edition!
+# Atom Raku Support - »ö« Official Edition!
 
 [![apm package][apm-ver-link]][apm-pkg-link]
 [![][dl-badge]][apm-pkg-link]
 [![][mit-badge]][mit]
 [![travis][travis-badge]][travis-link]
 
-A colorful, thoughtful, and helpful language grammar for Perl 6! See
+A colorful, thoughtful, and helpful language grammar for Raku! See
 [here](#how-do-i-use-this) for questions about usage.
 
-![A screenshot of an funnified Raku/Perl 6 file][screenshot-1]
+![A screenshot of an funnified Raku file][screenshot-1]
 
 ## Integration
 This package has integration with the Atom [script][script-package] package.
 With both this package and the `script` package you can execute
-highlighted Raku/Perl 6 code or the whole document, even if it hasn't been saved using
+highlighted Raku code or the whole document, even if it hasn't been saved using
 a keyboard shortcut.
 
 ## What Makes This The *Fun* Edition?
 
-> Perl 6 (Raku) is optimized for fun. ― Audrey Tang
+> Raku is optimized for fun. ― Audrey Tang
 
 * This package was designed to work with [Fira Code][fira-code] ligatures
 
-* Much more syntax highlighted (numbers, operators, interpolation, traits, better strings).
+* Much more syntax highlighted (numbers, operators, interpolation, traits, better strings)
 
-* Some day we hope this package will also contain support for many popular
-  atom packages that have service hooks like autocomplete+ and linter
+* Some day we hope this package will also contain support for many popular atom packages that have service hooks like autocomplete+ and linter
 
 
 ## See something? Say something!
 See something highlighted incorrectly? See something LTA (Less Than Awesome)?
-Please report it on the [issue tracker][issues]. Any issue no matter how small
-should be reported. It is our hope that this is not only the best Raku/Perl 6
-highlighter for Atom, but the best highlighter for Atom out there.
+Please report it on the [issue tracker][issues]. Any issue no matter how small should be reported. It is our hope that this is not only the best Raku highlighter for Atom, but the best highlighter for Atom out there.
 
 ## Contributing
 Contributions are welcome! Please see [`CONTRIBUTING.md`][contributing] for a tutorial on writing Atom syntax grammars and more information!
@@ -60,15 +57,12 @@ Integration with Autocomplete+, linter or other packages are possible future fea
 
 ## How do I use this?
 
-This language grammar should automatically highlight `.p6`, `.pod6`, `.pm6` and
-`.nqp` files. The language grammar will also detect files whose first
-line includes `use v6`, a shebang whose last term before any whitespace is
-`perl6` , `=begin pod`, or `my class`.
+This language grammar should automatically highlight `.raku`, `.rakumod`, `.rakutest`, `.rakudoc`, `.nqp` and legacy `.p6`, `.pod6`, `.pm6` files. The language grammar will also detect files whose first line includes `use v6`, a shebang whose last term before any whitespace is `raku` , `=begin pod`, or `my class`.
 
 If you are having issues, the `language-perl` package is probably taking
 precedence. To remedy this you can:
 
-* Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Raku/Perl 6`
+* Click the language name in the status-bar (`Ctrl+Shift+L`) and select `Raku`
 * If you want to permanently change the preferences for a file type,
   add the following to your `config.cson` (*Edit* → *Config*):
 
@@ -76,10 +70,10 @@ precedence. To remedy this you can:
   "*":
     core:
       customFileTypes:
-        'source.perl6fe': [
+        'source.raku': [
           'p6'
           'pm6'
-          # Add pm and t if you want auto choose this highlighter for .pm or 't
+          # Add pm and t if you want auto choose this highlighter for .pm or .t
           # files.
           'pm'
           't'

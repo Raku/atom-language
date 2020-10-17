@@ -3,8 +3,8 @@ fs = require 'fs-plus'
 GrammarRegistry = require '../lib/grammar-registry'
 
 registry = new GrammarRegistry()
-p6Grammar = registry.loadGrammarSync(path.resolve(__dirname, '..', '..', 'atom-language-perl6', 'grammars', 'perl6fe.cson'))
-p6Grammar.maxTokensPerLine = Infinity
+RakuGrammar = registry.loadGrammarSync(path.resolve(__dirname, '..', '..', 'atom-language-perl6', 'grammars', 'raku.cson'))
+RakuGrammar.maxTokensPerLine = Infinity
 
 duration_tot = 0
 tokenize = (grammar, content, lineCount) ->
@@ -29,6 +29,6 @@ TestFolder = path.resolve('benchmark', 'rakudo')
 files = fs.readdirSync(TestFolder)
 for file in files
   console.log file
-  tokenizeFile(path.resolve('benchmark', 'rakudo', file), p6Grammar, "tokening #{file}")
+  tokenizeFile(path.resolve('benchmark', 'rakudo', file), RakuGrammar, "tokening #{file}")
 
 console.log "Total time: #{duration_tot}ms"

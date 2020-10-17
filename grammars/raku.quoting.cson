@@ -1,8 +1,8 @@
-'scopeName': 'source.quoting.perl6fe'
-'name': 'Quoting (Perl 6)'
+'scopeName': 'source.quoting.raku'
+'name': 'Quoting in Raku'
 'fileTypes': []
 'patterns': [
-## See `./dev/Q_q_qq.p6` to alter the generator for this code
+## See `./dev/Q_q_qq.raku` to alter the generator for this code
 #1START DO NOT EDIT BETWEEN THIS LINE AND #1END
   # Q_triple_paren
   {
@@ -17,13 +17,13 @@
       )*)
       \\s*(\\(\\(\\()'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\)\\)\\)'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.triple_paren.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.triple_paren.quote.raku'
     'patterns': [ { 'include': '#q_triple_paren_string_content' } ]
   }
   # q_triple_paren
@@ -39,17 +39,17 @@
       )*)
       \\s*(\\(\\(\\()'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\)\\)\\)|(?<!\\\\)\\)\\)\\)'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.triple_paren.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.triple_paren.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\(\\(\\(|\\\\\\)\\)\\)'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_triple_paren_string_content' }
     ]
@@ -67,20 +67,20 @@
       )*)
       \\s*(\\(\\(\\()'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\)\\)\\)|(?<!\\\\)\\)\\)\\)'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.triple_paren.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.triple_paren.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\(\\(\\(|\\\\\\)\\)\\)'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_triple_paren_string_content' }
     ]
   }
@@ -97,13 +97,13 @@
       )*)
       \\s*(\\[\\[\\[)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\]\\]\\]'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.triple_bracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.triple_bracket.quote.raku'
     'patterns': [ { 'include': '#q_triple_bracket_string_content' } ]
   }
   # q_triple_bracket
@@ -119,17 +119,17 @@
       )*)
       \\s*(\\[\\[\\[)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\]\\]\\]|(?<!\\\\)\\]\\]\\]'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.triple_bracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.triple_bracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\[\\[\\[|\\\\\\]\\]\\]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_triple_bracket_string_content' }
     ]
@@ -147,20 +147,20 @@
       )*)
       \\s*(\\[\\[\\[)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\]\\]\\]|(?<!\\\\)\\]\\]\\]'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.triple_bracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.triple_bracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\[\\[\\[|\\\\\\]\\]\\]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_triple_bracket_string_content' }
     ]
   }
@@ -177,13 +177,13 @@
       )*)
       \\s*(\\{\\{\\{)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\}\\}\\}'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.triple_brace.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.triple_brace.quote.raku'
     'patterns': [ { 'include': '#q_triple_brace_string_content' } ]
   }
   # q_triple_brace
@@ -199,17 +199,17 @@
       )*)
       \\s*(\\{\\{\\{)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\}\\}\\}|(?<!\\\\)\\}\\}\\}'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.triple_brace.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.triple_brace.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\{\\{\\{|\\\\\\}\\}\\}'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_triple_brace_string_content' }
     ]
@@ -227,20 +227,20 @@
       )*)
       \\s*(\\{\\{\\{)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\}\\}\\}|(?<!\\\\)\\}\\}\\}'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.triple_brace.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.triple_brace.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\{\\{\\{|\\\\\\}\\}\\}'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_triple_brace_string_content' }
     ]
   }
@@ -257,13 +257,13 @@
       )*)
       \\s*(<<<)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '>>>'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.triple_angle.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.triple_angle.quote.raku'
     'patterns': [ { 'include': '#q_triple_angle_string_content' } ]
   }
   # q_triple_angle
@@ -279,17 +279,17 @@
       )*)
       \\s*(<<<)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\>>>|(?<!\\\\)>>>'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.triple_angle.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.triple_angle.quote.raku'
     'patterns': [
       {
         'match': '\\\\<<<|\\\\>>>'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_triple_angle_string_content' }
     ]
@@ -307,20 +307,20 @@
       )*)
       \\s*(<<<)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\>>>|(?<!\\\\)>>>'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.triple_angle.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.triple_angle.quote.raku'
     'patterns': [
       {
         'match': '\\\\<<<|\\\\>>>'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_triple_angle_string_content' }
     ]
   }
@@ -337,13 +337,13 @@
       )*)
       \\s*(<<)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '>>'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double_angle.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double_angle.quote.raku'
     'patterns': [ { 'include': '#q_double_angle_string_content' } ]
   }
   # q_double_angle
@@ -359,17 +359,17 @@
       )*)
       \\s*(<<)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\>>|(?<!\\\\)>>'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double_angle.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double_angle.quote.raku'
     'patterns': [
       {
         'match': '\\\\<<|\\\\>>'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_double_angle_string_content' }
     ]
@@ -387,20 +387,20 @@
       )*)
       \\s*(<<)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\>>|(?<!\\\\)>>'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.double_angle.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.double_angle.quote.raku'
     'patterns': [
       {
         'match': '\\\\<<|\\\\>>'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_double_angle_string_content' }
     ]
   }
@@ -417,13 +417,13 @@
       )*)
       \\s*(\\(\\()'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\)\\)'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double_paren.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double_paren.quote.raku'
     'patterns': [ { 'include': '#q_double_paren_string_content' } ]
   }
   # q_double_paren
@@ -439,17 +439,17 @@
       )*)
       \\s*(\\(\\()'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\)\\)|(?<!\\\\)\\)\\)'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double_paren.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double_paren.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\(\\(|\\\\\\)\\)'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_double_paren_string_content' }
     ]
@@ -467,20 +467,20 @@
       )*)
       \\s*(\\(\\()'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\)\\)|(?<!\\\\)\\)\\)'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.double_paren.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.double_paren.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\(\\(|\\\\\\)\\)'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_double_paren_string_content' }
     ]
   }
@@ -497,13 +497,13 @@
       )*)
       \\s*(\\[\\[)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\]\\]'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double_bracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double_bracket.quote.raku'
     'patterns': [ { 'include': '#q_double_bracket_string_content' } ]
   }
   # q_double_bracket
@@ -519,17 +519,17 @@
       )*)
       \\s*(\\[\\[)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\]\\]|(?<!\\\\)\\]\\]'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double_bracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double_bracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\[\\[|\\\\\\]\\]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_double_bracket_string_content' }
     ]
@@ -547,20 +547,20 @@
       )*)
       \\s*(\\[\\[)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\]\\]|(?<!\\\\)\\]\\]'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.double_bracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.double_bracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\[\\[|\\\\\\]\\]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_double_bracket_string_content' }
     ]
   }
@@ -577,13 +577,13 @@
       )*)
       \\s*({{)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '}}'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double_brace.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double_brace.quote.raku'
     'patterns': [ { 'include': '#q_double_brace_string_content' } ]
   }
   # q_double_brace
@@ -599,17 +599,17 @@
       )*)
       \\s*({{)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\}}|(?<!\\\\)}}'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double_brace.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double_brace.quote.raku'
     'patterns': [
       {
         'match': '\\\\{{|\\\\}}'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_double_brace_string_content' }
     ]
@@ -627,20 +627,20 @@
       )*)
       \\s*({{)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\}}|(?<!\\\\)}}'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.double_brace.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.double_brace.quote.raku'
     'patterns': [
       {
         'match': '\\\\{{|\\\\}}'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_double_brace_string_content' }
     ]
   }
@@ -657,13 +657,13 @@
       )*)
       \\s*({)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '}'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.brace.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.brace.quote.raku'
     'patterns': [ { 'include': '#q_brace_string_content' } ]
   }
   # q_brace
@@ -679,17 +679,17 @@
       )*)
       \\s*({)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\}|(?<!\\\\)}'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.brace.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.brace.quote.raku'
     'patterns': [
       {
         'match': '\\\\{|\\\\}'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_brace_string_content' }
     ]
@@ -707,20 +707,20 @@
       )*)
       \\s*({)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\}|(?<!\\\\)}'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.brace.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.brace.quote.raku'
     'patterns': [
       {
         'match': '\\\\{|\\\\}'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_brace_string_content' }
     ]
   }
@@ -737,13 +737,13 @@
       )*)
       \\s*(<)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '>'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.angle.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.angle.quote.raku'
     'patterns': [ { 'include': '#q_angle_string_content' } ]
   }
   # q_angle
@@ -759,17 +759,17 @@
       )*)
       \\s*(<)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\>|(?<!\\\\)>'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.angle.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.angle.quote.raku'
     'patterns': [
       {
         'match': '\\\\<|\\\\>'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_angle_string_content' }
     ]
@@ -787,20 +787,20 @@
       )*)
       \\s*(<)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\>|(?<!\\\\)>'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.angle.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.angle.quote.raku'
     'patterns': [
       {
         'match': '\\\\<|\\\\>'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_angle_string_content' }
     ]
   }
@@ -817,13 +817,13 @@
       )*)
       \\s+(\\()'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\)'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.paren.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.paren.quote.raku'
     'patterns': [ { 'include': '#q_paren_string_content' } ]
   }
   # q_paren
@@ -839,17 +839,17 @@
       )*)
       \\s+(\\()'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\)|(?<!\\\\)\\)'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.paren.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.paren.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\(|\\\\\\)'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_paren_string_content' }
     ]
@@ -867,20 +867,20 @@
       )*)
       \\s+(\\()'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\)|(?<!\\\\)\\)'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.paren.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.paren.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\(|\\\\\\)'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_paren_string_content' }
     ]
   }
@@ -897,13 +897,13 @@
       )*)
       \\s*(\\[)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\]'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.bracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.bracket.quote.raku'
     'patterns': [ { 'include': '#q_bracket_string_content' } ]
   }
   # q_bracket
@@ -919,17 +919,17 @@
       )*)
       \\s*(\\[)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\]|(?<!\\\\)\\]'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.bracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.bracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\[|\\\\\\]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_bracket_string_content' }
     ]
@@ -947,20 +947,20 @@
       )*)
       \\s*(\\[)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\\]|(?<!\\\\)\\]'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.bracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.bracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\\\[|\\\\\\]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_bracket_string_content' }
     ]
   }
@@ -977,13 +977,13 @@
       )*)
       \\s*(“)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '”'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.left_double_right_double.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.left_double_right_double.quote.raku'
     'patterns': [ { 'include': '#q_left_double_right_double_string_content' } ]
   }
   # q_left_double_right_double
@@ -999,17 +999,17 @@
       )*)
       \\s*(“)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\”|(?<!\\\\)”'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.left_double_right_double.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.left_double_right_double.quote.raku'
     'patterns': [
       {
         'match': '\\\\“|\\\\”'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_left_double_right_double_string_content' }
     ]
@@ -1027,20 +1027,20 @@
       )*)
       \\s*(“)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\”|(?<!\\\\)”'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.left_double_right_double.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.left_double_right_double.quote.raku'
     'patterns': [
       {
         'match': '\\\\“|\\\\”'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_left_double_right_double_string_content' }
     ]
   }
@@ -1057,13 +1057,13 @@
       )*)
       \\s*(„)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '”|“'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.left_double-low-q_right_double.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.left_double-low-q_right_double.quote.raku'
     'patterns': [ { 'include': '#q_left_double-low-q_right_double_string_content' } ]
   }
   # q_left_double-low-q_right_double
@@ -1079,17 +1079,17 @@
       )*)
       \\s*(„)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\”|“|(?<!\\\\)”|“'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.left_double-low-q_right_double.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.left_double-low-q_right_double.quote.raku'
     'patterns': [
       {
         'match': '\\\\„|\\\\”|“'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_left_double-low-q_right_double_string_content' }
     ]
@@ -1107,20 +1107,20 @@
       )*)
       \\s*(„)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\”|“|(?<!\\\\)”|“'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.left_double-low-q_right_double.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.left_double-low-q_right_double.quote.raku'
     'patterns': [
       {
         'match': '\\\\„|\\\\”|“'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_left_double-low-q_right_double_string_content' }
     ]
   }
@@ -1137,13 +1137,13 @@
       )*)
       \\s*(‘)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '’'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.left_single_right_single.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.left_single_right_single.quote.raku'
     'patterns': [ { 'include': '#q_left_single_right_single_string_content' } ]
   }
   # q_left_single_right_single
@@ -1159,17 +1159,17 @@
       )*)
       \\s*(‘)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\’|(?<!\\\\)’'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.left_single_right_single.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.left_single_right_single.quote.raku'
     'patterns': [
       {
         'match': '\\\\‘|\\\\’'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_left_single_right_single_string_content' }
     ]
@@ -1187,20 +1187,20 @@
       )*)
       \\s*(‘)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\’|(?<!\\\\)’'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.left_single_right_single.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.left_single_right_single.quote.raku'
     'patterns': [
       {
         'match': '\\\\‘|\\\\’'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_left_single_right_single_string_content' }
     ]
   }
@@ -1217,13 +1217,13 @@
       )*)
       \\s*(‚)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '‘'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.low-q_left_single.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.low-q_left_single.quote.raku'
     'patterns': [ { 'include': '#q_low-q_left_single_string_content' } ]
   }
   # q_low-q_left_single
@@ -1239,17 +1239,17 @@
       )*)
       \\s*(‚)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\‘|(?<!\\\\)‘'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.low-q_left_single.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.low-q_left_single.quote.raku'
     'patterns': [
       {
         'match': '\\\\‚|\\\\‘'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_low-q_left_single_string_content' }
     ]
@@ -1267,20 +1267,20 @@
       )*)
       \\s*(‚)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\‘|(?<!\\\\)‘'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.low-q_left_single.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.low-q_left_single.quote.raku'
     'patterns': [
       {
         'match': '\\\\‚|\\\\‘'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_low-q_left_single_string_content' }
     ]
   }
@@ -1297,13 +1297,13 @@
       )*)
       \\s*(「)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '」'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.fw_cornerbracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.fw_cornerbracket.quote.raku'
     'patterns': [ { 'include': '#q_fw_cornerbracket_string_content' } ]
   }
   # q_fw_cornerbracket
@@ -1319,17 +1319,17 @@
       )*)
       \\s*(「)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\」|(?<!\\\\)」'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.fw_cornerbracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.fw_cornerbracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\「|\\\\」'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_fw_cornerbracket_string_content' }
     ]
@@ -1347,20 +1347,20 @@
       )*)
       \\s*(「)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\」|(?<!\\\\)」'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.fw_cornerbracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.fw_cornerbracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\「|\\\\」'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_fw_cornerbracket_string_content' }
     ]
   }
@@ -1377,13 +1377,13 @@
       )*)
       \\s*(｢)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '｣'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.hw_cornerbracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.hw_cornerbracket.quote.raku'
     'patterns': [ { 'include': '#q_hw_cornerbracket_string_content' } ]
   }
   # q_hw_cornerbracket
@@ -1399,17 +1399,17 @@
       )*)
       \\s*(｢)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\｣|(?<!\\\\)｣'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.hw_cornerbracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.hw_cornerbracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\｢|\\\\｣'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_hw_cornerbracket_string_content' }
     ]
@@ -1427,20 +1427,20 @@
       )*)
       \\s*(｢)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\｣|(?<!\\\\)｣'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.hw_cornerbracket.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.hw_cornerbracket.quote.raku'
     'patterns': [
       {
         'match': '\\\\｢|\\\\｣'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_hw_cornerbracket_string_content' }
     ]
   }
@@ -1457,13 +1457,13 @@
       )*)
       \\s*(«)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '»'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.chevron.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.chevron.quote.raku'
     'patterns': [ { 'include': '#q_chevron_string_content' } ]
   }
   # q_chevron
@@ -1479,17 +1479,17 @@
       )*)
       \\s*(«)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\»|(?<!\\\\)»'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.chevron.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.chevron.quote.raku'
     'patterns': [
       {
         'match': '\\\\«|\\\\»'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_chevron_string_content' }
     ]
@@ -1507,20 +1507,20 @@
       )*)
       \\s*(«)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\»|(?<!\\\\)»'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.chevron.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.chevron.quote.raku'
     'patterns': [
       {
         'match': '\\\\«|\\\\»'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_chevron_string_content' }
     ]
   }
@@ -1537,13 +1537,13 @@
       )*)
       \\s*(⟅)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '⟆'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.s-shaped-bag-delimiter.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.s-shaped-bag-delimiter.quote.raku'
     'patterns': [ { 'include': '#q_s-shaped-bag-delimiter_string_content' } ]
   }
   # q_s-shaped-bag-delimiter
@@ -1559,17 +1559,17 @@
       )*)
       \\s*(⟅)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\⟆|(?<!\\\\)⟆'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.s-shaped-bag-delimiter.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.s-shaped-bag-delimiter.quote.raku'
     'patterns': [
       {
         'match': '\\\\⟅|\\\\⟆'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_s-shaped-bag-delimiter_string_content' }
     ]
@@ -1587,20 +1587,20 @@
       )*)
       \\s*(⟅)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\⟆|(?<!\\\\)⟆'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.s-shaped-bag-delimiter.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.s-shaped-bag-delimiter.quote.raku'
     'patterns': [
       {
         'match': '\\\\⟅|\\\\⟆'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_s-shaped-bag-delimiter_string_content' }
     ]
   }
@@ -1617,13 +1617,13 @@
       )*)
       \\s*(/)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '/'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.slash.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.slash.quote.raku'
     'patterns': [ { 'include': '#q_slash_string_content' } ]
   }
   # q_slash
@@ -1639,17 +1639,17 @@
       )*)
       \\s*(/)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\/|(?<!\\\\)/'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.slash.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.slash.quote.raku'
     'patterns': [
       {
         'match': '\\\\/'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_slash_string_content' }
     ]
@@ -1667,20 +1667,20 @@
       )*)
       \\s*(/)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\/|(?<!\\\\)/'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.slash.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.slash.quote.raku'
     'patterns': [
       {
         'match': '\\\\/'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_slash_string_content' }
     ]
   }
@@ -1697,13 +1697,13 @@
       )*)
       \\s+(\')'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\''
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.single.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.single.quote.raku'
     'patterns': [ { 'include': '#q_single_string_content' } ]
   }
   # q_single
@@ -1719,17 +1719,17 @@
       )*)
       \\s+(\')'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\'|(?<!\\\\)\''
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.single.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.single.quote.raku'
     'patterns': [
       {
         'match': '\\\\\''
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_single_string_content' }
     ]
@@ -1747,20 +1747,20 @@
       )*)
       \\s+(\')'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\\'|(?<!\\\\)\''
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.single.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.single.quote.raku'
     'patterns': [
       {
         'match': '\\\\\''
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_single_string_content' }
     ]
   }
@@ -1777,13 +1777,13 @@
       )*)
       \\s*(")'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '"'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double.quote.raku'
     'patterns': [ { 'include': '#q_double_string_content' } ]
   }
   # q_double
@@ -1799,17 +1799,17 @@
       )*)
       \\s*(")'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\"|(?<!\\\\)"'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.double.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.double.quote.raku'
     'patterns': [
       {
         'match': '\\\\"'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_double_string_content' }
     ]
@@ -1827,20 +1827,20 @@
       )*)
       \\s*(")'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\"|(?<!\\\\)"'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.double.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.double.quote.raku'
     'patterns': [
       {
         'match': '\\\\"'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_double_string_content' }
     ]
   }
@@ -1857,13 +1857,13 @@
       )*)
       \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\3'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.any.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.any.quote.raku'
     }
 #1END
 ]
@@ -1872,7 +1872,7 @@
     'patterns': [
       {
         'match': '(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
     ]
   'q_right_double_right_double_string_content':

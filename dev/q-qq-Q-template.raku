@@ -1,4 +1,4 @@
-#!/usr/bin/env perl6
+#!/usr/bin/env raku
 # Generate the q[] qq[] and Q[] quoting constructs
 my @open-close-delimiters =
 #Left Pi right Pf. Open Ps close Pe
@@ -47,18 +47,18 @@ my $qq-quotation-marks = Q:to/🐧/;
   {
     'begin': 'YYY'
     'beginCaptures':
-      '0': 'name': 'punctuation.definition.string.begin.perl6fe'
+      '0': 'name': 'punctuation.definition.string.begin.raku'
     'end': 'ZZZ'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.end.perl6fe'
-    'name': 'string.quoted.XXX.perl6fe'
+      '0': 'name': 'punctuation.definition.string.end.raku'
+    'name': 'string.quoted.XXX.raku'
     'patterns': [
       {
         'match': '\\\\[YYYZZZabtnfre\\\\\\{\\}]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#interpolation' }
-      { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+      { 'include': 'source.quoting.raku#q_XXX_string_content' }
     ]
   }
 🐧
@@ -67,18 +67,18 @@ my $q-quotation-marks = Q:to/🐧/;
     'begin': '(?<=\\W|^)YYY'
     'beginCaptures':
       '0':
-        'name': 'punctuation.definition.string.begin.perl6fe'
+        'name': 'punctuation.definition.string.begin.raku'
     'end': 'ZZZ'
     'endCaptures':
       '0':
-        'name': 'punctuation.definition.string.end.perl6fe'
-    'name': 'string.quoted.single.XXX.perl6fe'
+        'name': 'punctuation.definition.string.end.raku'
+    'name': 'string.quoted.single.XXX.raku'
     'patterns': [
       {
         'match': '\\\\[YYYZZZ\\\\]'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
-      { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+      { 'include': 'source.quoting.raku#q_XXX_string_content' }
     ]
   }
 🐧
@@ -98,13 +98,13 @@ my $q-patterns = Q:to/🐧/;
       )*)
       \\s*(YYY)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': 'ZZZ'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.XXX.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.XXX.quote.raku'
     'patterns': [ { 'include': '#q_XXX_string_content' } ]
   }
   # q_XXX
@@ -120,17 +120,17 @@ my $q-patterns = Q:to/🐧/;
       )*)
       \\s*(YYY)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.XXX.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.XXX.quote.raku'
     'patterns': [
       {
         'match': '\\\\YYY|\\\\ZZZ'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#q_XXX_string_content' }
     ]
@@ -148,20 +148,20 @@ my $q-patterns = Q:to/🐧/;
       )*)
       \\s*(YYY)'
     'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.qq.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.qq.XXX.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.qq.XXX.quote.raku'
     'patterns': [
       {
         'match': '\\\\YYY|\\\\ZZZ'
-        'name': 'constant.character.escape.perl6fe'
+        'name': 'constant.character.escape.raku'
       }
       { 'include': '#qq_character_escape' }
-      { 'include': 'source.perl6fe#interpolation' }
+      { 'include': 'source.raku#interpolation' }
       { 'include': '#q_XXX_string_content' }
     ]
   }
@@ -190,13 +190,13 @@ my $q-any-str = Q:to/🐧/;
       )*)
       \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
     'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.perl6fe'
-      '2': 'name': 'support.function.quote.adverb.perl6fe'
-      '3': 'name': 'punctuation.definition.string.perl6fe'
+      '1': 'name': 'string.quoted.q.operator.raku'
+      '2': 'name': 'support.function.quote.adverb.raku'
+      '3': 'name': 'punctuation.definition.string.raku'
     'end': '\\3'
     'endCaptures':
-      '0': 'name': 'punctuation.definition.string.perl6fe'
-    'contentName': 'string.quoted.q.any.quote.perl6fe'
+      '0': 'name': 'punctuation.definition.string.raku'
+    'contentName': 'string.quoted.q.any.quote.raku'
     }
 🐧
 
@@ -205,12 +205,12 @@ my $multiline-comment-str = Q:to/🐧/;
   {
   'begin': '\\s*#`YYY',
   'end': 'ZZZ',
-  'name': 'comment.multiline.hash-tick.XXX.perl6fe'
+  'name': 'comment.multiline.hash-tick.XXX.raku'
   'patterns': [
     {
       'begin': 'YYY'
       'end': 'ZZZ'
-      'name': 'comment.internal.XXX.perl6fe'
+      'name': 'comment.internal.XXX.raku'
     }
   ]
   }
@@ -221,64 +221,64 @@ my $pod-tag-str = Q:to/🐧/;
       {
         'begin': '(?x) (U) (YYY)'
         'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '1': 'name': 'support.function.pod.code.raku'
+          '2': 'name': 'punctuation.section.embedded.pod.code.raku'
         'end':   '(?x) (ZZZ)'
         'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.underline.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
+          '1': 'name': 'punctuation.section.embedded.pod.code.raku'
+        'contentName': 'markup.underline.raku'
+        'name': 'meta.pod.c.raku'
         'patterns': [
           { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+          { 'include': 'source.quoting.raku#q_XXX_string_content' }
         ]
       }
       # IYYY ZZZ
       {
         'begin': '(?x) (I) (YYY)'
         'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '1': 'name': 'support.function.pod.code.raku'
+          '2': 'name': 'punctuation.section.embedded.pod.code.raku'
         'end':   '(?x) (ZZZ)'
         'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.italic.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
+          '1': 'name': 'punctuation.section.embedded.pod.code.raku'
+        'contentName': 'markup.italic.raku'
+        'name': 'meta.pod.c.raku'
         'patterns': [
           { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+          { 'include': 'source.quoting.raku#q_XXX_string_content' }
         ]
       }
       # BYYY ZZZ
       {
         'begin': '(?x) (B) (YYY)'
         'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '1': 'name': 'support.function.pod.code.raku'
+          '2': 'name': 'punctuation.section.embedded.pod.code.raku'
         'end':   '(?x) (ZZZ)'
         'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.bold.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
+          '1': 'name': 'punctuation.section.embedded.pod.code.raku'
+        'contentName': 'markup.bold.raku'
+        'name': 'meta.pod.c.raku'
         'patterns': [
           { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+          { 'include': 'source.quoting.raku#q_XXX_string_content' }
         ]
       }
       # UppercaseYYY ZZZ
       {
         'begin': '(?x) ([A-Z]) (YYY)'
         'beginCaptures':
-          '1': 'name': 'support.function.pod.code.perl6fe'
-          '2': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
+          '1': 'name': 'support.function.pod.code.raku'
+          '2': 'name': 'punctuation.section.embedded.pod.code.raku'
         'end':   '(?x) (ZZZ)'
         'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.perl6fe'
-        'contentName': 'markup.raw.code.perl6fe'
-        'name': 'meta.pod.c.perl6fe'
+          '1': 'name': 'punctuation.section.embedded.pod.code.raku'
+        'contentName': 'markup.raw.code.raku'
+        'name': 'meta.pod.c.raku'
         'patterns': [
           { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.perl6fe#q_XXX_string_content' }
+          { 'include': 'source.quoting.raku#q_XXX_string_content' }
         ]
       }
 🐧
@@ -301,16 +301,16 @@ my $regex-tag-str = Q:to/♥/;
   (YYY)
   '''
   'beginCaptures':
-    '1': 'name': 'string.regexp.construct.XXX.perl6fe'
-    '2': 'name': 'entity.name.section.adverb.regexp.XXX.perl6fe'
-    '3': 'name': 'punctuation.definition.regexp.XXX.perl6fe'
+    '1': 'name': 'string.regexp.construct.XXX.raku'
+    '2': 'name': 'entity.name.section.adverb.regexp.XXX.raku'
+    '3': 'name': 'punctuation.definition.regexp.XXX.raku'
   'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (ZZZ)'
   'endCaptures':
-    '1': 'name': 'punctuation.definition.regexp.XXX.perl6fe'
-  'contentName': 'string.regexp.XXX.perl6fe'
+    '1': 'name': 'punctuation.definition.regexp.XXX.raku'
+  'contentName': 'string.regexp.XXX.raku'
   'patterns': [
     { 'include': '#interpolation' }
-    { 'include': 'source.regexp.perl6fe' }
+    { 'include': 'source.regexp.raku' }
   ]
 }
 ♥
