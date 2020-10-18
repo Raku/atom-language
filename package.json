@@ -6,14 +6,14 @@
     "atom": "*",
     "node": "*"
   },
-  "homepage": "http://github.com/perl6/atom-language-perl6/",
+  "homepage": "http://github.com/Raku/atom-language-perl6/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/perl6/atom-language-perl6.git"
+    "url": "https://github.com/Raku/atom-language-perl6.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/perl6/atom-language-perl6/issues"
+    "url": "https://github.com/Raku/atom-language-perl6/issues"
   },
   "devDependencies": {
     "coffeelint": "^1.10.1"
