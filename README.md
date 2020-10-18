@@ -6,15 +6,15 @@
 [apm-pkg-link]: https://atom.io/packages/language-perl6
 [apm-ver-link]: https://img.shields.io/apm/v/language-perl6.svg
 [dl-badge]:     http://img.shields.io/apm/dm/language-perl6.svg
-[contributing]: https://github.com/perl6/atom-language-perl6/blob/master/CONTRIBUTING.md
-[CREDITS]: https://github.com/perl6/atom-language-perl6/blob/master/CREDITS
-[build-status]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
-[build-status-link]: https://travis-ci.org/perl6/atom-language-perl6
-[issues]: https://github.com/perl6/atom-language-perl6/issues
-[travis-badge]: https://travis-ci.org/perl6/atom-language-perl6.svg?branch=master
-[travis-link]: https://travis-ci.org/perl6/atom-language-perl6?branch=master
+[contributing]: https://github.com/Raku/atom-language-perl6/blob/master/CONTRIBUTING.md
+[CREDITS]: https://github.com/Raku/atom-language-perl6/blob/master/CREDITS
+[build-status]: https://travis-ci.org/Raku/atom-language-perl6.svg?branch=master
+[build-status-link]: https://travis-ci.org/Raku/atom-language-perl6
+[issues]: https://github.com/Raku/atom-language-perl6/issues
+[travis-badge]: https://travis-ci.org/Raku/atom-language-perl6.svg?branch=master
+[travis-link]: https://travis-ci.org/Raku/atom-language-perl6?branch=master
 [fira-code]: https://github.com/tonsky/FiraCode
-[screenshot-1]: https://raw.githubusercontent.com/perl6/atom-language-perl6/master/images/example1.png
+[screenshot-1]: https://raw.githubusercontent.com/Raku/atom-language-perl6/master/images/example1.png
 
 # Atom Raku Support - »ö« Official Edition!
 
