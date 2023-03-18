@@ -355,15 +355,13 @@ my $zero-file;
 my $first-file;
 my $second-file;
 my $third-file;
-for ^@delimiters -> $i {
-  next unless @delimiters[$i][6];
-  my ($name, $open, $close, $num, $nil, $Nil, $bool) = @delimiters[$i];
+for @delimiters.grep(*[6]) -> $delim {
+  my ($name, $open, $close, $num, $nil, $Nil, $bool) = $delim;
   $third-file ~= replace-multiline-comment($pod-tag-str, $name, $open, $close);
 }
 # Normal quotation marks
-for ^@delimiters -> $i {
-  next unless @delimiters[$i][4];
-  my ($name, $open, $close, $num, $bool, $type) = @delimiters[$i];
+for @delimiters.grep(*[4]) -> $delim {
+  my ($name, $open, $close, $num, $bool, $type) = $delim;
   #say $type;
   #say $bool;
   given $type {
@@ -374,28 +372,28 @@ for ^@delimiters -> $i {
 }
 #$first-file ~= $normal-quotes-file;
 # Multi line comment
-for ^@open-close-delimiters -> $i {
+for @open-close-delimiters -> $delim {
     $zero-file ~= replace-multiline-comment $multiline-comment-str,
-                          @open-close-delimiters[$i][0],
-                          @open-close-delimiters[$i][1],
-                          @open-close-delimiters[$i][2];
+                          $delim[0],
+                          $delim[1],
+                          $delim[2];
 }
 $zero-file ~= $normal-quotes-file;
 # q qq Q quoting constructs
-for ^@delimiters -> $i {
-    if use-for-q @delimiters[$i] {
+for @delimiters -> $delim {
+    if use-for-q $delim {
         #say "Skipping: {@delimiters[$i].perl}" unless $DEBUG;
         next;
     }
-    $first-file ~= replace($q-patterns, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
+    $first-file ~= replace($q-patterns, $delim[0], $delim[1], $delim[2]);
 
 }
 # Get list of symbols we shouldn't use for q_any (using whatever delimiter the person wants)
 my @not-any;
-for ^@delimiters -> $i {
-    if @delimiters[$i][3] eq 1 {
-        push @not-any, @delimiters[$i][1] if @delimiters[$i][3] eq 1;
-        push @not-any, @delimiters[$i][2] if @delimiters[$i][1] ne @delimiters[$i][2];
+for @delimiters -> $delim {
+    if $delim[3] eq 1 {
+        push @not-any, $delim[1] if $delim[3] eq 1;
+        push @not-any, $delim[2] if $delim[1] ne $delim[2];
     }
 }
 #push @not-any, '@';
@@ -406,12 +404,12 @@ $q-any-str ~~ s/ZZZ/$not-any/;
 }}
 $first-file ~= $q-any-str;
 
-for ^@delimiters -> $i {
-    if use-for-q @delimiters[$i] {
+for @delimiters -> $delim {
+    if use-for-q $delim {
         #say "Skipping: {@delimiters[$i].perl}" unless $DEBUG;
         next;
     }
-    $second-file ~= replace($q-second-str, @delimiters[$i][0], @delimiters[$i][1], @delimiters[$i][2]);
+    $second-file ~= replace($q-second-str, $delim[0],$delim[1], $delim[2]);
 }
 spurt 'ZERO.cson', $zero-file;
 spurt 'FIRST.cson', $first-file;
