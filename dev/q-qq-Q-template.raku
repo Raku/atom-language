@@ -1,22 +1,28 @@
 #!/usr/bin/env raku
+use JSON::Fast;
+
+sub compress-wrapped($_) {
+  .chomp
+  .subst(/\s+/, ' ', :g)
+}
 # Generate the q[] qq[] and Q[] quoting constructs
 my @open-close-delimiters =
 #Left Pi right Pf. Open Ps close Pe
 # std prop: What quoting style does it use by default?
 # For example “…” quoting is like qq, while '…' is like q
 #name                       #open        #close      #number #std quotes #std prop. #pod-tag?
-('triple_paren',          Q<\\(\\(\\(>, Q<\\)\\)\\)>, 3,       False,   True),
-('triple_bracket',        Q<\\[\\[\\[>, Q<\\]\\]\\]>, 3,       False),
-('triple_brace',          Q<\\{\\{\\{>, Q<\\}\\}\\}>, 3,       False),
+('triple_paren',          Q<\(\(\(>, Q<\)\)\)>, 3,       False,   True),
+('triple_bracket',        Q<\[\[\[>, Q<\]\]\]>, 3,       False),
+('triple_brace',          Q<\{\{\{>, Q<\}\}\}>, 3,       False),
 ('triple_angle',             '<<<',      '>>>',       3,       False,  Nil,        True),
 ('double_angle',            '<<',        '>>',        2,       False,  Nil,        True),
-('double_paren',             Q<\\(\\(>,   Q<\\)\\)>,  2,       False),
-('double_bracket',           Q<\\[\\[>,   Q<\\]\\]>,  2,       False),
+('double_paren',             Q<\(\(>,   Q<\)\)>,  2,       False),
+('double_bracket',           Q<\[\[>,   Q<\]\]>,  2,       False),
 ('double_brace',            '{{',         Q<}}>,      2,       False),
 ('brace',                   '{',          Q<}>,       1,       False),
 ('angle',                   '<',         '>',         1,       False,  Nil,        True),
-('paren',                    Q<\\(>,      Q<\\)>,     1,       False),
-('bracket',                  Q<\\[>,      Q<\\]>,     1,       False),
+('paren',                    Q<\(>,      Q<\)>,     1,       False),
+('bracket',                  Q<\[>,      Q<\]>,     1,       False),
 ('left_double_right_double', Q<“>,        Q<”>,       1,       True,    'qq'),
 ('left_double-low-q_right_double', '„', '”|“',          1,      True,    'qq'),
 ('left_single_right_single', Q<‘>,        Q<’>,       1,       True,    'q'),
@@ -32,369 +38,450 @@ my @delimiters = @open-close-delimiters;
 the delimiters being pushed to @delimiters are unmatched (open and close delimiters are the same)
 
 push @delimiters, ('slash',  '/',   '/',   1, False);
-push @delimiters, ('single', Q<\'>, Q<\'>, 1, True, 'q');
+push @delimiters, ('single', Q<'>, Q<'>, 1, True, 'q');
 push @delimiters, ('double', Q<">,  Q<">,  1, True, 'qq');
 push @delimiters, ('right_double_right_double', '”', '”', 1, True, 'qq');
 # These identifiers are not allowed to be used without a space.
 # Example: q '…'
-my @identifiers = '-', Q[\'];
+my @identifiers = '-', Q<'>;
 
 ## Replace XXX with the content's name
 ## Replace YYY with the escaped opening delimiter
 ## Replace ZZZ with the escaped closing delimiter
-my $qq-quotation-marks = Q:to/🐧/;
-# Quotation Mark XXX
-  {
-    'begin': 'YYY'
-    'beginCaptures':
-      '0': 'name': 'punctuation.definition.string.begin.raku'
-    'end': 'ZZZ'
-    'endCaptures':
-      '0': 'name': 'punctuation.definition.string.end.raku'
-    'name': 'string.quoted.XXX.raku'
-    'patterns': [
-      {
-        'match': '\\\\[YYYZZZabtnfre\\\\\\{\\}]'
-        'name': 'constant.character.escape.raku'
+my $qq-quotation-marks = {
+    'begin' => 'YYY',
+    'beginCaptures' => {
+      '0' => {
+        'name' => 'punctuation.definition.string.begin.raku'
       }
-      { 'include': '#interpolation' }
-      { 'include': 'source.quoting.raku#q_XXX_string_content' }
+    },
+    'end' => 'ZZZ',
+    'endCaptures' => {
+      '0' => {
+        'name' => 'punctuation.definition.string.end.raku'
+      }
+    },
+    'name' => 'string.quoted.XXX.raku',
+    'patterns' => [
+      {
+        'match' => Q/\\[YYYZZZabtnfre\\\{\}]/,
+        'name' => 'constant.character.escape.raku'
+      },
+      { 'include' => '#interpolation' },
+      { 'include' => 'source.quoting.raku#q_XXX_string_content' }
+    ]
+};
+my $q-quotation-marks = {
+    'begin' => Q/(?<=\W|^)YYY/,
+    'beginCaptures' => {
+        '0' => {
+          'name' => 'punctuation.definition.string.begin.raku'
+        }
+    },
+    'end' => 'ZZZ',
+    'endCaptures' => {
+      '0' => {
+        'name' => 'punctuation.definition.string.end.raku'
+      }
+    },
+    'name' => 'string.quoted.single.XXX.raku',
+    'patterns' => [
+      {
+        'match' => Q/\\[YYYZZZ\\]/,
+        'name' => 'constant.character.escape.raku'
+      },
+      { 'include' => 'source.quoting.raku#q_XXX_string_content' }
     ]
   }
-🐧
-my $q-quotation-marks = Q:to/🐧/;
-  {
-    'begin': '(?<=\\W|^)YYY'
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.raku'
-    'end': 'ZZZ'
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.raku'
-    'name': 'string.quoted.single.XXX.raku'
-    'patterns': [
-      {
-        'match': '\\\\[YYYZZZ\\\\]'
-        'name': 'constant.character.escape.raku'
-      }
-      { 'include': 'source.quoting.raku#q_XXX_string_content' }
-    ]
-  }
-🐧
 =comment Q quoting
 
-my $q-patterns = Q:to/🐧/;
-  # Q_XXX
+my $q-patterns = [
   {
-    'begin': '(?x) (?<=^|[\\[\\]\\s\\(\\){},;])
+    'begin' => Q:to/REGEX/.&compress-wrapped,
+    (?x) (?<=^|[\[\]\s\(\){},;])
       (Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
-        \\s*:(?:
+        \s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
-      \\s*(YYY)'
-    'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.raku'
-      '2': 'name': 'support.function.quote.adverb.raku'
-      '3': 'name': 'punctuation.definition.string.raku'
-    'end': 'ZZZ'
-    'endCaptures':
-      '0': 'name': 'punctuation.definition.string.raku'
-    'contentName': 'string.quoted.q.XXX.quote.raku'
-    'patterns': [ { 'include': '#q_XXX_string_content' } ]
-  }
-  # q_XXX
+      \s*(YYY)
+    REGEX
+    'beginCaptures' => {
+      '1' => {
+        'name' => 'string.quoted.q.operator.raku'
+      },
+      '2' => {
+        'name' => 'support.function.quote.adverb.raku'
+      },
+      '3' => {
+        'name' => 'punctuation.definition.string.raku'
+      }
+    },
+    'end' => 'ZZZ',
+    'endCaptures' => {
+      '0' => {
+        'name' => 'punctuation.definition.string.raku'
+      }
+    },
+    'contentName' => 'string.quoted.q.XXX.quote.raku',
+    'patterns' => [ { 'include' => '#q_XXX_string_content' }, ]
+  },
   {
-    'begin': '(?x) (?<=^|[\\[\\]\\s\\(\\){},;])
+    'begin' => Q:to/REGEX/.&compress-wrapped,
+    (?x) (?<=^|[\[\]\s\(\){},;])
       (q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
-        \\s*:(?:
+        \s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
-      \\s*(YYY)'
-    'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.raku'
-      '2': 'name': 'support.function.quote.adverb.raku'
-      '3': 'name': 'punctuation.definition.string.raku'
-    'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
-    'endCaptures':
-      '0': 'name': 'punctuation.definition.string.raku'
-    'contentName': 'string.quoted.q.XXX.quote.raku'
-    'patterns': [
-      {
-        'match': '\\\\YYY|\\\\ZZZ'
-        'name': 'constant.character.escape.raku'
+      \s*(YYY)
+    REGEX
+    'beginCaptures' => {
+      '1' => {
+        'name' => 'string.quoted.q.operator.raku'
+      },
+      '2' => {
+        'name' => 'support.function.quote.adverb.raku'
+      },
+      '3' => {
+        'name' => 'punctuation.definition.string.raku'
       }
-      { 'include': '#q_XXX_string_content' }
+    },
+    'end' => Q/\\\\ZZZ|(?<!\\)ZZZ/,
+    'endCaptures' => {
+      '0' => {
+        'name' => 'punctuation.definition.string.raku'
+      }
+    },
+    'contentName' => 'string.quoted.q.XXX.quote.raku',
+    'patterns' => [
+      {
+        'match' => Q/\\YYY|\\ZZZ/,
+        'name' => 'constant.character.escape.raku'
+      },
+      { 'include' => '#q_XXX_string_content' }
     ]
-  }
-  # qq_XXX
+  },
   {
-    'begin': '(?x) (?<=^|[\\[\\]\\s\\(\\){},;])
+    'begin' => Q:to/REGEX/.&compress-wrapped,
+    (?x) (?<=^|[\[\]\s\(\){},;])
       (qq(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
-        \\s*:(?:
+        \s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
-      \\s*(YYY)'
-    'beginCaptures':
-      '1': 'name': 'string.quoted.qq.operator.raku'
-      '2': 'name': 'support.function.quote.adverb.raku'
-      '3': 'name': 'punctuation.definition.string.raku'
-    'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
-    'endCaptures':
-      '0': 'name': 'punctuation.definition.string.raku'
-    'contentName': 'string.quoted.qq.XXX.quote.raku'
-    'patterns': [
-      {
-        'match': '\\\\YYY|\\\\ZZZ'
-        'name': 'constant.character.escape.raku'
+      \s*(YYY)
+    REGEX
+    'beginCaptures' => {
+      '1' => {
+        'name' => 'string.quoted.qq.operator.raku'
+      },
+      '2' => {
+        'name' => 'support.function.quote.adverb.raku'
+      },
+      '3' => {
+        'name' => 'punctuation.definition.string.raku'
       }
-      { 'include': '#qq_character_escape' }
-      { 'include': 'source.raku#interpolation' }
-      { 'include': '#q_XXX_string_content' }
+    },
+    'end' => Q/\\\\ZZZ|(?<!\\)ZZZ/,
+    'endCaptures' => {
+      '0' => {
+        'name' => 'punctuation.definition.string.raku'
+      }
+    },
+    'contentName' => 'string.quoted.qq.XXX.quote.raku',
+    'patterns' => [
+      {
+        'match' => Q/\\YYY|\\ZZZ/,
+        'name' => 'constant.character.escape.raku'
+      },
+      { 'include' => '#qq_character_escape' },
+      { 'include' => 'source.raku#interpolation' },
+      { 'include' => '#q_XXX_string_content' }
     ]
   }
-🐧
+];
 
 ##sections
-my $q-second-str = Q:to/🐧/;
-  # q_XXX
-  'q_XXX_string_content':
-    'begin': 'YYY'
-    'end': '\\\\\\\\ZZZ|(?<!\\\\)ZZZ'
-    'patterns': [ { 'include': '#q_XXX_string_content' } ]
-🐧
+my &q-second = -> $XXX {
+  {
+    "q_$XXX<>_string_content" => {
+    'begin' => 'YYY',
+    'end' => Q/\\\\ZZZ|(?<!\\)ZZZ/,
+    'patterns' => [ { 'include' => '#q_XXX_string_content' }, ]
+  }
+  }
+};
 
-my $q-any-str = Q:to/🐧/;
-    # q_any qq_any Q_any
-    {
-    'begin': '(?x) (?<=^|[\\[\\]\\s\\(\\){},;])
+my $q-any-str = {
+    'begin' => Q:to/REGEX/.&compress-wrapped,
+    (?x) (?<=^|[\[\]\s\(\){},;])
       (q|qq|Q(?:x|w|ww|v|s|a|h|f|c|b|p)?)
       ((?:
-        \\s*:(?:
+        \s*:(?:
           x|exec|w|words|ww|quotewords|v|val|q|single|double|
           s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash|
           regexp|substr|trans|codes|p|path|nfkc|nfkd
         )
       )*)
-      \\s*([^\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\\s])'
-    'beginCaptures':
-      '1': 'name': 'string.quoted.q.operator.raku'
-      '2': 'name': 'support.function.quote.adverb.raku'
-      '3': 'name': 'punctuation.definition.string.raku'
-    'end': '\\3'
-    'endCaptures':
-      '0': 'name': 'punctuation.definition.string.raku'
-    'contentName': 'string.quoted.q.any.quote.raku'
-    }
-🐧
+      \s*([^\p{Ps}\p{Pe}\p{Pi}\p{Pf}\w\s])
+    REGEX
+    'beginCaptures' => {
+      '1' => {
+        'name' => 'string.quoted.q.operator.raku'
+      },
+      '2' => {
+        'name' => 'support.function.quote.adverb.raku'
+      },
+      '3' => {
+        'name' => 'punctuation.definition.string.raku'
+      }
+    },
+    'end' => Q/\3/,
+    'endCaptures' => {
+      '0' => {
+        'name' => 'punctuation.definition.string.raku'
+      }
+    },
+    'contentName' => 'string.quoted.q.any.quote.raku'
+};
 
-my $multiline-comment-str = Q:to/🐧/;
-  # multiline comment XXX
-  {
-  'begin': '\\s*#`YYY',
-  'end': 'ZZZ',
-  'name': 'comment.multiline.hash-tick.XXX.raku'
-  'patterns': [
+my $multiline-comment = {
+  'begin' => Q<\s*#`YYY>,
+  'end' => 'ZZZ',
+  'name' => 'comment.multiline.hash-tick.XXX.raku',
+  'patterns' => [
     {
-      'begin': 'YYY'
-      'end': 'ZZZ'
-      'name': 'comment.internal.XXX.raku'
-    }
+      'begin' => 'YYY',
+      'end' => 'ZZZ',
+      'name' => 'comment.internal.XXX.raku'
+    },
   ]
-  }
-🐧
+};
 
-my $pod-tag-str = Q:to/🐧/;
-      # UYYY ZZZ
+my $pod-tag = [
       {
-        'begin': '(?x) (U) (YYY)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.raku'
-          '2': 'name': 'punctuation.section.embedded.pod.code.raku'
-        'end':   '(?x) (ZZZ)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.raku'
-        'contentName': 'markup.underline.raku'
-        'name': 'meta.pod.c.raku'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.raku#q_XXX_string_content' }
+        'begin' => Q/(?x) (U) (YYY)/,
+        'beginCaptures' => {
+          '1' => {
+            'name' => 'support.function.pod.code.raku'
+          },
+          '2' => {
+            'name' => 'punctuation.section.embedded.pod.code.raku'
+          }
+        },
+        'end' => Q/(?x) (ZZZ)/,
+        'endCaptures' => {
+          '1' => {
+            'name' => 'punctuation.section.embedded.pod.code.raku'
+          }
+        },
+        'contentName' => 'markup.underline.raku',
+        'name' => 'meta.pod.c.raku',
+        'patterns' => [
+          { 'include' => '#comment-block-syntax' },
+          { 'include' => 'source.quoting.raku#q_XXX_string_content' }
+        ]
+      },
+      {
+        'begin' => Q/(?x) (I) (YYY)/,
+        'beginCaptures' => {
+          '1' => {
+            'name' => 'support.function.pod.code.raku'
+          },
+          '2' => {
+            'name' => 'punctuation.section.embedded.pod.code.raku'
+          }
+        },
+        'end' =>  Q/(?x) (ZZZ)/,
+        'endCaptures' => {
+          '1' => {
+            'name' => 'punctuation.section.embedded.pod.code.raku'
+          }
+        },
+        'contentName' => 'markup.italic.raku',
+        'name' => 'meta.pod.c.raku',
+        'patterns' => [
+          { 'include' => '#comment-block-syntax' },
+          { 'include' => 'source.quoting.raku#q_XXX_string_content' }
+        ]
+      },
+      {
+        'begin' => Q/(?x) (B) (YYY)/,
+        'beginCaptures' => {
+          '1' => {
+            'name' => 'support.function.pod.code.raku'
+          },
+          '2' => {
+            'name' => 'punctuation.section.embedded.pod.code.raku'
+          }
+        },
+        'end' => Q/(?x) (ZZZ)/,
+        'endCaptures' => {
+          '1' => {
+            'name' => 'punctuation.section.embedded.pod.code.raku'
+          }
+        },
+        'contentName' => 'markup.bold.raku',
+        'name' => 'meta.pod.c.raku',
+        'patterns' => [
+          { 'include' => '#comment-block-syntax' },
+          { 'include' => 'source.quoting.raku#q_XXX_string_content' }
+        ]
+      },
+      {
+        'begin' => Q/(?x) ([A-Z]) (YYY)/,
+        'beginCaptures' => {
+          '1' => {
+            'name' => 'support.function.pod.code.raku'
+          },
+          '2' => {
+            'name' => 'punctuation.section.embedded.pod.code.raku'
+          }
+        },
+        'end' =>  Q/(?x) (ZZZ)/,
+        'endCaptures' => {
+          '1' => {
+            'name' => 'punctuation.section.embedded.pod.code.raku'
+          }
+        },
+        'contentName' => 'markup.raw.code.raku',
+        'name' => 'meta.pod.c.raku',
+        'patterns' => [
+          { 'include' => '#comment-block-syntax' },
+          { 'include' => 'source.quoting.raku#q_XXX_string_content' }
         ]
       }
-      # IYYY ZZZ
-      {
-        'begin': '(?x) (I) (YYY)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.raku'
-          '2': 'name': 'punctuation.section.embedded.pod.code.raku'
-        'end':   '(?x) (ZZZ)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.raku'
-        'contentName': 'markup.italic.raku'
-        'name': 'meta.pod.c.raku'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.raku#q_XXX_string_content' }
-        ]
-      }
-      # BYYY ZZZ
-      {
-        'begin': '(?x) (B) (YYY)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.raku'
-          '2': 'name': 'punctuation.section.embedded.pod.code.raku'
-        'end':   '(?x) (ZZZ)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.raku'
-        'contentName': 'markup.bold.raku'
-        'name': 'meta.pod.c.raku'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.raku#q_XXX_string_content' }
-        ]
-      }
-      # UppercaseYYY ZZZ
-      {
-        'begin': '(?x) ([A-Z]) (YYY)'
-        'beginCaptures':
-          '1': 'name': 'support.function.pod.code.raku'
-          '2': 'name': 'punctuation.section.embedded.pod.code.raku'
-        'end':   '(?x) (ZZZ)'
-        'endCaptures':
-          '1': 'name': 'punctuation.section.embedded.pod.code.raku'
-        'contentName': 'markup.raw.code.raku'
-        'name': 'meta.pod.c.raku'
-        'patterns': [
-          { 'include': '#comment-block-syntax' }
-          { 'include': 'source.quoting.raku#q_XXX_string_content' }
-        ]
-      }
-🐧
-my $regex-tag-str = Q:to/♥/;
-# regex_XXX
-{
-  'begin': '''(?x)
-  (?<= ^|\\s )
+];
+my $regex-tag = {
+  'begin' => Q:to/REGEX/.chomp,
+  (?x)
+  (?<= ^|\s )
   (?:
     (m|rx|s|S)
     (
       (?:
         (?<!:P5) # < This can maybe be removed because we
-        \\s*:\\w+
-        (?!\\s*:P5) # < include p5_regex above it
+        \s*:\w+
+        (?!\s*:P5) # < include p5_regex above it
       )*
     )
   )
-  \\s*
+  \s*
   (YYY)
-  '''
-  'beginCaptures':
-    '1': 'name': 'string.regexp.construct.XXX.raku'
-    '2': 'name': 'entity.name.section.adverb.regexp.XXX.raku'
-    '3': 'name': 'punctuation.definition.regexp.XXX.raku'
-  'end': '(?x) (?: (?<!\\\\)|(?<=\\\\\\\\) ) (ZZZ)'
-  'endCaptures':
-    '1': 'name': 'punctuation.definition.regexp.XXX.raku'
-  'contentName': 'string.regexp.XXX.raku'
-  'patterns': [
-    { 'include': '#interpolation' }
-    { 'include': 'source.regexp.raku' }
+  REGEX
+  'beginCaptures' => {
+    '1' => {
+      'name' => 'string.regexp.construct.XXX.raku'
+    },
+    '2' => {
+      'name' => 'entity.name.section.adverb.regexp.XXX.raku'
+    },
+    '3' => {
+      'name' => 'punctuation.definition.regexp.XXX.raku'
+    }
+  },
+  'end' => Q/(?x) (?: (?<!\\)|(?<=\\\\) ) (ZZZ)/,
+  'endCaptures' => {
+    '1' => {
+      'name' => 'punctuation.definition.regexp.XXX.raku'
+    }
+  },
+  'contentName' => 'string.regexp.XXX.raku',
+  'patterns' => [
+    { 'include' => '#interpolation' },
+    { 'include' => 'source.regexp.raku' }
   ]
-}
-♥
+};
 sub regex-highlighting {
-  my Str @output;
-  @output.push: replace($regex-tag-str, |@delimiters.first({.[0] eq 'slash'}).head(3));
-  for ^@open-close-delimiters -> $i {
-    next unless @open-close-delimiters[$i][3] == 1;
-    @output.push: replace($regex-tag-str, |@open-close-delimiters[$i].head(3));
+  my @output;
+  @output.append: replace($regex-tag, |@delimiters.first({.[0] eq 'slash'}).head(3));
+  for @open-close-delimiters.grep(*[3] == 1) -> $delim {
+    @output.append: replace($regex-tag, |$delim.head(3));
   }
-  @output.push: replace($regex-tag-str,
+  @output.append: replace($regex-tag,
     'any',
-    Q‘[^#\\p{Ps}\\p{Pe}\\p{Pi}\\p{Pf}\\w\'\\-<>\\-\\]\\)\\}\\{]’,
-    Q‘\\3’
+    Q‘[^#\p{Ps}\p{Pe}\p{Pi}\p{Pf}\w'\-<>\-\]\)\}\{]’,
+    Q‘\3’
   );
-  @output.join.indent(2);
+  @output
 }
-my Str:D $regex-file = regex-highlighting;
-sub replace ( Str $string is copy, $name, $begin, $end ) {
-  $string ~~ s:g/XXX/$name/;
+my Str:D $regex-file = regex-highlighting.&to-json: :sorted-keys;
+sub replace ( $input, $name, $begin, $end ) {
+  my $data = $input>>.clone;
+  $data>>.=subst: /XXX/, $name, :g;
   # Note: q (…) qq (…) Q (…) are only allowed with a space.
   # Note: q '…' qq '…' Q '…' are only allowed with a space.
-  if ( any(@identifiers) eq $begin ) or ( $begin eq Q<\\(> and $end eq Q<\\)> ) {
-    $string ~~ s:g/'\\\\s*(YYY)'/\\\\s+(YYY)/
+  if ( any(@identifiers) eq $begin ) or ( $begin eq Q<\(> and $end eq Q<\)> ) {
+    $data>>.=subst: Q<\s*(YYY)>, Q<\s+(YYY)>, :g;
   }
   if $begin eq $end {
-    $string ~~ s:g/'\\\\\\\\YYY|\\\\\\\\ZZZ'/\\\\\\\\YYY/;
-    $string ~~ s:g/YYYZZZ/YYY/;
+    $data>>.=subst: Q<\\YYY|\\ZZZ>, Q<\\YYY>, :g;
+    $data>>.=subst: 'YYYZZZ', 'YYY', :g;
   }
-  $string ~~ s:g/YYY/$begin/;
-  $string ~~ s:g/ZZZ/$end/;
-  $string;
+  $data>>.=subst: 'YYY', $begin, :g;
+  $data>>.=subst: 'ZZZ', $end, :g;
+  $data
 }
-sub replace-multiline-comment ( Str $string is copy, $name, $begin, $end ) {
-  $string ~~ s:g/XXX/$name/;
-  $string ~~ s:g/YYY/$begin/;
-  $string ~~ s:g/ZZZ/$end/;
-  $string;
+sub replace-multiline-comment ( $input, $name, $begin, $end ) {
+  my $data = $input>>.clone;
+  $data>>.=subst: 'XXX', $name, :g;
+  $data>>.=subst: 'YYY', $begin, :g;
+  $data>>.=subst: 'ZZZ', $end, :g;
+  $data
 }
-my $normal-quotes-file;
-my $zero-file;
-my $first-file;
-my $second-file;
-my $third-file;
+my $normal-quotes-data;
+my $zero-data;
+my $first-data;
+my %second-data;
+my $third-data;
 for @delimiters.grep(*[6]) -> $delim {
-  my ($name, $open, $close, $num, $nil, $Nil, $bool) = $delim;
-  $third-file ~= replace-multiline-comment($pod-tag-str, $name, $open, $close);
+  my ($name, $open, $close, $num, $, $, $) = $delim;
+  $third-data.append: replace-multiline-comment($pod-tag, $name, $open, $close)[];
 }
 # Normal quotation marks
 for @delimiters.grep(*[4]) -> $delim {
-  my ($name, $open, $close, $num, $bool, $type) = $delim;
+  my ($name, $open, $close, $num, $, $type) = $delim;
   #say $type;
   #say $bool;
   given $type {
-    when 'qq' { $normal-quotes-file ~= replace($qq-quotation-marks, $name, $open, $close) }
-    when 'q'  { $normal-quotes-file ~= replace($q-quotation-marks, $name, $open, $close) }
+    when 'qq' { $normal-quotes-data.append: replace($qq-quotation-marks, $name, $open, $close) }
+    when 'q'  { $normal-quotes-data.append: replace($q-quotation-marks, $name, $open, $close) }
     default { say "help"; }
   }
 }
-#$first-file ~= $normal-quotes-file;
+#$first-data ~= $normal-quotes-data;
 # Multi line comment
 for @open-close-delimiters -> $delim {
-    $zero-file ~= replace-multiline-comment $multiline-comment-str,
+    $zero-data.append: replace-multiline-comment $multiline-comment,
                           $delim[0],
                           $delim[1],
                           $delim[2];
 }
-$zero-file ~= $normal-quotes-file;
+$zero-data.append: $normal-quotes-data[];
 # q qq Q quoting constructs
 for @delimiters -> $delim {
     if use-for-q $delim {
         #say "Skipping: {@delimiters[$i].perl}" unless $DEBUG;
         next;
     }
-    $first-file ~= replace($q-patterns, $delim[0], $delim[1], $delim[2]);
+    $first-data.append: replace($q-patterns, $delim[0], $delim[1], $delim[2])[];
 
 }
 # Get list of symbols we shouldn't use for q_any (using whatever delimiter the person wants)
 my @not-any;
-for @delimiters -> $delim {
-    if $delim[3] eq 1 {
-        push @not-any, $delim[1] if $delim[3] eq 1;
-        push @not-any, $delim[2] if $delim[1] ne $delim[2];
-    }
+for @delimiters.grep(*[3] == 1) -> $delim {
+    push @not-any, $delim[1];
+    push @not-any, $delim[2] if $delim[1] ne $delim[2];
 }
 #push @not-any, '@';
 @not-any .= unique;
@@ -402,20 +489,20 @@ for @delimiters -> $delim {
 my $not-any = @not-any.join('');
 $q-any-str ~~ s/ZZZ/$not-any/;
 }}
-$first-file ~= $q-any-str;
+$first-data.append: $q-any-str;
 
 for @delimiters -> $delim {
     if use-for-q $delim {
         #say "Skipping: {@delimiters[$i].perl}" unless $DEBUG;
         next;
     }
-    $second-file ~= replace($q-second-str, $delim[0],$delim[1], $delim[2]);
+    %second-data.append: replace(q-second($delim[0]), $delim[0], $delim[1], $delim[2])<>;
 }
-spurt 'ZERO.cson', $zero-file;
-spurt 'FIRST.cson', $first-file;
-spurt 'SECOND.cson', $second-file;
-spurt 'THIRD.cson', $third-file;
-spurt 'REGEX.cson', $regex-file;
+spurt 'ZERO.json', $zero-data.&to-json: :sorted-keys;
+spurt 'FIRST.json', $first-data.&to-json: :sorted-keys;
+spurt 'SECOND.json', %second-data.&to-json: :sorted-keys;
+spurt 'THIRD.json', $third-data.&to-json: :sorted-keys;
+spurt 'REGEX.json', $regex-file;
 say "Done generating.";
 sub use-for-q ( @delimiters ) {
     # If the delimiters are equal and they are an opening, closing or begining or ending
