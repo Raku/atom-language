@@ -5,6 +5,9 @@ sub compress-wrapped($_) {
   .chomp
   .subst(/\s+/, ' ', :g)
 }
+
+
+
 # Generate the q[] qq[] and Q[] quoting constructs
 my @open-close-delimiters =
 #Left Pi right Pf. Open Ps close Pe
@@ -402,6 +405,13 @@ my $regex-tag = {
     { 'include' => 'source.regexp.raku' }
   ]
 };
+
+
+sub use-for-q ( @delimiters ) {
+    # If the delimiters are equal and they are an opening, closing or begining or ending
+    # unicode type symbol, then we can't use it for q/qq/Q
+    @delimiters[1] eq @delimiters[2] and uniprop(@delimiters[1]) eq any('Pi', 'Pf', 'Ps', 'Pe');
+}
 sub regex-highlighting {
   my @output;
   @output.append: replace($regex-tag, |@delimiters.first({.[0] eq 'slash'}).head(3));
@@ -415,7 +425,7 @@ sub regex-highlighting {
   );
   @output
 }
-my Str:D $regex-file = regex-highlighting.&to-json: :sorted-keys;
+
 sub replace ( $input, $name, $begin, $end ) {
   my $data = $input>>.clone;
   $data>>.=subst: /XXX/, $name, :g;
@@ -439,14 +449,18 @@ sub replace-multiline-comment ( $input, $name, $begin, $end ) {
   $data>>.=subst: 'ZZZ', $end, :g;
   $data
 }
+
+
+my @*regex = regex-highlighting;
+
 my $normal-quotes-data;
-my $zero-data;
-my $first-data;
-my %second-data;
-my $third-data;
+my @*zero;
+my @*quoting-patterns;
+my %*quoting-repo-most;
+my @*comment-block-syntax-patterns-most;
 for @delimiters.grep(*[6]) -> $delim {
   my ($name, $open, $close, $num, $, $, $) = $delim;
-  $third-data.append: replace-multiline-comment($pod-tag, $name, $open, $close)[];
+  @*comment-block-syntax-patterns-most.append: replace-multiline-comment($pod-tag, $name, $open, $close)[];
 }
 # Normal quotation marks
 for @delimiters.grep(*[4]) -> $delim {
@@ -462,19 +476,19 @@ for @delimiters.grep(*[4]) -> $delim {
 #$first-data ~= $normal-quotes-data;
 # Multi line comment
 for @open-close-delimiters -> $delim {
-    $zero-data.append: replace-multiline-comment $multiline-comment,
+    @*zero.append: replace-multiline-comment $multiline-comment,
                           $delim[0],
                           $delim[1],
                           $delim[2];
 }
-$zero-data.append: $normal-quotes-data[];
+@*zero.append: $normal-quotes-data[];
 # q qq Q quoting constructs
 for @delimiters -> $delim {
     if use-for-q $delim {
         #say "Skipping: {@delimiters[$i].perl}" unless $DEBUG;
         next;
     }
-    $first-data.append: replace($q-patterns, $delim[0], $delim[1], $delim[2])[];
+    @*quoting-patterns.append: replace($q-patterns, $delim[0], $delim[1], $delim[2])[];
 
 }
 # Get list of symbols we shouldn't use for q_any (using whatever delimiter the person wants)
@@ -489,24 +503,20 @@ for @delimiters.grep(*[3] == 1) -> $delim {
 my $not-any = @not-any.join('');
 $q-any-str ~~ s/ZZZ/$not-any/;
 }}
-$first-data.append: $q-any-str;
+@*quoting-patterns.append: $q-any-str;
 
 for @delimiters -> $delim {
     if use-for-q $delim {
         #say "Skipping: {@delimiters[$i].perl}" unless $DEBUG;
         next;
     }
-    %second-data.append: replace(q-second($delim[0]), $delim[0], $delim[1], $delim[2])<>;
+    %*quoting-repo-most.append: replace(q-second($delim[0]), $delim[0], $delim[1], $delim[2])<>;
 }
-spurt 'ZERO.json', $zero-data.&to-json: :sorted-keys;
-spurt 'FIRST.json', $first-data.&to-json: :sorted-keys;
-spurt 'SECOND.json', %second-data.&to-json: :sorted-keys;
-spurt 'THIRD.json', $third-data.&to-json: :sorted-keys;
-spurt 'REGEX.json', $regex-file;
+spurt 'ZERO.json', @*zero.&to-json: :sorted-keys;
+spurt 'FIRST.json', @*quoting-patterns.&to-json: :sorted-keys;
+spurt 'SECOND.json', %*quoting-repo-most.&to-json: :sorted-keys;
+spurt 'THIRD.json', @*comment-block-syntax-patterns-most.&to-json: :sorted-keys;
+spurt 'REGEX.json', @*regex.&to-json: :sorted-keys;
 say "Done generating.";
-sub use-for-q ( @delimiters ) {
-    # If the delimiters are equal and they are an opening, closing or begining or ending
-    # unicode type symbol, then we can't use it for q/qq/Q
-    @delimiters[1] eq @delimiters[2] and uniprop(@delimiters[1]) eq any('Pi', 'Pf', 'Ps', 'Pe');
-}
+
 # vim: ts=2
