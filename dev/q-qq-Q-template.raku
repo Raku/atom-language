@@ -450,6 +450,8 @@ sub replace-multiline-comment ( $input, $name, $begin, $end ) {
   $data
 }
 
+$*PROGRAM.parent(2).&chdir;
+
 
 my @*regex = regex-highlighting;
 
@@ -512,11 +514,14 @@ for @delimiters -> $delim {
     }
     %*quoting-repo-most.append: replace(q-second($delim[0]), $delim[0], $delim[1], $delim[2])<>;
 }
-spurt 'ZERO.json', @*zero.&to-json: :sorted-keys;
-spurt 'FIRST.json', @*quoting-patterns.&to-json: :sorted-keys;
-spurt 'SECOND.json', %*quoting-repo-most.&to-json: :sorted-keys;
-spurt 'THIRD.json', @*comment-block-syntax-patterns-most.&to-json: :sorted-keys;
-spurt 'REGEX.json', @*regex.&to-json: :sorted-keys;
+my $meta-info-tmlanguage = EVALFILE 'dev/meta-info.tmLanguage.raku';
+my $raku-quoting-tmlanguage = EVALFILE 'dev/raku.quoting.tmLanguage.raku';
+my $raku-regex-tmlanguage = EVALFILE 'dev/raku.regex.tmLanguage.raku';
+my $raku-tmlanguage = EVALFILE 'dev/raku.tmLanguage.raku';
+'grammars/meta-info.tmLanguage.json'.IO.spurt: $meta-info-tmlanguage.&to-json: :sorted-keys;
+'grammars/raku.quoting.tmLanguage.json'.IO.spurt: $raku-quoting-tmlanguage.&to-json: :sorted-keys;
+'grammars/raku.regex.tmLanguage.json'.IO.spurt: $raku-regex-tmlanguage.&to-json: :sorted-keys;
+'grammars/raku.tmLanguage.json'.IO.spurt: $raku-tmlanguage.&to-json: :sorted-keys;
 say "Done generating.";
 
 # vim: ts=2
