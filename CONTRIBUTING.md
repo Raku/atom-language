@@ -25,7 +25,7 @@ on this project and share some of the things I have learned. Atom doesn't have
 documentation on creating grammars, so I hope this to become a great resource
 for others who may wish to contribute.
 
-### Installing for Development
+### Installing for Development (obsolete)
 1. Clone the Github repository into any folder you wish.
 2. Make sure the normal package is uninstalled.
 3. Run `apm link atom-language-perl6`
@@ -52,27 +52,6 @@ Because of this, a priority system is the best way to categorize any issues.
   to implement.
 
 ## Making Changes to the Grammar and Helpful Tips:
-
-### Atom Grammars
-
-* Atom uses a TextMate type grammar. While TextMate uses plist's(XMLish),
-  Atom stores them in JSON format.
-* The code that Atom uses to actually process the grammars is called
-  [first-mate][first-mate].
-* Lines above and below each other that are on the same indentation level
-  are _unordered_. If you need rules to apply in a specified order, make
-  sure you put curly brackets around them.
-* Atom uses the [Oniguruma][Oniguruma] Regex engine which is the same one that
-  Ruby uses. More details in the section below.
-  
-  ### Escaping
-  **Important escaping is very easy to mess up. Use the included scripts to get to an unescaped version, edit on that one, and then escape it again**
-  
- * The best thing to use when editing is use `dev/escape.raku` or `dev/unescape.raku` to escape or unescape text. These scripts accept STDIN and output an escaped/unescaped version.
-
-* I usually copy the text `xclip -o | dev/unescape.raku` work on the text and then copy back and do`xclip -o | dev/escape.raku`
-
-* (though often I do `xclip -o | dev/Xescape.raku | xclip` and it lands right back on the clipboard but in a differently escaped version. This will prevent accidents with the escaping which are very easy to do (can cause silent bugs or worse).
 
 ### Oniguruma Regex Engine
 * The Oniguruma regex engine is used by all programs which utilize
@@ -136,10 +115,10 @@ Once you have edited `q-qq-Q-template.raku`, run `dev/replace.sh` which uses
 awk to do the replacement. Eventually it will be nice if we had a purely Raku
 solution.
 
-### Testing
+### Testing (obsolete)
 We all love tests, right? To run tests, run `apm test` and the tests will run.
 
-The testing file is at `spec/grammar-raku-spec.coffee`. Please make sure
+The testing file is at `spec/grammar-raku-spec.js`. Please make sure
 when adding a test, that you are able to make the test fail by altering the
 values of the expected response. Syntax problems can cause tests to succeed
 silently.
