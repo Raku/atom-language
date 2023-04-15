@@ -14,8 +14,5 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Raku/atom-language-perl6/issues"
-  },
-  "devDependencies": {
-    "coffeelint": "^1.10.1"
   }
 }
