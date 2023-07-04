@@ -1218,7 +1218,7 @@
         "4": {
           "patterns": [
             {
-              "match": "(?x) ( [\\p{Digit}\\p{Alpha}'\\-_]+ ) \\b (:)? (\\w+ \\b )? (\\S+  )?",
+              "match": "(?x) ( [\\p{Digit}\\pL\\pM'\\-_]+ ) \\b (:)? (\\w+ \\b )? (\\S+  )?",
               "captures": {
                 "1": {
                   "name": "entity.name.function.raku"
@@ -1263,7 +1263,7 @@
           "name": "entity.name.function.regexp.named.TOP.raku"
         },
         {
-          "match": "[\\p{Digit}\\p{Alpha}'\\-_]+",
+          "match": "[\\p{Digit}\\pL\\pM'\\-_]+",
           "name": "entity.name.function.regexp.named.raku"
         },
         {
@@ -2634,7 +2634,7 @@
           "include": "#regexp-variables"
         },
         {
-          "match": "(?x)\n(\\$|@|%|&)\n(\\.|\\*|:|!|\\^|~|=|\\?)?\n(\n    (?:[\\p{Alpha}_])           # Must start with Alpha or underscore\n    (?:\n       [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore, or a ' or -\n    |                           # followed by an Alpha or underscore\n       [\\-'] [\\p{Alpha}_]\n    )*\n)",
+          "match": "(?x)\n(\\$|@|%|&)\n(\\.|\\*|:|!|\\^|~|=|\\?)?\n(\n    (?:[\\pL\\pM_])           # Must start with Alpha or underscore\n    (?:\n       [\\p{Digit}\\pL\\pM_]  # have alphanum/underscore, or a ' or -\n    |                           # followed by an Alpha or underscore\n       [\\-'] [\\pL\\pM_]\n    )*\n)",
           "captures": {
             "1": {
               "name": "variable.other.identifier.sigil.raku"
@@ -2675,7 +2675,7 @@
     "interpolation": {
       "patterns": [
         {
-          "match": "(?x)\n(?<!\\\\)\n(\\$|@|%|&)\n(?!\\$)\n(\\.|\\*|:|!|\\^|~|=|\\?)?  # Twigils\n([\\p{Alpha}_])             # Must start with Alpha or underscore\n(\n   [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore, or a ' or -\n|                           # followed by an Alpha or underscore\n   [\\-'] [\\p{Alpha}_]\n)*\n( \\[ .* \\] )?             # postcircumfix [ ]\n## methods\n(?:\n  (?:\n    ( \\. )\n    (\n       [\\p{Alpha}]\n        (?:\n          [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore, or a ' or -\n        |                          # followed by an Alpha or underscore\n          [\\-'] [\\p{Alpha}_]\n        )*\n\n    )\n  )?\n  ( \\( .*?  \\) )\n)?",
+          "match": "(?x)\n(?<!\\\\)\n(\\$|@|%|&)\n(?!\\$)\n(\\.|\\*|:|!|\\^|~|=|\\?)?  # Twigils\n([\\pL\\pM_])             # Must start with Alpha or underscore\n(\n   [\\p{Digit}\\pL\\pM_]  # have alphanum/underscore, or a ' or -\n|                           # followed by an Alpha or underscore\n   [\\-'] [\\pL\\pM_]\n)*\n( \\[ .* \\] )?             # postcircumfix [ ]\n## methods\n(?:\n  (?:\n    ( \\. )\n    (\n       [\\pL\\pM]\n        (?:\n          [\\p{Digit}\\pL\\pM_]  # have alphanum/underscore, or a ' or -\n        |                          # followed by an Alpha or underscore\n          [\\-'] [\\pL\\pM_]\n        )*\n\n    )\n  )?\n  ( \\( .*?  \\) )\n)?",
           "captures": {
             "1": {
               "name": "variable.other.identifier.sigil.raku"
@@ -2727,13 +2727,13 @@
               "name": "support.function.raku"
             },
             "8": {
-              "begin": "(",
+              "begin": "\\(",
               "beginCaptures": {
                 "0": {
                   "name": "keyword.operator.paren.open.raku"
                 }
               },
-              "end": ")",
+              "end": "\\)",
               "endCaptures": {
                 "0": {
                   "name": "keyword.operator.paren.close.raku"
