@@ -441,7 +441,7 @@
         '4' => {
           'patterns' => [
             {
-              'match' => '(?x) ( [\\p{Digit}\\p{Alpha}\'\\-_]+ ) \\b (:)? (\\w+ \\b )? (\\S+  )?',
+              'match' => Q/(?x) ( [\p{Digit}\pL\pM'\-_]+ ) \b (:)? (\w+ \b )? (\S+  )?/,
               'captures' => {
                 '1' => {
                   'name' => 'entity.name.function.raku'
@@ -486,7 +486,7 @@
           'name' => 'entity.name.function.regexp.named.TOP.raku'
         },
         {
-          'match' => '[\\p{Digit}\\p{Alpha}\'\\-_]+',
+          'match' => Q/[\p{Digit}\pL\pM'\-_]+/,
           'name' => 'entity.name.function.regexp.named.raku'
         },
         {
@@ -1487,16 +1487,16 @@
           'include' => '#regexp-variables'
         },
         {
-          'match' => q:to/REGEX/.chomp,
+          'match' => Q:to/REGEX/.chomp,
           (?x)
-          (\\$|@|%|&)
-          (\\.|\\*|:|!|\\^|~|=|\\?)?
+          (\$|@|%|&)
+          (\.|\*|:|!|\^|~|=|\?)?
           (
-              (?:[\\p{Alpha}_])           # Must start with Alpha or underscore
+              (?:[\pL\pM_])           # Must start with Alpha or underscore
               (?:
-                 [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore, or a ' or -
+                 [\\p{Digit}\pL\pM_]  # have alphanum/underscore, or a ' or -
               |                           # followed by an Alpha or underscore
-                 [\\-'] [\\p{Alpha}_]
+                 [\-'] [\pL\pM_]
               )*
           )
           REGEX
@@ -1540,34 +1540,34 @@
     'interpolation' => {
       'patterns' => [
         {
-          'match' => q:to/REGEX/.chomp,
+          'match' => Q:to/REGEX/.chomp,
           (?x)
-          (?<!\\\\)
-          (\\$|@|%|&)
-          (?!\\$)
-          (\\.|\\*|:|!|\\^|~|=|\\?)?  # Twigils
-          ([\\p{Alpha}_])             # Must start with Alpha or underscore
+          (?<!\\)
+          (\$|@|%|&)
+          (?!\$)
+          (\.|\*|:|!|\^|~|=|\?)?  # Twigils
+          ([\pL\pM_])             # Must start with Alpha or underscore
           (
-             [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore, or a ' or -
+             [\p{Digit}\pL\pM_]  # have alphanum/underscore, or a ' or -
           |                           # followed by an Alpha or underscore
-             [\\-'] [\\p{Alpha}_]
+             [\-'] [\pL\pM_]
           )*
-          ( \\[ .* \\] )?             # postcircumfix [ ]
+          ( \[ .* \] )?             # postcircumfix [ ]
           ## methods
           (?:
             (?:
-              ( \\. )
+              ( \. )
               (
-                 [\\p{Alpha}]
+                 [\pL\pM]
                   (?:
-                    [\\p{Digit}\\p{Alpha}_]  # have alphanum/underscore, or a ' or -
+                    [\p{Digit}\pL\pM_]  # have alphanum/underscore, or a ' or -
                   |                          # followed by an Alpha or underscore
-                    [\\-'] [\\p{Alpha}_]
+                    [\-'] [\pL\pM_]
                   )*
           
               )
             )?
-            ( \\( .*?  \\) )
+            ( \( .*?  \) )
           )?
           REGEX
           'captures' => {
@@ -1621,13 +1621,13 @@
               'name' => 'support.function.raku'
             },
             '8' => {
-              'begin' => '(',
+              'begin' => Q<\(>,
               'beginCaptures' => {
                 '0' => {
                   'name' => 'keyword.operator.paren.open.raku'
                 }
               },
-              'end' => ')',
+              'end' => Q<\)>,
               'endCaptures' => {
                 '0' => {
                   'name' => 'keyword.operator.paren.close.raku'
