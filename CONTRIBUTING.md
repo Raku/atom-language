@@ -108,6 +108,7 @@ are generated from the corresponding `.raku` files in the `dev` folder. Each `.r
 file describes the content of the eventual `.json` files, the main advantages being:
 - no need for custom templating; familiar concepts of code composition can be used
 - Raku provides a great variety of string literals; superfluous escaping can be avoided
+
 `dev/generate-grammars.raku` serves two purposes:
 - it contains commonly used templates for quoting constructs, multi-line comments and q quoting
 - it generates all `tmLanguage.json` files from the `tmLanguage.raku` files
