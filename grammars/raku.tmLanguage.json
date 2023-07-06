@@ -2779,7 +2779,7 @@
               "name": "variable.other.identifier.raku"
             }
           },
-          "match": "(?x)\n(\\$|@|%|&)\n(\\.|\\*|:|!|\\^|~|=|\\?)?\n(\n    (?:[\\pL\\pM_])           # Must start with Alpha or underscore\n    (?:\n       [\\\\p{Digit}\\pL\\pM_]  # have alphanum/underscore, or a ' or -\n    |                           # followed by an Alpha or underscore\n       [\\-'] [\\pL\\pM_]\n    )*\n)",
+          "match": "(?x)\n(\\$|@|%|&)\n(\\.|\\*|:|!|\\^|~|=|\\?)?\n(\n    (?:[\\pL\\pM_])           # Must start with Alpha or underscore\n    (?:\n       [\\p{Digit}\\pL\\pM_]  # have alphanum/underscore, or a ' or -\n    |                           # followed by an Alpha or underscore\n       [\\-'] [\\pL\\pM_]\n    )*\n)",
           "name": "meta.variable.container.raku"
         }
       ]

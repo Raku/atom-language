@@ -1494,7 +1494,7 @@
           (
               (?:[\pL\pM_])           # Must start with Alpha or underscore
               (?:
-                 [\\p{Digit}\pL\pM_]  # have alphanum/underscore, or a ' or -
+                 [\p{Digit}\pL\pM_]  # have alphanum/underscore, or a ' or -
               |                           # followed by an Alpha or underscore
                  [\-'] [\pL\pM_]
               )*
