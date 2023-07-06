@@ -1,7 +1,7 @@
- {
-  "scopeName": "source.quoting.raku",
+{
+  "fileTypes": [
+  ],
   "name": "Quoting in Raku",
-  "fileTypes": [],
   "patterns": [
     {
       "begin": "(?x) (?<=^|[\\[\\]\\s\\(\\){},;]) (Q(?:x|w|ww|v|s|a|h|f|c|b|p)?) ((?: \\s*:(?: x|exec|w|words|ww|quotewords|v|val|q|single|double| s|scalar|a|array|h|hash|f|function|c|closure|b|blackslash| regexp|substr|trans|codes|p|path|nfkc|nfkd ) )*) \\s*(\\(\\(\\()",
@@ -16,13 +16,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.triple_paren.quote.raku",
       "end": "\\)\\)\\)",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.triple_paren.quote.raku",
       "patterns": [
         {
           "include": "#q_triple_paren_string_content"
@@ -42,13 +42,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.triple_paren.quote.raku",
       "end": "\\\\\\\\\\)\\)\\)|(?<!\\\\)\\)\\)\\)",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.triple_paren.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\(\\(\\(|\\\\\\)\\)\\)",
@@ -72,13 +72,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.triple_paren.quote.raku",
       "end": "\\\\\\\\\\)\\)\\)|(?<!\\\\)\\)\\)\\)",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.triple_paren.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\(\\(\\(|\\\\\\)\\)\\)",
@@ -108,13 +108,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.triple_bracket.quote.raku",
       "end": "\\]\\]\\]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.triple_bracket.quote.raku",
       "patterns": [
         {
           "include": "#q_triple_bracket_string_content"
@@ -134,13 +134,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.triple_bracket.quote.raku",
       "end": "\\\\\\\\\\]\\]\\]|(?<!\\\\)\\]\\]\\]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.triple_bracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\[\\[\\[|\\\\\\]\\]\\]",
@@ -164,13 +164,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.triple_bracket.quote.raku",
       "end": "\\\\\\\\\\]\\]\\]|(?<!\\\\)\\]\\]\\]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.triple_bracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\[\\[\\[|\\\\\\]\\]\\]",
@@ -200,13 +200,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.triple_brace.quote.raku",
       "end": "\\}\\}\\}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.triple_brace.quote.raku",
       "patterns": [
         {
           "include": "#q_triple_brace_string_content"
@@ -226,13 +226,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.triple_brace.quote.raku",
       "end": "\\\\\\\\\\}\\}\\}|(?<!\\\\)\\}\\}\\}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.triple_brace.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\{\\{\\{|\\\\\\}\\}\\}",
@@ -256,13 +256,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.triple_brace.quote.raku",
       "end": "\\\\\\\\\\}\\}\\}|(?<!\\\\)\\}\\}\\}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.triple_brace.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\{\\{\\{|\\\\\\}\\}\\}",
@@ -292,13 +292,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.triple_angle.quote.raku",
       "end": ">>>",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.triple_angle.quote.raku",
       "patterns": [
         {
           "include": "#q_triple_angle_string_content"
@@ -318,13 +318,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.triple_angle.quote.raku",
       "end": "\\\\\\\\>>>|(?<!\\\\)>>>",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.triple_angle.quote.raku",
       "patterns": [
         {
           "match": "\\\\<<<|\\\\>>>",
@@ -348,13 +348,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.triple_angle.quote.raku",
       "end": "\\\\\\\\>>>|(?<!\\\\)>>>",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.triple_angle.quote.raku",
       "patterns": [
         {
           "match": "\\\\<<<|\\\\>>>",
@@ -384,13 +384,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double_angle.quote.raku",
       "end": ">>",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double_angle.quote.raku",
       "patterns": [
         {
           "include": "#q_double_angle_string_content"
@@ -410,13 +410,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double_angle.quote.raku",
       "end": "\\\\\\\\>>|(?<!\\\\)>>",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double_angle.quote.raku",
       "patterns": [
         {
           "match": "\\\\<<|\\\\>>",
@@ -440,13 +440,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.double_angle.quote.raku",
       "end": "\\\\\\\\>>|(?<!\\\\)>>",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.double_angle.quote.raku",
       "patterns": [
         {
           "match": "\\\\<<|\\\\>>",
@@ -476,13 +476,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double_paren.quote.raku",
       "end": "\\)\\)",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double_paren.quote.raku",
       "patterns": [
         {
           "include": "#q_double_paren_string_content"
@@ -502,13 +502,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double_paren.quote.raku",
       "end": "\\\\\\\\\\)\\)|(?<!\\\\)\\)\\)",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double_paren.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\(\\(|\\\\\\)\\)",
@@ -532,13 +532,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.double_paren.quote.raku",
       "end": "\\\\\\\\\\)\\)|(?<!\\\\)\\)\\)",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.double_paren.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\(\\(|\\\\\\)\\)",
@@ -568,13 +568,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double_bracket.quote.raku",
       "end": "\\]\\]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double_bracket.quote.raku",
       "patterns": [
         {
           "include": "#q_double_bracket_string_content"
@@ -594,13 +594,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double_bracket.quote.raku",
       "end": "\\\\\\\\\\]\\]|(?<!\\\\)\\]\\]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double_bracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\[\\[|\\\\\\]\\]",
@@ -624,13 +624,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.double_bracket.quote.raku",
       "end": "\\\\\\\\\\]\\]|(?<!\\\\)\\]\\]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.double_bracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\[\\[|\\\\\\]\\]",
@@ -660,13 +660,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double_brace.quote.raku",
       "end": "}}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double_brace.quote.raku",
       "patterns": [
         {
           "include": "#q_double_brace_string_content"
@@ -686,13 +686,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double_brace.quote.raku",
       "end": "\\\\\\\\}}|(?<!\\\\)}}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double_brace.quote.raku",
       "patterns": [
         {
           "match": "\\\\{{|\\\\}}",
@@ -716,13 +716,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.double_brace.quote.raku",
       "end": "\\\\\\\\}}|(?<!\\\\)}}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.double_brace.quote.raku",
       "patterns": [
         {
           "match": "\\\\{{|\\\\}}",
@@ -752,13 +752,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.brace.quote.raku",
       "end": "}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.brace.quote.raku",
       "patterns": [
         {
           "include": "#q_brace_string_content"
@@ -778,13 +778,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.brace.quote.raku",
       "end": "\\\\\\\\}|(?<!\\\\)}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.brace.quote.raku",
       "patterns": [
         {
           "match": "\\\\{|\\\\}",
@@ -808,13 +808,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.brace.quote.raku",
       "end": "\\\\\\\\}|(?<!\\\\)}",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.brace.quote.raku",
       "patterns": [
         {
           "match": "\\\\{|\\\\}",
@@ -844,13 +844,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.angle.quote.raku",
       "end": ">",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.angle.quote.raku",
       "patterns": [
         {
           "include": "#q_angle_string_content"
@@ -870,13 +870,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.angle.quote.raku",
       "end": "\\\\\\\\>|(?<!\\\\)>",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.angle.quote.raku",
       "patterns": [
         {
           "match": "\\\\<|\\\\>",
@@ -900,13 +900,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.angle.quote.raku",
       "end": "\\\\\\\\>|(?<!\\\\)>",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.angle.quote.raku",
       "patterns": [
         {
           "match": "\\\\<|\\\\>",
@@ -936,13 +936,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.paren.quote.raku",
       "end": "\\)",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.paren.quote.raku",
       "patterns": [
         {
           "include": "#q_paren_string_content"
@@ -962,13 +962,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.paren.quote.raku",
       "end": "\\\\\\\\\\)|(?<!\\\\)\\)",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.paren.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\(|\\\\\\)",
@@ -992,13 +992,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.paren.quote.raku",
       "end": "\\\\\\\\\\)|(?<!\\\\)\\)",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.paren.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\(|\\\\\\)",
@@ -1028,13 +1028,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.bracket.quote.raku",
       "end": "\\]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.bracket.quote.raku",
       "patterns": [
         {
           "include": "#q_bracket_string_content"
@@ -1054,13 +1054,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.bracket.quote.raku",
       "end": "\\\\\\\\\\]|(?<!\\\\)\\]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.bracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\[|\\\\\\]",
@@ -1084,13 +1084,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.bracket.quote.raku",
       "end": "\\\\\\\\\\]|(?<!\\\\)\\]",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.bracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\\\[|\\\\\\]",
@@ -1120,13 +1120,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.left_double_right_double.quote.raku",
       "end": "”",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.left_double_right_double.quote.raku",
       "patterns": [
         {
           "include": "#q_left_double_right_double_string_content"
@@ -1146,13 +1146,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.left_double_right_double.quote.raku",
       "end": "\\\\\\\\”|(?<!\\\\)”",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.left_double_right_double.quote.raku",
       "patterns": [
         {
           "match": "\\\\“|\\\\”",
@@ -1176,13 +1176,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.left_double_right_double.quote.raku",
       "end": "\\\\\\\\”|(?<!\\\\)”",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.left_double_right_double.quote.raku",
       "patterns": [
         {
           "match": "\\\\“|\\\\”",
@@ -1212,13 +1212,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.left_double-low-q_right_double.quote.raku",
       "end": "”|“",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.left_double-low-q_right_double.quote.raku",
       "patterns": [
         {
           "include": "#q_left_double-low-q_right_double_string_content"
@@ -1238,13 +1238,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.left_double-low-q_right_double.quote.raku",
       "end": "\\\\\\\\”|“|(?<!\\\\)”|“",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.left_double-low-q_right_double.quote.raku",
       "patterns": [
         {
           "match": "\\\\„|\\\\”|“",
@@ -1268,13 +1268,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.left_double-low-q_right_double.quote.raku",
       "end": "\\\\\\\\”|“|(?<!\\\\)”|“",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.left_double-low-q_right_double.quote.raku",
       "patterns": [
         {
           "match": "\\\\„|\\\\”|“",
@@ -1304,13 +1304,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.left_single_right_single.quote.raku",
       "end": "’",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.left_single_right_single.quote.raku",
       "patterns": [
         {
           "include": "#q_left_single_right_single_string_content"
@@ -1330,13 +1330,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.left_single_right_single.quote.raku",
       "end": "\\\\\\\\’|(?<!\\\\)’",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.left_single_right_single.quote.raku",
       "patterns": [
         {
           "match": "\\\\‘|\\\\’",
@@ -1360,13 +1360,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.left_single_right_single.quote.raku",
       "end": "\\\\\\\\’|(?<!\\\\)’",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.left_single_right_single.quote.raku",
       "patterns": [
         {
           "match": "\\\\‘|\\\\’",
@@ -1396,13 +1396,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.low-q_left_single.quote.raku",
       "end": "‘",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.low-q_left_single.quote.raku",
       "patterns": [
         {
           "include": "#q_low-q_left_single_string_content"
@@ -1422,13 +1422,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.low-q_left_single.quote.raku",
       "end": "\\\\\\\\‘|(?<!\\\\)‘",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.low-q_left_single.quote.raku",
       "patterns": [
         {
           "match": "\\\\‚|\\\\‘",
@@ -1452,13 +1452,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.low-q_left_single.quote.raku",
       "end": "\\\\\\\\‘|(?<!\\\\)‘",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.low-q_left_single.quote.raku",
       "patterns": [
         {
           "match": "\\\\‚|\\\\‘",
@@ -1488,13 +1488,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.fw_cornerbracket.quote.raku",
       "end": "」",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.fw_cornerbracket.quote.raku",
       "patterns": [
         {
           "include": "#q_fw_cornerbracket_string_content"
@@ -1514,13 +1514,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.fw_cornerbracket.quote.raku",
       "end": "\\\\\\\\」|(?<!\\\\)」",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.fw_cornerbracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\「|\\\\」",
@@ -1544,13 +1544,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.fw_cornerbracket.quote.raku",
       "end": "\\\\\\\\」|(?<!\\\\)」",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.fw_cornerbracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\「|\\\\」",
@@ -1580,13 +1580,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.hw_cornerbracket.quote.raku",
       "end": "｣",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.hw_cornerbracket.quote.raku",
       "patterns": [
         {
           "include": "#q_hw_cornerbracket_string_content"
@@ -1606,13 +1606,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.hw_cornerbracket.quote.raku",
       "end": "\\\\\\\\｣|(?<!\\\\)｣",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.hw_cornerbracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\｢|\\\\｣",
@@ -1636,13 +1636,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.hw_cornerbracket.quote.raku",
       "end": "\\\\\\\\｣|(?<!\\\\)｣",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.hw_cornerbracket.quote.raku",
       "patterns": [
         {
           "match": "\\\\｢|\\\\｣",
@@ -1672,13 +1672,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.chevron.quote.raku",
       "end": "»",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.chevron.quote.raku",
       "patterns": [
         {
           "include": "#q_chevron_string_content"
@@ -1698,13 +1698,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.chevron.quote.raku",
       "end": "\\\\\\\\»|(?<!\\\\)»",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.chevron.quote.raku",
       "patterns": [
         {
           "match": "\\\\«|\\\\»",
@@ -1728,13 +1728,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.chevron.quote.raku",
       "end": "\\\\\\\\»|(?<!\\\\)»",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.chevron.quote.raku",
       "patterns": [
         {
           "match": "\\\\«|\\\\»",
@@ -1764,13 +1764,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.s-shaped-bag-delimiter.quote.raku",
       "end": "⟆",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.s-shaped-bag-delimiter.quote.raku",
       "patterns": [
         {
           "include": "#q_s-shaped-bag-delimiter_string_content"
@@ -1790,13 +1790,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.s-shaped-bag-delimiter.quote.raku",
       "end": "\\\\\\\\⟆|(?<!\\\\)⟆",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.s-shaped-bag-delimiter.quote.raku",
       "patterns": [
         {
           "match": "\\\\⟅|\\\\⟆",
@@ -1820,13 +1820,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.s-shaped-bag-delimiter.quote.raku",
       "end": "\\\\\\\\⟆|(?<!\\\\)⟆",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.s-shaped-bag-delimiter.quote.raku",
       "patterns": [
         {
           "match": "\\\\⟅|\\\\⟆",
@@ -1856,13 +1856,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.slash.quote.raku",
       "end": "/",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.slash.quote.raku",
       "patterns": [
         {
           "include": "#q_slash_string_content"
@@ -1882,13 +1882,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.slash.quote.raku",
       "end": "\\\\\\\\/|(?<!\\\\)/",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.slash.quote.raku",
       "patterns": [
         {
           "match": "\\\\/",
@@ -1912,13 +1912,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.slash.quote.raku",
       "end": "\\\\\\\\/|(?<!\\\\)/",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.slash.quote.raku",
       "patterns": [
         {
           "match": "\\\\/",
@@ -1948,13 +1948,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.single.quote.raku",
       "end": "'",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.single.quote.raku",
       "patterns": [
         {
           "include": "#q_single_string_content"
@@ -1974,13 +1974,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.single.quote.raku",
       "end": "\\\\\\\\'|(?<!\\\\)'",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.single.quote.raku",
       "patterns": [
         {
           "match": "\\\\'",
@@ -2004,13 +2004,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.single.quote.raku",
       "end": "\\\\\\\\'|(?<!\\\\)'",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.single.quote.raku",
       "patterns": [
         {
           "match": "\\\\'",
@@ -2040,13 +2040,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double.quote.raku",
       "end": "\"",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double.quote.raku",
       "patterns": [
         {
           "include": "#q_double_string_content"
@@ -2066,13 +2066,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.double.quote.raku",
       "end": "\\\\\\\\\"|(?<!\\\\)\"",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.q.double.quote.raku",
       "patterns": [
         {
           "match": "\\\\\"",
@@ -2096,13 +2096,13 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.qq.double.quote.raku",
       "end": "\\\\\\\\\"|(?<!\\\\)\"",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
       },
-      "contentName": "string.quoted.qq.double.quote.raku",
       "patterns": [
         {
           "match": "\\\\\"",
@@ -2132,102 +2132,22 @@
           "name": "punctuation.definition.string.raku"
         }
       },
+      "contentName": "string.quoted.q.any.quote.raku",
       "end": "\\3",
       "endCaptures": {
         "0": {
           "name": "punctuation.definition.string.raku"
         }
-      },
-      "contentName": "string.quoted.q.any.quote.raku"
+      }
     }
   ],
   "repository": {
-    "qq_character_escape": {
+    "q_angle_string_content": {
+      "begin": "<",
+      "end": "\\\\\\\\>|(?<!\\\\)>",
       "patterns": [
         {
-          "match": "(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\",
-          "name": "constant.character.escape.raku"
-        }
-      ]
-    },
-    "q_right_double_right_double_string_content": {
-      "begin": "”",
-      "end": "”",
-      "patterns": [
-        {
-          "include": "#q_right_double_right_double_string_content"
-        }
-      ]
-    },
-    "q_triple_paren_string_content": {
-      "begin": "\\(\\(\\(",
-      "end": "\\\\\\\\\\)\\)\\)|(?<!\\\\)\\)\\)\\)",
-      "patterns": [
-        {
-          "include": "#q_triple_paren_string_content"
-        }
-      ]
-    },
-    "q_triple_bracket_string_content": {
-      "begin": "\\[\\[\\[",
-      "end": "\\\\\\\\\\]\\]\\]|(?<!\\\\)\\]\\]\\]",
-      "patterns": [
-        {
-          "include": "#q_triple_bracket_string_content"
-        }
-      ]
-    },
-    "q_triple_brace_string_content": {
-      "begin": "\\{\\{\\{",
-      "end": "\\\\\\\\\\}\\}\\}|(?<!\\\\)\\}\\}\\}",
-      "patterns": [
-        {
-          "include": "#q_triple_brace_string_content"
-        }
-      ]
-    },
-    "q_triple_angle_string_content": {
-      "begin": "<<<",
-      "end": "\\\\\\\\>>>|(?<!\\\\)>>>",
-      "patterns": [
-        {
-          "include": "#q_triple_angle_string_content"
-        }
-      ]
-    },
-    "q_double_angle_string_content": {
-      "begin": "<<",
-      "end": "\\\\\\\\>>|(?<!\\\\)>>",
-      "patterns": [
-        {
-          "include": "#q_double_angle_string_content"
-        }
-      ]
-    },
-    "q_double_paren_string_content": {
-      "begin": "\\(\\(",
-      "end": "\\\\\\\\\\)\\)|(?<!\\\\)\\)\\)",
-      "patterns": [
-        {
-          "include": "#q_double_paren_string_content"
-        }
-      ]
-    },
-    "q_double_bracket_string_content": {
-      "begin": "\\[\\[",
-      "end": "\\\\\\\\\\]\\]|(?<!\\\\)\\]\\]",
-      "patterns": [
-        {
-          "include": "#q_double_bracket_string_content"
-        }
-      ]
-    },
-    "q_double_brace_string_content": {
-      "begin": "{{",
-      "end": "\\\\\\\\}}|(?<!\\\\)}}",
-      "patterns": [
-        {
-          "include": "#q_double_brace_string_content"
+          "include": "#q_angle_string_content"
         }
       ]
     },
@@ -2240,24 +2160,6 @@
         }
       ]
     },
-    "q_angle_string_content": {
-      "begin": "<",
-      "end": "\\\\\\\\>|(?<!\\\\)>",
-      "patterns": [
-        {
-          "include": "#q_angle_string_content"
-        }
-      ]
-    },
-    "q_paren_string_content": {
-      "begin": "\\(",
-      "end": "\\\\\\\\\\)|(?<!\\\\)\\)",
-      "patterns": [
-        {
-          "include": "#q_paren_string_content"
-        }
-      ]
-    },
     "q_bracket_string_content": {
       "begin": "\\[",
       "end": "\\\\\\\\\\]|(?<!\\\\)\\]",
@@ -2267,39 +2169,57 @@
         }
       ]
     },
-    "q_left_double_right_double_string_content": {
-      "begin": "“",
-      "end": "\\\\\\\\”|(?<!\\\\)”",
+    "q_chevron_string_content": {
+      "begin": "«",
+      "end": "\\\\\\\\»|(?<!\\\\)»",
       "patterns": [
         {
-          "include": "#q_left_double_right_double_string_content"
+          "include": "#q_chevron_string_content"
         }
       ]
     },
-    "q_left_double-low-q_right_double_string_content": {
-      "begin": "„",
-      "end": "\\\\\\\\”|“|(?<!\\\\)”|“",
+    "q_double_angle_string_content": {
+      "begin": "<<",
+      "end": "\\\\\\\\>>|(?<!\\\\)>>",
       "patterns": [
         {
-          "include": "#q_left_double-low-q_right_double_string_content"
+          "include": "#q_double_angle_string_content"
         }
       ]
     },
-    "q_left_single_right_single_string_content": {
-      "begin": "‘",
-      "end": "\\\\\\\\’|(?<!\\\\)’",
+    "q_double_brace_string_content": {
+      "begin": "{{",
+      "end": "\\\\\\\\}}|(?<!\\\\)}}",
       "patterns": [
         {
-          "include": "#q_left_single_right_single_string_content"
+          "include": "#q_double_brace_string_content"
         }
       ]
     },
-    "q_low-q_left_single_string_content": {
-      "begin": "‚",
-      "end": "\\\\\\\\‘|(?<!\\\\)‘",
+    "q_double_bracket_string_content": {
+      "begin": "\\[\\[",
+      "end": "\\\\\\\\\\]\\]|(?<!\\\\)\\]\\]",
       "patterns": [
         {
-          "include": "#q_low-q_left_single_string_content"
+          "include": "#q_double_bracket_string_content"
+        }
+      ]
+    },
+    "q_double_paren_string_content": {
+      "begin": "\\(\\(",
+      "end": "\\\\\\\\\\)\\)|(?<!\\\\)\\)\\)",
+      "patterns": [
+        {
+          "include": "#q_double_paren_string_content"
+        }
+      ]
+    },
+    "q_double_string_content": {
+      "begin": "\"",
+      "end": "\\\\\\\\\"|(?<!\\\\)\"",
+      "patterns": [
+        {
+          "include": "#q_double_string_content"
         }
       ]
     },
@@ -2321,12 +2241,57 @@
         }
       ]
     },
-    "q_chevron_string_content": {
-      "begin": "«",
-      "end": "\\\\\\\\»|(?<!\\\\)»",
+    "q_left_double-low-q_right_double_string_content": {
+      "begin": "„",
+      "end": "\\\\\\\\”|“|(?<!\\\\)”|“",
       "patterns": [
         {
-          "include": "#q_chevron_string_content"
+          "include": "#q_left_double-low-q_right_double_string_content"
+        }
+      ]
+    },
+    "q_left_double_right_double_string_content": {
+      "begin": "“",
+      "end": "\\\\\\\\”|(?<!\\\\)”",
+      "patterns": [
+        {
+          "include": "#q_left_double_right_double_string_content"
+        }
+      ]
+    },
+    "q_left_single_right_single_string_content": {
+      "begin": "‘",
+      "end": "\\\\\\\\’|(?<!\\\\)’",
+      "patterns": [
+        {
+          "include": "#q_left_single_right_single_string_content"
+        }
+      ]
+    },
+    "q_low-q_left_single_string_content": {
+      "begin": "‚",
+      "end": "\\\\\\\\‘|(?<!\\\\)‘",
+      "patterns": [
+        {
+          "include": "#q_low-q_left_single_string_content"
+        }
+      ]
+    },
+    "q_paren_string_content": {
+      "begin": "\\(",
+      "end": "\\\\\\\\\\)|(?<!\\\\)\\)",
+      "patterns": [
+        {
+          "include": "#q_paren_string_content"
+        }
+      ]
+    },
+    "q_right_double_right_double_string_content": {
+      "begin": "”",
+      "end": "”",
+      "patterns": [
+        {
+          "include": "#q_right_double_right_double_string_content"
         }
       ]
     },
@@ -2339,15 +2304,6 @@
         }
       ]
     },
-    "q_slash_string_content": {
-      "begin": "/",
-      "end": "\\\\\\\\/|(?<!\\\\)/",
-      "patterns": [
-        {
-          "include": "#q_slash_string_content"
-        }
-      ]
-    },
     "q_single_string_content": {
       "begin": "'",
       "end": "\\\\\\\\'|(?<!\\\\)'",
@@ -2357,14 +2313,59 @@
         }
       ]
     },
-    "q_double_string_content": {
-      "begin": "\"",
-      "end": "\\\\\\\\\"|(?<!\\\\)\"",
+    "q_slash_string_content": {
+      "begin": "/",
+      "end": "\\\\\\\\/|(?<!\\\\)/",
       "patterns": [
         {
-          "include": "#q_double_string_content"
+          "include": "#q_slash_string_content"
+        }
+      ]
+    },
+    "q_triple_angle_string_content": {
+      "begin": "<<<",
+      "end": "\\\\\\\\>>>|(?<!\\\\)>>>",
+      "patterns": [
+        {
+          "include": "#q_triple_angle_string_content"
+        }
+      ]
+    },
+    "q_triple_brace_string_content": {
+      "begin": "\\{\\{\\{",
+      "end": "\\\\\\\\\\}\\}\\}|(?<!\\\\)\\}\\}\\}",
+      "patterns": [
+        {
+          "include": "#q_triple_brace_string_content"
+        }
+      ]
+    },
+    "q_triple_bracket_string_content": {
+      "begin": "\\[\\[\\[",
+      "end": "\\\\\\\\\\]\\]\\]|(?<!\\\\)\\]\\]\\]",
+      "patterns": [
+        {
+          "include": "#q_triple_bracket_string_content"
+        }
+      ]
+    },
+    "q_triple_paren_string_content": {
+      "begin": "\\(\\(\\(",
+      "end": "\\\\\\\\\\)\\)\\)|(?<!\\\\)\\)\\)\\)",
+      "patterns": [
+        {
+          "include": "#q_triple_paren_string_content"
+        }
+      ]
+    },
+    "qq_character_escape": {
+      "patterns": [
+        {
+          "match": "(?x) \\\\[abtnfre\\\\\\{\\}] | \\\\",
+          "name": "constant.character.escape.raku"
         }
       ]
     }
-  }
+  },
+  "scopeName": "source.quoting.raku"
 }

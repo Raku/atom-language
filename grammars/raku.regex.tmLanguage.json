@@ -1,13 +1,37 @@
- {
-  "scopeName": "source.regexp.raku",
+{
+  "fileTypes": [
+  ],
   "name": "Regular Expressions in Raku",
-  "fileTypes": [],
   "patterns": [
     {
       "include": "#regexp"
     }
   ],
   "repository": {
+    "re_strings": {
+      "patterns": [
+        {
+          "begin": "(?<!\\\\)\\'",
+          "end": "(?<=\\\\\\\\)\\'|(?<!\\\\)\\'",
+          "name": "string.literal.raku"
+        },
+        {
+          "begin": "(?<!\\\\)‘",
+          "end": "(?<=\\\\\\\\)\\’|(?<!\\\\)’",
+          "name": "string.literal.raku",
+          "patterns": [
+            {
+              "include": "source.raku#q_left_single_right_single_string_content"
+            }
+          ]
+        },
+        {
+          "begin": "(?<!\\\\)\\\"",
+          "end": "(?<=\\\\\\\\)\\\"|(?<!\\\\)\\\"",
+          "name": "string.literal.raku"
+        }
+      ]
+    },
     "regexp": {
       "patterns": [
         {
@@ -51,7 +75,6 @@
           "name": "keyword.other.special-method.match.variable.numbered.perlt6e"
         },
         {
-          "match": "(\\$)(\\<)(\\w+)(\\>)\\s*(=)",
           "captures": {
             "1": {
               "name": "variable.other.identifier.sigil.regexp.perl6"
@@ -69,6 +92,7 @@
               "name": "storage.modifier.match.assignment.regexp.raku"
             }
           },
+          "match": "(\\$)(\\<)(\\w+)(\\>)\\s*(=)",
           "name": "meta.match.variable.raku"
         },
         {
@@ -84,12 +108,12 @@
               "name": "punctuation.section.embedded.end.raku"
             }
           },
+          "name": "meta.interpolation.raku",
           "patterns": [
             {
               "include": "source.raku"
             }
-          ],
-          "name": "meta.interpolation.raku"
+          ]
         },
         {
           "match": "<\\(|\\)>",
@@ -132,7 +156,6 @@
               ]
             },
             {
-              "match": "(\\w+)(=)",
               "captures": {
                 "1": {
                   "name": "entity.name.function.capturename.raku"
@@ -141,10 +164,10 @@
                   "name": "storage.modifier.capture.assignment.raku"
                 }
               },
+              "match": "(\\w+)(=)",
               "name": "meta.capture.assignment.raku"
             },
             {
-              "match": "(:)(\\w+)",
               "captures": {
                 "1": {
                   "name": "punctuation.definition.property.regexp.raku"
@@ -153,6 +176,7 @@
                   "name": "variable.other.identifier.property.regexp.raku"
                 }
               },
+              "match": "(:)(\\w+)",
               "name": "meta.property.name.regexp.raku"
             },
             {
@@ -166,13 +190,13 @@
                   "name": "keyword.operator.charclass.open.regexp.raku"
                 }
               },
+              "contentName": "constant.character.custom.property.regexp.raku",
               "end": "\\]",
               "endCaptures": {
                 "0": {
                   "name": "keyword.operator.charclass.close.regexp.raku"
                 }
               },
-              "contentName": "constant.character.custom.property.regexp.raku",
               "patterns": [
                 {
                   "include": "source.raku#hex_escapes"
@@ -216,30 +240,7 @@
           "name": "support.function.alternation.regexp.raku"
         }
       ]
-    },
-    "re_strings": {
-      "patterns": [
-        {
-          "begin": "(?<!\\\\)\\'",
-          "end": "(?<=\\\\\\\\)\\'|(?<!\\\\)\\'",
-          "name": "string.literal.raku"
-        },
-        {
-          "begin": "(?<!\\\\)‘",
-          "end": "(?<=\\\\\\\\)\\’|(?<!\\\\)’",
-          "name": "string.literal.raku",
-          "patterns": [
-            {
-              "include": "source.raku#q_left_single_right_single_string_content"
-            }
-          ]
-        },
-        {
-          "begin": "(?<!\\\\)\\\"",
-          "end": "(?<=\\\\\\\\)\\\"|(?<!\\\\)\\\"",
-          "name": "string.literal.raku"
-        }
-      ]
     }
-  }
+  },
+  "scopeName": "source.regexp.raku"
 }

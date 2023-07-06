@@ -1,10 +1,9 @@
- {
-  "scopeName": "source.meta-info",
-  "name": "META.info",
+{
   "fileTypes": [
     "META.info",
     "META6.json"
   ],
+  "name": "META.info",
   "patterns": [
     {
       "include": "#value"
@@ -42,6 +41,10 @@
     "constant": {
       "match": "\\b(?:true|false|null)\\b",
       "name": "constant.language.json"
+    },
+    "fields": {
+      "match": "(?x) \"(?: perl|name|version|description|author(?:s)?|provides|depends|emulates| supersedes|superseded-by|excludes|build-depends|test-depends|resource| support|email|mailinglist|bugtracker|source|source-url|source-type| irc|phone|production|license|tags|auth )\"",
+      "name": "entity.name.function.field.meta-info"
     },
     "number": {
       "comment": "handles integer and decimal numbers",
@@ -103,10 +106,6 @@
         }
       ]
     },
-    "fields": {
-      "match": "(?x) \"(?: perl|name|version|description|author(?:s)?|provides|depends|emulates| supersedes|superseded-by|excludes|build-depends|test-depends|resource| support|email|mailinglist|bugtracker|source|source-url|source-type| irc|phone|production|license|tags|auth )\"",
-      "name": "entity.name.function.field.meta-info"
-    },
     "string": {
       "begin": "\"",
       "beginCaptures": {
@@ -152,5 +151,6 @@
         }
       ]
     }
-  }
+  },
+  "scopeName": "source.meta-info"
 }
