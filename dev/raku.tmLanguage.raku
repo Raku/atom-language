@@ -441,7 +441,7 @@
         '4' => {
           'patterns' => [
             {
-              'match' => Q/(?x) ( [\p{Digit}\pL\pM'\-_]+ ) \b (:)? (\w+ \b )? (\S+  )?/,
+              'match' => Q/(?x) ( [\p{Nd}\pL\pM'\-_]+ ) \b (:)? (\w+ \b )? (\S+  )?/,
               'captures' => {
                 '1' => {
                   'name' => 'entity.name.function.raku'
@@ -486,7 +486,7 @@
           'name' => 'entity.name.function.regexp.named.TOP.raku'
         },
         {
-          'match' => Q/[\p{Digit}\pL\pM'\-_]+/,
+          'match' => Q/[\p{Nd}\pL\pM'\-_]+/,
           'name' => 'entity.name.function.regexp.named.raku'
         },
         {
@@ -1494,7 +1494,7 @@
           (
               (?:[\pL\pM_])           # Must start with Alpha or underscore
               (?:
-                 [\p{Digit}\pL\pM_]  # have alphanum/underscore, or a ' or -
+                 [\p{Nd}\pL\pM_]  # have alphanum/underscore, or a ' or -
               |                           # followed by an Alpha or underscore
                  [\-'] [\pL\pM_]
               )*
@@ -1548,7 +1548,7 @@
           (\.|\*|:|!|\^|~|=|\?)?  # Twigils
           ([\pL\pM_])             # Must start with Alpha or underscore
           (
-             [\p{Digit}\pL\pM_]  # have alphanum/underscore, or a ' or -
+             [\p{Nd}\pL\pM_]  # have alphanum/underscore, or a ' or -
           |                           # followed by an Alpha or underscore
              [\-'] [\pL\pM_]
           )*
@@ -1560,7 +1560,7 @@
               (
                  [\pL\pM]
                   (?:
-                    [\p{Digit}\pL\pM_]  # have alphanum/underscore, or a ' or -
+                    [\p{Nd}\pL\pM_]  # have alphanum/underscore, or a ' or -
                   |                          # followed by an Alpha or underscore
                     [\-'] [\pL\pM_]
                   )*
