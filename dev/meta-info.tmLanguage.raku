@@ -40,7 +40,7 @@
       ]
     },
     'constant' => {
-      'match' => '\\b(?:true|false|null)\\b',
+      'match' => Q/\b(?:True|true|False|false|null)\b/,
       'name' => 'constant.language.json'
     },
     'number' => {
@@ -104,7 +104,7 @@
       ]
     },
     'fields' => {
-      'match' => Q/(?x) "(?: perl|name|version|description|author(?:s)?|provides|depends|emulates| supersedes|superseded-by|excludes|build-depends|test-depends|resource| support|email|mailinglist|bugtracker|source|source-url|source-type| irc|phone|production|license|tags|auth )"/,
+      'match' => Q/(?x) "(?: perl|meta-version|name|version|description|authors|provides|depends|emulates| supersedes|superseded-by|excludes|build-depends|test-depends|resources| support|email|mailinglist|bugtracker|source|source-url|source-type| irc|phone|production|license|tags|auth )"/,
       'name' => 'entity.name.function.field.meta-info'
     },
     'string' => {
