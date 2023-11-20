@@ -43,7 +43,7 @@
       "name": "constant.language.json"
     },
     "fields": {
-      "match": "(?x) \"(?: perl|meta-version| name|version|description|authors|provides|depends|emulates| supersedes|superseded-by|excludes|build-depends|test-depends|resources| support|email|mailinglist|bugtracker|source|source-url|source-type| irc|phone|production|license|tags|auth )\"",
+      "match": "(?x) \"(?: perl|meta-version|name|version|description|authors|provides|depends|emulates| supersedes|superseded-by|excludes|build-depends|test-depends|resources| support|email|mailinglist|bugtracker|source|source-url|source-type| irc|phone|production|license|tags|auth )\"",
       "name": "entity.name.function.field.meta-info"
     },
     "number": {
