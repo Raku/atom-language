@@ -441,7 +441,7 @@
         '4' => {
           'patterns' => [
             {
-              'match' => Q/(?x) ( [\p{Nd}\pL\pM'\-_]+ ) \b (:)? (\w+ \b )? (\S+  )?/,
+              'match' => Q/(?x) ( [\p{Nd}\p{L}\p{M}'\-_]+ ) \b (:)? (\w+ \b )? (\S+  )?/,
               'captures' => {
                 '1' => {
                   'name' => 'entity.name.function.raku'
@@ -486,7 +486,7 @@
           'name' => 'entity.name.function.regexp.named.TOP.raku'
         },
         {
-          'match' => Q/[\p{Nd}\pL\pM'\-_]+/,
+          'match' => Q/[\p{Nd}\p{L}\p{M}'\-_]+/,
           'name' => 'entity.name.function.regexp.named.raku'
         },
         {
@@ -1492,11 +1492,11 @@
           (\$|@|%|&)
           (\.|\*|:|!|\^|~|=|\?)?
           (
-              (?:[\pL\pM_])           # Must start with Alpha or underscore
+              (?:[\p{L}\p{M}_])           # Must start with Alpha or underscore
               (?:
-                 [\p{Nd}\pL\pM_]  # have alphanum/underscore, or a ' or -
+                 [\p{Nd}\p{L}\p{M}_]  # have alphanum/underscore, or a ' or -
               |                           # followed by an Alpha or underscore
-                 [\-'] [\pL\pM_]
+                 [\-'] [\p{L}\p{M}_]
               )*
           )
           REGEX
@@ -1546,11 +1546,11 @@
           (\$|@|%|&)
           (?!\$)
           (\.|\*|:|!|\^|~|=|\?)?  # Twigils
-          ([\pL\pM_])             # Must start with Alpha or underscore
+          ([\p{L}\p{M}_])             # Must start with Alpha or underscore
           (
-             [\p{Nd}\pL\pM_]  # have alphanum/underscore, or a ' or -
+             [\p{Nd}\p{L}\p{M}_]  # have alphanum/underscore, or a ' or -
           |                           # followed by an Alpha or underscore
-             [\-'] [\pL\pM_]
+             [\-'] [\p{L}\p{M}_]
           )*
           ( \[ .* \] )?             # postcircumfix [ ]
           ## methods
@@ -1558,11 +1558,11 @@
             (?:
               ( \. )
               (
-                 [\pL\pM]
+                 [\p{L}\p{M}]
                   (?:
-                    [\p{Nd}\pL\pM_]  # have alphanum/underscore, or a ' or -
+                    [\p{Nd}\p{L}\p{M}_]  # have alphanum/underscore, or a ' or -
                   |                          # followed by an Alpha or underscore
-                    [\-'] [\pL\pM_]
+                    [\-'] [\p{L}\p{M}_]
                   )*
           
               )
